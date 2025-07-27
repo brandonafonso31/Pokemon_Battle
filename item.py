@@ -1,3 +1,5 @@
+from pokemon import Pokemon
+
 class Item:
     def __init__(self,name:str,effect:str = ""):
         self.name = name
@@ -12,6 +14,9 @@ class Item:
 class Balls(Item):
     def __init__(self,name:str,effect:str = ""):
         super(Item)
+        
+    def throw(self,pokemon:Pokemon):
+        pass
 
 class Heals(Item):
     def __init__(self,name:str,effect:str = ""):
