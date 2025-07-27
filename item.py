@@ -21,16 +21,27 @@ class Balls(Item):
         
     @override    
     def use(self,pokemon:Pokemon):
+        """usable on ennemy pokemon only"""
         pass
 
 class Heals(Item):
     def __init__(self,name:str,effect:str = ""):
         super().__init__(name, effect)
         
+    @override    
+    def use(self,pokemon:Pokemon):
+        """usable on ally pokemon only"""
+        pass
+    
 class Heal_Status(Item):
     def __init__(self,name:str,effect:str = ""):
         super().__init__(name, effect)
         
+    @override    
+    def use(self,pokemon:Pokemon):
+        """usable on ally pokemon only"""
+        pass   
+    
 class Fight_object(Item):
     def __init__(self,name:str,effect:str = ""):
         super().__init__(name, effect)
