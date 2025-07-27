@@ -181,19 +181,19 @@ class Pokemon:
             
     def check_each_EV(self):
         return all([_ <= 252 for _ in self.EV.values()])
-    
-def real_pv(pv:int,nature,EV:int,IV=31,niv=50):
+
+def get_scale_by_nature(stat_name: str, nature: Nature):
+    return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
+     
+def real_pv(stat_name:str,pv:int,nature,EV:int,IV=31,niv=50):
     pv = (2 * pv + IV + EV//4) * niv
     pv = pv// 100 + niv + 10
-    return round(pv)
+    return round(pv*get_scale_by_nature(stat_name,nature))
 
 def real_stat(stat_name:str,stat:int,nature:Nature,EV:int,IV=31,niv=50):
     stat = (2 * stat + IV + EV//4) * niv
     stat = (stat//100 + 5)
-    if stat_name == nature.effect()["stat_boost"]: scale = 1.1  # stat boost par la nature
-    elif stat_name == nature.effect()["stat_neg"]: scale = 0.9  # stat affaiblis par la nature
-    else: scale = 1                                             # stat noon affect par la nature
-    return round(stat*scale)                                          
+    return round(stat*get_scale_by_nature(stat_name,nature))                                          
 
 def get_damage(x,y,z,niv=50):
     damage = (niv * 0.4 +2) * z * x
