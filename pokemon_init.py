@@ -33,8 +33,9 @@ leviator.learn_move(danse_draco)
 leviator.learn_move(seisme)
 #print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
+pikachu_EV = {"pv":1274,"atk":252,"def_":500,"atk_spe":252,"def_spe":252,"vit":252}
 pikachu = Pokemon("Pikachu",pv=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
-                   type1=Type.ELECTRIQUE,talent="paratonerre",num_on_sprite_sheet=30)
+                   type1=Type.ELECTRIQUE,talent="paratonerre",num_on_sprite_sheet=30,EV=pikachu_EV, nature=Nature.BRAVE)
 
 cage_eclair = StatusMove("Cage-Éclair",Type.ELECTRIQUE,precision=90,pp=20, effect = dico_effect_move["Cage-Éclair"], prio = 0)
 
