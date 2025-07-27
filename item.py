@@ -1,4 +1,5 @@
 from pokemon import Pokemon
+from typing import override
 
 class Item:
     def __init__(self,name:str,effect:str = ""):
@@ -11,21 +12,25 @@ class Item:
     def __str__(self):
         return self.name
     
+    def use(self,pokemon:Pokemon):
+        pass
+    
 class Balls(Item):
     def __init__(self,name:str,effect:str = ""):
-        super(Item)
+        super().__init__(name, effect)
         
-    def throw(self,pokemon:Pokemon):
+    @override    
+    def use(self,pokemon:Pokemon):
         pass
 
 class Heals(Item):
     def __init__(self,name:str,effect:str = ""):
-        super(Item)
-
+        super().__init__(name, effect)
+        
 class Heal_Status(Item):
     def __init__(self,name:str,effect:str = ""):
-        super(Item)
+        super().__init__(name, effect)
         
 class Fight_object(Item):
     def __init__(self,name:str,effect:str = ""):
-        super(Item)
+        super().__init__(name, effect)
