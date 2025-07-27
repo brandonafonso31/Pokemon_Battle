@@ -152,7 +152,16 @@ class Pokemon:
         else:
             move.pp -= 1
             print(f"{self.name} utilise {move}")    # a afficher dans la barre blanche plutot ?
-            animation_loader.play_attack_animation(move.name, window, opponent.rect.center)
+            
+            if move.name in animation_data:
+                frames, frame_duration = animation_loader.load_animation_frames(move.name, animation_data)
+                surfaces = [pygame.image.fromstring(f.tobytes(), f.size, f.mode).convert_alpha() for f in frames]
+                
+                for surf in surfaces:
+                    window.fill((255, 255, 255))  # Clear screen or keep battle background
+                    window.blit(surf, (300, 200))  # À ajuster selon ta zone de combat
+                    pygame.display.update()
+                    pygame.time.delay(frame_duration)
             
             damage = 0
             if isinstance(move, SpecialMove):
