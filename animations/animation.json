@@ -1,0 +1,10 @@
+{
+  "Crocs Givre": {
+    "sheet": "assets/animations/teeth.png",
+    "frame_size": [64, 64],
+    "rows": 4,
+    "cols": 6,
+    "frame_duration": 50,
+    "offset": [0, 0]
+  }
+}
