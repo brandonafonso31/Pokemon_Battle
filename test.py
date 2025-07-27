@@ -29,7 +29,7 @@ types = list(Type)
 
 for type in types:
     # Recharger une nouvelle copie de l’image d’origine à chaque tour
-    image = Image.open("battle_ui/move1_button.png").convert("RGBA")
+    image = Image.open("battle_ui/move_button.png").convert("RGBA")
     pixels = image.load()
     
     print(type, ImageColor.getrgb(type.color()))
