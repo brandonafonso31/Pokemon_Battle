@@ -9,3 +9,14 @@ class Item:
     def __str__(self):
         return self.name
     
+class Balls(Item):
+    def __init__(self,name:str,effect:str = ""):
+        super(Item)
+
+class Heals(Item):
+    def __init__(self,name:str,effect:str = ""):
+        super(Item)
+
+class Heal_Status(Item):
+    def __init__(self,name:str,effect:str = ""):
+        super(Item)
