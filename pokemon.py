@@ -31,7 +31,7 @@ class Pokemon:
         self.dresseur = None
         
         hp_cur = pv
-        hp_max = pv                 # à modifier plus tard quand less pv seront vraiment calculés
+        hp_max = pv                 # à modifier plus tard quand les pv seront vraiment calculés
         
         self.talent = talent        # à implementer comme Class Enum comme type ? 
         
