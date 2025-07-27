@@ -1,7 +1,7 @@
 import json
 import os
-import pygame
 from PIL import Image
+from config import img_dir_path
 
 def load_animation_config(json_path):
     with open(json_path, "r", encoding="utf-8") as f:
@@ -9,7 +9,7 @@ def load_animation_config(json_path):
 
 def load_animation_frames(name, config):
     data = config[name]
-    path = os.path.join("animations", data["spritesheet"])
+    path = os.path.join(img_dir_path, data["spritesheet"])
     img = Image.open(path).convert("RGBA")
 
     frames = []
