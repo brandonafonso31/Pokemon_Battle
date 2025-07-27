@@ -8,10 +8,10 @@ LINE_PRINT = "-"*70
 
 class Pokemon:
     def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
-        gen: int,type1: Type, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None,item=None):
+        gen: int,type1: Type, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None,item=None,id_num=0):
         
         self.name = name
-        
+        self.id = id_num
         # Stats
         self.EV = EV
         self.pv = real_pv(pv,None,EV["pv"])
@@ -51,11 +51,12 @@ class Pokemon:
         return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n"
     
     def __eq__(self, other):
-        return self.name == other.name and self.dresseur == other.dresseur \
+        return self.id == other.id  # id sera implémenter dans la classe Team_Pokemon est sera de 1 à 6 unique
+        """return self.name == other.name and self.dresseur == other.dresseur \
             and self.EV == other.EV and self.get_moveset() == other.get_moveset() \
                 and self.get_stats() == other.get_stats() and self.nickname == other.nickname \
                     and self.talent == other.talent and self.nature == other.nature \
-                        and self.shiny == other.shiny and self.item == other.item
+                        and self.shiny == other.shiny and self.item == other.item"""
     
     def show_type(self):
         types = f"TYPE1: {self.type1.name}"
