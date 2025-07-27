@@ -18,3 +18,8 @@ antidote = item.Heal_Status("Antidote")
 rappel = item.Heal_Status("Rappel")
 maxrappel = item.Heal_Status("Max Rappel")
 
+attack_plus = item.Fight_object("Attaque+")
+defense_plus = item.Fight_object("Défense+")
+speed_plus = item.Fight_object("Vitesse+")
+special_attack_plus = item.Fight_object("Attaque spéciale+")
+special_defense_plus = item.Fight_object("Défense spéciale+")
