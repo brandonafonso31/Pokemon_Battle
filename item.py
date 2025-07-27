@@ -20,3 +20,7 @@ class Heals(Item):
 class Heal_Status(Item):
     def __init__(self,name:str,effect:str = ""):
         super(Item)
+        
+class Fight_object(Item):
+    def __init__(self,name:str,effect:str = ""):
+        super(Item)
