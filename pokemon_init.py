@@ -23,11 +23,14 @@ leviator = Pokemon("Léviator",pv=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=
                    type1=Type.EAU,type2=Type.VOL,talent="intimidation",num_on_sprite_sheet=151)
 
 crocgivre = PhysicalMove("Crocs Givre",Type.GLACE,power=65,precision=95,pp=15, effect = dico_effect_move["Crocs Givre"], prio = 0)
+cascade = PhysicalMove("Cascade",Type.EAU,power=80,precision=100,pp=15, effect = dico_effect_move["Cascade"], prio = 0)
+danse_draco = StatusMove("Danse Draco",Type.DRAGON,precision=100,pp=20, effect = dico_effect_move["Danse Draco"], prio = 0)
+seisme = PhysicalMove("Séisme",Type.SOL,power=100,precision=100,pp=10, effect = dico_effect_move["Séisme"], prio = 0)
 
 leviator.learn_move(crocgivre)
-leviator.learn_move("cascade")
-leviator.learn_move("danse draco")
-leviator.learn_move("séïsme")
+leviator.learn_move(cascade)
+leviator.learn_move(danse_draco)
+leviator.learn_move(seisme)
 #print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
 pikachu = Pokemon("Pikachu",pv=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
