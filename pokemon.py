@@ -20,7 +20,7 @@ class Pokemon:
         self.atk_spe = real_stat(atk_spe,None,EV["atk_spe"])
         self.def_spe = real_stat(def_spe,None,EV["def_spe"])
         self.vit = real_stat(vit,None,EV["vit"])
-        hp_max = self.pv
+        self.hp_max = self.pv
         
         self.legit = self.check_sum_EV() and self.check_each_EV()
         
@@ -43,20 +43,28 @@ class Pokemon:
         self.talent = talent        # à implementer comme Class Enum comme type ? 
         self.nature = None          # à implementer comme Class Enum comme type ?
         self.shiny = False          # à implementer plus tard, change uniquement les scripts
-        self.item = item          # à implementer plus tard, objet tenu par le pokémon
+        self.item = item            # à implementer plus tard, objet tenu par le pokémon
+        self.nickname = ""
     
     def __str__(self):
         output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} \n{LINE_PRINT}"
         return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n"
     
     def __eq__(self, other):
-        return self.name == other.name and self.dresseur == other.dresseur
+        return self.name == other.name and self.dresseur == other.dresseur \
+            and self.EV == other.EV and self.get_moveset() == other.get_moveset() \
+                and self.get_stats() == other.get_stats() and self.nickname == other.nickname \
+                    and self.talent == other.talent and self.nature == other.nature \
+                        and self.shiny == other.shiny and self.item == other.item
     
     def show_type(self):
         types = f"TYPE1: {self.type1.name}"
         if self.type2 != None:
             types += f", TYPE2: {self.type2.name}"
         return types
+    
+    def get_stats(self):
+        return [self.pv,self.atk,self.def_,self.atk_spe,self.def_spe,self.vit]
     
     def show_stats(self):
         return f"PV: {self.pv},\nATK: {self.atk},\nDEF: {self.def_},\nATK_SPE: {self.atk_spe},\nDEF_SPE: {self.def_spe},\nVIT: {self.vit}"
