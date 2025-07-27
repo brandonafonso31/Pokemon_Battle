@@ -102,6 +102,7 @@ while run :
             # open_pokemon_team()
             pokemon_selected = False
             choose_action = True
+            draw_text("LA TEAM POKEMON EST SELECTIONNEE", font,WHITE,250,resolution[1]//2)
             pygame.time.delay(1000)
         
         if bag_selected:
@@ -109,6 +110,7 @@ while run :
             # open_bag()
             bag_selected = False
             choose_action = True
+            draw_text("LE SAC EST SELECTIONNE", font,WHITE,250,resolution[1]//2)
             pygame.time.delay(1000)
         
     if not battle_start and run:
