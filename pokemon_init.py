@@ -10,12 +10,12 @@ dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=
 lance_flamme = SpecialMove("Lance-Flammes",Type.FEU,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Flammes"], prio = 0)
 crocs_eclair = SpecialMove("Croc-éclair",Type.ELECTRIQUE,power=90,precision=100,pp=15, effect = dico_effect_move["Croc-éclair"], prio = 0)
 lance_soleil = SpecialMove("Lance-Soleil",Type.PLANTE,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Soleil"], prio = 0)
-atterisage = StatusMove("Atterisage",Type.VOL,precision=100,pp=15, effect = dico_effect_move["Atterissage"], prio = 0)
+#atterisage = StatusMove("Atterisage",Type.VOL,precision=100,pp=15, effect = dico_effect_move["Atterissage"], prio = 0)
 
 dracaufeu.learn_move(lance_flamme)
 dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
-dracaufeu.learn_move(atterisage)
+#dracaufeu.learn_move(atterisage)
 print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"pv":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
@@ -24,12 +24,12 @@ leviator = Pokemon("Léviator",pv=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=
 
 crocgivre = PhysicalMove("Crocs Givre",Type.GLACE,power=65,precision=95,pp=15, effect = dico_effect_move["Crocs Givre"], prio = 0)
 cascade = PhysicalMove("Cascade",Type.EAU,power=80,precision=100,pp=15, effect = dico_effect_move["Cascade"], prio = 0)
-danse_draco = StatusMove("Danse Draco",Type.DRAGON,precision=100,pp=20, effect = dico_effect_move["Danse Draco"], prio = 0)
+#danse_draco = StatusMove("Danse Draco",Type.DRAGON,precision=100,pp=20, effect = dico_effect_move["Danse Draco"], prio = 0)
 seisme = PhysicalMove("Séisme",Type.SOL,power=100,precision=100,pp=10, effect = dico_effect_move["Séisme"], prio = 0)
 
 leviator.learn_move(crocgivre)
 leviator.learn_move(cascade)
-leviator.learn_move(danse_draco)
+#leviator.learn_move(danse_draco)
 leviator.learn_move(seisme)
 print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
