@@ -1,5 +1,8 @@
 import pygame
 import json
+from animation_loader import load_animation_config, load_animation_frames
+
+animation_data = load_animation_config("animations/animations.json")
 
 def load_animation_config(json_path):
     with open(json_path, "r") as f:
@@ -17,3 +20,18 @@ def load_animation_frames(config):
             rect = pygame.Rect(col * frame_width, row * frame_height, frame_width, frame_height)
             frames.append(sheet.subsurface(rect))
     return frames
+
+def play_attack_animation(move_name, window, target_pos):
+    if move_name not in animation_data:
+        return  # Pas d'anim, on skip
+    
+    config = animation_data[move_name]
+    frames = load_animation_frames(config)
+    offset = config.get("offset", [0, 0])
+    duration = config.get("frame_duration", 60)
+
+    x, y = target_pos[0] + offset[0], target_pos[1] + offset[1]
+    for frame in frames:
+        window.blit(frame, (x, y))
+        pygame.display.flip()
+        pygame.time.delay(duration)

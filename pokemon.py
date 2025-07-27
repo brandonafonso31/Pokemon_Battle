@@ -5,7 +5,9 @@ from random import randint
 from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
+from animation_loader import load_animation_config, load_animation_frames
 
+animation_data = load_animation_config("animations/animations.json")
 LINE_PRINT = "-"*70
 
 class Pokemon:
@@ -160,7 +162,7 @@ class Pokemon:
                 return
             damage *= self.get_cm(opponent,move)
             
-            move.play_animation(window, os.path.join(img_dir_path,"Sprites/pokemon_back .png"), os.path.join(img_dir_path,"Sprites/pokemon_front.png"), attacker_coords, defender_coords)
+            
             
             opponent.pv -= floor(damage)
             if  opponent.pv <= 0:
