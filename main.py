@@ -18,6 +18,7 @@ res_scene = (1050,540)
 resolution = (res_scene[0],260+res_scene[1])
 window = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Pokemon Battle")
+pygame.display.set_icon(pygame.image.load("sys/pokeball.png"))
 
 #------|Fonts
 font = pygame.font.SysFont("arialblack",40)
