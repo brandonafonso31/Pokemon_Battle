@@ -12,7 +12,7 @@ class Pokemon:
         
         self.name = name
         self.id = id_num
-        # Stats
+        # Stats Meilleurs avec dic_stat = {} ?
         self.EV = EV
         self.pv = real_pv(pv,None,EV["pv"])
         self.atk = real_stat(atk,None,EV["atk"])
