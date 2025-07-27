@@ -17,7 +17,12 @@ class Move:
         self.animation = animation
     
     def __str__(self):
-        return f"{self.name}"     
+        return f"{self.name}" 
+    
+    def play_animation(self, window, attacker_sprite, defender_sprite, attacker_coords, defender_coords):
+        if self.animation:
+            self.animation(window, attacker_sprite, defender_sprite, attacker_coords, defender_coords)
+    
         
 class StatusMove(Move):
     def __init__(self, name: str, type: Type, precision: int, pp: int, effect: str, prio: int):
