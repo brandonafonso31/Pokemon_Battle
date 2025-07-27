@@ -164,6 +164,7 @@ class Pokemon:
             if  opponent.pv <= 0:
                 opponent.pv = 0
                 print(f"{opponent.name} est KO !")
+        print("\n")
         return self, opponent
             
     def heal(self):
