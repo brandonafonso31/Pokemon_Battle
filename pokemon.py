@@ -142,7 +142,7 @@ class Pokemon:
         
         return stab * eff * rand/100    # a ajouter |---> * crit * objets * talents * climats
             
-    def use_move(self,move_id : str, opponent):
+    def use_move(self,move_id : str, opponent,window):
         move = getattr(self, move_id)
         if move.pp < 1:
             print(f"plus de pp")                # devra stoper le process d'attaque et en redemander une autre !!!
@@ -159,7 +159,9 @@ class Pokemon:
                 print(f"STATUS TODO ?")
                 return
             damage *= self.get_cm(opponent,move)
-            #print(f"Damage: {damage}")
+            
+            move.play_animation(window, os.path.join(img_dir_path,"Sprites/pokemon_back .png"), os.path.join(img_dir_path,"Sprites/pokemon_front.png"), attacker_coords, defender_coords)
+            
             opponent.pv -= floor(damage)
             if  opponent.pv <= 0:
                 opponent.pv = 0
