@@ -50,8 +50,8 @@ def start_battle(window,res):
     pygame.display.flip()
     #-------------------------| SPRITE ENNEMI |--------------------------#
     pygame.time.delay(500)
-    pokemon_opponent,opponent,coord_opp = get_opponent_sprite(res)
-    window.blit(opponent,coord_opp)
+    pokemon_opponent,opponent_pokemon_sprite,coord_opp = get_opponent_sprite(res)
+    window.blit(opponent_pokemon_sprite,coord_opp)
     #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.display.flip()
     pygame.time.delay(500)
