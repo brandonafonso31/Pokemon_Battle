@@ -5,43 +5,41 @@ class Type(Enum):
     
     def color(self):
         if self == Type.NORMAL:
-            return '0x000000'
+            return "#FFFFFF"
         elif self == Type.FEU:
-            return '0xFFA500'
+            return "#FF0000"
         elif self == Type.EAU:
-            return '0x00FFFF'
+            return "#0000FF"
         elif self == Type.PLANTE:
-            return '0x00FF00'
+            return "#00FF00"
         elif self == Type.ELECTRIQUE:
-            return '0xFFFF00'
+            return "#FFFF00"
+        elif self == Type.SOL or self == Type.ROCHE:
+            return "#663300"
         elif self == Type.COMBAT:
-            return '0xFF0000'
-        elif self == Type.ROCHE:
-            return '0x808080'
-        elif self == Type.SOL:
-            return '0x663300'
+            return "#A14708"
         elif self == Type.FEE:
-            return '0x800080'
+            return "#F016F0"
         elif self == Type.PSY:
-            return '0xFF00FF'
+            return "#981098"
         elif self == Type.TENEBRE:
-            return '0x808000'
+            return "#2C2828"
         elif self == Type.SPECTRE:
-            return '0x0000FF'
+            return "#36035D"
         elif self == Type.POISON:
-            return '0x000080'
+            return "#57109A"
         elif self == Type.INSECTE:
-            return '0x008000'
+            return "#008000"
         elif self == Type.VOL:
-            return '0x008080'
+            return "#008080"
         elif self == Type.DRAGON:
-            return '0x000000'
+            return "#2A4AA2"
         elif self == Type.ACIER:
-            return '0xCDCDCD'
+            return "#CDCDCD"
         elif self == Type.GLACE:
-            return '0x00FFFF'
+            return "#00FFFF"
         else:
-            return '0x000000'
+            return "#000000"
         
 print(Type.GLACE.color())
 """
