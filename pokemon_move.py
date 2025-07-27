@@ -2,10 +2,9 @@ from pokemon_type import Type
 from collections import defaultdict
 
 class Move:
-    def __init__(self, name: str, type: Type, move_type: str, power: int, precision: int, pp: int, effect: str, prio: int):
+    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
         self.name = name
-        self.type = type
-        self.move_type = move_type 
+        self.type = type 
         
         self.power = power
         self.precision = precision
@@ -19,19 +18,18 @@ class Move:
         
 class StatusMove(Move):
     def __init__(self, name: str, type: Type, precision: int, pp: int, effect: str, prio: int):
-        super().__init__(name, type, "status", None, precision, pp, effect, prio)
+        super().__init__(name, type, None, precision, pp, effect, prio)
 
 class PhysicalMove(Move):
     def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
-        super().__init__(name, type, "physical", power, precision, pp, effect, prio)
+        super().__init__(name, type, power, precision, pp, effect, prio)
 
 class SpecialMove(Move):
     def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
-        super().__init__(name, type, "special", power, precision, pp, effect, prio)
+        super().__init__(name, type, power, precision, pp, effect, prio)
 
 
 # plutôt mettre les trucs comme ça dans un csv, peut-être même toute l'attaque (power, pp, precision, prio ...)
-
 dico_effect_move = {    
     "Lance-Flammes" : f"L'ennemi reçoit un torrent de flammes. A 10% de chance de brûler la cible.",
     
