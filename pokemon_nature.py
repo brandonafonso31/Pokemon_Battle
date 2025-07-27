@@ -12,7 +12,7 @@ class Nature(Enum):
         # boost atk
         if self == Nature.SOLO:
             stat_change["stat_boost"] = "atk"
-            stat_change["stat_neg"] = "def"
+            stat_change["stat_neg"] = "def_"
         elif self == Nature.RIGIDE:
             stat_change["stat_boost"] = "atk"
             stat_change["stat_neg"] = "atk_spe"
@@ -25,16 +25,16 @@ class Nature(Enum):
         
         #boost def
         elif self == Nature.ASSURE:
-            stat_change["stat_boost"] = "def"
+            stat_change["stat_boost"] = "def_"
             stat_change["stat_neg"] = "atk"
         elif self == Nature.MALIN:
-            stat_change["stat_boost"] = "def"
+            stat_change["stat_boost"] = "def_"
             stat_change["stat_neg"] = "atk_spe"
         elif self == Nature.LACHE:
-            stat_change["stat_boost"] = "def"
+            stat_change["stat_boost"] = "def_"
             stat_change["stat_neg"] = "def_spe"
         elif self == Nature.RELAX:
-            stat_change["stat_boost"] = "def"
+            stat_change["stat_boost"] = "def_"
             stat_change["stat_neg"] = "vit"
             
         # boost atk_spe
@@ -43,7 +43,7 @@ class Nature(Enum):
             stat_change["stat_neg"] = "atk"
         elif self == Nature.DOUX:
             stat_change["stat_boost"] = "atk_spe"
-            stat_change["stat_neg"] = "def"
+            stat_change["stat_neg"] = "def_"
         elif self == Nature.FOUFOU:
             stat_change["stat_boost"] = "atk_spe"
             stat_change["stat_neg"] = "def_spe"
@@ -60,7 +60,7 @@ class Nature(Enum):
             stat_change["stat_neg"] = "atk_spe"
         elif self == Nature.GENTIL:
             stat_change["stat_boost"] = "def_spe"
-            stat_change["stat_neg"] = "def"
+            stat_change["stat_neg"] = "def_"
         elif self == Nature.MALPOLI:
             stat_change["stat_boost"] = "def_spe"
             stat_change["stat_neg"] = "vit"
@@ -71,7 +71,7 @@ class Nature(Enum):
             stat_change["stat_neg"] = "atk"
         elif self == Nature.PRESSE:
             stat_change["stat_boost"] = "vit"
-            stat_change["stat_neg"] = "def"
+            stat_change["stat_neg"] = "def_"
         elif self == Nature.JOVIAL:
             stat_change["stat_boost"] = "vit"
             stat_change["stat_neg"] = "atk_spe"
