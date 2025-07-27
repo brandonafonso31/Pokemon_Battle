@@ -2,8 +2,6 @@ from pokemon import Pokemon
 from pokemon_type import Type
 from move import *
 
-
-
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,
                     type1=Type.FEU,type2=Type.VOL,talent="brasier",num_on_sprite_sheet=7)
