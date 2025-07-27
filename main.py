@@ -43,10 +43,6 @@ pokemon_button = Button(x_menu, y_menu + 95, pokemon_img, 1)
 bag_button = Button(x_menu, y_menu + 185, bag_img, 1)
 
 x_move = resolution[0]//2
-move1_button = Button(x_move - 200, y_menu + 50, move1_img, 1)
-move2_button = Button(x_move + 200 , y_menu + 50, move2_img, 1)
-move3_button = Button(x_move - 200, y_menu + 150, move3_img, 1)
-move4_button = Button(x_move + 200, y_menu + 150, move4_img, 1)
 
 #------|Functions
 def draw_text(text, font, text_col, x, y):
@@ -104,13 +100,13 @@ while run :
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             
             moves = pokemon_trainer.get_moveset()
-            if moves[0] is not None and draw_move(window,move1_button):
+            if moves[0] is not None and draw_move(window,moves[0],x_move - 200, y_menu + 50):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move1")                            
-            if moves[1] is not None and draw_move(window,move2_button):
+            if moves[1] is not None and draw_move(window,moves[1],x_move + 200, y_menu + 50):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move2")                
-            if moves[2] is not None and draw_move(window,move3_button):
+            if moves[2] is not None and draw_move(window,moves[2],x_move - 200, y_menu + 150):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move3")                
-            if moves[3] is not None and draw_move(window,move4_button):
+            if moves[3] is not None and draw_move(window,moves[3],x_move + 200, y_menu + 150):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move4")
         
         # façon très sale de parer au pb des deux boutons qui s'affichent avant que l'app ne se ferme
