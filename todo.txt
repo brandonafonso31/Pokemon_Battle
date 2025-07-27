@@ -1,0 +1,3 @@
+- StatusMove à implémenter
+- ajustement: checker la prio avant d'intervertir les pokemons attaque/defense
+- faire les talents
