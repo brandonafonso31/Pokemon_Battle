@@ -155,6 +155,10 @@ class Pokemon:
     def get_moveset(self):
         return [self.move1, self.move2, self.move3, self.move4]
     
+    def is_dead(self):
+        return self.pv <= 0
+
+    
 def get_damage(x,y,z):
     damage = (50 * 0.4 +2) * z * x
     damage = damage//(y * 50) + 2
