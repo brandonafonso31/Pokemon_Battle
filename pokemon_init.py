@@ -5,16 +5,22 @@ from pokemon_nature import Nature
 import pygame
 
 #--------------------------------------| ANIMATION |--------------------------------------#
-def flash_red_animation(window, attacker_sprite, defender_sprite, attacker_coords, defender_coords):
-    for _ in range(2):
-        pygame.time.delay(100)
-        temp = defender_sprite.copy()
-        temp.fill((255, 0, 0), special_flags=pygame.BLEND_RGB_ADD)
-        window.blit(temp, defender_coords)
-        pygame.display.update()
-        pygame.time.delay(100)
-        window.blit(defender_sprite, defender_coords)
-        pygame.display.update()        
+animation_data = {
+    "Lance-Flammes": {
+        "frames": [
+            "animations/lance_flammes/frame1.png",
+            "animations/lance_flammes/frame2.png",
+            "animations/lance_flammes/frame3.png"
+        ],
+        "duration": 100,  # en ms par frame
+        "offset": [30, -20]
+    },
+    "Crocs Givre": {
+        "frames": ["animations/crocs_givre/frame1.png"],
+        "duration": 150,
+        "offset": [0, 0]
+    }
+}     
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu_EV = {"pv":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
 dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,

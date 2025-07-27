@@ -59,7 +59,6 @@ def start_battle(window,res):
     pygame.time.delay(500)
     pokemon_trainer,trainer_pokemon_sprite,coord_trainer = get_trainer_sprite(res)
     window.blit(trainer_pokemon_sprite,coord_trainer)
-       
     return pokemon_trainer,pokemon_opponent,window
 
 """def refresh_screen(window,resolution):
