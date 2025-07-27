@@ -1,8 +1,6 @@
 import pygame
 import json
-from animation_loader import load_animation_config, load_animation_frames
 
-animation_data = load_animation_config("animations/animations.json")
 
 def load_animation_config(json_path):
     with open(json_path, "r") as f:
@@ -35,3 +33,6 @@ def play_attack_animation(move_name, window, target_pos):
         window.blit(frame, (x, y))
         pygame.display.flip()
         pygame.time.delay(duration)
+        
+
+animation_data = load_animation_config("animations/animations.json")
