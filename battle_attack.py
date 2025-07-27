@@ -2,6 +2,8 @@ from pokemon import *
 import pygame
 from pygame.locals import *
 
+BLACK = (0, 0, 0, 255)
+
 def attack(pokemon_attacker: Pokemon,pokemon_defender: Pokemon,move_id: str = "move1", ia: bool = False):
     if ia:
         move_id = "move1" # "move"+randint(1,5)
@@ -29,6 +31,18 @@ def turn(pokemon_1: Pokemon,pokemon_2: Pokemon, move_id: int):
     else:
         pokemon_1,pokemon_2,not check_if_dead(pokemon_2)   
     return pokemon_1,pokemon_2,not check_if_dead(pokemon_2) and not check_if_dead(pokemon_1)
+
+def perform_choice_attack(pokemon_trainer, pokemon_opponent, move_id,window,res_scene,resolution):
+    pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+    pygame.display.flip()
+    pokemon_trainer, pokemon_opponent, in_battle = turn(pokemon_trainer, pokemon_opponent, move_id)
+    choose_action = in_battle
+    attack_selected = False
+    run = in_battle     # run = *False on stoppe car le combat est finis
+    battle_start = run
+    pygame.time.delay(500)
+    return pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start, window
+
 
 """
 def battle(pokemon_trainer: Pokemon,pokemon_opponent: Pokemon):
