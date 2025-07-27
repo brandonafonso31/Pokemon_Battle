@@ -7,6 +7,7 @@ from pokemon_init import *
 from pokemon_battle import *
 from battle_attack import *
 from button import *
+from ui_battle import *
 
 #------|Init pygame
 pygame.init()
@@ -103,13 +104,13 @@ while run :
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             
             moves = pokemon_trainer.get_moveset()
-            if moves[0] is not None and move1_button.draw(window):
+            if moves[0] is not None and draw_move(window,move1_button):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move1")                            
-            if moves[1] is not None and move2_button.draw(window):
+            if moves[1] is not None and draw_move(window,move2_button):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move2")                
-            if moves[2] is not None and move3_button.draw(window):
+            if moves[2] is not None and draw_move(window,move3_button):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move3")                
-            if moves[3] is not None and move4_button.draw(window):
+            if moves[3] is not None and draw_move(window,move4_button):
                 pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start = perform_choice_attack(pokemon_trainer, pokemon_opponent, "move4")
         
         # façon très sale de parer au pb des deux boutons qui s'affichent avant que l'app ne se ferme
