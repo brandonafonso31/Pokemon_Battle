@@ -1,10 +1,10 @@
 {
   "Crocs Givre": {
-    "sheet": "images/battle_animation/teeth.png",
-    "frame_size": [64, 64],
-    "rows": 4,
-    "cols": 6,
-    "frame_duration": 50,
-    "offset": [0, 0]
+    "spritesheet": "images/battle_animation/teeth.png",
+    "frame_width": 192,
+    "frame_height": 192,
+    "total_frames": 15,
+    "zoom": 2,
+    "frame_duration": 100
   }
 }

@@ -4,6 +4,28 @@ from pokemon_move import *
 from pokemon_nature import Nature
 import pygame
 
+from PIL import Image
+
+def extract_and_zoom_fixed_frames(sheet_path: str, frame_width=192, frame_height=192, total_frames=15, zoom=2):
+    img = Image.open(sheet_path).convert("RGBA")
+    frames = []
+    cols = img.width // frame_width
+
+    for i in range(total_frames):
+        col = i % cols
+        row = i // cols
+        x = col * frame_width
+        y = row * frame_height
+        frame = img.crop((x, y, x + frame_width, y + frame_height))
+        if zoom != 1:
+            new_size = (frame_width * zoom, frame_height * zoom)
+            frame = frame.resize(new_size, Image.NEAREST)
+        frames.append(frame)
+
+    return frames
+
+frames = extract_and_zoom_fixed_frames("teeth.png", zoom=2)
+
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu_EV = {"pv":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
 dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,
