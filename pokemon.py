@@ -189,11 +189,11 @@ def get_scale_by_nature(stat_name: str, nature: Nature):
 def real_pv(stat_name:str, pv:int, nature:Nature, EV:int, IV=31, niv=50):
     pv = (2 * pv + IV + EV//4) * niv
     pv = pv// 100 + niv + 10
-    return floor(pv*get_scale_by_nature(stat_name,nature))
+    return pv
 
 def real_stat(stat_name:str, stat:int, nature:Nature, EV:int, IV=31, niv=50):
     stat = (2 * stat + IV + EV//4) * niv
-    stat = (stat//100 + 5)
+    stat = stat//100 + 5
     return floor(stat*get_scale_by_nature(stat_name,nature))                                          
 
 def get_damage(x,y,z,niv=50):
