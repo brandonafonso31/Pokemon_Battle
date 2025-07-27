@@ -1,8 +1,7 @@
 from pokemon import *
 import pygame
 from pygame.locals import *
-
-BLACK = (0, 0, 0, 255)
+from config import BLACK
 
 def attack(pokemon_attacker: Pokemon,pokemon_defender: Pokemon,move_id: str = "move1", ia: bool = False):
     if ia:
