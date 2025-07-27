@@ -9,10 +9,16 @@ LINE_PRINT = "-"*70
 
 class Pokemon:
     def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
-        gen: int,type1: Type, nature:Nature= Nature.BIZARRE, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None,item=None,id_num=0):
+        gen: int,type1: Type, nature:Nature= Nature.BIZARRE, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0}, \
+            type2=None,talent=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname=""):
         
+        # Infos
         self.name = name
         self.id = id_num
+        self.nature = nature
+        self.legit = self.check_sum_EV() and self.check_each_EV()
+        self.nickname = nickname
+        
         # Stats Meilleurs avec dic_stat = {} ?
         self.EV = EV
         self.pv = real_pv(pv,None,EV["pv"])
@@ -21,11 +27,7 @@ class Pokemon:
         self.atk_spe = real_stat(atk_spe,None,EV["atk_spe"])
         self.def_spe = real_stat(def_spe,None,EV["def_spe"])
         self.vit = real_stat(vit,None,EV["vit"])
-        self.hp_max = self.pv
-        
-        self.nature = nature
-        
-        self.legit = self.check_sum_EV() and self.check_each_EV()
+        self.hp_max = self.pv      
         
         # Types
         self.type1 = type1
@@ -41,19 +43,18 @@ class Pokemon:
         self.move3 = None
         self.move4 = None
         
-        # Dresseur ? je sais plus pour quoi faire ...
-        self.dresseur = None
-        self.talent = talent        # à implementer comme Class Enum comme type ? 
-        self.shiny = False          # à implementer plus tard, change uniquement les scripts
-        self.item = item            # à implementer plus tard, objet tenu par le pokémon
-        self.nickname = ""
+        # A implementer
+        self.dresseur = None        # Dresseur ? je sais plus pour quoi faire ...
+        self.talent = talent        # Class Enum comme type ? 
+        self.shiny = False          # change uniquement les scripts
+        self.item = item            # objet tenu par le pokémon
     
     def __str__(self):
         output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} \n{LINE_PRINT}"
         return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n"
     
     def __eq__(self, other):
-        return self.id == other.id  # id sera implémenter dans la classe Team_Pokemon est sera de 1 à 6 unique
+        return self.id == other.id  # id sera implémenter dans la classe Team_Pokemon est sera de 1 à 6 unique et vérifié
         """return self.name == other.name and self.dresseur == other.dresseur \
             and self.EV == other.EV and self.get_moveset() == other.get_moveset() \
                 and self.get_stats() == other.get_stats() and self.nickname == other.nickname \
