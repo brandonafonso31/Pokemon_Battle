@@ -1,3 +1,4 @@
-- StatusMove à implémenter
+- implenter des attaques
 - ajustement: checker la prio avant d'intervertir les pokemons lors du tour d'attaques --> faire choisir l'ia son attaque avant de checker la prio !
 - faire les talents
+- StatusMove à implémenter
