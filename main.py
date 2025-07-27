@@ -63,6 +63,10 @@ while run :
     
     # battle    
     if in_battle:
+        
+        refresh_screen(window,resolution)
+        
+        
         if choose_action: 
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
             if attack_button.draw(window):
@@ -104,15 +108,18 @@ while run :
             choose_action = True
             draw_text("LA TEAM POKEMON EST SELECTIONNEE", font,WHITE,250,resolution[1]//2)
             pygame.time.delay(1000)
+            window.blit(background,(0,0))
+            pygame.display.flip()
         
         if bag_selected:
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             # open_bag()
             bag_selected = False
             choose_action = True
-            draw_text("LE SAC EST SELECTIONNE", font,WHITE,250,resolution[1]//2)
+            draw_text("LE SAC EST SELECTIONNE", font,WHITE,100,resolution[1]//2)
             pygame.time.delay(1000)
-        
+            pygame.display.update()
+            
     if not battle_start and run:
         pygame.time.delay(500)
         window.fill((0,0,0))
