@@ -14,7 +14,7 @@ class Pokemon:
         
         # Stats
         self.EV = EV
-        self.pv = real_stat(pv,None,EV["pv"])
+        self.pv = real_pv(pv,None,EV["pv"])
         self.atk = real_stat(atk,None,EV["atk"])
         self.def_ = real_stat(def_,None,EV["def_"])
         self.atk_spe = real_stat(atk_spe,None,EV["atk_spe"])
@@ -161,12 +161,17 @@ class Pokemon:
     def is_dead(self):
         return self.pv <= 0
     
+def real_pv(pv:int,nature,EV:int,IV=31,niv=50):
+    pv = (2 * pv + IV + EV//4) * niv
+    pv = pv// 100 + niv + 10
+    return round(pv)
+
 def real_stat(stat:int,nature,EV:int,IV=31,niv=50):
     stat = (2 * stat + IV + EV//4) * niv
-    stat = (stat//100 + 5) #  * nature a rajouter lorsque j'aurais implémenter les natures
+    stat = (stat//100 + 5)  #  * nature a rajouter lorsque j'aurais implémenter les natures
     return round(stat)
 
-def get_damage(x,y,z):
-    damage = (50 * 0.4 +2) * z * x
-    damage = damage//(y * 50) + 2
+def get_damage(x,y,z,niv=50):
+    damage = (niv * 0.4 +2) * z * x
+    damage = damage//(y * niv) + 2
     return damage
