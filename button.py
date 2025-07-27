@@ -1,7 +1,7 @@
 import pygame
 
 class Button():
-	def __init__(self, x, y, image, scale, text='', text_color=(0, 0, 0)):
+	def __init__(self, x, y, image, scale, text='', font_size=40, text_color=(0, 0, 0)):
 		width = image.get_width()
 		height = image.get_height()
 		self.image = pygame.transform.scale(image, (int(width * scale), int(height * scale)))
@@ -11,7 +11,7 @@ class Button():
   
   		# Texte du bouton
 		self.text = text
-		self.font = pygame.font.SysFont(None, 50)  # Taille par défaut
+		self.font = pygame.font.SysFont(None, font_size)  # Taille par défaut
 		self.text_color = text_color
 		self.text_surface = self.font.render(text, True, text_color)
 		self.text_rect = self.text_surface.get_rect(center=self.rect.center)
