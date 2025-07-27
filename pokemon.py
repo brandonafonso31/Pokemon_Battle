@@ -22,6 +22,8 @@ class Pokemon:
         self.vit = real_stat(vit,None,EV["vit"])
         hp_max = self.pv
         
+        self.legit = self.check_sum_EV() and self.check_each_EV()
+        
         # Types
         self.type1 = type1
         self.type2 = type2 
@@ -164,6 +166,8 @@ class Pokemon:
     def check_sum_EV(self):
         return sum([_ for _ in self.EV.values()]) <= 510
             
+    def check_each_EV(self):
+        return all([_ <= 252 for _ in self.EV.values()])
     
 def real_pv(pv:int,nature,EV:int,IV=31,niv=50):
     pv = (2 * pv + IV + EV//4) * niv
