@@ -1,16 +1,17 @@
 from move import *
-from pokemon_init import *
-from sprite import *
-import pygame
-from pygame.locals import *
-from PIL import Image
+from pokemon_init import dracaufeu,leviator
+from pokemon import Pokemon
 from config import img_dir_path,song_dir_path
+
+import os
+import sprite
+import pygame
 
 def get_sprite(pokemon: Pokemon,front_or_back: str):
     pokemon_sprite = pokemon.sprites(front_or_back)
     pokemon_path = os.path.join(img_dir_path,f"sprites/pokemon_{front_or_back}.png")
     pokemon_sprite = pygame.image.load(pokemon_path).convert()
-    pokemon_sprite.set_colorkey(get_first_pixel(pokemon_path))
+    pokemon_sprite.set_colorkey(sprite.get_first_pixel(pokemon_path))
     scale = 2 + (front_or_back == "back")
     pokemon_sprite = pygame.transform.scale(pokemon_sprite, (scale * 100,scale * 100))
     return pokemon_sprite
@@ -19,7 +20,7 @@ def get_sprite(pokemon: Pokemon,front_or_back: str):
 def get_opponent_sprite(res):
     pokemon = leviator
     opponent_pokemon_sprite = get_sprite(pokemon,"front")
-    y_opponent = get_base_pixel(os.path.join(img_dir_path,"sprites/pokemon_front.png"))
+    y_opponent = sprite.get_base_pixel(os.path.join(img_dir_path,"sprites/pokemon_front.png"))
     y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
     x_opponent = res[0]//2 + 75
     return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
@@ -28,14 +29,14 @@ def get_opponent_sprite(res):
 def get_trainer_sprite(res):
     pokemon = dracaufeu
     trainer_pokemon_sprite = get_sprite(pokemon,"back")
-    y_trainer = get_top_pixel(os.path.join(img_dir_path,"sprites/pokemon_back.png"))
+    y_trainer = sprite.get_top_pixel(os.path.join(img_dir_path,"sprites/pokemon_back.png"))
     y_trainer = res[1] - 3*(96 - y_trainer) - 350
     x_trainer = res[0]//2 - 75*2 - 96*2
     return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
 
 def get_image(image_path):
     image = pygame.image.load(image_path).convert()
-    image.set_colorkey(get_first_pixel(image_path))
+    image.set_colorkey(sprite.get_first_pixel(image_path))
     return image,image.get_size()
 
 
