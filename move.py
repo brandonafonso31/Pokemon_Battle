@@ -1,4 +1,4 @@
-from pokemon_type import *
+from pokemon_type import Type
 
 
 class Move:
@@ -25,13 +25,12 @@ class PhysicalMove(Move):
     def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
         super().__init__(name, type, "physical", power, precision, pp, effect, prio)
 
-
 class SpecialMove(Move):
     def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
         super().__init__(name, type, "special", power, precision, pp, effect, prio)
 
 
-# plutôt mettre les trucs comme ça dans un csv, peut-être même toute l'attaaque (power, pp, precision, prio ...)
+# plutôt mettre les trucs comme ça dans un csv, peut-être même toute l'attaque (power, pp, precision, prio ...)
 
 dico_effect_move = {    
     "Lance-Flammes" : f"L'ennemi reçoit un torrent de flammes. A 10% de chance de brûler la cible.",
