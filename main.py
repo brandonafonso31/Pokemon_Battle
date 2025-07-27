@@ -1,12 +1,14 @@
 import os
-#print(os.getcwd())
 import pygame
+
+from config import *
 from pygame.locals import *
 from pokemon_init import *
-import pokemon_battle
+
 from button import Button
 import ui_battle
-from config import *
+import pokemon_battle
+
 
 #------|Init pygame
 pygame.init()
