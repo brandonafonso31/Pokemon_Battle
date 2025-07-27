@@ -8,11 +8,7 @@ from pokemon_battle import *
 from battle_attack import *
 from button import *
 from ui_battle import *
-
-#------|Path dir
-principal_dir = os.getcwd()
-img_dir = os.path.join(principal_dir,"images")
-song_dir = os.path.join(principal_dir,"song")
+from config import *
 
 #------|Init pygame
 pygame.init()
@@ -23,7 +19,7 @@ res_scene = (1050,540)
 resolution = (res_scene[0],260+res_scene[1])
 window = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Pokemon Battle")
-pygame.display.set_icon(pygame.image.load(f"{img_dir}/sys/pokeball.png"))
+pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/pokeball.png")))
 
 #------|Fonts
 font = pygame.font.SysFont("arialblack",40)
@@ -31,9 +27,9 @@ WHITE = (255,255,255)
 BLACK=(0,0,0)
 
 #------|Button
-attack_img = pygame.image.load(f"{img_dir}/battle_ui/button_attack.png").convert_alpha()
-pokemon_img = pygame.image.load(f"{img_dir}/battle_ui/button_pokemon.png").convert_alpha()
-bag_img = pygame.image.load(f"{img_dir}/battle_ui/button_bag.png").convert_alpha()
+attack_img = pygame.image.load(os.path.join(img_dir_path,"battle_ui/button_attack.png")).convert_alpha()
+pokemon_img = pygame.image.load(os.path.join(img_dir_path,"battle_ui/button_pokemon.png")).convert_alpha()
+bag_img = pygame.image.load(os.path.join(img_dir_path,"battle_ui/button_bag.png")).convert_alpha()
 
 #------|create button instances
 y_menu = resolution[1]-260

@@ -4,10 +4,11 @@ from sprite import *
 import pygame
 from pygame.locals import *
 from PIL import Image
+from config import img_dir_path,song_dir_path
 
-def get_sprite(res,pokemon: Pokemon,front_or_back: str):
+def get_sprite(pokemon: Pokemon,front_or_back: str):
     pokemon_sprite = pokemon.sprites(front_or_back)
-    pokemon_path = f"sprites/pokemon_{front_or_back}.png"
+    pokemon_path = os.path.join(img_dir_path,f"sprites/pokemon_{front_or_back}.png")
     pokemon_sprite = pygame.image.load(pokemon_path).convert()
     pokemon_sprite.set_colorkey(get_first_pixel(pokemon_path))
     scale = 2 + (front_or_back == "back")
@@ -17,8 +18,8 @@ def get_sprite(res,pokemon: Pokemon,front_or_back: str):
 
 def get_opponent_sprite(res):
     pokemon = leviator
-    opponent_pokemon_sprite = get_sprite(res,pokemon,"front")
-    y_opponent = get_base_pixel("sprites/pokemon_front.png")
+    opponent_pokemon_sprite = get_sprite(pokemon,"front")
+    y_opponent = get_base_pixel(os.path.join(img_dir_path,"sprites/pokemon_front.png"))
     y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
     x_opponent = res[0]//2 + 75
     return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
@@ -26,8 +27,8 @@ def get_opponent_sprite(res):
 
 def get_trainer_sprite(res):
     pokemon = dracaufeu
-    trainer_pokemon_sprite = get_sprite(res,pokemon,"back")
-    y_trainer = get_top_pixel("sprites/pokemon_back.png")
+    trainer_pokemon_sprite = get_sprite(pokemon,"back")
+    y_trainer = get_top_pixel(os.path.join(img_dir_path,"sprites/pokemon_back.png"))
     y_trainer = res[1] - 3*(96 - y_trainer) - 350
     x_trainer = res[0]//2 - 75*2 - 96*2
     return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
@@ -41,11 +42,11 @@ def get_image(image_path):
 def start_battle(window,res):
     """Instancie les premiers éléments de la scène."""
     #-----------------------------| MUSIC |------------------------------#
-    pygame.mixer.music.load('song/elite_four/2-29. Battle! Elite Four.mp3')
+    pygame.mixer.music.load(os.path.join(song_dir_path,"elite_four/2-29. Battle! Elite Four.mp3"))
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     #---------------------------| BACKGROUND |---------------------------#
-    background = pygame.image.load("background/forest.jpg").convert()
+    background = pygame.image.load(os.path.join(img_dir_path,"background/forest.jpg")).convert()
     window.blit(background,(0,0))
     pygame.display.flip()
     #-------------------------| SPRITE ENNEMI |--------------------------#
