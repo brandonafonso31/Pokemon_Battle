@@ -147,10 +147,10 @@ class Pokemon:
                 return
             damage *= self.get_cm(opponent,move)
             #print(f"Damage: {damage}")
-            opponent.pv -= damage
+            opponent.pv -= round(damage)
             if  opponent.pv <= 0:
                 opponent.pv = 0
-                print(f"{opponent.name} a feinté !")
+                print(f"{opponent.name} est KO !")
         return self, opponent
             
     def heal(self):
