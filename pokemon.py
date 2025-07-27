@@ -5,9 +5,9 @@ from random import randint
 from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
-from animation_loader import load_animation_config, load_animation_frames
+import animation_loader
 
-animation_data = load_animation_config("animations/animations.json")
+animation_data = animation_loader.load_animation_config("animations/animations.json")
 LINE_PRINT = "-"*70
 
 class Pokemon:
@@ -151,6 +151,7 @@ class Pokemon:
         else:
             move.pp -= 1
             print(f"{self.name} utilise {move}")    # a afficher dans la barre blanche plutot ?
+            animation_loader.play_attack_animation(move.name, window, opponent.rect.center)
             
             damage = 0
             if isinstance(move, SpecialMove):
