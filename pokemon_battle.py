@@ -42,7 +42,7 @@ def get_image(image_path):
 def start_battle(window,res):
     """Instancie les premiers éléments de la scène."""
     #-----------------------------| MUSIC |------------------------------#
-    pygame.mixer.music.load(os.path.join(song_dir_path,"elite_four/2-29. Battle! Elite Four.mp3"))
+    pygame.mixer.music.load(os.path.join(song_dir_path,"elite_four/Battle_Elite_Four_BW.mp3"))
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     #---------------------------| BACKGROUND |---------------------------#
