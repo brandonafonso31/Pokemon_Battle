@@ -3,3 +3,6 @@ from enum import Enum
 class Nature(Enum):
     SOLO, RIGIDE,MAUVAIS, BRAVE, ASSURE, MALIN, LACHE, RELAX, MODESTE, DOUX, DISCRET, CALME, PRUDENT, GENTIL, \
         MALPOLI, TIMIDE, PRESSE, JOVIAL, NAIF, HARDI, HARDI, BIZARRE, PUDIQUE, DOCILE, SERIEUX = range(18)
+        
+    def __str__(self):
+        return self.name
