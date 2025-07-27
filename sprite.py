@@ -34,7 +34,7 @@ def get_first_pixel(image_path):
 
 def get_base_pixel(image_path):
     """itère sur tous les pixel en les parcourant en ligne, jusqu'à 
-    trouver un pixel (le pixel le plus bas), puis le retourne le j"""
+    trouver un pixel (le pixel le plus bas), puis retourne le j"""
     image = Image.open(image_path)
     border = get_first_pixel(image_path)
     
@@ -50,7 +50,7 @@ def get_base_pixel(image_path):
 
 def get_top_pixel(image_path):
     """itère sur tous les pixel en les parcourant en ligne, jusqu'à 
-    trouver un pixel (le pixel le plus bas), puis le retourne le j"""
+    trouver un pixel (le pixel le plus haut), puis retourne le j"""
     image = Image.open(image_path)
     border = get_first_pixel(image_path)
     
