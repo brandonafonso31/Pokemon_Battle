@@ -1,9 +1,8 @@
 from pokemon_type import Type
 from collections import defaultdict
-from typing import Callable
 
 class Move:
-    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int, animation: Callable = None):
+    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
         self.name = name
         self.type = type 
         
@@ -13,8 +12,6 @@ class Move:
         
         self.effect = effect
         self.prio = prio
-        
-        self.animation = animation
     
     def __str__(self):
         return f"{self.name}" 
