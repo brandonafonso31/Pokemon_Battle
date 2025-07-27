@@ -3,6 +3,47 @@ from enum import Enum
 class Type(Enum):
     NORMAL,FEU,EAU,PLANTE,ELECTRIQUE,COMBAT,ROCHE,SOL,FEE,PSY,TENEBRE,SPECTRE,POISON,INSECTE,VOL,DRAGON,ACIER,GLACE = range(18)
     
+    def color(self):
+        if self == Type.NORMAL:
+            return '0x000000'
+        elif self == Type.FEU:
+            return '0xFFA500'
+        elif self == Type.EAU:
+            return '0x00FFFF'
+        elif self == Type.PLANTE:
+            return '0x00FF00'
+        elif self == Type.ELECTRIQUE:
+            return '0xFFFF00'
+        elif self == Type.COMBAT:
+            return '0xFF0000'
+        elif self == Type.ROCHE:
+            return '0x808080'
+        elif self == Type.SOL:
+            return '0x663300'
+        elif self == Type.FEE:
+            return '0x800080'
+        elif self == Type.PSY:
+            return '0xFF00FF'
+        elif self == Type.TENEBRE:
+            return '0x808000'
+        elif self == Type.SPECTRE:
+            return '0x0000FF'
+        elif self == Type.POISON:
+            return '0x000080'
+        elif self == Type.INSECTE:
+            return '0x008000'
+        elif self == Type.VOL:
+            return '0x008080'
+        elif self == Type.DRAGON:
+            return '0x000000'
+        elif self == Type.ACIER:
+            return '0xCDCDCD'
+        elif self == Type.GLACE:
+            return '0x00FFFF'
+        else:
+            return '0x000000'
+        
+print(Type.GLACE.color())
 """
 print(Type.GLACE)           # Type.GLACE
 print(Type.GLACE.name)      # "GLACE"
