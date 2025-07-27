@@ -1,6 +1,6 @@
 from sprite import *
 from pokemon_type import *
-from move import *
+from pokemon_move import *
 from random import randint
 from config import img_dir_path
 from pokemon_nature import Nature

@@ -1,4 +1,4 @@
-from move import *
+from pokemon_move import *
 from pokemon_init import dracaufeu,leviator
 from pokemon import Pokemon
 from config import img_dir_path,song_dir_path

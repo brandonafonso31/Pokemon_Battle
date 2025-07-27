@@ -1,6 +1,6 @@
 from pokemon import Pokemon
 from pokemon_type import Type
-from move import *
+from pokemon_move import *
 from pokemon_nature import Nature
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu_EV = {"pv":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
