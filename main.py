@@ -2,11 +2,9 @@ import os
 #print(os.getcwd())
 import pygame
 from pygame.locals import *
-from sprite import *
 from pokemon_init import *
-from pokemon_battle import *
-from battle_attack import *
-from button import *
+import pokemon_battle
+from button import Button
 import ui_battle
 from config import *
 
@@ -55,7 +53,7 @@ run = True
 while run :
     #check les variables afin de faire divers actions
     if battle_start and not in_battle:
-        pokemon_trainer,pokemon_opponent,window = start_battle(window,resolution)
+        pokemon_trainer,pokemon_opponent,window = pokemon_battle.start_battle(window,resolution)
         in_battle = True
         choose_action = True
         
