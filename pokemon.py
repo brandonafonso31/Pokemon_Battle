@@ -16,7 +16,6 @@ class Pokemon:
         self.name = name
         self.id = id_num
         self.nature = nature
-        self.legit = self.check_sum_EV() and self.check_each_EV()
         self.nickname = nickname
         
         # Stats Meilleurs avec dic_stat = {} ?
@@ -29,6 +28,7 @@ class Pokemon:
         self.vit = real_stat("vit",vit,None,EV["vit"])
         self.hp_max = self.pv      
         
+        self.legit = self.check_sum_EV() and self.check_each_EV()
         # Types
         self.type1 = type1
         self.type2 = type2 
