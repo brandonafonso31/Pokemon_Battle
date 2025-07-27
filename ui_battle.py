@@ -12,23 +12,18 @@ def draw_move(window,move,x,y):
     move_button = Button(x, y, move_img, 1,move.name,ImageColor.getrgb(move.type.color()))
     return move_button.draw(window)
 
-def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent,current_menu):
-    if current_menu == "attack":
-        pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-        in_battle,run,battle_start = True,True,True
+def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent):
+    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+    still_in_battle = True
                 
-        moves = pokemon_trainer.get_moveset()
-        if moves[0] is not None and draw_move(window,moves[0],x_move - 200, y_menu + 50):
-            pokemon_trainer, pokemon_opponent, in_battle, \
-                run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move1",window,res_scene,resolution)                            
-        if moves[1] is not None and draw_move(window,moves[1],x_move + 200, y_menu + 50):
-            pokemon_trainer, pokemon_opponent, in_battle, \
-                run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move2",window,res_scene,resolution)                
-        if moves[2] is not None and draw_move(window,moves[2],x_move - 200, y_menu + 150):
-            pokemon_trainer, pokemon_opponent, in_battle, \
-                run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move3", window,res_scene,resolution)                
-        if moves[3] is not None and draw_move(window,moves[3],x_move + 200, y_menu + 150):
-            pokemon_trainer, pokemon_opponent, in_battle, \
-                run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move4", window,res_scene,resolution)
+    moves = pokemon_trainer.get_moveset()
+    if moves[0] is not None and draw_move(window,moves[0],x_move - 200, y_menu + 50):
+        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move1",window,res_scene,resolution)                            
+    if moves[1] is not None and draw_move(window,moves[1],x_move + 200, y_menu + 50):
+        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move2",window,res_scene,resolution)                
+    if moves[2] is not None and draw_move(window,moves[2],x_move - 200, y_menu + 150):
+        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move3", window,res_scene,resolution)                
+    if moves[3] is not None and draw_move(window,moves[3],x_move + 200, y_menu + 150):
+        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move4", window,res_scene,resolution)
             
-    return pokemon_trainer, pokemon_opponent, in_battle, run, battle_start
+    return pokemon_trainer, pokemon_opponent, still_in_battle

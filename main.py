@@ -46,7 +46,7 @@ def draw_text(text, font, text_col, x, y):
 battle_start = False
 in_battle = False
 current_menu = ""
-
+fight_continue = True
 #------|Boucle qui fait tourner le jeu  
 run = True
 while run :
@@ -76,10 +76,14 @@ while run :
                 current_menu = "bag"
             
         elif current_menu == "attack":
-            pokemon_trainer, pokemon_opponent, in_battle,\
-                run, battle_start = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent,current_menu)
-            if not in_battle:
-                current_menu = "main"
+            pokemon_trainer, pokemon_opponent, in_battle = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent)
+            if not in_battle:   # l'un des 2 pokemon est KO
+                pygame.time.delay(500)
+                pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+                draw_text("L'un des pokémon est KO", font, WHITE, 100, 600)
+                pygame.display.flip()
+                pygame.time.delay(500)
+                run = False
             
         elif current_menu == "team_pokemon":
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
