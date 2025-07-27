@@ -26,7 +26,7 @@ dracaufeu_EV = {"pv":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
 dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,
                     type1=Type.FEU,type2=Type.VOL,talent="brasier",num_on_sprite_sheet=7,EV=dracaufeu_EV,nature=Nature.MODESTE)
 
-lance_flamme = SpecialMove("Lance-Flammes",Type.FEU,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Flammes"], prio = 0,animation=flash_red_animation)
+lance_flamme = SpecialMove("Lance-Flammes",Type.FEU,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Flammes"], prio = 0,animation=animation_data["Lance-flammes"])
 crocs_eclair = SpecialMove("Croc-éclair",Type.ELECTRIQUE,power=90,precision=100,pp=15, effect = dico_effect_move["Croc-éclair"], prio = 0)
 lance_soleil = SpecialMove("Lance-Soleil",Type.PLANTE,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Soleil"], prio = 0)
 atterisage = StatusMove("Atterisage",Type.VOL,precision=100,pp=15, effect = dico_effect_move["Atterissage"], prio = 0)
