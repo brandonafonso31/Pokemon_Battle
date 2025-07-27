@@ -3,12 +3,13 @@ from pokemon_type import *
 from move import *
 from random import randint
 from config import img_dir_path
+from pokemon_nature import Nature
 
 LINE_PRINT = "-"*70
 
 class Pokemon:
     def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
-        gen: int,type1: Type, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None,item=None,id_num=0):
+        gen: int,type1: Type, nature:Nature, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None,item=None,id_num=0):
         
         self.name = name
         self.id = id_num
@@ -21,6 +22,8 @@ class Pokemon:
         self.def_spe = real_stat(def_spe,None,EV["def_spe"])
         self.vit = real_stat(vit,None,EV["vit"])
         self.hp_max = self.pv
+        
+        self.nature = nature
         
         self.legit = self.check_sum_EV() and self.check_each_EV()
         
@@ -41,7 +44,6 @@ class Pokemon:
         # Dresseur ? je sais plus pour quoi faire ...
         self.dresseur = None
         self.talent = talent        # à implementer comme Class Enum comme type ? 
-        self.nature = None          # à implementer comme Class Enum comme type ?
         self.shiny = False          # à implementer plus tard, change uniquement les scripts
         self.item = item            # à implementer plus tard, objet tenu par le pokémon
         self.nickname = ""
