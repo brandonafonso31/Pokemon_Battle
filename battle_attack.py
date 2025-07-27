@@ -34,12 +34,10 @@ def perform_choice_attack(pokemon_trainer, pokemon_opponent, move_id,window,res_
     pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     pygame.display.flip()
     pokemon_trainer, pokemon_opponent, in_battle = turn(pokemon_trainer, pokemon_opponent, move_id)
-    choose_action = in_battle
-    attack_selected = False
     run = in_battle     # run = False on stoppe car le combat est finis
     battle_start = run
     pygame.time.delay(500)
-    return pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start, window
+    return pokemon_trainer, pokemon_opponent, in_battle, run, battle_start, window
 
 
 """

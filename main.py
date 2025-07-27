@@ -73,13 +73,14 @@ while run :
             elif pokemon_button.draw(window):
                 current_menu = "team_pokemon"
             elif bag_button.draw(window):
-                current_menu = "attack"
+                current_menu = "bag"
             
         elif current_menu == "attack":
             pokemon_trainer, pokemon_opponent, in_battle,\
-                run, battle_start, window = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent)
-            current_menu = "main"
-             
+                run, battle_start = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent,current_menu)
+            if not in_battle:
+                current_menu = "main"
+            
         elif current_menu == "team_pokemon":
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             # open_pokemon_team()
