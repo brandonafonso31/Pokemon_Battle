@@ -18,21 +18,21 @@ class Button():
 	def render_text_to_fit(self):
 		max_width = self.rect.width - 2 * self.padding
 		max_height = self.rect.height - 2 * self.padding
-
+		adjust_x = 2.5
 		font_size = 50  # Taille max initiale
-		while font_size > 10:
+		while font_size > 20:
 			font = pygame.font.SysFont(self.font_name, font_size)
 			text_surface = font.render(self.text, True, self.text_color)
 			text_rect = text_surface.get_rect()
 			if text_rect.width <= max_width and text_rect.height <= max_height:
-				text_rect.center = self.rect.center
+				text_rect.center = (self.rect.center[0]- adjust_x, self.rect.center[1])	# adjust bc image not symetrical
 				return text_surface, text_rect
 			font_size -= 1
 
 		# Fallback : texte trop long
 		font = pygame.font.SysFont(self.font_name, 10)
 		text_surface = font.render(self.text, True, self.text_color)
-		text_rect = text_surface.get_rect(center=self.rect.center)
+		text_rect = text_surface.get_rect(center=(self.rect.center[0] - adjust_x, self.rect.center[1]))	# adjust bc image not symetrical
 		return text_surface, text_rect
   
 	def draw(self, surface):
@@ -53,6 +53,5 @@ class Button():
 		surface.blit(self.image, (self.rect.x, self.rect.y))
   
 		# Redessine le texte (car centré sur le rect original)
-		self.text_rect = self.text_surface.get_rect(center=self.rect.center)
 		surface.blit(self.text_surface, self.text_rect)
 		return action
