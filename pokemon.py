@@ -1,0 +1,159 @@
+from sprite import *
+from pokemon_type import *
+from move import *
+from random import randint
+
+LINE_PRINT = "-"*70
+
+class Pokemon:
+    def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int,
+                 gen: int,type1: Type,type2=None,talent=None,num_on_sprite_sheet=None):
+        
+        # à modifier car vrai stats ne fonctionne pas comme ça ... IV/EV ? 
+        
+        self.name = name
+        self.pv = pv
+        self.atk = atk
+        self.def_ = def_
+        self.atk_spe = atk_spe
+        self.def_spe = def_spe
+        self.vit = vit
+        self.type1 = type1
+        self.type2 = type2
+        self.gen = gen
+        self.num_on_sprite_sheet = num_on_sprite_sheet
+        
+        self.move1 = None
+        self.move2 = None
+        self.move3 = None
+        self.move4 = None
+        
+        self.dresseur = None
+        
+        hp_cur = pv
+        hp_max = pv                 # à modifier plus tard quand less pv seront vraiment calculés
+        
+        self.talent = talent        # à implementer comme Class Enum comme type ? 
+        
+        self.shiny = False          # à implementer  
+    
+    def __str__(self):
+        output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} \n{LINE_PRINT}"
+        return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n"
+    
+    def __eq__(self, other):
+        return self.name == other.name and self.dresseur == other.dresseur
+    
+    def show_type(self):
+        types = f"TYPE1: {self.type1.name}"
+        if self.type2 != None:
+            types += f", TYPE2: {self.type2.name}"
+        return types
+    
+    def show_stats(self):
+        return f"PV: {self.pv},\nATK: {self.atk},\nDEF: {self.def_},\nATK_SPE: {self.atk_spe},\nDEF_SPE: {self.def_spe},\nVIT: {self.vit}"
+    
+    def show_moves(self):
+        return f"Move1: {self.move1},\nMove2: {self.move2},\nMove3: {self.move3}, \nMove4: {self.move4}"
+    
+    def show_sprite_front(self):
+        return self.sprite_front
+    
+    def show_sprite_back(self):
+        return self.sprite_back
+    
+    def learn_move(self, new_move: Move):
+        if new_move in [self.move1, self.move2, self.move3, self.move4]:
+            print(f"L'attaque {new_move} est déjà apprise")
+            return
+
+        if self.move1 is None:
+            self.move1 = new_move
+        elif self.move2 is None:
+            self.move2 = new_move 
+        elif self.move3 is None:
+            self.move3 = new_move 
+        elif self.move4 is None:
+            self.move4 = new_move 
+        else:
+            move_to_remove = "move" + str(input(f"Choisir un move à remplacer :  {self.show_moves()} → "))
+            try:
+                setattr(self, move_to_remove, new_move)
+            except Exception:
+                print(f"Erreur : move '{move_to_remove}' inexistant.")
+                self.learn_move(new_move)
+                return
+
+        print(f"L'attaque {new_move} a été apprise\n")
+        
+    def sprites(self,front_or_back):
+        sprites = "sprites/sprites_gen"+str(self.gen)
+        return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back)
+        
+    def get_cm(self, opponent, move : Move, objets=None):
+        """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""
+        msg = ""
+        rand = randint(85,101)
+        #check type 1 et 2 il y ai au moins un diff de none a ajouter
+        if self.type1 is None and self.type2 is not None :
+            self.type1, self.type2 = self.type2, None
+            
+        if self.type2 is None:
+            eff = get_multiplicateur(move.type,self.type1)
+        else:
+            eff = get_double_multiplicateur(move.type,opponent.type1,opponent.type2)
+            
+        stab = (move.type == self.type1 or move.type == self.type2) + 1
+        
+        if eff == 4:
+            msg+="C'est hyper efficace !"
+        elif eff == 2:
+            msg+="C'est super efficace !"
+        elif eff ==1:
+            msg+="C'est efficace"
+        elif eff == 0.5:
+            msg+="Ce n'est pas très efficace"
+        elif eff == 0.25:
+            msg+="Ce n'est vraiment pas efficace"
+        elif eff == 0:
+            msg+="Cela ne fait aucun dégat"
+        print(msg)
+        
+        return stab * eff * rand/100    # a ajouter |---> * crit * objets * talents * climats
+            
+    def use_move(self,move_id : str, opponent):
+        move = getattr(self, move_id)
+        if move.pp < 1:
+            print(f"plus de pp")                # devra stoper le process d'attaque et en redemander une autre !!!
+        else:
+            move.pp -= 1
+            print(f"{self.name} utilise {move}")    # a afficher dans la barre blanche plutot ?
+            
+            damage = 0
+            if isinstance(move, SpecialMove):
+                damage = get_damage(self.atk_spe,opponent.def_spe,move.power)
+            elif isinstance(move, PhysicalMove):
+                damage = get_damage(self.atk,opponent.def_,move.power)
+            elif isinstance(move,StatusMove):
+                print(f"STATUS TODO ?")
+                return
+            damage *= self.get_cm(opponent,move)
+            #print(f"Damage: {damage}")
+            opponent.pv -= damage
+            if  opponent.pv <= 0:
+                opponent.pv = 0
+                print(f"{opponent.name} a feinté !")
+        return self, opponent
+            
+    def heal(self):
+        self.pv = self.hp_max
+        print(f"{self.name} a été soigné")
+        return self
+    
+    def get_moveset(self):
+        return [self.move1, self.move2, self.move3, self.move4]
+    
+def get_damage(x,y,z):
+    damage = (50 * 0.4 +2) * z * x
+    damage = damage//(y * 50) + 2
+    return damage
