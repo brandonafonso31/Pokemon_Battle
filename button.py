@@ -1,7 +1,7 @@
 import pygame
 
 class Button():
-	def __init__(self, x, y, image, scale, text='', font_size=40, text_color=(0, 0, 0)):
+	def __init__(self, x, y, image, scale, text='', text_color=(0, 0, 0), padding=10):
 		width = image.get_width()
 		height = image.get_height()
 		self.image = pygame.transform.scale(image, (int(width * scale), int(height * scale)))
@@ -9,12 +9,31 @@ class Button():
 		self.rect.topleft = (x, y)
 		self.clicked = False
   
-  		# Texte du bouton
 		self.text = text
-		self.font = pygame.font.SysFont(None, font_size)  # Taille par défaut
 		self.text_color = text_color
-		self.text_surface = self.font.render(text, True, text_color)
-		self.text_rect = self.text_surface.get_rect(center=self.rect.center)
+		self.font_name = pygame.font.get_default_font()
+		self.padding = padding
+		self.text_surface, self.text_rect = self.render_text_to_fit()
+  
+	def render_text_to_fit(self):
+		max_width = self.rect.width - 2 * self.padding
+		max_height = self.rect.height - 2 * self.padding
+
+		font_size = 50  # Taille max initiale
+		while font_size > 10:
+			font = pygame.font.SysFont(self.font_name, font_size)
+			text_surface = font.render(self.text, True, self.text_color)
+			text_rect = text_surface.get_rect()
+			if text_rect.width <= max_width and text_rect.height <= max_height:
+				text_rect.center = self.rect.center
+				return text_surface, text_rect
+			font_size -= 1
+
+		# Fallback : texte trop long
+		font = pygame.font.SysFont(self.font_name, 10)
+		text_surface = font.render(self.text, True, self.text_color)
+		text_rect = text_surface.get_rect(center=self.rect.center)
+		return text_surface, text_rect
   
 	def draw(self, surface):
 		action = False
