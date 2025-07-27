@@ -4,6 +4,7 @@ from move import *
 from random import randint
 from config import img_dir_path
 from pokemon_nature import Nature
+from math import floor
 
 LINE_PRINT = "-"*70
 
@@ -159,7 +160,7 @@ class Pokemon:
                 return
             damage *= self.get_cm(opponent,move)
             #print(f"Damage: {damage}")
-            opponent.pv -= round(damage)
+            opponent.pv -= floor(damage)
             if  opponent.pv <= 0:
                 opponent.pv = 0
                 print(f"{opponent.name} est KO !")
@@ -188,12 +189,12 @@ def get_scale_by_nature(stat_name: str, nature: Nature):
 def real_pv(stat_name:str, pv:int, nature:Nature, EV:int, IV=31, niv=50):
     pv = (2 * pv + IV + EV//4) * niv
     pv = pv// 100 + niv + 10
-    return round(pv*get_scale_by_nature(stat_name,nature))
+    return floor(pv*get_scale_by_nature(stat_name,nature))
 
 def real_stat(stat_name:str, stat:int, nature:Nature, EV:int, IV=31, niv=50):
     stat = (2 * stat + IV + EV//4) * niv
     stat = (stat//100 + 5)
-    return round(stat*get_scale_by_nature(stat_name,nature))                                          
+    return floor(stat*get_scale_by_nature(stat_name,nature))                                          
 
 def get_damage(x,y,z,niv=50):
     damage = (niv * 0.4 +2) * z * x
