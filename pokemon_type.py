@@ -3,6 +3,9 @@ from enum import Enum
 class Type(Enum):
     NORMAL,FEU,EAU,PLANTE,ELECTRIQUE,COMBAT,ROCHE,SOL,FEE,PSY,TENEBRE,SPECTRE,POISON,INSECTE,VOL,DRAGON,ACIER,GLACE = range(18)
     
+    def __str__(self):
+        return self.name
+    
     def color(self):
         if self == Type.NORMAL:
             return "#FFFFFF"
