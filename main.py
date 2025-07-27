@@ -60,12 +60,9 @@ while run :
         pokemon_trainer,pokemon_opponent,window = start_battle(window,resolution)
         in_battle = True
         choose_action = True
-    
-    # battle    
+        
     if in_battle:
-        
         #refresh_screen(window,resolution)
-        
         
         if choose_action: 
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
@@ -107,9 +104,6 @@ while run :
             pokemon_selected = False
             choose_action = True
             draw_text("LA TEAM POKEMON EST SELECTIONNEE", font,WHITE,250,resolution[1]//2)
-            pygame.time.delay(1000)
-            window.blit(background,(0,0))
-            pygame.display.flip()
         
         if bag_selected:
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
@@ -117,8 +111,6 @@ while run :
             bag_selected = False
             choose_action = True
             draw_text("LE SAC EST SELECTIONNE", font,WHITE,100,resolution[1]//2)
-            pygame.time.delay(1000)
-            pygame.display.update()
             
     if not battle_start and run:
         pygame.time.delay(500)
