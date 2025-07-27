@@ -32,12 +32,12 @@ class Pokemon:
         
         self.dresseur = None
         
-        hp_cur = pv
+        hp_cur = pv                 
         hp_max = pv                 # à modifier plus tard quand les pv seront vraiment calculés
         
         self.talent = talent        # à implementer comme Class Enum comme type ? 
-        
-        self.shiny = False          # à implementer  
+        self.nature = None          # à implementer comme Class Enum comme type ?
+        self.shiny = False          # à implementer plus tard, change uniquement les scripts
     
     def __str__(self):
         output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} \n{LINE_PRINT}"
