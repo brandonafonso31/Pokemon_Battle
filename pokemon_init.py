@@ -16,7 +16,7 @@ dracaufeu.learn_move(lance_flamme)
 dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
 dracaufeu.learn_move(atterisage)
-#print(dracaufeu)
+print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"pv":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
 leviator = Pokemon("Léviator",pv=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=81,gen=1,
@@ -31,9 +31,9 @@ leviator.learn_move(crocgivre)
 leviator.learn_move(cascade)
 leviator.learn_move(danse_draco)
 leviator.learn_move(seisme)
-#print(leviator)
+print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
-pikachu_EV = {"pv":1274,"atk":252,"def_":500,"atk_spe":252,"def_spe":252,"vit":252}
+pikachu_EV = {"pv":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
 pikachu = Pokemon("Pikachu",pv=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
                    type1=Type.ELECTRIQUE,talent="paratonerre",num_on_sprite_sheet=30,EV=pikachu_EV, nature=Nature.BRAVE)
 
@@ -43,4 +43,4 @@ pikachu.learn_move(cage_eclair)
 """pikachu.learn_move("fatal-foudre")
 pikachu.learn_move("chargeur")
 pikachu.learn_move("électacle")"""
-#print(pikachu)
+print(pikachu)
