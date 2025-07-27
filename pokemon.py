@@ -21,12 +21,12 @@ class Pokemon:
         
         # Stats Meilleurs avec dic_stat = {} ?
         self.EV = EV
-        self.pv = real_pv(pv,None,EV["pv"])
-        self.atk = real_stat(atk,None,EV["atk"])
-        self.def_ = real_stat(def_,None,EV["def_"])
-        self.atk_spe = real_stat(atk_spe,None,EV["atk_spe"])
-        self.def_spe = real_stat(def_spe,None,EV["def_spe"])
-        self.vit = real_stat(vit,None,EV["vit"])
+        self.pv = real_pv("pv",pv,None,EV["pv"])
+        self.atk = real_stat("atk",atk,None,EV["atk"])
+        self.def_ = real_stat("def_",def_,None,EV["def_"])
+        self.atk_spe = real_stat("atk_spe",atk_spe,None,EV["atk_spe"])
+        self.def_spe = real_stat("def_sep",def_spe,None,EV["def_spe"])
+        self.vit = real_stat("vit",vit,None,EV["vit"])
         self.hp_max = self.pv      
         
         # Types
@@ -187,10 +187,13 @@ def real_pv(pv:int,nature,EV:int,IV=31,niv=50):
     pv = pv// 100 + niv + 10
     return round(pv)
 
-def real_stat(stat:int,nature,EV:int,IV=31,niv=50):
+def real_stat(stat_name:str,stat:int,nature:Nature,EV:int,IV=31,niv=50):
     stat = (2 * stat + IV + EV//4) * niv
-    stat = (stat//100 + 5)  #  * nature a rajouter lorsque j'aurais implémenter les natures
-    return round(stat)
+    stat = (stat//100 + 5)
+    if stat_name == nature.effect()["stat_boost"]: scale = 1.1  # stat boost par la nature
+    elif stat_name == nature.effect()["stat_neg"]: scale = 0.9  # stat affaiblis par la nature
+    else: scale = 1                                             # stat noon affect par la nature
+    return round(stat*scale)                                          
 
 def get_damage(x,y,z,niv=50):
     damage = (niv * 0.4 +2) * z * x
