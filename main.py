@@ -29,11 +29,6 @@ attack_img = pygame.image.load("battle_ui/button_attack.png").convert_alpha()
 pokemon_img = pygame.image.load("battle_ui/button_pokemon.png").convert_alpha()
 bag_img = pygame.image.load("battle_ui/button_bag.png").convert_alpha()
 
-move1_img = pygame.image.load('battle_ui/move1_button.png').convert_alpha()
-move2_img = pygame.image.load('battle_ui/move2_button.png').convert_alpha()
-move3_img = pygame.image.load('battle_ui/move3_button.png').convert_alpha()
-move4_img = pygame.image.load('battle_ui/move4_button.png').convert_alpha()
-
 #------|create button instances
 y_menu = resolution[1]-260
 
@@ -73,10 +68,6 @@ run = True
 while run :
     #check les variables afin de faire divers actions
     if battle_start and not in_battle:
-        #------|Musique
-        pygame.mixer.music.load('song/elite_four/2-29. Battle! Elite Four.mp3')
-        pygame.mixer.music.play(loops=-1)
-        pygame.mixer.music.set_volume(0.3)
         pokemon_trainer,pokemon_opponent,window = start_battle(window,resolution)
         in_battle = True
         choose_action = True
