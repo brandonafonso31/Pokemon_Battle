@@ -10,7 +10,8 @@ dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=
 lance_flamme = SpecialMove("Lance-Flammes",Type.FEU,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Flammes"], prio = 0)
 crocs_eclair = SpecialMove("Croc-éclair",Type.ELECTRIQUE,power=90,precision=100,pp=15, effect = dico_effect_move["Croc-éclair"], prio = 0)
 lance_soleil = SpecialMove("Lance-Soleil",Type.PLANTE,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Soleil"], prio = 0)
-#atterisage = StatusMove("Atterisage",Type.VOL,precision=100,pp=15, effect = dico_effect_move["Atterissage"], prio = 0)
+atterisage = StatusMove("Atterisage",Type.VOL,precision=100,pp=15, effect = dico_effect_move["Atterissage"], prio = 0)
+
 dracaufeu.learn_move(lance_flamme)
 dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
@@ -23,9 +24,10 @@ leviator = Pokemon("Léviator",pv=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=
 
 crocgivre = PhysicalMove("Crocs Givre",Type.GLACE,power=65,precision=95,pp=15, effect = dico_effect_move["Crocs Givre"], prio = 0)
 cascade = PhysicalMove("Cascade",Type.EAU,power=80,precision=100,pp=15, effect = dico_effect_move["Cascade"], prio = 0)
-#danse_draco = StatusMove("Danse Draco",Type.DRAGON,precision=100,pp=20, effect = dico_effect_move["Danse Draco"], prio = 0)
+danse_draco = StatusMove("Danse Draco",Type.DRAGON,precision=100,pp=20, effect = dico_effect_move["Danse Draco"], prio = 0)
 seisme = PhysicalMove("Séisme",Type.SOL,power=100,precision=100,pp=10, effect = dico_effect_move["Séisme"], prio = 0)
 aquajet = PhysicalMove("Aqua-Jet",Type.EAU,power=40,precision=100,pp=20, effect = dico_effect_move["Aqua-Jet"], prio = 1)
+
 leviator.learn_move(crocgivre)
 leviator.learn_move(cascade)
 leviator.learn_move(aquajet)
@@ -37,6 +39,7 @@ pikachu = Pokemon("Pikachu",pv=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,ge
                    type1=Type.ELECTRIQUE,talent="paratonerre",num_on_sprite_sheet=30,EV=pikachu_EV, nature=Nature.BRAVE)
 
 cage_eclair = StatusMove("Cage-Éclair",Type.ELECTRIQUE,precision=90,pp=20, effect = dico_effect_move["Cage-Éclair"], prio = 0)
+
 pikachu.learn_move(cage_eclair)
 """pikachu.learn_move("fatal-foudre")
 pikachu.learn_move("chargeur")
