@@ -18,16 +18,16 @@ def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemo
             
     moves = pokemon_trainer.get_moveset()
     if moves[0] is not None and draw_move(window,moves[0],x_move - 200, y_menu + 50):
-        pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, \
+        pokemon_trainer, pokemon_opponent, in_battle, \
             run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move1",window,res_scene,resolution)                            
     if moves[1] is not None and draw_move(window,moves[1],x_move + 200, y_menu + 50):
-        pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, \
+        pokemon_trainer, pokemon_opponent, in_battle, \
             run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move2",window,res_scene,resolution)                
     if moves[2] is not None and draw_move(window,moves[2],x_move - 200, y_menu + 150):
-        pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, \
+        pokemon_trainer, pokemon_opponent, in_battle, \
             run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move3", window,res_scene,resolution)                
     if moves[3] is not None and draw_move(window,moves[3],x_move + 200, y_menu + 150):
-        pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, \
+        pokemon_trainer, pokemon_opponent, in_battle, \
             run, battle_start, window = battle_attack.perform_choice_attack(pokemon_trainer, pokemon_opponent, "move4", window,res_scene,resolution)
             
-    return pokemon_trainer, pokemon_opponent, in_battle, choose_action, attack_selected, run, battle_start, window
+    return pokemon_trainer, pokemon_opponent, in_battle, run, battle_start, window
