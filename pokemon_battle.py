@@ -54,11 +54,13 @@ def start_battle(window,res):
     pygame.time.delay(500)
     pokemon_opponent,opponent_pokemon_sprite,coord_opp = get_opponent_sprite(res)
     window.blit(opponent_pokemon_sprite,coord_opp)
+    pokemon_opponent.add_coord(coord_opp)
     #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.display.flip()
     pygame.time.delay(500)
     pokemon_trainer,trainer_pokemon_sprite,coord_trainer = get_trainer_sprite(res)
     window.blit(trainer_pokemon_sprite,coord_trainer)
+    pokemon_trainer.add_coord(coord_trainer)
     return pokemon_trainer,pokemon_opponent,window
 
 """def refresh_screen(window,resolution):
