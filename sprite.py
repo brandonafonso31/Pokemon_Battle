@@ -1,5 +1,6 @@
 from PIL import Image
 import os
+from config import img_dir_path
 
 LEN_NAME_POKEMON = 7
 NB_POKEMON_PER_ROW = 8
@@ -9,7 +10,7 @@ RES_SPRITE_POKEMON = (96, 96)
 
 def recup_sprite_pokemon(sprite_gen_path, num_pokemon, front_or_back):
     global LEN_NAME_POKEMON,WHITE,NB_POKEMON_PER_ROW,RES_SPRITE_POKEMON
-    image = Image.open(sprite_gen_path+"_"+front_or_back+".png")
+    image = Image.open(f"{sprite_gen_path}_{front_or_back}.png")
     res_image = image.size
     
     nb_row = res_image[0]//RES_SPRITE_POKEMON[0]
@@ -25,7 +26,7 @@ def recup_sprite_pokemon(sprite_gen_path, num_pokemon, front_or_back):
             pixel = image.getpixel((i,j))
             sprite_pokemon.putpixel((i-indice_row,j-indice_col), pixel)
             
-    sprite_pokemon.save("sprites/pokemon_"+front_or_back+".png")
+    sprite_pokemon.save(os.path.join(img_dir_path,f"sprites/pokemon_{front_or_back}.png"))
     return sprite_pokemon
     
 def get_first_pixel(image_path):

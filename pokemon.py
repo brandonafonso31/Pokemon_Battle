@@ -2,6 +2,7 @@ from sprite import *
 from pokemon_type import *
 from move import *
 from random import randint
+from config import img_dir_path
 
 LINE_PRINT = "-"*70
 
@@ -23,6 +24,7 @@ class Pokemon:
         self.gen = gen
         self.num_on_sprite_sheet = num_on_sprite_sheet
         
+        # Meilleurs avec juste self.moveset = [] ?
         self.move1 = None
         self.move2 = None
         self.move3 = None
@@ -87,7 +89,7 @@ class Pokemon:
         print(f"L'attaque {new_move} a été apprise\n")
         
     def sprites(self,front_or_back):
-        sprites = "sprites/sprites_gen"+str(self.gen)
+        sprites = os.path.join(img_dir_path,"sprites/sprites_gen"+str(self.gen))
         return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back)
         
     def get_cm(self, opponent, move : Move, objets=None):
