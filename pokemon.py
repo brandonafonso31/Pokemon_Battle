@@ -7,20 +7,26 @@ from config import img_dir_path
 LINE_PRINT = "-"*70
 
 class Pokemon:
-    def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int,
-                 gen: int,type1: Type,type2=None,talent=None,num_on_sprite_sheet=None):
-        
-        # à modifier car vrai stats ne fonctionne pas comme ça ... IV/EV ? 
+    def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
+        gen: int,type1: Type, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None):
         
         self.name = name
-        self.pv = pv
-        self.atk = atk
-        self.def_ = def_
-        self.atk_spe = atk_spe
-        self.def_spe = def_spe
-        self.vit = vit
+        
+        # Stats
+        self.EV = EV
+        self.pv = real_stat(pv,None,EV["pv"])
+        self.atk = real_stat(atk,None,EV["atk"])
+        self.def_ = real_stat(def_,None,EV["def_"])
+        self.atk_spe = real_stat(atk_spe,None,EV["atk_spe"])
+        self.def_spe = real_stat(def_spe,None,EV["def_spe"])
+        self.vit = real_stat(vit,None,EV["vit"])
+        hp_max = self.pv
+        
+        # Types
         self.type1 = type1
-        self.type2 = type2
+        self.type2 = type2 
+        
+        # Sprite
         self.gen = gen
         self.num_on_sprite_sheet = num_on_sprite_sheet
         
@@ -30,11 +36,8 @@ class Pokemon:
         self.move3 = None
         self.move4 = None
         
+        # Dresseur ? je sais plus pour quoi faire ...
         self.dresseur = None
-        
-        hp_cur = pv                 
-        hp_max = pv                 # à modifier plus tard quand les pv seront vraiment calculés
-        
         self.talent = talent        # à implementer comme Class Enum comme type ? 
         self.nature = None          # à implementer comme Class Enum comme type ?
         self.shiny = False          # à implementer plus tard, change uniquement les scripts
@@ -157,8 +160,12 @@ class Pokemon:
     
     def is_dead(self):
         return self.pv <= 0
-
     
+def real_stat(stat:int,nature,EV:int,IV=31,niv=50):
+    stat = (2 * stat + IV + EV//4) * niv
+    stat = (stat//100 + 5) #  * nature a rajouter lorsque j'aurais implémenter les natures
+    return round(stat)
+
 def get_damage(x,y,z):
     damage = (50 * 0.4 +2) * z * x
     damage = damage//(y * 50) + 2
