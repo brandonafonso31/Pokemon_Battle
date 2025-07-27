@@ -189,7 +189,7 @@ class Pokemon:
     def check_each_EV(self):
         return all([_ <= 252 for _ in self.EV.values()])
 
-    def add_pos(self,coord):
+    def add_rect(self,coord):
         self.rect = pygame.Rect(coord[0], coord[1], 64, 64)
 
 def get_scale_by_nature(stat_name: str, nature: Nature):
