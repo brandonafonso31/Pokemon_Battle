@@ -26,21 +26,3 @@ def load_animation_frames(name, config):
         frames.append(frame)
 
     return frames, data["frame_duration"]
-
-def play_attack_animation(move_name, window, target_pos):
-    if move_name not in animation_data:
-        return  # Pas d'anim disponible pour ce move
-    
-    config = animation_data[move_name]
-    frames = load_animation_frames(config)
-    offset = config.get("offset", [0, 0])
-    duration = config.get("frame_duration", 60)
-
-    x, y = target_pos[0] + offset[0], target_pos[1] + offset[1]
-    for frame in frames:
-        window.blit(frame, (x, y))
-        pygame.display.flip()
-        pygame.time.delay(duration)
-        
-
-animation_data = load_animation_config("animations/animations.json")
