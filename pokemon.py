@@ -8,7 +8,7 @@ LINE_PRINT = "-"*70
 
 class Pokemon:
     def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
-        gen: int,type1: Type, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None):
+        gen: int,type1: Type, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},type2=None,talent=None,num_on_sprite_sheet=None,item=None):
         
         self.name = name
         
@@ -43,6 +43,7 @@ class Pokemon:
         self.talent = talent        # à implementer comme Class Enum comme type ? 
         self.nature = None          # à implementer comme Class Enum comme type ?
         self.shiny = False          # à implementer plus tard, change uniquement les scripts
+        self.item = item          # à implementer plus tard, objet tenu par le pokémon
     
     def __str__(self):
         output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} \n{LINE_PRINT}"
