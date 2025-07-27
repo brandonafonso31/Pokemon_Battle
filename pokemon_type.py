@@ -41,11 +41,11 @@ class Type(Enum):
         else:
             return "#000000"
         
-print(Type.GLACE.color())
 """
 print(Type.GLACE)           # Type.GLACE
 print(Type.GLACE.name)      # "GLACE"
 print(Type.GLACE.value)     # 17
+print(Type.GLACE.color())   # "#00FFFF"
 
 # Comparaison
 if mon_type == Type.FEU:
