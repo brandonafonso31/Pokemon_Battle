@@ -8,9 +8,9 @@ def attack(pokemon_attacker: Pokemon,pokemon_defender: Pokemon,move_id: str = "m
     pokemon_attacker,pokemon_defender = pokemon_attacker.use_move(move_id,pokemon_defender)
     return pokemon_attacker,pokemon_defender
 
-def turn(pokemon_1: Pokemon,pokemon_2: Pokemon, move_id: int):
+def turn(pokemon_1: Pokemon,pokemon_2: Pokemon, move_id: str):
     if move_id not in ["move1","move2","move3","move4"]:
-        return
+        return Exception("move_id not move1,2,3,4")
     ia = pokemon_2
     # check pour s'assurer que le pokemon1 est plus rapide sinon on les inverse
     if pokemon_2.vit > pokemon_1.vit:
@@ -18,11 +18,12 @@ def turn(pokemon_1: Pokemon,pokemon_2: Pokemon, move_id: int):
         ia = pokemon_1
         
     pokemon_1, pokemon_2 = attack(pokemon_1, pokemon_2, move_id, ia = (ia == pokemon_1))
-    print(f"PP {pokemon_1.name} move1: {pokemon_1.move1.pp}, Pv {pokemon_2.name}: {pokemon_2.pv}")      # barre de vie dans la fentre direct / pas d'affichage de pp
+    print(f"PP {pokemon_1.name} {move_id}: {pokemon_1.move1.pp}, Pv {pokemon_2.name}: {pokemon_2.pv}")      # barre de vie dans la fentre direct / pas d'affichage de pp
     pygame.time.delay(2000)
+    
     if not pokemon_2.is_dead():
         pokemon_2,pokemon_1= attack(pokemon_2, pokemon_1, move_id, ia = (ia == pokemon_2))
-        print(f"PP {pokemon_2.name} move1: {pokemon_2.move1.pp}, Pv {pokemon_1.name}: {pokemon_1.pv}")  # barre de vie dans la fentre direct / pas d'affichage de pp
+        print(f"PP {pokemon_2.name} {move_id}: {pokemon_2.move1.pp}, Pv {pokemon_1.name}: {pokemon_1.pv}")  # barre de vie dans la fentre direct / pas d'affichage de pp
     else:
         pokemon_1,pokemon_2,not pokemon_2.is_dead()   
     return pokemon_1,pokemon_2,not pokemon_2.is_dead() and not pokemon_1.is_dead()
