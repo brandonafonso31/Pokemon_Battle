@@ -102,12 +102,14 @@ while run :
             # open_pokemon_team()
             pokemon_selected = False
             choose_action = True
+            pygame.time.delay(1000)
         
         if bag_selected:
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             # open_bag()
             bag_selected = False
             choose_action = True
+            pygame.time.delay(1000)
         
     if not battle_start and run:
         pygame.time.delay(500)
@@ -127,6 +129,6 @@ while run :
     pygame.display.update()
     
 pygame.mixer.music.stop()
-pygame.time.delay(2000)
+pygame.time.delay(1000)
 pygame.quit()
 exit()
