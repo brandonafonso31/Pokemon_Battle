@@ -1,6 +1,8 @@
 from pokemon import Pokemon
-from pokemon_type import *
+from pokemon_type import Type
 from move import *
+
+
 
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,
@@ -31,9 +33,9 @@ leviator.learn_move("séïsme")
 pikachu = Pokemon("Pikachu",pv=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
                    type1=Type.ELECTRIQUE,talent="paratonerre",num_on_sprite_sheet=30)
 
-cageeclair = StatusMove("Cage-Éclair",Type.ELECTRIQUE,precision=90,pp=20, effect = dico_effect_move["Cage-Éclair"], prio = 0)
+cage_eclair = StatusMove("Cage-Éclair",Type.ELECTRIQUE,precision=90,pp=20, effect = dico_effect_move["Cage-Éclair"], prio = 0)
 
-pikachu.learn_move(cageeclair)
+pikachu.learn_move(cage_eclair)
 """pikachu.learn_move("fatal-foudre")
 pikachu.learn_move("chargeur")
 pikachu.learn_move("électacle")"""
