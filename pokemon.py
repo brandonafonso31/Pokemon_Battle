@@ -161,8 +161,8 @@ class Pokemon:
     def is_dead(self):
         return self.pv <= 0
     
-    def check_count_EV(self):
-        return sum([_ for _ in self.EV.values()]) == 510
+    def check_sum_EV(self):
+        return sum([_ for _ in self.EV.values()]) <= 510
             
     
 def real_pv(pv:int,nature,EV:int,IV=31,niv=50):
