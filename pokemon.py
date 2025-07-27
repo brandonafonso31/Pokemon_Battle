@@ -172,8 +172,8 @@ class Pokemon:
         return self
     
     def get_moveset(self):
-        return [self.move1, self.move2, self.move3, self.move4]
-    
+        return [move for move in [self.move1, self.move2, self.move3, self.move4] if move is not None]
+
     def is_dead(self):
         return self.pv <= 0
     
