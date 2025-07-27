@@ -1,5 +1,5 @@
 from pokemon_type import Type
-
+from collections import defaultdict
 
 class Move:
     def __init__(self, name: str, type: Type, move_type: str, power: int, precision: int, pp: int, effect: str, prio: int):
@@ -37,9 +37,7 @@ dico_effect_move = {
     
     "Crocs Givre" : f"Le lanceur utilise une morsure glaciale. A 10% de chance de geler ou d'apeurer la cible.",
     
-    "Cage-Éclair" : f"Un faible choc électrique frappe l'ennemi. Paralyse la cible.",
-    
-    "Lance-Soleil" : f"",
-    "Croc-éclair" : f"",
-    "Atterissage" : f""
-}        
+    "Cage-Éclair" : f"Un faible choc électrique frappe l'ennemi. Paralyse la cible."
+} 
+
+dico_effect_move = defaultdict(str,dico_effect_move)
