@@ -1,4 +1,4 @@
-from pokemon import *
+from pokemon import Pokemon
 
 
 class Dresseur:
