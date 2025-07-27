@@ -1,10 +1,12 @@
 from pokemon import Pokemon
 import pygame
 from config import BLACK
+from random import randint
+
 
 def attack(pokemon_attacker: Pokemon,pokemon_defender: Pokemon,move_id: str = "move1", ia: bool = False):
     if ia:
-        move_id = "move1" # "move"+randint(1,5)
+        move_id = f"move{randint(1,5)}"     # a modifier plus tard si vrai reflextion
     pokemon_attacker,pokemon_defender = pokemon_attacker.use_move(move_id,pokemon_defender)
     return pokemon_attacker,pokemon_defender,move_id
 
