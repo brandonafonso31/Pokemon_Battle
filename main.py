@@ -64,7 +64,7 @@ while run :
     # battle    
     if in_battle:
         
-        refresh_screen(window,resolution)
+        #refresh_screen(window,resolution)
         
         
         if choose_action: 
