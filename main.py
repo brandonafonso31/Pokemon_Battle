@@ -45,73 +45,63 @@ def draw_text(text, font, text_col, x, y):
 #------|Variable
 battle_start = False
 in_battle = False
-choose_action = False
-attack_selected = False
-pokemon_selected = False
-bag_selected = False
+current_menu = ""
 
 #------|Boucle qui fait tourner le jeu  
 run = True
 while run :
+    
+    if not battle_start and run:
+        pygame.time.delay(500)
+        window.fill((0,0,0))
+        pygame.mixer.music.stop()
+        draw_text("Press left click to start battle", font, WHITE,250,resolution[1]//2)
+        
     #check les variables afin de faire divers actions
     if battle_start and not in_battle:
         pokemon_trainer,pokemon_opponent,window = pokemon_battle.start_battle(window,resolution)
         in_battle = True
-        choose_action = True
+        current_menu = "main"
         
     if in_battle:
         #refresh_screen(window,resolution)
         
-        if choose_action: 
+        if current_menu == "main": 
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
             if attack_button.draw(window):
-                choose_action = False
-                attack_selected = True
-                
-            if pokemon_button.draw(window):
-                pokemon_selected = True
-                choose_action = False
-            if bag_button.draw(window):
-                bag_selected = True
-                choose_action = False
+                current_menu = "attack"
+            elif pokemon_button.draw(window):
+                current_menu = "team_pokemon"
+            elif bag_button.draw(window):
+                current_menu = "attack"
             
-        if attack_selected:
-            pokemon_trainer, pokemon_opponent, in_battle, choose_action,\
-                attack_selected, run, battle_start, window = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent)
-        
-        # façon très sale de parer au pb des deux boutons qui s'affichent avant que l'app ne se ferme
-        if not run:
-            break
+        elif current_menu == "attack":
+            pokemon_trainer, pokemon_opponent, in_battle,\
+                run, battle_start, window = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent)
+            current_menu = "main"
              
-        if pokemon_selected:
+        elif current_menu == "team_pokemon":
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             # open_pokemon_team()
-            pokemon_selected = False
-            choose_action = True
-            draw_text("LA TEAM POKEMON EST SELECTIONNEE", font,WHITE,250,600)
+            draw_text("LA TEAM POKEMON EST SELECTIONNEE", font, WHITE, 250, 600)
+            pygame.display.flip()
+            pygame.time.delay(500)
+            current_menu = "main"
         
-        if bag_selected:
+        elif current_menu == "bag":
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             # open_bag()
-            bag_selected = False
-            choose_action = True
-            draw_text("LE SAC EST SELECTIONNE", font,WHITE,100,600)
-            
-    if not battle_start and run:
-        pygame.time.delay(500)
-        window.fill((0,0,0))
-        pygame.mixer.music.stop()        
-        
-        draw_text("Press left click to start battle",font,WHITE,250,resolution[1]//2)
+            draw_text("LE SAC EST SELECTIONNE", font, WHITE, 100, 600)
+            pygame.display.flip()
+            pygame.time.delay(500)
+            current_menu = "main"
      
     #event handler
-    for event in pygame.event.get():
-        
+    for event in pygame.event.get():        
         if event.type == pygame.QUIT:
             run = False
         if event.type == pygame.MOUSEBUTTONDOWN:
             battle_start = True
-                    
     pygame.display.update()
     
 pygame.mixer.music.stop()
