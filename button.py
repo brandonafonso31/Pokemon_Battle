@@ -11,7 +11,7 @@ class Button():
   
   		# Texte du bouton
 		self.text = text
-		self.font = pygame.font.SysFont(None, 24)  # Taille par défaut
+		self.font = pygame.font.SysFont(None, 50)  # Taille par défaut
 		self.text_color = text_color
 		self.text_surface = self.font.render(text, True, text_color)
 		self.text_rect = self.text_surface.get_rect(center=self.rect.center)
