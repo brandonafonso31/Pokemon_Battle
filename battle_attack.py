@@ -30,7 +30,7 @@ def perform_choice_attack(pokemon_1: Pokemon, pokemon_2: Pokemon, move_id: str,w
     print(f"PP {pokemon_1.name} {move_id}: {pokemon_1.move1.pp}, Pv {pokemon_2.name}: {pokemon_2.pv}")      # barre de vie dans la fentre direct / pas d'affichage de pp
     pygame.time.delay(1500)
     
-    # Si le Pokémon 2 (le moins rapide) n'est pas mort il atttaque
+    # Si le Pokémon 2 (le moins rapide) n'est pas mort il attaque
     if not pokemon_2.is_dead():
         pokemon_2, pokemon_1,  move_id= attack(pokemon_2, pokemon_1, move_id, ia = (ia == pokemon_2))
         print(f"PP {pokemon_2.name} {move_id}: {pokemon_2.move1.pp}, Pv {pokemon_1.name}: {pokemon_1.pv}")  # barre de vie dans la fentre direct / pas d'affichage de pp
