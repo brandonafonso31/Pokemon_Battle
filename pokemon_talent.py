@@ -5,4 +5,4 @@ class Talent:
         self.effect = effect    # fonction callable that applies the effect
 
     def __str__(self):
-        return f"{self.name}: {self.description}"
+        return f"{self.name}"
