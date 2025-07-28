@@ -64,7 +64,7 @@ while run :
         if current_menu == "main":
             with timing_lock:
                 current_timing = Timing.Start
-                pokemon_trainer,pokemon_opponent = check_timing_talent(pokemon_trainer,pokemon_opponent) 
+            pokemon_trainer,pokemon_opponent = check_timing_talent(pokemon_trainer,pokemon_opponent) 
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
             if attack_button.draw(window):
                 current_menu = "attack"
