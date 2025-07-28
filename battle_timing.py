@@ -19,7 +19,7 @@ def apply_timing_effect(pokemon_using_talent, pokemon_2):
     timing_talent = pokemon_using_talent.talent.timing
     with timing_lock:
         if current_timing == timing_talent :
-            pokemon_using_talent.talent.effect(pokemon_2)
+            pokemon_using_talent.talent.effect(pokemon_using_talent,pokemon_2)
     return pokemon_using_talent, pokemon_2 
     
 def check_timing_talent(pokemon_1, pokemon_2):
