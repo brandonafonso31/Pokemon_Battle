@@ -1,4 +1,5 @@
 - faire les talents
+- continue implementing target
 - add attribut for buff/debuff for each stat ( un tab [] ?)
 - add ui_battle: hp_bar, name or nickname, lvl
 - StatusMove à implémenter
