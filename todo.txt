@@ -1,3 +1,5 @@
 - faire les talents
+- add attribut for buff/debuff for each stat ( un tab [] ?)
+- add ui_battle: hp_bar, name or nickname, lvl
 - StatusMove à implémenter
 - implenter animations des attaques
