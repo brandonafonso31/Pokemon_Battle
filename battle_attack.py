@@ -21,12 +21,14 @@ def check_timing_talent(pokemon: Pokemon):
     timing_talent = pokemon.talent.timing
     with timing_lock:
         if current_timing == timing_talent :
-            pokemon.talent.apply_effect()    
+            pokemon.talent.effect()  
 
 
 def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,resolution):
     with timing_lock:
         current_timing = Timing.Start
+    check_timing_talent(pokemon_1)
+    check_timing_talent(pokemon_2)
     pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     pygame.display.flip()
     
@@ -43,9 +45,15 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
     # Attaque du Pokémon le plus rapide
     with timing_lock:
         current_timing = Timing.ABOUT_TO_GET_HIT
+    check_timing_talent(pokemon_1)
+    check_timing_talent(pokemon_2)
+    
     pokemon_1, pokemon_2 = pokemon_1.use_move(move_id_1,pokemon_2,window)
     with timing_lock:
-        current_timing = Timing.GOT_HIT  
+        current_timing = Timing.GOT_HIT 
+    check_timing_talent(pokemon_1)
+    check_timing_talent(pokemon_2)
+     
     print(f"PP {pokemon_1.name} {move_id_1}: {getattr(pokemon_1,move_id_1).pp}, Pv {pokemon_2.name}: {pokemon_2.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
     pygame.time.delay(1500)
     
@@ -53,9 +61,13 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
     if not pokemon_2.is_dead():
         with timing_lock:
             current_timing = Timing.ABOUT_TO_GET_HIT
+            check_timing_talent(pokemon_1)
+            check_timing_talent(pokemon_2)
         pokemon_2, pokemon_1 = pokemon_2.use_move(move_id_2,pokemon_1,window)
         with timing_lock:
             current_timing = Timing.GOT_HIT
+            check_timing_talent(pokemon_1)
+            check_timing_talent(pokemon_2)
         print(f"PP {pokemon_2.name} {move_id_2}: {getattr(pokemon_2,move_id_2).pp}, Pv {pokemon_1.name}: {pokemon_1.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
             
     pygame.time.delay(500)
@@ -64,6 +76,8 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
         pokemon_1,pokemon_2 = pokemon_2, pokemon_1
     with timing_lock:
         current_timing = Timing.END
+        check_timing_talent(pokemon_1)
+        check_timing_talent(pokemon_2)
     
     return pokemon_1, pokemon_2, (not pokemon_2.is_dead() and not pokemon_1.is_dead())
 
