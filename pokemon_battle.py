@@ -39,7 +39,6 @@ def get_image(image_path):
     image.set_colorkey(sprite.get_first_pixel(image_path))
     return image,image.get_size()
 
-
 def start_battle(window,res):
     """Instancie les premiers éléments de la scène."""
     #-----------------------------| MUSIC |------------------------------#

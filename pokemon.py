@@ -5,6 +5,9 @@ from random import randint
 from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
+from config import res_scene
+from refresh_scene import refresh_background
+
 import animation_loader
 import pygame
 
@@ -33,6 +36,7 @@ class Pokemon:
         self.hp_max = self.pv      
         
         self.legit = self.check_sum_EV() and self.check_each_EV()
+        
         # Types
         self.type1 = type1
         self.type2 = type2 
@@ -40,7 +44,8 @@ class Pokemon:
         # Sprite
         self.gen = gen
         self.num_on_sprite_sheet = num_on_sprite_sheet
-        self.rect = None 
+        self.rect = None
+        
         # Meilleurs avec juste self.moveset = [] ?
         self.move1 = None
         self.move2 = None
@@ -79,13 +84,7 @@ class Pokemon:
     
     def show_moves(self):
         return f"Move1: {self.move1},\nMove2: {self.move2},\nMove3: {self.move3}, \nMove4: {self.move4}"
-    
-    def show_sprite_front(self):
-        return self.sprite_front
-    
-    def show_sprite_back(self):
-        return self.sprite_back
-    
+
     def learn_move(self, new_move: Move):
         if new_move in [self.move1, self.move2, self.move3, self.move4]:
             print(f"L'attaque {new_move} est déjà apprise")
@@ -145,40 +144,56 @@ class Pokemon:
         
         return stab * eff * rand/100    # a ajouter |---> * crit * objets * talents * climats
             
-    def use_move(self,move_id : str, opponent,window):
+    def use_move(self, move_id: str, opponent, window):
         move = getattr(self, move_id)
+        
+        # PP check
         if move.pp < 1:
-            print(f"plus de pp")                # devra stoper le process d'attaque et en redemander une autre !!!
-        else:
-            move.pp -= 1
-            print(f"{self.name} utilise {move}")    # a afficher dans la barre blanche plutot ?
+            print(f"No PP left for {move.name}")
+            return None  # Signal to request another move
+        
+        move.pp -= 1
+        print(f"{self.name} uses {move.name}")
+        
+        # Handle animation
+        if move.name in animation_data:
+            frames, frame_duration = animation_loader.load_animation_frames(move.name, animation_data)
+            surfaces = [pygame.image.fromstring(f.tobytes(), f.size, f.mode).convert_alpha() for f in frames]
             
-            if move.name in animation_data:
-                frames, frame_duration = animation_loader.load_animation_frames(move.name, animation_data)
-                surfaces = [pygame.image.fromstring(f.tobytes(), f.size, f.mode).convert_alpha() for f in frames]
-                
-                for surf in surfaces:
-                    window.fill((255, 255, 255))  # Clear screen or keep battle background
-                    window.blit(surf, (300, 200))  # À ajuster selon ta zone de combat
-                    pygame.display.update()
-                    pygame.time.delay(frame_duration)
+            # Create a temporary surface for animation
+            anim_surface = pygame.Surface((window.get_width(), window.get_height()), pygame.SRCALPHA)
             
-            damage = 0
-            if isinstance(move, SpecialMove):
-                damage = get_damage(self.atk_spe,opponent.def_spe,move.power)
-            elif isinstance(move, PhysicalMove):
-                damage = get_damage(self.atk,opponent.def_,move.power)
-            elif isinstance(move,StatusMove):
-                print(f"STATUS TODO ?")
-                return
-            damage *= self.get_cm(opponent,move)
-            
-            
-            
-            opponent.pv -= floor(damage)
-            if  opponent.pv <= 0:
-                opponent.pv = 0
-                print(f"{opponent.name} est KO !")
+            for surf in surfaces:
+                window.fill((0, 0, 0))  # Clear screen or use your background
+                # Redraw battle scene here
+                refresh_background(window,res_scene)
+                # Draw animation at appropriate position
+                anim_surface.blit(surf, opponent.rect.topleft)
+                window.blit(anim_surface, (0, 0))
+                pygame.display.flip()
+                pygame.time.delay(frame_duration)
+        
+        # Calculate damage
+        damage = 0
+        if isinstance(move, SpecialMove):
+            damage = get_damage(self.atk_spe, opponent.def_spe, move.power)
+        elif isinstance(move, PhysicalMove):
+            damage = get_damage(self.atk, opponent.def_, move.power)
+        elif isinstance(move, StatusMove):
+            # TODO: Implement status effects
+            print(f"{move.name} has status effects!")
+            return self, opponent
+        
+        # Apply type effectiveness
+        damage *= self.get_cm(opponent, move)
+        damage = max(1, floor(damage))  # Ensure minimum damage of 1
+        
+        # Apply damage
+        opponent.pv -= damage
+        if opponent.pv <= 0:
+            opponent.pv = 0
+            print(f"{opponent.name} fainted!")
+        
         return self, opponent
             
     def heal(self):

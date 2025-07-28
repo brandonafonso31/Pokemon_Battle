@@ -1,0 +1,20 @@
+from config import img_dir_path
+
+import sprite 
+import pygame
+import os
+
+def refresh_background(window,res):
+    #---------------------------| BACKGROUND |---------------------------#
+    background = pygame.image.load(os.path.join(img_dir_path,"background/forest.jpg")).convert()
+    window.blit(background,(0,0))
+    pygame.display.flip()
+    #-------------------------| SPRITE ENNEMI |--------------------------#
+    pokemon_opponent,opponent_pokemon_sprite,coord_opp = sprite.get_opponent_sprite(res)
+    window.blit(opponent_pokemon_sprite,coord_opp)
+    pokemon_opponent.add_rect(coord_opp)
+    #--------------------------| SPRITE ALLIE |--------------------------#    
+    pygame.display.flip()
+    pokemon_trainer,trainer_pokemon_sprite,coord_trainer = sprite.get_trainer_sprite(res)
+    window.blit(trainer_pokemon_sprite,coord_trainer)
+    pokemon_trainer.add_rect(coord_trainer)
