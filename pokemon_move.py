@@ -2,9 +2,10 @@ from pokemon_type import Type
 from collections import defaultdict
 import os,pygame,json
 from config import principal_dir_path,img_dir_path
+from move_target import Target
 
 class Move:
-    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int, target= None,animation = None):
+    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int, target:Target = Target.OPPONENT,animation = None):
         self.name = name
         self.type = type 
         
