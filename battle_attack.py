@@ -48,11 +48,11 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
     if not pokemon_2.is_dead():
         with timing_lock:
             current_timing = Timing.ABOUT_TO_GET_HIT
-            pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
+        pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
         pokemon_2, pokemon_1 = pokemon_2.use_move(move_id_2,pokemon_1,window)
         with timing_lock:
             current_timing = Timing.GOT_HIT
-            pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
+        pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
         print(f"PP {pokemon_2.name} {move_id_2}: {getattr(pokemon_2,move_id_2).pp}, Pv {pokemon_1.name}: {pokemon_1.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
             
     pygame.time.delay(500)
@@ -61,7 +61,7 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
         pokemon_1,pokemon_2 = pokemon_2, pokemon_1
     with timing_lock:
         current_timing = Timing.END
-        pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
+    pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
     
     return pokemon_1, pokemon_2, (not pokemon_2.is_dead() and not pokemon_1.is_dead())
 
