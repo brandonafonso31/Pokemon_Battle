@@ -6,7 +6,6 @@ from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
 from config import res_scene
-from refresh_scene import refresh_background
 
 import animation_loader
 import pygame
