@@ -19,5 +19,5 @@ def intimidation(pokemon_1,pokemon_2):
     return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.Start, frequency=1)
 
 talents = {
-    "intimidation": intimidation,
+    "Intimidation": intimidation,
 }
