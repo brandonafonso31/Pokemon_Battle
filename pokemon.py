@@ -209,6 +209,19 @@ class Pokemon:
     def change_talent(self, talent: Talent):
         self.talent = talent
         print(f"{self.name} a désormais le talent {talent}")
+        
+    def get_modified_stat(self, stat_name):
+        """Renvoie la stat modifiée par les stages."""
+        stage = self.stat_modifiers[stat_name]
+        base_value = getattr(self, stat_name)
+        # wrong value need to change them
+        if stage >= 0:
+            modifier = (2 + stage) / 2
+        else:
+            modifier = 2 / (2 - stage)
+
+        return int(base_value * modifier)
+
 
 
 def get_scale_by_nature(stat_name: str, nature: Nature):

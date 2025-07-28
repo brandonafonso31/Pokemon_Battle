@@ -1,7 +1,7 @@
 - faire les talents
 - continue implementing target
 - add attribut for buff/debuff for each stat ( un tab [] ?)
-- add esquive stat to pokemon ?
+- add esquive et precision to pokemon ?
 - add ui_battle: hp_bar, name or nickname, lvl
 - StatusMove à implémenter
 - implenter animations des attaques
