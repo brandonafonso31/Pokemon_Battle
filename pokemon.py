@@ -36,6 +36,16 @@ class Pokemon:
         
         self.legit = self.check_sum_EV() and self.check_each_EV()
         
+        # Buff / Debuff
+        self.stats_modifier = { 
+            "pv": 0,
+            "atk": 0,
+            "def_": 0,
+            "atk_spe": 0,
+            "def_spe": 0,
+            "vit": 0
+        }
+        
         # Types
         self.type1 = type1
         self.type2 = type2 
