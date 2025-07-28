@@ -2,7 +2,7 @@ from pokemon import Pokemon
 import pygame
 from config import BLACK
 from random import randint
-from battle_timing  import Timing
+from battle_timing  import Timing,timing_lock,current_timing 
 
 def check_move(move_id: str):
     return move_id in ["move1","move2","move3","move4"]
@@ -17,7 +17,8 @@ def check_prio(pokemon:Pokemon, move_id:str, pokemon_ia:Pokemon,move_id_ia:str):
     return pokemon,move_id,pokemon_ia,move_id_ia,False
 
 def perform_choice_attack(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,resolution):
-    timing = Timing.Start
+    with timing_lock:
+            current_timing = Timing.Start
     pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     pygame.display.flip()
     
@@ -32,24 +33,30 @@ def perform_choice_attack(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,
     pokemon_1,move_id_1,pokemon_2,move_id_2,bool_change = check_prio(pokemon_1,move_id,pokemon_ia,move_id_ia)
 
     # Attaque du Pokémon le plus rapide
-    timing = Timing.ABOUT_TO_GET_HIT
+    with timing_lock:
+            current_timing = Timing.ABOUT_TO_GET_HIT
     pokemon_1, pokemon_2 = pokemon_1.use_move(move_id_1,pokemon_2,window)
-    timing = Timing.GOT_HIT
+    with timing_lock:
+            current_timing = Timing.GOT_HIT  
     print(f"PP {pokemon_1.name} {move_id_1}: {getattr(pokemon_1,move_id_1).pp}, Pv {pokemon_2.name}: {pokemon_2.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
     pygame.time.delay(1500)
     
     # Si le Pokémon 2 (le moins rapide) n'est pas mort il attaque
     if not pokemon_2.is_dead():
-        timing = Timing.ABOUT_TO_GET_HIT
+        with timing_lock:
+            current_timing = Timing.ABOUT_TO_GET_HIT
         pokemon_2, pokemon_1 = pokemon_2.use_move(move_id_2,pokemon_1,window)
-        timing = Timing.GOT_HIT
+        with timing_lock:
+            current_timing = Timing.GOT_HIT
         print(f"PP {pokemon_2.name} {move_id_2}: {getattr(pokemon_2,move_id_2).pp}, Pv {pokemon_1.name}: {pokemon_1.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
             
     pygame.time.delay(500)
     
     if bool_change:
         pokemon_1,pokemon_2 = pokemon_2, pokemon_1
-    timing = Timing.END
+    with timing_lock:
+        current_timing = Timing.END
+    
     return pokemon_1, pokemon_2, (not pokemon_2.is_dead() and not pokemon_1.is_dead())
 
 
