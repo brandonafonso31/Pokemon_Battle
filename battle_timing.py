@@ -2,7 +2,7 @@ from enum import Enum
 import threading
 
 class Timing(Enum):
-    Start, ABOUT_TO_GET_HIT, GOT_HIT, END , NONE = range(4)
+    Start, ABOUT_TO_GET_HIT, GOT_HIT, END , NONE = range(5)
     
     def __str__(self):
         if self == Timing.Start:
