@@ -15,24 +15,22 @@ class Timing(Enum):
             return "Fin du tour"
         return "Unknown Timing"
 
+def apply_timing_effect(pokemon_using_talent, pokemon_2):
+    timing_talent = pokemon_using_talent.talent.timing
+    with timing_lock:
+        if current_timing == timing_talent :
+            pokemon_using_talent.talent.effect(pokemon_2)
+    return pokemon_using_talent, pokemon_2 
+    
 def check_timing_talent(pokemon_1, pokemon_2):
     """Check if the timing is correct for the move"""
-    inverse = pokemon_1.vit < pokemon_2.vit
-    if inverse:
-        pokemon_1, pokemon_2 = pokemon_2, pokemon_1
-    
-    timing_talent = pokemon_1.talent.timing
-    with timing_lock:
-        if current_timing == timing_talent :
-            pokemon_1.talent.effect(pokemon_2)
-            
-    timing_talent = pokemon_2.talent.timing
-    with timing_lock:
-        if current_timing == timing_talent :
-            pokemon_1.talent.effect(pokemon_2) 
-    if inverse:
-        pokemon_1, pokemon_2 = pokemon_2, pokemon_1             
-    return pokemon_2, pokemon_1
+    if pokemon_1.vit >= pokemon_2.vit:
+        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)
+        pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
+    else:
+        pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
+        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)         
+    return pokemon_1, pokemon_2
   
 current_timing = Timing.Start
 timing_lock = threading.Lock()
