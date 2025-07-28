@@ -10,7 +10,10 @@ class Talent:
 
     def __str__(self):
         return f"{self.name}"
-    
+
+def none():
+    return Talent()
+   
 def intimidation():
     """Talent: Intimidation"""
     def effect(pokemon_1,pokemon_2):
@@ -19,6 +22,6 @@ def intimidation():
     return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.Start, frequency=1)
 
 talents = {
-    "None": Talent(),
+    "None": none,
     "Intimidation": intimidation,
 }
