@@ -2,6 +2,7 @@ from pokemon import Pokemon
 from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
+from pokemon_talent import Talent,talents
 
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu_EV = {"pv":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
@@ -17,6 +18,7 @@ dracaufeu.learn_move(lance_flamme)
 #dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
 #dracaufeu.learn_move(atterisage)
+dracaufeu.change_talent(talents["torche"]())
 print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"pv":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
