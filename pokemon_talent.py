@@ -11,10 +11,10 @@ class Talent:
     def __str__(self):
         return f"{self.name}"
     
-def intimidation(pokemon_1,pokemon_2):
-    """Talent: Torche"""
-    def effect():
-        print(f"{pokemon_1.name}'s Talent!")
+def intimidation():
+    """Talent: Intimidation"""
+    def effect(pokemon_1,pokemon_2):
+        print(f"Le talent de {pokemon_1.name} influcence {pokemon_2.name}!")
 
     return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.Start, frequency=1)
 

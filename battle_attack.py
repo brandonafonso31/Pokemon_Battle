@@ -2,7 +2,7 @@ from pokemon import Pokemon
 import pygame
 from config import BLACK
 from random import randint
-from battle_timing  import Timing,timing_lock,current_timing 
+from battle_timing  import Timing,timing_lock,current_timing,check_timing_talent
 
 def check_move(move_id: str):
     return move_id in ["move1","move2","move3","move4"]
@@ -16,19 +16,8 @@ def check_prio(pokemon:Pokemon, move_id:str, pokemon_ia:Pokemon,move_id_ia:str):
         return pokemon_ia,move_id_ia,pokemon,move_id, True
     return pokemon,move_id,pokemon_ia,move_id_ia,False
 
-def check_timing_talent(pokemon: Pokemon):
-    """Check if the timing is correct for the move"""
-    timing_talent = pokemon.talent.timing
-    with timing_lock:
-        if current_timing == timing_talent :
-            pokemon.talent.effect()  
-
-
 def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,resolution):
-    with timing_lock:
-        current_timing = Timing.Start
-    check_timing_talent(pokemon_1)
-    check_timing_talent(pokemon_2)
+
     pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     pygame.display.flip()
     
@@ -45,14 +34,12 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
     # Attaque du Pokémon le plus rapide
     with timing_lock:
         current_timing = Timing.ABOUT_TO_GET_HIT
-    check_timing_talent(pokemon_1)
-    check_timing_talent(pokemon_2)
+    pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
     
     pokemon_1, pokemon_2 = pokemon_1.use_move(move_id_1,pokemon_2,window)
     with timing_lock:
         current_timing = Timing.GOT_HIT 
-    check_timing_talent(pokemon_1)
-    check_timing_talent(pokemon_2)
+    pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
      
     print(f"PP {pokemon_1.name} {move_id_1}: {getattr(pokemon_1,move_id_1).pp}, Pv {pokemon_2.name}: {pokemon_2.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
     pygame.time.delay(1500)
@@ -61,13 +48,11 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
     if not pokemon_2.is_dead():
         with timing_lock:
             current_timing = Timing.ABOUT_TO_GET_HIT
-            check_timing_talent(pokemon_1)
-            check_timing_talent(pokemon_2)
+            pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
         pokemon_2, pokemon_1 = pokemon_2.use_move(move_id_2,pokemon_1,window)
         with timing_lock:
             current_timing = Timing.GOT_HIT
-            check_timing_talent(pokemon_1)
-            check_timing_talent(pokemon_2)
+            pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
         print(f"PP {pokemon_2.name} {move_id_2}: {getattr(pokemon_2,move_id_2).pp}, Pv {pokemon_1.name}: {pokemon_1.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
             
     pygame.time.delay(500)

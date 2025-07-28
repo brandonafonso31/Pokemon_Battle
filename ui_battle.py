@@ -3,7 +3,7 @@ from PIL import ImageColor
 from config import img_dir_path,BLACK
 import os 
 import battle_attack
-
+from battle_timing import Timing,timing_lock,current_timing,check_timing_talent
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
@@ -15,7 +15,7 @@ def draw_move(window,move,x,y):
 def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent):
     pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     still_in_battle = True
-                
+    
     moves = pokemon_trainer.get_moveset()
     length = len(moves)
     if length > 0 and moves[0] is not None and draw_move(window,moves[0],x_move - 200, y_menu + 50):
