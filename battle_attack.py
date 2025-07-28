@@ -16,7 +16,7 @@ def check_prio(pokemon:Pokemon, move_id:str, pokemon_ia:Pokemon,move_id_ia:str):
         return pokemon_ia,move_id_ia,pokemon,move_id, True
     return pokemon,move_id,pokemon_ia,move_id_ia,False
 
-def perform_choice_attack(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,resolution):
+def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,resolution):
     with timing_lock:
             current_timing = Timing.Start
     pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
