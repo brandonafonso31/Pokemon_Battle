@@ -16,9 +16,17 @@ def check_prio(pokemon:Pokemon, move_id:str, pokemon_ia:Pokemon,move_id_ia:str):
         return pokemon_ia,move_id_ia,pokemon,move_id, True
     return pokemon,move_id,pokemon_ia,move_id_ia,False
 
+def check_timing_talent(pokemon: Pokemon):
+    """Check if the timing is correct for the move"""
+    timing_talent = pokemon.talent.timing
+    with timing_lock:
+        if current_timing == timing_talent :
+            pokemon.talent.apply_effect()    
+
+
 def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,resolution):
     with timing_lock:
-            current_timing = Timing.Start
+        current_timing = Timing.Start
     pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     pygame.display.flip()
     
@@ -34,10 +42,10 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
 
     # Attaque du Pokémon le plus rapide
     with timing_lock:
-            current_timing = Timing.ABOUT_TO_GET_HIT
+        current_timing = Timing.ABOUT_TO_GET_HIT
     pokemon_1, pokemon_2 = pokemon_1.use_move(move_id_1,pokemon_2,window)
     with timing_lock:
-            current_timing = Timing.GOT_HIT  
+        current_timing = Timing.GOT_HIT  
     print(f"PP {pokemon_1.name} {move_id_1}: {getattr(pokemon_1,move_id_1).pp}, Pv {pokemon_2.name}: {pokemon_2.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
     pygame.time.delay(1500)
     
