@@ -22,7 +22,7 @@ print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"pv":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
 leviator = Pokemon("Léviator",pv=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=81,gen=1,
-                   type1=Type.EAU,type2=Type.VOL,talent="intimidation",num_on_sprite_sheet=151,EV=leviator_EV, nature=Nature.RIGIDE)
+                   type1=Type.EAU,type2=Type.VOL,num_on_sprite_sheet=151,EV=leviator_EV, nature=Nature.RIGIDE)
 
 crocgivre = PhysicalMove("Crocs Givre",Type.GLACE,power=65,precision=95,pp=15, effect = dico_effect_move["Crocs Givre"], prio = 0)
 cascade = PhysicalMove("Cascade",Type.EAU,power=80,precision=100,pp=15, effect = dico_effect_move["Cascade"], prio = 0)
