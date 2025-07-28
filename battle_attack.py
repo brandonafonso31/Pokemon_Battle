@@ -41,7 +41,8 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
         current_timing = Timing.GOT_HIT 
     pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
      
-    print(f"PP {pokemon_1.name} {move_id_1}: {getattr(pokemon_1,move_id_1).pp}, Pv {pokemon_2.name}: {pokemon_2.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
+    # barre de vie dans la fentre direct
+    print(f"PP {pokemon_1.name} {move_id_1}: {getattr(pokemon_1,move_id_1).pp}, Pv {pokemon_2.name}: {pokemon_2.pv}\n")  
     pygame.time.delay(1500)
     
     # Si le Pokémon 2 (le moins rapide) n'est pas mort il attaque
@@ -53,7 +54,8 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
         with timing_lock:
             current_timing = Timing.GOT_HIT
         pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
-        print(f"PP {pokemon_2.name} {move_id_2}: {getattr(pokemon_2,move_id_2).pp}, Pv {pokemon_1.name}: {pokemon_1.pv}\n")  # barre de vie dans la fentre direct / pas d'affichage de pp
+        # barre de vie dans la fentre direct
+        print(f"PP {pokemon_2.name} {move_id_2}: {getattr(pokemon_2,move_id_2).pp}, Pv {pokemon_1.name}: {pokemon_1.pv}\n")  
             
     pygame.time.delay(500)
     

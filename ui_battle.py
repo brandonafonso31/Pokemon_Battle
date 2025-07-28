@@ -3,7 +3,6 @@ from PIL import ImageColor
 from config import img_dir_path,BLACK
 import os 
 import battle_attack
-from battle_timing import Timing,timing_lock,current_timing,check_timing_talent
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
