@@ -26,6 +26,7 @@ class Talent:
 def intimidation():
     """Talent: Intimidation"""
     def effect(pokemon_1,pokemon_2):
+        pokemon_1.talent.used += 1
         print(f"Le talent de {pokemon_1.name} influcence {pokemon_2.name}!")
 
     return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.Start, frequency=1)

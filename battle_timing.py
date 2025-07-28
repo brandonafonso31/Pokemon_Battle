@@ -16,7 +16,6 @@ class Timing(Enum):
         return "Unknown Timing"
 
 def apply_timing_effect(pokemon_using_talent, pokemon_2):
-    print(f"Vérification du timing pour {pokemon_using_talent.name} avec le talent {pokemon_using_talent.talent.name}")
     timing_talent = pokemon_using_talent.talent.timing
     with timing_lock:
         print(f"Timing actuel: {current_timing}, Timing talent: {timing_talent}")
@@ -27,11 +26,9 @@ def apply_timing_effect(pokemon_using_talent, pokemon_2):
 def check_timing_talent(pokemon_1, pokemon_2):
     """Check if the timing is correct for the move"""
     if pokemon_1.vit >= pokemon_2.vit:
-        print(f"1 - {pokemon_1.name} a la priorité")
         pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)
         pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
     else:
-        print(f"2 - {pokemon_2.name} a la priorité")
         pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
         pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)         
     return pokemon_1, pokemon_2
