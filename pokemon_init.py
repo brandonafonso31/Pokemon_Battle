@@ -18,6 +18,7 @@ dracaufeu.learn_move(lance_flamme)
 #dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
 #dracaufeu.learn_move(atterisage)
+dracaufeu.change_talent(talents["None"]())
 print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"pv":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
