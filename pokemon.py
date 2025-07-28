@@ -5,6 +5,7 @@ from random import randint
 from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
+from pokemon_talent import Talent
 
 import pygame
 
@@ -13,7 +14,7 @@ LINE_PRINT = "-"*70
 class Pokemon:
     def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
         gen: int,type1: Type, nature:Nature= Nature.BIZARRE, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0}, \
-            type2=None,talent=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname=""):
+            type2=None,talent:Talent=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname=""):
         
         # Infos
         self.name = name
@@ -48,9 +49,11 @@ class Pokemon:
         self.move3 = None
         self.move4 = None
         
+        # Talent
+        self.talent = talent 
+        
         # A implementer
-        self.dresseur = None        # Dresseur ? je sais plus pour quoi faire ...
-        self.talent = talent        # Class Enum comme type ? 
+        self.dresseur = None        # Dresseur ? je sais plus pour quoi faire ... 
         self.shiny = False          # change uniquement les scripts
         self.item = item            # objet tenu par le pokémon
     
@@ -66,26 +69,24 @@ class Pokemon:
                     and self.talent == other.talent and self.nature == other.nature \
                         and self.shiny == other.shiny and self.item == other.item"""
     
+    
     def show_type(self):
         types = f"TYPE1: {self.type1.name}"
         if self.type2 != None:
             types += f", TYPE2: {self.type2.name}"
         return types
-    
     def get_stats(self):
         return [self.pv,self.atk,self.def_,self.atk_spe,self.def_spe,self.vit]
-    
     def show_stats(self):
         return f"PV: {self.pv},\nATK: {self.atk},\nDEF: {self.def_},\nATK_SPE: {self.atk_spe},\nDEF_SPE: {self.def_spe},\nVIT: {self.vit}"
     
+    
     def show_moves(self):
         return f"Move1: {self.move1},\nMove2: {self.move2},\nMove3: {self.move3}, \nMove4: {self.move4}"
-
     def learn_move(self, new_move: Move):
         if new_move in [self.move1, self.move2, self.move3, self.move4]:
             print(f"L'attaque {new_move} est déjà apprise")
             return
-
         if self.move1 is None:
             self.move1 = new_move
         elif self.move2 is None:
@@ -105,10 +106,14 @@ class Pokemon:
 
         print(f"L'attaque {new_move} a été apprise\n")
         
+    
+    
     def sprites(self,front_or_back):
         sprites = os.path.join(img_dir_path,"sprites/sprites_gen"+str(self.gen))
         return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back)
         
+    
+    
     def get_cm(self, opponent, move : Move, objets=None):
         """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""
         msg = ""
@@ -137,19 +142,16 @@ class Pokemon:
         elif eff == 0:
             msg+="Cela ne fait aucun dégat"
         print(msg)
-        
         return stab * eff * rand/100    # a ajouter |---> * crit * objets * talents * climats
             
     def use_move(self, move_id: str, opponent, window):
-        move = getattr(self, move_id)
-        
+        move = getattr(self, move_id) 
         # PP check
         if move.pp < 1:
             print(f"No PP left for {move.name}")
             return None  # Signal to request another move
         move.pp -= 1
         print(f"{self.name} uses {move.name}")
-        
         # Calculate damage
         damage = 0
         if isinstance(move, SpecialMove):
@@ -160,18 +162,16 @@ class Pokemon:
             # TODO: Implement status effects
             print(f"{move.name} has status effects!")
             return self, opponent
-        
         # Apply type effectiveness
         damage *= self.get_cm(opponent, move)
         damage = max(1, floor(damage))  # Ensure minimum damage of 1
-        
         # Apply damage
         opponent.pv -= damage
         if opponent.pv <= 0:
             opponent.pv = 0
             print(f"{opponent.name} fainted!")
-        
         return self, opponent
+    
             
     def heal(self):
         self.pv = self.hp_max
@@ -192,6 +192,12 @@ class Pokemon:
 
     def add_rect(self,coord):
         self.rect = pygame.Rect(coord[0], coord[1], 64, 64)
+    
+    
+    def change_talent(self, talent: Talent):
+        self.talent = talent
+        print(f"{self.name} a désormais le talent {talent}")
+
 
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1

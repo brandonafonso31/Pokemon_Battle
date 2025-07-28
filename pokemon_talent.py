@@ -19,7 +19,3 @@ def torche():
 talents = {
     "torche": torche,
 }
-
-"""from pokemon_init import dracaufeu
-dracaufeu.talent = talents["torche"]()
-print(dracaufeu)"""
