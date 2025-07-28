@@ -1,14 +1,9 @@
-import os
-import pygame
+import os,ui_battle,pokemon_battle,pygame
 
 from config import *
 from pygame.locals import *
 from pokemon_init import *
-
 from button import Button
-import ui_battle
-import pokemon_battle
-
 
 #------|Init pygame
 pygame.init()
