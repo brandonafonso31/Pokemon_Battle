@@ -9,9 +9,9 @@ def check_move(move_id: str):
 
 def check_prio(pokemon:Pokemon, move_id:str, pokemon_ia:Pokemon,move_id_ia:str):
     move = getattr(pokemon, move_id)
-    print(move,move.prio)
+    print(f"move joueur:{move}, prio: {move.prio}")
     move_ia = getattr(pokemon_ia,move_id_ia)
-    print(move_ia,move_ia.prio)
+    print(f"move IA:{move_ia}, prio: {move_ia.prio}")
     if move_ia.prio > move.prio or pokemon_ia.vit > pokemon.vit:
         return pokemon_ia,move_id_ia,pokemon,move_id, True
     return pokemon,move_id,pokemon_ia,move_id_ia,False
@@ -61,8 +61,7 @@ def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,
         pokemon_1,pokemon_2 = pokemon_2, pokemon_1
     with timing_lock:
         current_timing = Timing.END
-        check_timing_talent(pokemon_1)
-        check_timing_talent(pokemon_2)
+        pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
     
     return pokemon_1, pokemon_2, (not pokemon_2.is_dead() and not pokemon_1.is_dead())
 
