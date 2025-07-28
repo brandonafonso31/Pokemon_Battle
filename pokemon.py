@@ -7,6 +7,7 @@ from pokemon_nature import Nature
 from math import floor
 from pokemon_talent import Talent
 
+import os
 import pygame
 
 LINE_PRINT = "-"*70
