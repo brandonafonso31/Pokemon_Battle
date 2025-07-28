@@ -5,12 +5,9 @@ from random import randint
 from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
-from config import res_scene
 
-import animation_loader
 import pygame
 
-animation_data = animation_loader.load_animation_config("animations/animations.json")
 LINE_PRINT = "-"*70
 
 class Pokemon:
@@ -115,7 +112,7 @@ class Pokemon:
     def get_cm(self, opponent, move : Move, objets=None):
         """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""
         msg = ""
-        rand = randint(85,101)
+        rand = randint(85,100)
         #check type 1 et 2 il y ai au moins un diff de none a ajouter
         if self.type1 is None and self.type2 is not None :
             self.type1, self.type2 = self.type2, None
@@ -150,27 +147,8 @@ class Pokemon:
         if move.pp < 1:
             print(f"No PP left for {move.name}")
             return None  # Signal to request another move
-        
         move.pp -= 1
         print(f"{self.name} uses {move.name}")
-        
-        # Handle animation
-        if move.name in animation_data:
-            frames, frame_duration = animation_loader.load_animation_frames(move.name, animation_data)
-            surfaces = [pygame.image.fromstring(f.tobytes(), f.size, f.mode).convert_alpha() for f in frames]
-            
-            # Create a temporary surface for animation
-            anim_surface = pygame.Surface((window.get_width(), window.get_height()), pygame.SRCALPHA)
-            
-            for surf in surfaces:
-                window.fill((0, 0, 0))  # Clear screen or use your background
-                # Redraw battle scene here
-                refresh_background(window,res_scene)
-                # Draw animation at appropriate position
-                anim_surface.blit(surf, opponent.rect.topleft)
-                window.blit(anim_surface, (0, 0))
-                pygame.display.flip()
-                pygame.time.delay(frame_duration)
         
         # Calculate damage
         damage = 0
