@@ -22,13 +22,6 @@ class Talent:
             
     def reset(self):
         self.used = 0
-
-def none():
-    def none_effect(pokemon_1, pokemon_2):
-        """No effect talent"""
-        print(f"Aucun talent")
-        return pokemon_1, pokemon_2
-    return Talent("None","No talent", none_effect, Timing.Start, frequency=0)
    
 def intimidation():
     """Talent: Intimidation"""
@@ -38,6 +31,5 @@ def intimidation():
     return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.Start, frequency=1)
 
 talents = {
-    "None": none,
     "Intimidation": intimidation,
 }
