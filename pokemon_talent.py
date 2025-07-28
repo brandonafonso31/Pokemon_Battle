@@ -1,7 +1,7 @@
 from battle_timing import Timing
 
 class Talent:
-    def __init__(self, name, description, effect, timing:Timing, frequency = 1):
+    def __init__(self, name, description, effect, timing:Timing=Timing.NONE, frequency = 1):
         self.name = name
         self.description = description
         self.effect = effect
