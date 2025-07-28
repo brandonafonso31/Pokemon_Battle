@@ -1,4 +1,5 @@
 from enum import Enum
+import threading
 
 class Timing(Enum):
     Start, ABOUT_TO_GET_HIT, GOT_HIT, END = range(4)
@@ -13,3 +14,8 @@ class Timing(Enum):
         elif self == Timing.END:
             return "Fin du tour"
         return "Unknown Timing"
+    
+current_timing = Timing.Start
+timing_lock = threading.Lock()
+timing_thread = threading.Thread(target=lambda: None, daemon=True)
+timing_thread.start()
