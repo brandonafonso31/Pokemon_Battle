@@ -1,7 +1,7 @@
 from battle_timing import Timing
 
 class Talent:
-    def __init__(self, name, description, effect, timing:Timing=Timing.Start, frequency = 1):
+    def __init__(self, name, description, effect, timing:Timing, frequency):
         self.name = name
         self.description = description
         self.effect = effect
@@ -24,11 +24,11 @@ class Talent:
         self.used = 0
 
 def none():
-    def effect(pokemon_1, pokemon_2):
+    def none_effect(pokemon_1, pokemon_2):
         """No effect talent"""
         print(f"Aucun talent")
         return pokemon_1, pokemon_2
-    return Talent("None","No talent",effect, Timing.Start, frequency=0)
+    return Talent("None","No talent", none_effect, Timing.Start, frequency=0)
    
 def intimidation():
     """Talent: Intimidation"""

@@ -18,6 +18,7 @@ dracaufeu.learn_move(lance_flamme)
 #dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
 #dracaufeu.learn_move(atterisage)
+dracaufeu.change_talent(talents["None"]())
 print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"pv":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
@@ -34,7 +35,7 @@ leviator.learn_move(crocgivre)
 leviator.learn_move(cascade)
 leviator.learn_move(aquajet)
 leviator.learn_move(seisme)
-dracaufeu.change_talent(talents["Intimidation"]())
+leviator.change_talent(talents["Intimidation"]())
 print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
 pikachu_EV = {"pv":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
