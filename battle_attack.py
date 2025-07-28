@@ -5,67 +5,83 @@ from random import randint
 from battle_timing  import Timing,timing_lock,current_timing,check_timing_talent
 
 def check_move(move_id: str):
-    return move_id in ["move1","move2","move3","move4"]
+    return move_id in ["move1", "move2", "move3", "move4"]
 
-def check_prio(pokemon:Pokemon, move_id:str, pokemon_ia:Pokemon,move_id_ia:str):
-    move = getattr(pokemon, move_id)
-    print(f"move joueur:{move}, prio: {move.prio}")
-    move_ia = getattr(pokemon_ia,move_id_ia)
-    print(f"move IA:{move_ia}, prio: {move_ia.prio}")
-    if move_ia.prio > move.prio or pokemon_ia.vit > pokemon.vit:
-        return pokemon_ia,move_id_ia,pokemon,move_id, True
-    return pokemon,move_id,pokemon_ia,move_id_ia,False
+def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
+    """Exécute un tour complet de combat entre deux Pokémon."""
 
-def turn(pokemon_1: Pokemon, pokemon_ia: Pokemon, move_id: str,window,res_scene,resolution):
-
-    pygame.draw.rect(window, BLACK, (0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+    # Nettoyage interface
+    pygame.draw.rect(window, (0, 0, 0), (0, res_scene[1], resolution[0], resolution[1] - res_scene[1]))
     pygame.display.flip()
-    
-    if not check_move(move_id):
-        return Exception(f"Error: {move_id} n'est pas un attribut du Pokemon Allié")
-   
-    # Changer ou non l'order selon la prio des attaques ou la vitesse des pokemon
-    move_id_ia = f"move{randint(1,len(pokemon_ia.get_moveset()))}"   # a modifier plus tard si vrai reflextion
-    if not check_move(move_id_ia):
-        return Exception(f"Error: {move_id_ia} n'est pas un attribut du Pokemon Ennemi")
-    
-    pokemon_1,move_id_1,pokemon_2,move_id_2,bool_change = check_prio(pokemon_1,move_id,pokemon_ia,move_id_ia)
 
-    # Attaque du Pokémon le plus rapide
+    # Vérification validité du move joueur
+    if not check_move(move_id_player):
+        raise Exception(f"Erreur : {move_id_player} n'est pas un move valide.")
+
+    # Choix du move de l'IA
+    move_id_ia = f"move{randint(1, len(pokemon_2.get_moveset()))}"
+    if not check_move(move_id_ia):
+        raise Exception(f"Erreur : {move_id_ia} n'est pas un move valide pour l'IA.")
+
+    # Récupération des moves
+    move_player = getattr(pokemon_1, move_id_player)
+    move_ia = getattr(pokemon_2, move_id_ia)
+
+    # Détermination de l'ordre : priorité > vitesse
+    if move_player.prio > move_ia.prio:
+        first, first_move_id = pokemon_1, move_id_player
+        second, second_move_id = pokemon_2, move_id_ia
+    elif move_ia.prio > move_player.prio:
+        first, first_move_id = pokemon_2, move_id_ia
+        second, second_move_id = pokemon_1, move_id_player
+    else:
+        if pokemon_1.vit >= pokemon_2.vit:
+            first, first_move_id = pokemon_1, move_id_player
+            second, second_move_id = pokemon_2, move_id_ia
+        else:
+            first, first_move_id = pokemon_2, move_id_ia
+            second, second_move_id = pokemon_1, move_id_player
+
+    # TIMING : ABOUT_TO_GET_HIT
     with timing_lock:
-        current_timing = Timing.ABOUT_TO_GET_HIT
-    pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
-    
-    pokemon_1, pokemon_2 = pokemon_1.use_move(move_id_1,pokemon_2,window)
+        Timing.current_timing = Timing.ABOUT_TO_GET_HIT
+    check_timing_talent(first, second)
+
+    # ATTAQUE DU PREMIER
+    first, second = first.use_move(first_move_id, second, window)
+
+    # TIMING : GOT_HIT
     with timing_lock:
-        current_timing = Timing.GOT_HIT 
-    pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
-     
-    # barre de vie dans la fentre direct
-    print(f"PP {pokemon_1.name} {move_id_1}: {getattr(pokemon_1,move_id_1).pp}, Pv {pokemon_2.name}: {pokemon_2.pv}\n")  
+        Timing.current_timing = Timing.GOT_HIT
+    check_timing_talent(first, second)
+
+    # Log
+    move = getattr(first, first_move_id)
+    print(f"PP {first.name} {first_move_id}: {move.pp}, Pv {second.name}: {second.pv}\n")
+
     pygame.time.delay(1500)
-    
-    # Si le Pokémon 2 (le moins rapide) n'est pas mort il attaque
-    if not pokemon_2.is_dead():
+
+    # ATTAQUE DU SECOND SI VIVANT
+    if not second.is_dead():
         with timing_lock:
-            current_timing = Timing.ABOUT_TO_GET_HIT
-        pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
-        pokemon_2, pokemon_1 = pokemon_2.use_move(move_id_2,pokemon_1,window)
+            Timing.current_timing = Timing.ABOUT_TO_GET_HIT
+        check_timing_talent(second, first)
+
+        second, first = second.use_move(second_move_id, first, window)
+
         with timing_lock:
-            current_timing = Timing.GOT_HIT
-        pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
-        # barre de vie dans la fentre direct
-        print(f"PP {pokemon_2.name} {move_id_2}: {getattr(pokemon_2,move_id_2).pp}, Pv {pokemon_1.name}: {pokemon_1.pv}\n")  
-            
-    pygame.time.delay(500)
-    
-    if bool_change:
-        pokemon_1,pokemon_2 = pokemon_2, pokemon_1
+            Timing.current_timing = Timing.GOT_HIT
+        check_timing_talent(second, first)
+
+        move = getattr(second, second_move_id)
+        print(f"PP {second.name} {second_move_id}: {move.pp}, Pv {first.name}: {first.pv}\n")
+
+        pygame.time.delay(1000)
+
     with timing_lock:
-        current_timing = Timing.END
-    pokemon_1,pokemon_2 = check_timing_talent(pokemon_1,pokemon_2)
-    
-    return pokemon_1, pokemon_2, (not pokemon_2.is_dead() and not pokemon_1.is_dead())
+        Timing.current_timing = Timing.END
+
+    return pokemon_1, pokemon_2, (not pokemon_1.is_dead() and not pokemon_2.is_dead())
 
 
 """
