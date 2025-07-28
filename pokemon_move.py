@@ -1,8 +1,10 @@
 from pokemon_type import Type
 from collections import defaultdict
+import os,pygame,json
+from config import principal_dir_path,img_dir_path
 
 class Move:
-    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
+    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int, target= None,animation = None):
         self.name = name
         self.type = type 
         
@@ -12,14 +14,12 @@ class Move:
         
         self.effect = effect
         self.prio = prio
+        
+        self.target = target
+        self.animation = animation
     
     def __str__(self):
         return f"{self.name}" 
-    
-    def play_animation(self, window, attacker_sprite, defender_sprite, attacker_coords, defender_coords):
-        if self.animation:
-            self.animation(window, attacker_sprite, defender_sprite, attacker_coords, defender_coords)
-    
         
 class StatusMove(Move):
     def __init__(self, name: str, type: Type, precision: int, pp: int, effect: str, prio: int):

@@ -1,0 +1,12 @@
+{
+  "Crocs Givre": {
+    "spritesheet": "teeth.png",
+    "frame_width": 192,
+    "frame_height": 192,
+    "cols": 3,
+    "rows": 5,
+    "total_frames": 15,
+    "zoom": 2,
+    "frame_duration": 100
+  }
+}
