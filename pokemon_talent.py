@@ -1,24 +1,23 @@
 from battle_timing import Timing
 
 class Talent:
-    def __init__(self, name, description, effect, timing:Timing):
+    def __init__(self, name, description, effect, timing:Timing, frequency = 1):
         self.name = name
         self.description = description
-        self.effect = effect    # fonction callable that applies the effect
+        self.effect = effect
         self.timing = timing
+        self.frequency = frequency
 
     def __str__(self):
         return f"{self.name}"
     
-def torche():
+def intimidation(pokemon_1,pokemon_2):
     """Talent: Torche"""
-    def effect(pokemon):
-        # When hit by a Fire-type move, the Pokémon's Special Attack is raised by 1 stage.
-        pokemon.atk_spe += 1    #to change cause meh wrong implementation
-        print(f"{pokemon.name}'s Special Attack rose!")
+    def effect():
+        print(f"{pokemon_1.name}'s Talent!")
 
-    return Talent("Torche", "Boosts the Special Attack when hit by a Fire-type move.", effect, Timing.ABOUT_TO_GET_HIT)
+    return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.Start, frequency=1)
 
 talents = {
-    "torche": torche,
+    "intimidation": intimidation,
 }
