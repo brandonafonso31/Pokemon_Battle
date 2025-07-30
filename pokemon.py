@@ -210,16 +210,15 @@ class Pokemon:
         self.talent = talent
         print(f"{self.name} a désormais le talent {talent}")
         
-    def get_modified_stat(self, stat_name):
+    def change_stat_from_buff_debuff(self, stat_name):
         """Renvoie la stat modifiée par les stages."""
-        stage = self.stat_modifiers[stat_name]
+        scale = self.stat_modifiers[stat_name]
         base_value = getattr(self, stat_name)
-        if stage >= 0:
-            modifier = (2 + stage) / 2
+        if scale >= 0:
+            base_value = (2 + scale) / 2
         else:
-            modifier = 2 / (2 - stage)
-
-        return int(base_value * modifier)
+            base_value = 2 / (2 - scale)
+        
     
     def add_buff_debuff(self, stat_name, scale=1):
         stat = self.stat_modifiers[stat_name]
