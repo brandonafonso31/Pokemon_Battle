@@ -219,8 +219,8 @@ class Pokemon:
         else:
             base_value = 2 / (2 - scale)
         
-    
     def add_buff_debuff(self, stat_name, scale=1):
+        boolean_change_stat = False
         stat = self.stat_modifiers[stat_name]
         if stat >= 6 and scale > 0:
             print(f"{self.name} ne peut pas augmenter {stat_name} au delà de 6")
@@ -228,6 +228,21 @@ class Pokemon:
             print(f"{self.name} ne peut pas baisser {stat_name} en dessous de -6")
         else:
             stat += scale
+            boolean_change_stat = True
+        return boolean_change_stat
+            
+    def apply_buff_debuff(self, stat_name, scale=1):
+        """Applique un buff ou un debuff à une stat."""
+        if stat_name not in self.stats_modifier:
+            print(f"Stat {stat_name} non reconnue.")
+            return
+        
+        boolean_change_stat = self.add_buff_debuff(stat_name, scale)
+        self.change_stat_from_buff_debuff(stat_name)
+        if scale > 0 and boolean_change_stat:
+            print(f"{self.name} a augmenté {stat_name} de {scale} stages.")
+        elif scale < 0 and boolean_change_stat:
+            print(f"{self.name} a diminué {stat_name} de {-scale} stages.")
 
 
 
