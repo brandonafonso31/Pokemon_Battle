@@ -17,10 +17,12 @@ class Timing(Enum):
 
 def apply_timing_effect(pokemon_using_talent, pokemon_2):
     timing_talent = pokemon_using_talent.talent.timing
+    talent = pokemon_using_talent.talent
     with timing_lock:
         #print(f"Timing actuel: {current_timing}, Timing talent: {timing_talent}")
-        if current_timing == timing_talent and pokemon_using_talent.talent.can_trigger():
-            pokemon_using_talent.talent.effect(pokemon_using_talent,pokemon_2)
+        if current_timing == timing_talent:
+            talent.trigger(pokemon_using_talent, pokemon_2)
+            
     return pokemon_using_talent, pokemon_2 
     
 def check_timing_talent(pokemon_1, pokemon_2):
