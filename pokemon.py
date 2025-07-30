@@ -212,7 +212,7 @@ class Pokemon:
         
     def change_stat_from_buff_debuff(self, stat_name):
         """Renvoie la stat modifiée par les stages."""
-        scale = self.stat_modifiers[stat_name]
+        scale = self.stat_modifier[stat_name]
         base_value = getattr(self, stat_name)
         if scale >= 0:
             ratio = (2 + scale) / 2
@@ -222,7 +222,7 @@ class Pokemon:
         
     def add_buff_debuff(self, stat_name, scale=1):
         boolean_change_stat = False
-        stat = self.stat_modifiers[stat_name]
+        stat = self.stat_modifier[stat_name]
         if stat >= 6 and scale > 0:
             print(f"{self.name} ne peut pas augmenter {stat_name} au delà de 6")
         elif stat <= -6 and scale < 0:
