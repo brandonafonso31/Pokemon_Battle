@@ -26,7 +26,7 @@ class Pokemon:
         
         # Stats Meilleurs avec dic_stat = {} ?
         self.EV = EV
-        self.pv = real_pv("pv",pv,nature,EV["pv"])
+        self.pv = real_pv(pv,EV["pv"])
         self.atk = real_stat("atk",atk,nature,EV["atk"])
         self.def_ = real_stat("def_",def_,nature,EV["def_"])
         self.atk_spe = real_stat("atk_spe",atk_spe,nature,EV["atk_spe"])
@@ -227,7 +227,7 @@ class Pokemon:
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
      
-def real_pv(stat_name:str, pv:int, nature:Nature, EV:int, IV=31, niv=50):
+def real_pv(pv:int, EV:int, IV=31, niv=50):
     pv = (2 * pv + IV + EV//4) * niv
     pv = pv// 100 + niv + 10
     return pv
