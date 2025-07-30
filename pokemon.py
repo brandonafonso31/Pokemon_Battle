@@ -215,9 +215,10 @@ class Pokemon:
         scale = self.stat_modifiers[stat_name]
         base_value = getattr(self, stat_name)
         if scale >= 0:
-            base_value = (2 + scale) / 2
+            ratio = (2 + scale) / 2
         else:
-            base_value = 2 / (2 - scale)
+            ratio = 2 / (2 - scale)
+        return int(base_value * ratio)
         
     def add_buff_debuff(self, stat_name, scale=1):
         boolean_change_stat = False
