@@ -3,6 +3,7 @@ import pygame
 from config import BLACK
 from random import randint
 from battle_timing  import Timing,timing_lock,current_timing,check_timing_talent
+import ui_battle
 
 def check_move(move_id: str):
     return move_id in ["move1", "move2", "move3", "move4"]
@@ -35,12 +36,14 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         first, first_move_id = pokemon_2, move_id_ia
         second, second_move_id = pokemon_1, move_id_player
     else:
+        first_from_trainer = True
         if pokemon_1.vit >= pokemon_2.vit:
             first, first_move_id = pokemon_1, move_id_player
             second, second_move_id = pokemon_2, move_id_ia
         else:
             first, first_move_id = pokemon_2, move_id_ia
             second, second_move_id = pokemon_1, move_id_player
+            first_from_trainer = False
 
     # TIMING : ABOUT_TO_GET_HIT
     with timing_lock:
@@ -49,6 +52,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
 
     # ATTAQUE DU PREMIER
     first, second = first.use_move(first_move_id, second, window)
+    ui_battle.draw_hp_bar(window, first, from_trainer=first_from_trainer)
 
     # TIMING : GOT_HIT
     with timing_lock:
@@ -68,7 +72,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         check_timing_talent(second, first)
 
         second, first = second.use_move(second_move_id, first, window)
-
+        ui_battle.draw_hp_bar(window, second, from_trainer=not first_from_trainer)
         with timing_lock:
             Timing.current_timing = Timing.GOT_HIT
         check_timing_talent(second, first)
