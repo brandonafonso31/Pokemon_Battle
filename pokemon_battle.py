@@ -49,10 +49,8 @@ def get_trainer_sprite(res):
     update_battle_json({"pokemon_trainer": pokemon_json})
     return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
 
-def update_battle_json(updates: dict, path=None):
-    if path is None:
-        from config import battle_dir_path  # à adapter selon ton architecture
-        path = os.path.join(battle_dir_path, "battle.json")
+def update_battle_json(updates: dict):
+    path = battle_json_path
 
     if os.path.exists(path):
         with open(path, "r") as f:
