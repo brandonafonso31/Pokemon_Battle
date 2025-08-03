@@ -29,14 +29,15 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     move_ia = getattr(pokemon_2, move_id_ia)
 
     # Détermination de l'ordre : priorité > vitesse
+    first_from_trainer = True
     if move_player.prio > move_ia.prio:
         first, first_move_id = pokemon_1, move_id_player
         second, second_move_id = pokemon_2, move_id_ia
     elif move_ia.prio > move_player.prio:
         first, first_move_id = pokemon_2, move_id_ia
         second, second_move_id = pokemon_1, move_id_player
+        first_from_trainer = False
     else:
-        first_from_trainer = True
         if pokemon_1.vit >= pokemon_2.vit:
             first, first_move_id = pokemon_1, move_id_player
             second, second_move_id = pokemon_2, move_id_ia
