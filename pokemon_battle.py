@@ -2,11 +2,7 @@ from pokemon_move import *
 from pokemon_init import dracaufeu,leviator
 from pokemon import Pokemon
 from config import img_dir_path,song_dir_path,battle_dir_path,battle_json_path
-import ui_battle
-
-import os
-import sprite
-import pygame
+import ui_battle, os, sprite, pygame
 
 def get_sprite(pokemon: Pokemon,front_or_back: str):
     pokemon_sprite = pokemon.sprites(front_or_back)
