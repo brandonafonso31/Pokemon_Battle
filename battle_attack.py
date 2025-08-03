@@ -53,7 +53,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
 
     # ATTAQUE DU PREMIER
     first, second = first.use_move(first_move_id, second, window)
-    ui_battle.draw_hp_bar(window, first, from_trainer=first_from_trainer)
+    ui_battle.refresh_screen(window, pokemon_1, pokemon_2)
 
     # TIMING : GOT_HIT
     with timing_lock:
@@ -73,7 +73,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         check_timing_talent(second, first)
 
         second, first = second.use_move(second_move_id, first, window)
-        ui_battle.draw_hp_bar(window, second, from_trainer=not first_from_trainer)
+        ui_battle.refresh_screen(window, pokemon_1, pokemon_2)
         with timing_lock:
             Timing.current_timing = Timing.GOT_HIT
         check_timing_talent(second, first)
