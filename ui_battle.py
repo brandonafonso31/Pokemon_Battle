@@ -1,9 +1,7 @@
 from button import *
 from PIL import ImageColor
-from config import img_dir_path,BLACK
-import os 
-import battle_attack
-from config import BLACK,res_scene
+from config import img_dir_path,BLACK,battle_json_path,res_scene
+import os,battle_attack,json
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
@@ -52,3 +50,22 @@ def draw_hp_bar(window, pokemon, from_trainer):
     font = pygame.font.SysFont("arial", 20)
     text = font.render(f"{pokemon.name} HP: {pokemon.hp}/{pokemon.hp_max}", True, BLACK)
     window.blit(text, (x, y))
+        
+def refresh_screen(window):
+    """Refresh the screen with the background."""
+    with open(battle_json_path, "r") as f:
+            data = json.load(f)
+    
+    background = pygame.image.load(data["background"]).convert()
+    window.blit(background, (0, 0))
+    
+    pokemon_trainer_path = data["pokemon_trainer"]
+    pokemon_trainer = pygame.image.load(pokemon_trainer_path["path_sprite"]).convert()
+    pokemon_trainer.set_colorkey(pokemon_trainer.get_first_pixel(pokemon_trainer_path["path_sprite"]))
+    window.blit(pokemon_trainer, (pokemon_trainer_path["x"], pokemon_trainer_path["y"]))
+    
+    pokemon_opponent_path = data["pokemon_opponent"]
+    pokemon_opponent = pygame.image.load(pokemon_opponent_path["path_sprite"]).convert()
+    pokemon_opponent.set_colorkey(pokemon_opponent.get_first_pixel(pokemon_opponent_path["path_sprite"]))
+    window.blit(pokemon_opponent, (pokemon_opponent_path["x"], pokemon_opponent_path["y"]))
+    pygame.display.flip()
