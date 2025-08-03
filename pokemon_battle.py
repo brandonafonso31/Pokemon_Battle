@@ -97,13 +97,3 @@ def start_battle(window,res):
     
     ui_battle.refresh_screen(window,pokemon_trainer, pokemon_opponent)
     return pokemon_trainer,pokemon_opponent,window
-
-"""def refresh_screen(window,resolution):
-    background = pygame.image.load(os.path.join(img_dir_path,"background/forest.jpg")).convert()
-    window.blit(background,(0,0))
-    pygame.display.flip()
-    pygame.time.delay(500)
-    window.blit(opponent_pokemon_sprite,coord_opp)
-    window.blit(trainer_pokemon_sprite,coord_trainer)
-    pygame.display.flip()
-    return window"""
