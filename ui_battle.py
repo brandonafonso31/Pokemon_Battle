@@ -80,3 +80,4 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent):
     # HP Bar
     draw_hp_bar(window, pokemon_trainer, True)
     draw_hp_bar(window, pokemon_opponent, False)
+    pygame.display.flip()
