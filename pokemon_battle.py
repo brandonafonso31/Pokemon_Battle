@@ -2,6 +2,7 @@ from pokemon_move import *
 from pokemon_init import dracaufeu,leviator
 from pokemon import Pokemon
 from config import img_dir_path,song_dir_path
+import ui_battle
 
 import os
 import sprite
@@ -60,6 +61,9 @@ def start_battle(window,res):
     pokemon_trainer,trainer_pokemon_sprite,coord_trainer = get_trainer_sprite(res)
     window.blit(trainer_pokemon_sprite,coord_trainer)
     pokemon_trainer.add_rect(coord_trainer)
+    
+    ui_battle.draw_hp_bar(window, pokemon_trainer, 200, 600)
+    ui_battle.draw_hp_bar(window, pokemon_opponent, 800, 200)
     return pokemon_trainer,pokemon_opponent,window
 
 """def refresh_screen(window,resolution):
