@@ -1,7 +1,7 @@
 from pokemon_move import *
 from pokemon_init import dracaufeu,leviator
 from pokemon import Pokemon
-from config import img_dir_path,song_dir_path,battle_dir_path
+from config import img_dir_path,song_dir_path,battle_dir_path,battle_json_path
 import ui_battle
 
 import os
@@ -25,7 +25,12 @@ def get_opponent_sprite(res):
     y_opponent = sprite.get_base_pixel(path_sprite)
     y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
     x_opponent = res[0]//2 + 75
-    json_dump(path_sprite, x_opponent, y_opponent,from_trainer=False)
+    pokemon_json = {
+        "path_sprite": path_sprite,
+        "x": x_opponent,
+        "y": y_opponent
+    }
+    update_battle_json({"pokemon_opponent": pokemon_json})
     
     return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
 
@@ -36,31 +41,28 @@ def get_trainer_sprite(res):
     y_trainer = sprite.get_top_pixel(path_sprite)
     y_trainer = res[1] - 3*(96 - y_trainer) - 350
     x_trainer = res[0]//2 - 75*2 - 96*2
-    json_dump(trainer_pokemon_sprite, x_trainer, y_trainer,from_trainer=True)
+    pokemon_json = {
+        "path_sprite": path_sprite,
+        "x": x_trainer,
+        "y": y_trainer
+    }
+    update_battle_json({"pokemon_trainer": pokemon_json})
     return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
 
-def json_dump(path_pokemon_sprite, x, y, from_trainer):
-    battle_json_path = os.path.join(battle_dir_path, "battle.json")
+def update_battle_json(updates: dict, path=None):
+    if path is None:
+        from config import battle_dir_path  # à adapter selon ton architecture
+        path = os.path.join(battle_dir_path, "battle.json")
 
-    # On essaye de charger le JSON s'il existe déjà
-    if os.path.exists(battle_json_path):
-        with open(battle_json_path, "r") as f:
+    if os.path.exists(path):
+        with open(path, "r") as f:
             data = json.load(f)
     else:
         data = {}
 
-    pokemon_json = {
-        "path_sprite": path_pokemon_sprite,
-        "x": x,
-        "y": y
-    }
+    data.update(updates)
 
-    if from_trainer:
-        data["from_trainer"] = pokemon_json
-    else:
-        data["pokemon_opponent"] = pokemon_json
-
-    with open(battle_json_path, "w") as f:
+    with open(path, "w") as f:
         json.dump(data, f, indent=4)
 
 def get_image(image_path):
@@ -95,9 +97,10 @@ def start_battle(window,res):
     ui_battle.draw_hp_bar(window, pokemon_trainer, from_trainer=True)
     ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
     
-    with open(os.path.join(battle_dir_path,"battle.json"), "w") as f:
-        f["music"] = music_path
-        f["background"] = background_path
+    update_battle_json({
+        "music": music_path,
+        "background": background_path
+    })
         
     return pokemon_trainer,pokemon_opponent,window
 
