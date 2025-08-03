@@ -87,12 +87,3 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         Timing.current_timing = Timing.END
 
     return pokemon_1, pokemon_2, (not pokemon_1.is_dead() and not pokemon_2.is_dead())
-
-
-"""
-def battle(pokemon_trainer: Pokemon,pokemon_opponent: Pokemon):
-    in_battle = True
-    while in_battle and not pokemon_trainer.is_dead() and not pokemon_opponent.is_dead():
-        pokemon_trainer,pokemon_opponent, in_battle = turn(pokemon_trainer,pokemon_opponent)
-    return pokemon_trainer,pokemon_opponent, in_battle
-"""
