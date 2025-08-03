@@ -56,9 +56,11 @@ def refresh_screen(window):
     with open(battle_json_path, "r") as f:
             data = json.load(f)
     
+    # Background
     background = pygame.image.load(data["background"]).convert()
     window.blit(background, (0, 0))
     
+    # Pokemon Trainer
     pokemon_trainer_path = data["pokemon_trainer"]
     pokemon_trainer = pygame.image.load(pokemon_trainer_path["path_sprite"]).convert()
     pokemon_trainer.set_colorkey(sprite.get_first_pixel(pokemon_trainer_path["path_sprite"]))
@@ -66,10 +68,15 @@ def refresh_screen(window):
     pokemon_trainer = pygame.transform.scale(pokemon_trainer, (scale * 100,scale * 100))
     window.blit(pokemon_trainer, (pokemon_trainer_path["x"], pokemon_trainer_path["y"]))
     
+    # Pokemon Opponent
     pokemon_opponent_path = data["pokemon_opponent"]
     pokemon_opponent = pygame.image.load(pokemon_opponent_path["path_sprite"]).convert()
     pokemon_opponent.set_colorkey(sprite.get_first_pixel(pokemon_opponent_path["path_sprite"]))
     scale = 2
     pokemon_opponent = pygame.transform.scale(pokemon_opponent, (scale * 100,scale * 100))
     window.blit(pokemon_opponent, (pokemon_opponent_path["x"], pokemon_opponent_path["y"]))
-    pygame.display.flip()
+    #pygame.display.flip()
+    
+    # HP Bar
+    draw_hp_bar(window, pokemon_trainer_path["pokemon"], True)
+    draw_hp_bar(window, pokemon_opponent_path["pokemon"], False)

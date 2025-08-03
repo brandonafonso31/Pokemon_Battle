@@ -18,14 +18,15 @@ def get_sprite(pokemon: Pokemon,front_or_back: str):
     return pokemon_sprite
 
 
-def get_opponent_sprite(res):
-    pokemon = dracaufeu
+def get_opponent_sprite(res, pokemon = dracaufeu):
+    
     opponent_pokemon_sprite = get_sprite(pokemon,"front")
     path_sprite = os.path.join(img_dir_path,"sprites/pokemon_front.png")
     y_opponent = sprite.get_base_pixel(path_sprite)
     y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
     x_opponent = res[0]//2 + 75
     pokemon_json = {
+        "pokemon": pokemon,
         "path_sprite": path_sprite,
         "x": x_opponent,
         "y": y_opponent
@@ -34,14 +35,14 @@ def get_opponent_sprite(res):
     
     return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
 
-def get_trainer_sprite(res):
-    pokemon = leviator
+def get_trainer_sprite(res, pokemon = leviator):
     trainer_pokemon_sprite = get_sprite(pokemon,"back")
     path_sprite = os.path.join(img_dir_path,"sprites/pokemon_back.png")
     y_trainer = sprite.get_top_pixel(path_sprite)
     y_trainer = res[1] - 3*(96 - y_trainer) - 350
     x_trainer = res[0]//2 - 75*2 - 96*2
     pokemon_json = {
+        "pokemon": pokemon,
         "path_sprite": path_sprite,
         "x": x_trainer,
         "y": y_trainer
