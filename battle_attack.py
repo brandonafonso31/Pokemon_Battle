@@ -57,7 +57,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
 
     # Log
     move = getattr(first, first_move_id)
-    print(f"PP {first.name} {first_move_id}: {move.pp}, Pv {second.name}: {second.pv}\n")
+    print(f"PP {first.name} {first_move_id}: {move.pp}, hp {second.name}: {second.hp}\n")
 
     pygame.time.delay(1500)
 
@@ -74,7 +74,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         check_timing_talent(second, first)
 
         move = getattr(second, second_move_id)
-        print(f"PP {second.name} {second_move_id}: {move.pp}, Pv {first.name}: {first.pv}\n")
+        print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
 
         pygame.time.delay(1000)
 
