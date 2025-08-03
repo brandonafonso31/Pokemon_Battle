@@ -1,6 +1,7 @@
+- implement trainer and pokemon_team
 - faire les talents
 - continue implementing target
-- add attribut for buff/debuff for each stat ( un tab [] ?)
+- edit hb_bar to move fluidly
 - add esquive et precision to pokemon ?
 - StatusMove à implémenter
 - implenter animations des attaques
