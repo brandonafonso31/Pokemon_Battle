@@ -99,7 +99,7 @@ def start_battle(window,res):
         "background": background_path
     })
     
-    ui_battle.refresh_screen(window)
+    ui_battle.refresh_screen(window,pokemon_trainer, pokemon_opponent)
     return pokemon_trainer,pokemon_opponent,window
 
 """def refresh_screen(window,resolution):

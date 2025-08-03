@@ -51,7 +51,7 @@ def draw_hp_bar(window, pokemon, from_trainer):
     text = font.render(f"{pokemon.name} HP: {pokemon.hp}/{pokemon.hp_max}", True, BLACK)
     window.blit(text, (x, y))
         
-def refresh_screen(window):
+def refresh_screen(window, pokemon_trainer, pokemon_opponent):
     """Refresh the screen with the background."""
     with open(battle_json_path, "r") as f:
             data = json.load(f)
@@ -62,21 +62,21 @@ def refresh_screen(window):
     
     # Pokemon Trainer
     pokemon_trainer_path = data["pokemon_trainer"]
-    pokemon_trainer = pygame.image.load(pokemon_trainer_path["path_sprite"]).convert()
-    pokemon_trainer.set_colorkey(sprite.get_first_pixel(pokemon_trainer_path["path_sprite"]))
+    pokemon_trainer_sprite = pygame.image.load(pokemon_trainer_path["path_sprite"]).convert()
+    pokemon_trainer_sprite.set_colorkey(sprite.get_first_pixel(pokemon_trainer_path["path_sprite"]))
     scale = 3
-    pokemon_trainer = pygame.transform.scale(pokemon_trainer, (scale * 100,scale * 100))
-    window.blit(pokemon_trainer, (pokemon_trainer_path["x"], pokemon_trainer_path["y"]))
+    pokemon_trainer_sprite = pygame.transform.scale(pokemon_trainer_sprite, (scale * 100,scale * 100))
+    window.blit(pokemon_trainer_sprite, (pokemon_trainer_path["x"], pokemon_trainer_path["y"]))
     
     # Pokemon Opponent
     pokemon_opponent_path = data["pokemon_opponent"]
-    pokemon_opponent = pygame.image.load(pokemon_opponent_path["path_sprite"]).convert()
-    pokemon_opponent.set_colorkey(sprite.get_first_pixel(pokemon_opponent_path["path_sprite"]))
+    pokemon_opponent_sprite = pygame.image.load(pokemon_opponent_path["path_sprite"]).convert()
+    pokemon_opponent_sprite.set_colorkey(sprite.get_first_pixel(pokemon_opponent_path["path_sprite"]))
     scale = 2
-    pokemon_opponent = pygame.transform.scale(pokemon_opponent, (scale * 100,scale * 100))
-    window.blit(pokemon_opponent, (pokemon_opponent_path["x"], pokemon_opponent_path["y"]))
+    pokemon_opponent_sprite = pygame.transform.scale(pokemon_opponent_sprite, (scale * 100,scale * 100))
+    window.blit(pokemon_opponent_sprite, (pokemon_opponent_path["x"], pokemon_opponent_path["y"]))
     #pygame.display.flip()
     
     # HP Bar
-    draw_hp_bar(window, pokemon_trainer_path["pokemon"], True)
-    draw_hp_bar(window, pokemon_opponent_path["pokemon"], False)
+    draw_hp_bar(window, pokemon_trainer, True)
+    draw_hp_bar(window, pokemon_opponent, False)
