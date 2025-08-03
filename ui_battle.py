@@ -3,6 +3,7 @@ from PIL import ImageColor
 from config import img_dir_path,BLACK
 import os 
 import battle_attack
+from config import BLACK,res_scene
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
@@ -28,10 +29,16 @@ def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemo
             
     return pokemon_trainer, pokemon_opponent, still_in_battle
 
-def draw_hp_bar(window, pokemon, x, y):
-    """Draw the HP bar of a pokemon"""
+def draw_hp_bar(window, pokemon, from_trainer):
+    """Draw the HP bar of a pokemon"""  
     hp_bar_length = 200
     hp_bar_height = 20
+    if from_trainer:
+        x = res_scene[0] - hp_bar_length - 50
+        y = res_scene[1] - hp_bar_height - 50
+    else:
+        x,y = 50,50
+            
     hp_ratio = pokemon.hp / (pokemon.hp_max if pokemon.hp_max > 0 else 1.0)
     
     # Draw the background of the HP bar
@@ -43,5 +50,5 @@ def draw_hp_bar(window, pokemon, x, y):
     
     # Draw the text
     font = pygame.font.SysFont("arial", 20)
-    text = font.render(f"{pokemon.name} HP: {pokemon.hp}/{pokemon.hp_max}", True, (255, 255, 255))
-    window.blit(text, (x + 5, y + 2))
+    text = font.render(f"{pokemon.name} HP: {pokemon.hp}/{pokemon.hp_max}", True, BLACK)
+    window.blit(text, (x, y))

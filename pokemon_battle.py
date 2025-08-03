@@ -62,8 +62,8 @@ def start_battle(window,res):
     window.blit(trainer_pokemon_sprite,coord_trainer)
     pokemon_trainer.add_rect(coord_trainer)
     
-    ui_battle.draw_hp_bar(window, pokemon_trainer, 200, 600)
-    ui_battle.draw_hp_bar(window, pokemon_opponent, 800, 200)
+    ui_battle.draw_hp_bar(window, pokemon_trainer, from_trainer=True)
+    ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
     return pokemon_trainer,pokemon_opponent,window
 
 """def refresh_screen(window,resolution):
