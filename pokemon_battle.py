@@ -1,7 +1,7 @@
 from pokemon_move import *
 from pokemon_init import dracaufeu,leviator
 from pokemon import Pokemon
-from config import img_dir_path,song_dir_path
+from config import img_dir_path,song_dir_path,battle_dir_path
 import ui_battle
 
 import os
@@ -21,9 +21,22 @@ def get_sprite(pokemon: Pokemon,front_or_back: str):
 def get_opponent_sprite(res):
     pokemon = dracaufeu
     opponent_pokemon_sprite = get_sprite(pokemon,"front")
-    y_opponent = sprite.get_base_pixel(os.path.join(img_dir_path,"sprites/pokemon_front.png"))
+    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_front.png")
+    y_opponent = sprite.get_base_pixel(path_sprite)
     y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
     x_opponent = res[0]//2 + 75
+    
+    pokemon_json = {
+        "sprite": opponent_pokemon_sprite,
+        "name": pokemon.name,
+        "hp": pokemon.hp,
+        "hp_max": pokemon.hp_max,
+        "moveset": pokemon.get_moveset(),
+        "vit": pokemon.vit
+    }
+    with open(os.path.join(battle_dir_path,"pokemon_opponent.json"), "w") as f:
+        json.dumps(pokemon_json, indent=4)
+    
     return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
 
 
