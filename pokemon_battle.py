@@ -39,16 +39,29 @@ def get_trainer_sprite(res):
     json_dump(trainer_pokemon_sprite, x_trainer, y_trainer,from_trainer=True)
     return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
 
-def json_dump(path_pokemon_sprite, x_opponent, y_opponent,from_trainer):
+def json_dump(path_pokemon_sprite, x, y, from_trainer):
+    battle_json_path = os.path.join(battle_dir_path, "battle.json")
+
+    # On essaye de charger le JSON s'il existe déjà
+    if os.path.exists(battle_json_path):
+        with open(battle_json_path, "r") as f:
+            data = json.load(f)
+    else:
+        data = {}
+
     pokemon_json = {
         "path_sprite": path_pokemon_sprite,
-        "x": x_opponent,
-        "y": y_opponent
+        "x": x,
+        "y": y
     }
-    with open(os.path.join(battle_dir_path,"battle.json"), "w") as f:
-        if from_trainer:
-            f["from_trainer"] = pokemon_json
-        f["pokemon_opponent"] = pokemon_json
+
+    if from_trainer:
+        data["from_trainer"] = pokemon_json
+    else:
+        data["pokemon_opponent"] = pokemon_json
+
+    with open(battle_json_path, "w") as f:
+        json.dump(data, f, indent=4)
 
 def get_image(image_path):
     image = pygame.image.load(image_path).convert()
