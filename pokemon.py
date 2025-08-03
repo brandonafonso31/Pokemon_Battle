@@ -239,8 +239,8 @@ class Pokemon:
             return
         
         boolean_change_stat = self.add_buff_debuff(stat_name, scale)
-        self.change_stat_from_buff_debuff(stat_name)
         if boolean_change_stat:
+            self.change_stat_from_buff_debuff(stat_name)
             if scale > 0 :
                 print(f"{self.name} a augmenté {stat_name} de {scale} stages.")
             elif scale < 0 :
