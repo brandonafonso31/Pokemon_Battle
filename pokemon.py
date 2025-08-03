@@ -176,7 +176,7 @@ class Pokemon:
             return self, opponent
         # Apply type effectiveness
         damage *= self.get_cm(opponent, move)
-        damage = max(1, floor(damage))  # Ensure minimum damage of 1
+        damage = max(0, floor(damage))
         # Apply damage
         opponent.hp -= damage
         if opponent.hp <= 0:
