@@ -47,7 +47,7 @@ def json_dump(path_pokemon_sprite, x_opponent, y_opponent,from_trainer):
     }
     with open(os.path.join(battle_dir_path,"battle.json"), "w") as f:
         if from_trainer:
-            pokemon_json["from_trainer"] = pokemon_json
+            f["from_trainer"] = pokemon_json
         f["pokemon_opponent"] = pokemon_json
 
 def get_image(image_path):
@@ -58,11 +58,13 @@ def get_image(image_path):
 def start_battle(window,res):
     """Instancie les premiers éléments de la scène."""
     #-----------------------------| MUSIC |------------------------------#
-    pygame.mixer.music.load(os.path.join(song_dir_path,"elite_four/Battle_Elite_Four_BW.mp3"))
+    music_path = os.path.join(song_dir_path,"elite_four/Battle_Elite_Four_BW.mp3")
+    pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     #---------------------------| BACKGROUND |---------------------------#
-    background = pygame.image.load(os.path.join(img_dir_path,"background/forest.jpg")).convert()
+    background_path = os.path.join(img_dir_path,"background/forest.jpg")
+    background = pygame.image.load(background_path).convert()
     window.blit(background,(0,0))
     pygame.display.flip()
     #-------------------------| SPRITE ENNEMI |--------------------------#
@@ -79,6 +81,11 @@ def start_battle(window,res):
     
     ui_battle.draw_hp_bar(window, pokemon_trainer, from_trainer=True)
     ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
+    
+    with open(os.path.join(battle_dir_path,"battle.json"), "w") as f:
+        f["music"] = music_path
+        f["background"] = background_path
+        
     return pokemon_trainer,pokemon_opponent,window
 
 """def refresh_screen(window,resolution):
