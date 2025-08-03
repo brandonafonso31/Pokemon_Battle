@@ -25,28 +25,30 @@ def get_opponent_sprite(res):
     y_opponent = sprite.get_base_pixel(path_sprite)
     y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
     x_opponent = res[0]//2 + 75
-    
-    pokemon_json = {
-        "sprite": opponent_pokemon_sprite,
-        "name": pokemon.name,
-        "hp": pokemon.hp,
-        "hp_max": pokemon.hp_max,
-        "moveset": pokemon.get_moveset(),
-        "vit": pokemon.vit
-    }
-    with open(os.path.join(battle_dir_path,"pokemon_opponent.json"), "w") as f:
-        json.dumps(pokemon_json, indent=4)
+    json_dump(path_sprite, x_opponent, y_opponent,from_trainer=False)
     
     return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
-
 
 def get_trainer_sprite(res):
     pokemon = leviator
     trainer_pokemon_sprite = get_sprite(pokemon,"back")
-    y_trainer = sprite.get_top_pixel(os.path.join(img_dir_path,"sprites/pokemon_back.png"))
+    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_back.png")
+    y_trainer = sprite.get_top_pixel(path_sprite)
     y_trainer = res[1] - 3*(96 - y_trainer) - 350
     x_trainer = res[0]//2 - 75*2 - 96*2
+    json_dump(trainer_pokemon_sprite, x_trainer, y_trainer,from_trainer=True)
     return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
+
+def json_dump(path_pokemon_sprite, x_opponent, y_opponent,from_trainer):
+    pokemon_json = {
+        "path_sprite": path_pokemon_sprite,
+        "x": x_opponent,
+        "y": y_opponent
+    }
+    with open(os.path.join(battle_dir_path,"battle.json"), "w") as f:
+        if from_trainer:
+            pokemon_json["from_trainer"] = pokemon_json
+        f["pokemon_opponent"] = pokemon_json
 
 def get_image(image_path):
     image = pygame.image.load(image_path).convert()
