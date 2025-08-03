@@ -5,8 +5,8 @@ from pokemon_nature import Nature
 from pokemon_talent import Talent,talents
 
 #--------------------------------------| Dracaufeu |--------------------------------------#
-dracaufeu_EV = {"pv":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
-dracaufeu = Pokemon("Dracaufeu",pv=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,
+dracaufeu_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
+dracaufeu = Pokemon("Dracaufeu",hp=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,
                     type1=Type.FEU,type2=Type.VOL,num_on_sprite_sheet=7,EV=dracaufeu_EV,nature=Nature.MODESTE)
 
 lance_flamme = SpecialMove("Lance-Flammes",Type.FEU,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Flammes"], prio = 0)
@@ -21,8 +21,8 @@ dracaufeu.learn_move(lance_soleil)
 dracaufeu.change_talent(talents["Intimidation"]())
 print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
-leviator_EV = {"pv":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
-leviator = Pokemon("Léviator",pv=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=81,gen=1,
+leviator_EV = {"hp":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
+leviator = Pokemon("Léviator",hp=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=81,gen=1,
                    type1=Type.EAU,type2=Type.VOL,num_on_sprite_sheet=151,EV=leviator_EV, nature=Nature.RIGIDE)
 
 crocgivre = PhysicalMove("Crocs Givre",Type.GLACE,power=65,precision=95,pp=15, effect = dico_effect_move["Crocs Givre"], prio = 0)
@@ -38,8 +38,8 @@ leviator.learn_move(seisme)
 leviator.change_talent(talents["Intimidation"]())
 print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
-pikachu_EV = {"pv":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
-pikachu = Pokemon("Pikachu",pv=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
+pikachu_EV = {"hp":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
+pikachu = Pokemon("Pikachu",hp=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
                    type1=Type.ELECTRIQUE,num_on_sprite_sheet=30,EV=pikachu_EV, nature=Nature.BRAVE)
 
 cage_eclair = StatusMove("Cage-Éclair",Type.ELECTRIQUE,precision=90,pp=20, effect = dico_effect_move["Cage-Éclair"], prio = 0)

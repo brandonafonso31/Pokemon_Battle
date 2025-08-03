@@ -14,8 +14,8 @@ import pygame
 LINE_PRINT = "-"*70
 
 class Pokemon:
-    def __init__(self,name: str,pv: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
-        gen: int,type1: Type, nature:Nature= Nature.BIZARRE, EV={"pv":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0}, \
+    def __init__(self,name: str,hp: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
+        gen: int,type1: Type, nature:Nature= Nature.BIZARRE, EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0}, \
             type2=None,talent:Talent=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname=""):
         
         # Infos
@@ -26,19 +26,19 @@ class Pokemon:
         
         # Stats Meilleurs avec dic_stat = {} ?
         self.EV = EV
-        self.pv = real_pv(pv,EV["pv"])
+        self.hp = real_hp(hp,EV["hp"])
         self.atk = real_stat("atk",atk,nature,EV["atk"])
         self.def_ = real_stat("def_",def_,nature,EV["def_"])
         self.atk_spe = real_stat("atk_spe",atk_spe,nature,EV["atk_spe"])
         self.def_spe = real_stat("def_sep",def_spe,nature,EV["def_spe"])
         self.vit = real_stat("vit",vit,nature,EV["vit"])
-        self.hp_max = self.pv      
+        self.hp_max = self.hp      
         
         self.legit = self.check_sum_EV() and self.check_each_EV()
         
         # Buff / Debuff
         self.stats_modifier = { 
-            "pv": 0,
+            "hp": 0,
             "atk": 0,
             "def_": 0,
             "atk_spe": 0,
@@ -88,9 +88,9 @@ class Pokemon:
             types += f", TYPE2: {self.type2.name}"
         return types
     def get_stats(self):
-        return [self.pv,self.atk,self.def_,self.atk_spe,self.def_spe,self.vit]
+        return [self.hp,self.atk,self.def_,self.atk_spe,self.def_spe,self.vit]
     def show_stats(self):
-        return f"PV: {self.pv},\nATK: {self.atk},\nDEF: {self.def_},\nATK_SPE: {self.atk_spe},\nDEF_SPE: {self.def_spe},\nVIT: {self.vit}"
+        return f"hp: {self.hp},\nATK: {self.atk},\nDEF: {self.def_},\nATK_SPE: {self.atk_spe},\nDEF_SPE: {self.def_spe},\nVIT: {self.vit}"
     
     
     def show_moves(self):
@@ -178,15 +178,15 @@ class Pokemon:
         damage *= self.get_cm(opponent, move)
         damage = max(1, floor(damage))  # Ensure minimum damage of 1
         # Apply damage
-        opponent.pv -= damage
-        if opponent.pv <= 0:
-            opponent.pv = 0
+        opponent.hp -= damage
+        if opponent.hp <= 0:
+            opponent.hp = 0
             print(f"{opponent.name} fainted!")
         return self, opponent
     
             
     def heal(self):
-        self.pv = self.hp_max
+        self.hp = self.hp_max
         print(f"{self.name} a été soigné")
         return self
     
@@ -194,7 +194,7 @@ class Pokemon:
         return [move for move in [self.move1, self.move2, self.move3, self.move4] if move is not None]
 
     def is_dead(self):
-        return self.pv <= 0
+        return self.hp <= 0
     
     def check_sum_EV(self):
         return sum([_ for _ in self.EV.values()]) <= 510
@@ -251,10 +251,10 @@ class Pokemon:
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
      
-def real_pv(pv:int, EV:int, IV=31, niv=50):
-    pv = (2 * pv + IV + EV//4) * niv
-    pv = pv// 100 + niv + 10
-    return pv
+def real_hp(hp:int, EV:int, IV=31, niv=50):
+    hp = (2 * hp + IV + EV//4) * niv
+    hp = hp// 100 + niv + 10
+    return hp
 
 def real_stat(stat_name:str, stat:int, nature:Nature, EV:int, IV=31, niv=50):
     stat = (2 * stat + IV + EV//4) * niv
