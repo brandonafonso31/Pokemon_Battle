@@ -1,14 +1,3 @@
 {
     "pokemon_opponent": {
-        "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites/pokemon_front.png",
-        "x": 600,
-        "y": 116
-    },
-    "pokemon_trainer": {
-        "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites/pokemon_back.png",
-        "x": 183,
-        "y": 183
-    },
-    "music": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\song\\elite_four/Battle_Elite_Four_BW.mp3",
-    "background": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\background/forest.jpg"
-}
+        "pokemon": 
