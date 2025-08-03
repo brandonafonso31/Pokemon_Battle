@@ -1,7 +1,7 @@
 from button import *
 from PIL import ImageColor
 from config import img_dir_path,BLACK,battle_json_path,res_scene
-import os,battle_attack,json
+import os,battle_attack,json,sprite
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
@@ -61,11 +61,11 @@ def refresh_screen(window):
     
     pokemon_trainer_path = data["pokemon_trainer"]
     pokemon_trainer = pygame.image.load(pokemon_trainer_path["path_sprite"]).convert()
-    pokemon_trainer.set_colorkey(pokemon_trainer.get_first_pixel(pokemon_trainer_path["path_sprite"]))
+    pokemon_trainer.set_colorkey(sprite.get_first_pixel(pokemon_trainer_path["path_sprite"]))
     window.blit(pokemon_trainer, (pokemon_trainer_path["x"], pokemon_trainer_path["y"]))
     
     pokemon_opponent_path = data["pokemon_opponent"]
     pokemon_opponent = pygame.image.load(pokemon_opponent_path["path_sprite"]).convert()
-    pokemon_opponent.set_colorkey(pokemon_opponent.get_first_pixel(pokemon_opponent_path["path_sprite"]))
+    pokemon_opponent.set_colorkey(sprite.get_first_pixel(pokemon_opponent_path["path_sprite"]))
     window.blit(pokemon_opponent, (pokemon_opponent_path["x"], pokemon_opponent_path["y"]))
     pygame.display.flip()
