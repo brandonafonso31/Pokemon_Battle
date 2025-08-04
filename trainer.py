@@ -26,8 +26,8 @@ class Trainer:
         self.pokemon_team.append(pokemon)
  
 from pokemon_init import leviator,dracaufeu,pikachu     
-dresseur_test = Trainer("Ash")
-dresseur_test.catch_pokemon(leviator)
-dresseur_test.catch_pokemon(dracaufeu)
-dresseur_test.catch_pokemon(pikachu)
-print(dresseur_test)
+trainer_ai = Trainer("Ash")
+trainer_ai.catch_pokemon(dracaufeu)
+trainer = Trainer("Brandon")
+trainer.catch_pokemon(leviator)
+print(trainer_ai,trainer,sep="\n")
