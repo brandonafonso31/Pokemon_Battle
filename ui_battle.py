@@ -51,11 +51,17 @@ def draw_hp_bar(window, pokemon, from_trainer,damage = 0):
     pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
     
     # Draw the current HP
-    current_hp_length = int(hp_bar_length * hp_ratio_before_damage)
-    
+    current_length = int(hp_bar_length * hp_ratio_before_damage)
     target_length = int(hp_bar_length * hp_ratio)
-       
-    if current_hp_length < pokemon.hp_max:
+    
+        # Draw the text
+    font = pygame.font.SysFont("arial", 20)
+    text = font.render(f"{pokemon.name} HP: {pokemon.hp}/{pokemon.hp_max}", True, BLACK)
+    window.blit(text, (x, y-50))
+    
+    if current_length <= target_length:
+        pygame.draw.rect(window, (0, 255, 0), (x, y, current_length, hp_bar_height))
+    else:
         while current_length > target_length:
             current_length -= 2  # speed of animation
             if current_length < target_length:
@@ -63,21 +69,8 @@ def draw_hp_bar(window, pokemon, from_trainer,damage = 0):
             # Redessiner fond + barre
             pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
             pygame.draw.rect(window, (0, 255, 0), (x, y, current_length, hp_bar_height))
-            pygame.display.update()
-            pygame.time.delay(10)
-
-        # Redessiner fond + barre
-        pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
-        pygame.draw.rect(window, (0, 255, 0), (x, y, current_length, hp_bar_height))
-        pygame.display.update()
-        pygame.time.delay(10)
-    else: pygame.draw.rect(window, (0, 255, 0), (x, y, current_hp_length, hp_bar_height))
-    
-    # Draw the text
-    font = pygame.font.SysFont("arial", 20)
-    text = font.render(f"{pokemon.name} HP: {pokemon.hp}/{pokemon.hp_max}", True, BLACK)
-    window.blit(text, (x, y))
-    pygame.display.flip()
+            pygame.display.flip()
+            pygame.time.delay(10)    
         
 def refresh_screen(window, pokemon_trainer, pokemon_opponent, damage = 0):
     """Refresh the screen with the background."""
