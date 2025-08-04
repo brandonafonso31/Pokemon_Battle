@@ -1,4 +1,11 @@
-This is a first project on pygame to test limit.
-Only a one 1V1 currently, no animations.
+# Pokemon Battle - Pygame Project
 
-Plans : https://github.com/brandonafonso31/Pokemon_Battle/blob/5db16cc9928163475a31971797af3322b39fd994/todo.txt
+This is a first project on pygame to test limits. Currently features a 1v1 battle system with no animations.
+
+## Plans and Roadmap
+
+See our development plans in the [todo.txt](todo.txt) file.
+
+## Getting Started
+
+(Add your installation/usage instructions here)
