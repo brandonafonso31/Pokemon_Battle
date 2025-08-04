@@ -1,5 +1,5 @@
-- optimiser la fluidité de l'animation de la barre de vie car des fois semble bugger ? voir l'affichage des pv numériques descendrent
-- add  function to change pokemon team from pc
+- optimiser la fluidité de l'animation de la barre de vie car des fois semble bugger, l'app arrete de fonctionnner et contienue apres la barre de vie?
+- add function to change pokemon team from pc
 - ajouter animation quand décédé (faire bouger le sprite dans le sol ou le fair diminuer ...)
 - continuer d'implement trainer and pokemon_team
 - continuer les talents

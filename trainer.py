@@ -24,16 +24,24 @@ class Trainer:
     
     def catch_pokemon(self, pokemon, nickname=None):
         nb_pokmeon = len(self.pokemon_team)
+        pokemon.id = nb_pokmeon
         if nb_pokmeon >= 6:
             print(f"{self.name} a déjà 6 Pokémon dans son équipe.")
             self.pc.append(pokemon)
             print(f"{pokemon.name} a été envoyé dans la boîte PC.")
         else:
-            pokemon.dresseur = self
-            pokemon.id = nb_pokmeon
+            pokemon.trainer = self
             pokemon.nickname = nickname if nickname is not None else pokemon.name
             self.pokemon_team.append(pokemon)
             print(f"{self.name} a capturé {pokemon.name}")
+        
+    def change_pokemon(self, pokemon_id, new_pokemon):
+        if 0 <= pokemon_id < len(self.pokemon_team):
+            old_pokemon = self.pokemon_team[pokemon_id]
+            self.pokemon_team[pokemon_id] = new_pokemon
+            print(f"{self.name} a remplacé {old_pokemon.name} par {new_pokemon.name}")
+        else:
+            print(f"ID de Pokémon invalide: {pokemon_id}.")
  
 from pokemon_init import leviator,dracaufeu,pikachu     
 trainer_ai = Trainer("Ash")

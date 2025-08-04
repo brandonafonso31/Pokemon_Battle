@@ -65,7 +65,7 @@ class Pokemon:
         self.talent = talent 
         
         # A implementer
-        self.dresseur = None        # Dresseur ? je sais plus pour quoi faire ... 
+        self.trainer = None        # Dresseur ? je sais plus pour quoi faire ... 
         self.shiny = False          # change uniquement les scripts
         self.item = item            # objet tenu par le pokémon
     
@@ -74,7 +74,7 @@ class Pokemon:
         return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n"
     
     def __eq__(self, other):
-        return self.id == other.id  # id sera implémenter dans la classe Team_Pokemon est sera de 1 à 6 unique et vérifié
+        return self.id == other.id  and self.trainer == other.trainer # id sera implémenter dans la classe Team_Pokemon est sera de 1 à 6 unique et vérifié
         """return self.name == other.name and self.dresseur == other.dresseur \
             and self.EV == other.EV and self.get_moveset() == other.get_moveset() \
                 and self.get_stats() == other.get_stats() and self.nickname == other.nickname \
