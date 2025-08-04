@@ -4,6 +4,7 @@ class Trainer:
     def __init__(self, name: str):
         self.name = name
         self.pokemon_team = []
+        self.pc = []
     
     def __str__(self):
         string  = f"Dresseur: {self.name}\nPokémon:"
@@ -25,6 +26,8 @@ class Trainer:
         nb_pokmeon = len(self.pokemon_team)
         if nb_pokmeon >= 6:
             print(f"{self.name} a déjà 6 Pokémon dans son équipe.")
+            self.pc.append(pokemon)
+            print(f"{pokemon.name} a été envoyé dans la boîte PC.")
         else:
             pokemon.dresseur = self
             pokemon.id = nb_pokmeon
