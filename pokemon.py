@@ -6,8 +6,7 @@ from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
 from pokemon_talent import Talent
-
-import os, pygame, battle_attack
+import os, pygame
 
 LINE_PRINT = "-"*70
 
@@ -254,7 +253,7 @@ class Pokemon:
             # Animation simple : le Pokémon disparaît
             for _ in range(100):
                 self.rect.y += 5
-                window.blit(battle_attack.get_sprite(self,front_or_back),self.rect)
+                window.blit(sprite.get_sprite(self,front_or_back),self.rect)
                 pygame.display.update(self.rect)
                 pygame.time.delay(50)
 
