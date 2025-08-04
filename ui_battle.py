@@ -35,9 +35,15 @@ def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemo
             
     return pokemon_trainer, pokemon_opponent, still_in_battle
 
+def get_color(ratio):
+    if ratio > 0.5:
+        return (0, 255, 0)       # Vert
+    elif ratio > 0.2:
+        return (255, 165, 0)     # Orange
+    else:
+        return (255, 0, 0)       # Rouge
+        
 def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=None):
-    """Draw the HP bar of a pokemon, with optional animation if old_hp is given."""
-
     hp_bar_length = 200
     hp_bar_height = 20
 
@@ -53,7 +59,6 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=No
 
     current_length = int(hp_bar_length * (previous_hp / hp_max))
     target_length = int(hp_bar_length * (current_hp / hp_max))
-
     font = pygame.font.SysFont("arialblack", 20)
 
     if current_length > target_length and full_refresh_func:
@@ -61,14 +66,14 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=No
             current_length -= 2
             if current_length < target_length:
                 current_length = target_length
-
+            color = get_color(current_length / hp_bar_length)
             # Redessiner toute la scène à chaque frame pour éviter les artefacts
             full_refresh_func()
 
             # Redessiner la barre et le texte
             pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
             bar_rect = (x, y, current_length, hp_bar_height)
-            pygame.draw.rect(window, (0, 255, 0), bar_rect)
+            pygame.draw.rect(window, color, bar_rect)
 
             text = font.render(f"{pokemon.name} HP: {current_hp}/{hp_max}", True, BLACK)
             text_rect = text.get_rect(topleft=(x, y - 40))
@@ -81,12 +86,12 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=No
         bar_length = int(hp_bar_length * (current_hp / hp_max))
         pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
         bar_rect = (x, y, bar_length, hp_bar_height)
-        pygame.draw.rect(window, (0, 255, 0), bar_rect)
+        color = get_color(current_hp / hp_max)
+        pygame.draw.rect(window, color, bar_rect)
 
         text = font.render(f"{pokemon.name} HP: {current_hp}/{hp_max}", True, BLACK)
         text_rect = text.get_rect(topleft=(x, y - 40))
         window.blit(text, text_rect)
-
    
 def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
     """Refresh the screen with the background and all sprites."""
