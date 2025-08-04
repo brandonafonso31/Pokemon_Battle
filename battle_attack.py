@@ -53,8 +53,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
 
     # ATTAQUE DU PREMIER
     pygame.time.delay(1000)
-    first, second = first.use_move(first_move_id, second, window)
-    ui_battle.refresh_screen(window, pokemon_1, pokemon_2)
+    first, second, damage = first.use_move(first_move_id, second, window)
+    ui_battle.refresh_screen(window, pokemon_1, pokemon_2, damage)
 
     # TIMING : GOT_HIT
     with timing_lock:
@@ -73,8 +73,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
             Timing.current_timing = Timing.ABOUT_TO_GET_HIT
         check_timing_talent(second, first)
 
-        second, first = second.use_move(second_move_id, first, window)
-        ui_battle.refresh_screen(window, pokemon_1, pokemon_2)
+        second, first, damage = second.use_move(second_move_id, first, window)
+        ui_battle.refresh_screen(window, pokemon_1, pokemon_2, damage)
         with timing_lock:
             Timing.current_timing = Timing.GOT_HIT
         check_timing_talent(second, first)
