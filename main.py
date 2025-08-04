@@ -92,6 +92,9 @@ while run :
             elif in_battle == "continue":
                 current_menu = "main"
             
+            else:
+                current_menu = "attack"
+            
         elif current_menu == "team_pokemon":
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             # open_pokemon_team()
