@@ -79,7 +79,7 @@ def draw_hp_bar(window, pokemon, from_trainer,damage = 0):
     window.blit(text, (x, y))
     pygame.display.flip()
         
-def refresh_screen(window, pokemon_trainer, pokemon_opponent):
+def refresh_screen(window, pokemon_trainer, pokemon_opponent, damage = 0):
     """Refresh the screen with the background."""
     with open(battle_json_path, "r") as f:
             data = json.load(f)
@@ -106,6 +106,6 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent):
     #pygame.display.flip()
     
     # HP Bar
-    draw_hp_bar(window, pokemon_trainer, True)
-    draw_hp_bar(window, pokemon_opponent, False)
+    draw_hp_bar(window, pokemon_trainer, True, damage)
+    draw_hp_bar(window, pokemon_opponent, False, damage)
     pygame.display.flip()
