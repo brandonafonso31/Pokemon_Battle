@@ -19,7 +19,7 @@ dracaufeu.learn_move(lance_flamme)
 dracaufeu.learn_move(lance_soleil)
 #dracaufeu.learn_move(atterisage)
 dracaufeu.change_talent(talents["Intimidation"]())
-print(dracaufeu)
+#print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"hp":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
 leviator = Pokemon("Léviator",hp=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=81,gen=1,
@@ -36,7 +36,7 @@ leviator.learn_move(cascade)
 leviator.learn_move(aquajet)
 leviator.learn_move(seisme)
 leviator.change_talent(talents["Intimidation"]())
-print(leviator)
+#print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
 pikachu_EV = {"hp":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
 pikachu = Pokemon("Pikachu",hp=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
@@ -48,4 +48,4 @@ pikachu.learn_move(cage_eclair)
 """pikachu.learn_move("fatal-foudre")
 pikachu.learn_move("chargeur")
 pikachu.learn_move("électacle")"""
-print(pikachu)
+#print(pikachu)
