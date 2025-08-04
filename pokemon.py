@@ -6,6 +6,7 @@ from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
 from pokemon_talent import Talent
+from random import randint,choice
 import os, pygame
 
 LINE_PRINT = "-"*70
@@ -245,17 +246,67 @@ class Pokemon:
                 print(f"{self.name} a diminué {stat_name} de {-scale} stages.")
 
 
-    def animate_death(self,window,front_or_back):
-        """Animation de la mort du Pokémon."""
+    def animate_death(self, window, front_or_back):
+        """Animation de mort plus visuelle avec options différentes"""
         if self.rect is None:
-            print("Erreur : le Pokémon n'a pas de rectangle défini pour l'animation.")
-        else:        
-            # Animation simple : le Pokémon disparaît
-            for _ in range(100):
-                self.rect.y += 5
-                window.blit(sprite.get_sprite(self,front_or_back),self.rect)
+            print("Erreur : Rectangle non défini")
+            return
+        
+        clock = pygame.time.Clock()
+        original_pos = self.rect.copy()
+        
+        # Fondu vers la transparence
+        for alpha in range(255, 0, -15):
+            temp_sprite = sprite.get_sprite(self, front_or_back).copy()
+            temp_sprite.fill((255, 255, 255, alpha), None, pygame.BLEND_RGBA_MULT)
+            window.blit(temp_sprite, self.rect)
+            pygame.display.update(self.rect)
+            clock.tick(30)
+                
+        # Choix aléatoire entre 3 types d'animation
+        #nimation_type = choice(["fade", "shake", "fall"])
+        """
+        if animation_type == "fade":
+            # Fondu vers la transparence
+            for alpha in range(255, 0, -15):
+                temp_sprite = sprite.get_sprite(self, front_or_back).copy()
+                temp_sprite.fill((255, 255, 255, alpha), None, pygame.BLEND_RGBA_MULT)
+                window.blit(temp_sprite, self.rect)
                 pygame.display.update(self.rect)
-                pygame.time.delay(50)
+                clock.tick(30)
+        
+        elif animation_type == "shake":
+            # Tremblement + rotation
+            for i in range(20):
+                angle = randint(-5, 5)
+                offset_x = randint(-5, 5)
+                rotated_sprite = pygame.transform.rotate(
+                    sprite.get_sprite(self, front_or_back), 
+                    angle
+                )
+                window.blit(rotated_sprite, 
+                        (self.rect.x + offset_x, self.rect.y))
+                pygame.display.update(self.rect)
+                clock.tick(30)
+        
+        elif animation_type == "fall":
+            # Chute + rotation
+            for i in range(1, 30):
+                self.rect.y += i//3  # Accélération progressive
+                angle = i*6  # Rotation progressive
+                rotated_sprite = pygame.transform.rotate(
+                    sprite.get_sprite(self, front_or_back), 
+                    angle
+                )
+                # Ajuster la position pour que la rotation soit centrée
+                window.blit(rotated_sprite, 
+                        (self.rect.x - rotated_sprite.get_width()//2 + self.rect.width//2,
+                            self.rect.y))
+                pygame.display.update()
+                clock.tick(60)"""
+        
+        # Réinitialiser la position (au cas où)
+        self.rect = original_pos
 
 
 def get_scale_by_nature(stat_name: str, nature: Nature):
