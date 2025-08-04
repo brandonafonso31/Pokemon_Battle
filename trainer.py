@@ -31,7 +31,7 @@ class Trainer:
         else:
             pokemon.dresseur = self
             pokemon.id = nb_pokmeon
-            pokemon.nickname = nickname if nickname is not None else pokemon.names
+            pokemon.nickname = nickname if nickname is not None else pokemon.name
             self.pokemon_team.append(pokemon)
             print(f"{self.name} a capturé {pokemon.name}")
  
