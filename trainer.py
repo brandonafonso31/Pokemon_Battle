@@ -8,7 +8,7 @@ class Trainer:
         self.pokemon_team = []
     
     def __str__(self):
-        string  = f"Dresseur: {self.name}\nPokémon:\n"
+        string  = f"Dresseur: {self.name}\nPokémon:"
         if len(self.pokemon_team)>0:
             string += f"\n{self.pokemon_team[0]}"
         if len(self.pokemon_team)>1:
