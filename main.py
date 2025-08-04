@@ -75,7 +75,7 @@ while run :
             
         elif current_menu == "attack":
             pokemon_trainer, pokemon_opponent, in_battle = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent)
-            if not in_battle:   # l'un des 2 pokemon est KO
+            if in_battle == "ko":   # l'un des 2 pokemon est KO
                 pygame.time.delay(500)
                 pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
                 pokemon_ko = pokemon_trainer if pokemon_trainer.hp <= 0 else pokemon_opponent
@@ -88,6 +88,9 @@ while run :
                 
                 pygame.time.delay(1000)
                 run = False
+            
+            elif in_battle == "continue":
+                current_menu = "main"
             
         elif current_menu == "team_pokemon":
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))

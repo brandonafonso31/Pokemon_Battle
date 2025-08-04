@@ -188,4 +188,4 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     with timing_lock:
         Timing.current_timing = Timing.END
 
-    return pokemon_1, pokemon_2, (not pokemon_1.is_dead() and not pokemon_2.is_dead())
+    return pokemon_1, pokemon_2, "ko" if (pokemon_1.is_dead() or pokemon_2.is_dead()) else "continue"
