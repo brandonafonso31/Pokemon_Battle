@@ -4,6 +4,7 @@ from config import *
 from pygame.locals import *
 from pokemon_init import *
 from button import Button
+from trainer import trainer_ai,trainer
 
 #------|Init pygame
 pygame.init()
