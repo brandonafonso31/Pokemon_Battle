@@ -84,7 +84,7 @@ while run :
                 pygame.time.delay(500)
                 
                 #animation de la mort du pokemon
-                pokemon_ko.animate_death()
+                pokemon_ko.animate_death(window,front_or_back="back" if pokemon_ko is pokemon_trainer else "front")
                 run = False
             
         elif current_menu == "team_pokemon":

@@ -1,96 +1,61 @@
-from pokemon import Pokemon
 import pygame
-from config import BLACK
-from random import randint
-from battle_timing  import Timing,timing_lock,current_timing,check_timing_talent
-import ui_battle
+from config import img_dir_path,battle_json_path
+import os, sprite, pygame, json
 
-def check_move(move_id: str):
-    return move_id in ["move1", "move2", "move3", "move4"]
 
-def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
-    """Exécute un tour complet de combat entre deux Pokémon."""
+def get_sprite(pokemon,front_or_back):
+    pokemon_sprite = pokemon.sprites(front_or_back)
+    pokemon_path = os.path.join(img_dir_path,f"sprites/pokemon_{front_or_back}.png")
+    pokemon_sprite = pygame.image.load(pokemon_path).convert()
+    pokemon_sprite.set_colorkey(sprite.get_first_pixel(pokemon_path))
+    scale = 2 + (front_or_back == "back")
+    pokemon_sprite = pygame.transform.scale(pokemon_sprite, (scale * 100,scale * 100))
+    return pokemon_sprite
 
-    # Nettoyage interface
-    pygame.draw.rect(window, (0, 0, 0), (0, res_scene[1], resolution[0], resolution[1] - res_scene[1]))
-    pygame.display.flip()
+def get_opponent_sprite(res, pokemon):
+    
+    opponent_pokemon_sprite = get_sprite(pokemon,"front")
+    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_front.png")
+    y_opponent = sprite.get_base_pixel(path_sprite)
+    y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
+    x_opponent = res[0]//2 + 75
+    pokemon_json = {
+        "path_sprite": path_sprite,
+        "x": x_opponent,
+        "y": y_opponent
+    }
+    update_battle_json({"pokemon_opponent": pokemon_json})
+    
+    return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
 
-    # Vérification validité du move joueur
-    if not check_move(move_id_player):
-        raise Exception(f"Erreur : {move_id_player} n'est pas un move valide.")
+def get_trainer_sprite(res, pokemon):
+    trainer_pokemon_sprite = get_sprite(pokemon,"back")
+    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_back.png")
+    y_trainer = sprite.get_top_pixel(path_sprite)
+    y_trainer = res[1] - 3*(96 - y_trainer) - 350
+    x_trainer = res[0]//2 - 75*2 - 96*2
+    pokemon_json = {
+        "path_sprite": path_sprite,
+        "x": x_trainer,
+        "y": y_trainer
+    }
+    update_battle_json({"pokemon_trainer": pokemon_json})
+    return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
 
-    # Choix du move de l'IA
-    move_id_ia = f"move{randint(1, len(pokemon_2.get_moveset()))}"
-    if not check_move(move_id_ia):
-        raise Exception(f"Erreur : {move_id_ia} n'est pas un move valide pour l'IA.")
+def update_battle_json(updates: dict):
 
-    # Récupération des moves
-    move_player = getattr(pokemon_1, move_id_player)
-    move_ia = getattr(pokemon_2, move_id_ia)
-
-    # Détermination de l'ordre : priorité > vitesse
-    first_from_trainer = True
-    if move_player.prio > move_ia.prio:
-        first, first_move_id = pokemon_1, move_id_player
-        second, second_move_id = pokemon_2, move_id_ia
-    elif move_ia.prio > move_player.prio:
-        first, first_move_id = pokemon_2, move_id_ia
-        second, second_move_id = pokemon_1, move_id_player
-        first_from_trainer = False
+    if os.path.exists(battle_json_path):
+        with open(battle_json_path, "r") as f:
+            data = json.load(f)
     else:
-        if pokemon_1.vit >= pokemon_2.vit:
-            first, first_move_id = pokemon_1, move_id_player
-            second, second_move_id = pokemon_2, move_id_ia
-        else:
-            first, first_move_id = pokemon_2, move_id_ia
-            second, second_move_id = pokemon_1, move_id_player
-            first_from_trainer = False
+        data = {}
 
-    # TIMING : ABOUT_TO_GET_HIT
-    with timing_lock:
-        Timing.current_timing = Timing.ABOUT_TO_GET_HIT
-    check_timing_talent(first, second)
+    data.update(updates)
 
-    # ATTAQUE DU PREMIER
-    pygame.time.delay(1000)
-    first, second, old_hp = first.use_move(first_move_id, second, window)
-    if second is pokemon_1:
-        ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_trainer=old_hp)
-    else:
-        ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_opponent=old_hp)
+    with open(battle_json_path, "w") as f:
+        json.dump(data, f, indent=4)
 
-    # TIMING : GOT_HIT
-    with timing_lock:
-        Timing.current_timing = Timing.GOT_HIT
-    check_timing_talent(first, second)
-
-    # Log
-    move = getattr(first, first_move_id)
-    print(f"PP {first.name} {first_move_id}: {move.pp}, hp {second.name}: {second.hp}\n")
-
-    pygame.time.delay(1500)
-
-    # ATTAQUE DU SECOND SI VIVANT
-    if not second.is_dead():
-        with timing_lock:
-            Timing.current_timing = Timing.ABOUT_TO_GET_HIT
-        check_timing_talent(second, first)
-
-        second, first, old_hp = second.use_move(second_move_id, first, window)
-        if first is pokemon_1:
-            ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_trainer=old_hp)
-        else:
-            ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_opponent=old_hp)
-        with timing_lock:
-            Timing.current_timing = Timing.GOT_HIT
-        check_timing_talent(second, first)
-
-        move = getattr(second, second_move_id)
-        print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
-
-        pygame.time.delay(1000)
-
-    with timing_lock:
-        Timing.current_timing = Timing.END
-
-    return pokemon_1, pokemon_2, (not pokemon_1.is_dead() and not pokemon_2.is_dead())
+def get_image(image_path):
+    image = pygame.image.load(image_path).convert()
+    image.set_colorkey(sprite.get_first_pixel(image_path))
+    return image,image.get_size()

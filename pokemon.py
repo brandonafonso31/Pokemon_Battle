@@ -6,10 +6,8 @@ from config import img_dir_path
 from pokemon_nature import Nature
 from math import floor
 from pokemon_talent import Talent
-from pokemon_talent import talents
 
-import os
-import pygame
+import os, pygame, battle_attack
 
 LINE_PRINT = "-"*70
 
@@ -248,17 +246,17 @@ class Pokemon:
                 print(f"{self.name} a diminué {stat_name} de {-scale} stages.")
 
 
-    def animate_death(self):
+    def animate_death(self,window,front_or_back):
         """Animation de la mort du Pokémon."""
         if self.rect is None:
             print("Erreur : le Pokémon n'a pas de rectangle défini pour l'animation.")
-            return
-        
-        # Animation simple : le Pokémon disparaît
-        for i in range(10):
-            self.rect.y += 5
-            pygame.display.update(self.rect)
-            pygame.time.delay(50)
+        else:        
+            # Animation simple : le Pokémon disparaît
+            for _ in range(100):
+                self.rect.y += 5
+                window.blit(battle_attack.get_sprite(self,front_or_back),self.rect)
+                pygame.display.update(self.rect)
+                pygame.time.delay(50)
 
 
 def get_scale_by_nature(stat_name: str, nature: Nature):
