@@ -21,9 +21,16 @@ class Trainer:
             string += f"\n{self.pokemon_team[5]}"
         return string
     
-    def catch_pokemon(self, pokemon):
-        pokemon.dresseur = self
-        self.pokemon_team.append(pokemon)
+    def catch_pokemon(self, pokemon, nickname=None):
+        nb_pokmeon = len(self.pokemon_team)
+        if nb_pokmeon >= 6:
+            print(f"{self.name} a déjà 6 Pokémon dans son équipe.")
+        else:
+            pokemon.dresseur = self
+            pokemon.id = nb_pokmeon
+            pokemon.nickname = nickname if nickname is not None else pokemon.names
+            self.pokemon_team.append(pokemon)
+            print(f"{self.name} a capturé {pokemon.name}")
  
 from pokemon_init import leviator,dracaufeu,pikachu     
 trainer_ai = Trainer("Ash")
