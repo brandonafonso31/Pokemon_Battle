@@ -23,9 +23,9 @@ class Trainer:
         return string
     
     def catch_pokemon(self, pokemon, nickname=None):
-        nb_pokmeon = len(self.pokemon_team)
-        pokemon.id = nb_pokmeon
-        if nb_pokmeon >= 6:
+        nb_pokemon = len(self.pokemon_team)
+        pokemon.id = nb_pokemon
+        if nb_pokemon >= 6:
             print(f"{self.name} a déjà 6 Pokémon dans son équipe.")
             self.pc.append(pokemon)
             print(f"{pokemon.name} a été envoyé dans la boîte PC.")
