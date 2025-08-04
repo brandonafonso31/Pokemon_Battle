@@ -117,7 +117,7 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
     window.blit(opponent_sprite, (opponent_path["x"], opponent_path["y"]))
 
     # HP Bars
-    draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer)
-    draw_hp_bar(window, pokemon_opponent, False, old_hp_opponent)
+    draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer, full_refresh_func=lambda: refresh_screen(window, pokemon_trainer, pokemon_opponent))
+    draw_hp_bar(window, pokemon_opponent, False, old_hp_opponent, full_refresh_func=lambda: refresh_screen(window, pokemon_trainer, pokemon_opponent))
 
     pygame.display.flip()
