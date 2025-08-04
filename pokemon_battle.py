@@ -2,6 +2,7 @@ from pokemon_move import *
 from pokemon_init import dracaufeu,leviator
 from pokemon import Pokemon
 from config import img_dir_path,song_dir_path,battle_dir_path,battle_json_path
+from trainer import trainer,trainer_ai
 import ui_battle, os, sprite, pygame
 
 def get_sprite(pokemon: Pokemon,front_or_back: str):
@@ -12,7 +13,6 @@ def get_sprite(pokemon: Pokemon,front_or_back: str):
     scale = 2 + (front_or_back == "back")
     pokemon_sprite = pygame.transform.scale(pokemon_sprite, (scale * 100,scale * 100))
     return pokemon_sprite
-
 
 def get_opponent_sprite(res, pokemon = dracaufeu):
     
@@ -63,27 +63,28 @@ def get_image(image_path):
     image.set_colorkey(sprite.get_first_pixel(image_path))
     return image,image.get_size()
 
-def start_battle(window,res):
+def start_battle(window, res, trainer = trainer, trainer_ia  = trainer_ai, \
+    music_path = "elite_four/Battle_Elite_Four_BW.mp3", background_path = "background/forest.jpg"):
     """Instancie les premiers éléments de la scène."""
     #-----------------------------| MUSIC |------------------------------#
-    music_path = os.path.join(song_dir_path,"elite_four/Battle_Elite_Four_BW.mp3")
+    music_path = os.path.join(song_dir_path,music_path)
     pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     #---------------------------| BACKGROUND |---------------------------#
-    background_path = os.path.join(img_dir_path,"background/forest.jpg")
+    background_path = os.path.join(img_dir_path,background_path)
     background = pygame.image.load(background_path).convert()
     window.blit(background,(0,0))
     pygame.display.flip()
     #-------------------------| SPRITE ENNEMI |--------------------------#
     pygame.time.delay(500)
-    pokemon_opponent,opponent_pokemon_sprite,coord_opp = get_opponent_sprite(res)
+    pokemon_opponent,opponent_pokemon_sprite,coord_opp = get_opponent_sprite(res, trainer_ia.pokemon_team[0])
     window.blit(opponent_pokemon_sprite,coord_opp)
     pokemon_opponent.add_rect(coord_opp)
     #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.display.flip()
     pygame.time.delay(500)
-    pokemon_trainer,trainer_pokemon_sprite,coord_trainer = get_trainer_sprite(res)
+    pokemon_trainer,trainer_pokemon_sprite,coord_trainer = get_trainer_sprite(res, trainer.pokemon_team[0])
     window.blit(trainer_pokemon_sprite,coord_trainer)
     pokemon_trainer.add_rect(coord_trainer)
     
