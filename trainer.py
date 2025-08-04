@@ -34,16 +34,8 @@ class Trainer:
             pokemon.nickname = nickname if nickname is not None else pokemon.name
             self.pokemon_team.append(pokemon)
             print(f"{self.name} a capturé {pokemon.name}")
-        
-    def change_pokemon(self, pokemon_id, new_pokemon):
-        if 0 <= pokemon_id < len(self.pokemon_team):
-            old_pokemon = self.pokemon_team[pokemon_id]
-            self.pokemon_team[pokemon_id] = new_pokemon
-            print(f"{self.name} a remplacé {old_pokemon.name} par {new_pokemon.name}")
-        else:
-            print(f"ID de Pokémon invalide: {pokemon_id}.")
  
-from pokemon_init import leviator,dracaufeu,pikachu     
+from pokemon_init import leviator,dracaufeu     
 trainer_ai = Trainer("Ash")
 trainer_ai.catch_pokemon(dracaufeu)
 trainer = Trainer("Brandon")
