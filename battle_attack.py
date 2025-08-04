@@ -52,6 +52,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     check_timing_talent(first, second)
 
     # ATTAQUE DU PREMIER
+    pygame.time.delay(1000)
     first, second = first.use_move(first_move_id, second, window)
     ui_battle.refresh_screen(window, pokemon_1, pokemon_2)
 
