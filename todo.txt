@@ -1,7 +1,7 @@
-- implement trainer and pokemon_team
+- optimiser la fluidité de l'animation de la barre de vie car des fois semble bugger ? voir l'affichage des pv numériques descendrent
+- continuer d'implement trainer and pokemon_team
 - faire les talents
 - continue implementing target
-- edit hb_bar to move fluidly
 - add esquive et precision to pokemon ?
 - StatusMove à implémenter
 - implenter animations des attaques
