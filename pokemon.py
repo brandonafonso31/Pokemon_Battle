@@ -248,6 +248,18 @@ class Pokemon:
                 print(f"{self.name} a diminué {stat_name} de {-scale} stages.")
 
 
+    def animate_death(self):
+        """Animation de la mort du Pokémon."""
+        if self.rect is None:
+            print("Erreur : le Pokémon n'a pas de rectangle défini pour l'animation.")
+            return
+        
+        # Animation simple : le Pokémon disparaît
+        for i in range(10):
+            self.rect.y += 5
+            pygame.display.update(self.rect)
+            pygame.time.delay(50)
+
 
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1

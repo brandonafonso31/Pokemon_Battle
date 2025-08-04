@@ -78,9 +78,13 @@ while run :
             if not in_battle:   # l'un des 2 pokemon est KO
                 pygame.time.delay(500)
                 pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-                draw_text("L'un des pokémon est KO", font, WHITE, 100, 600)
+                pokemon_ko = pokemon_trainer if pokemon_trainer.hp <= 0 else pokemon_opponent
+                draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
                 pygame.display.flip()
                 pygame.time.delay(500)
+                
+                #animation de la mort du pokemon
+                pokemon_ko.animate_death()
                 run = False
             
         elif current_menu == "team_pokemon":
