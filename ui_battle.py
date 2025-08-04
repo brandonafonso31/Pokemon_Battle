@@ -35,7 +35,7 @@ def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemo
             
     return pokemon_trainer, pokemon_opponent, still_in_battle
 
-def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
+def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=None):
     """Draw the HP bar of a pokemon, with optional animation if old_hp is given."""
 
     hp_bar_length = 200
@@ -56,19 +56,20 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
 
     font = pygame.font.SysFont("arialblack", 20)
 
-    # Animation uniquement si dégâts
-    if current_length > target_length:
+    if current_length > target_length and full_refresh_func:
         while current_length > target_length:
             current_length -= 2
             if current_length < target_length:
                 current_length = target_length
 
-            # Redessine la zone
+            # Redessiner toute la scène à chaque frame pour éviter les artefacts
+            full_refresh_func()
+
+            # Redessiner la barre et le texte
             pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
             bar_rect = (x, y, current_length, hp_bar_height)
             pygame.draw.rect(window, (0, 255, 0), bar_rect)
 
-            # Texte
             text = font.render(f"{pokemon.name} HP: {current_hp}/{hp_max}", True, BLACK)
             text_rect = text.get_rect(topleft=(x, y - 40))
             window.blit(text, text_rect)
@@ -76,7 +77,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
             pygame.display.update([bar_rect, text_rect])
             pygame.time.delay(10)
     else:
-        # Si pas d'animation, juste dessiner la barre actuelle
+        # Affichage direct sans animation
         bar_length = int(hp_bar_length * (current_hp / hp_max))
         pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
         bar_rect = (x, y, bar_length, hp_bar_height)
@@ -85,35 +86,33 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         text = font.render(f"{pokemon.name} HP: {current_hp}/{hp_max}", True, BLACK)
         text_rect = text.get_rect(topleft=(x, y - 40))
         window.blit(text, text_rect)
-        pygame.display.update([bar_rect, text_rect])
-    
-def refresh_screen(window, pokemon_trainer, pokemon_opponent, damage = 0):
-    """Refresh the screen with the background."""
+
+   
+def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
+    """Refresh the screen with the background and all sprites."""
     with open(battle_json_path, "r") as f:
-            data = json.load(f)
-        
+        data = json.load(f)
+
     # Background
     background = pygame.image.load(data["background"]).convert()
     window.blit(background, (0, 0))
-        
-    # Pokemon Trainer
-    pokemon_trainer_path = data["pokemon_trainer"]
-    pokemon_trainer_sprite = pygame.image.load(pokemon_trainer_path["path_sprite"]).convert()
-    pokemon_trainer_sprite.set_colorkey(sprite.get_first_pixel(pokemon_trainer_path["path_sprite"]))
-    scale = 3
-    pokemon_trainer_sprite = pygame.transform.scale(pokemon_trainer_sprite, (scale * 100,scale * 100))
-    window.blit(pokemon_trainer_sprite, (pokemon_trainer_path["x"], pokemon_trainer_path["y"]))
-        
-    # Pokemon Opponent
-    pokemon_opponent_path = data["pokemon_opponent"]
-    pokemon_opponent_sprite = pygame.image.load(pokemon_opponent_path["path_sprite"]).convert()
-    pokemon_opponent_sprite.set_colorkey(sprite.get_first_pixel(pokemon_opponent_path["path_sprite"]))
-    scale = 2
-    pokemon_opponent_sprite = pygame.transform.scale(pokemon_opponent_sprite, (scale * 100,scale * 100))
-    window.blit(pokemon_opponent_sprite, (pokemon_opponent_path["x"], pokemon_opponent_path["y"]))
-    #pygame.display.flip()
-        
-    # HP Bar
-    draw_hp_bar(window, pokemon_trainer, True, damage)
-    draw_hp_bar(window, pokemon_opponent, False, damage)
+
+    # Trainer
+    trainer_path = data["pokemon_trainer"]
+    trainer_sprite = pygame.image.load(trainer_path["path_sprite"]).convert()
+    trainer_sprite.set_colorkey(sprite.get_first_pixel(trainer_path["path_sprite"]))
+    trainer_sprite = pygame.transform.scale(trainer_sprite, (3 * 100, 3 * 100))
+    window.blit(trainer_sprite, (trainer_path["x"], trainer_path["y"]))
+
+    # Opponent
+    opponent_path = data["pokemon_opponent"]
+    opponent_sprite = pygame.image.load(opponent_path["path_sprite"]).convert()
+    opponent_sprite.set_colorkey(sprite.get_first_pixel(opponent_path["path_sprite"]))
+    opponent_sprite = pygame.transform.scale(opponent_sprite, (2 * 100, 2 * 100))
+    window.blit(opponent_sprite, (opponent_path["x"], opponent_path["y"]))
+
+    # HP Bars
+    draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer)
+    draw_hp_bar(window, pokemon_opponent, False, old_hp_opponent)
+
     pygame.display.flip()
