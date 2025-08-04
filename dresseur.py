@@ -2,7 +2,7 @@ from pokemon import Pokemon
 
 # Une class en plus poour pokemon_team ?
 
-class Dresseur:
+class Trainer:
     def __init__(self, name: str):
         self.name = name
         self.pokemon_team = []
@@ -23,13 +23,13 @@ class Dresseur:
             string += f"\n{self.pokemon_team[5]}"
         return string
     
-    def capturer(self, pokemon: Pokemon):
+    def catch_pokemon(self, pokemon: Pokemon):
         pokemon.dresseur = self
         self.pokemon_team.append(pokemon)
  
 from pokemon_init import leviator,dracaufeu,pikachu     
-dresseur_test = Dresseur("Ash")
-dresseur_test.capturer(leviator)
-dresseur_test.capturer(dracaufeu)
-dresseur_test.capturer(pikachu)
+dresseur_test = Trainer("Ash")
+dresseur_test.catch_pokemon(leviator)
+dresseur_test.catch_pokemon(dracaufeu)
+dresseur_test.catch_pokemon(pikachu)
 print(dresseur_test)
