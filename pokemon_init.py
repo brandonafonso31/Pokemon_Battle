@@ -49,3 +49,10 @@ pikachu.learn_move(cage_eclair)
 pikachu.learn_move("chargeur")
 pikachu.learn_move("électacle")"""
 #print(pikachu)
+
+test1 = leviator
+test1.num_on_sprite_sheet = 151
+test1.move1 = seisme
+test1.move2 = None
+test1.move3 = None
+test1.move4 = None
