@@ -247,68 +247,10 @@ class Pokemon:
 
 
     def animate_death(self, window, front_or_back):
-        """Animation de mort plus visuelle avec options différentes"""
-        if self.rect is None:
-            print("Erreur : Rectangle non défini")
-            return
+        """Animation de mort simplifiée mais fonctionnelle"""
+        pass
         
-        clock = pygame.time.Clock()
-        original_pos = self.rect.copy()
         
-        # Fondu vers la transparence
-        for alpha in range(255, 0, -15):
-            temp_sprite = sprite.get_sprite(self, front_or_back).copy()
-            temp_sprite.fill((255, 255, 255, alpha), None, pygame.BLEND_RGBA_MULT)
-            window.blit(temp_sprite, self.rect)
-            pygame.display.update(self.rect)
-            clock.tick(30)
-                
-        # Choix aléatoire entre 3 types d'animation
-        #nimation_type = choice(["fade", "shake", "fall"])
-        """
-        if animation_type == "fade":
-            # Fondu vers la transparence
-            for alpha in range(255, 0, -15):
-                temp_sprite = sprite.get_sprite(self, front_or_back).copy()
-                temp_sprite.fill((255, 255, 255, alpha), None, pygame.BLEND_RGBA_MULT)
-                window.blit(temp_sprite, self.rect)
-                pygame.display.update(self.rect)
-                clock.tick(30)
-        
-        elif animation_type == "shake":
-            # Tremblement + rotation
-            for i in range(20):
-                angle = randint(-5, 5)
-                offset_x = randint(-5, 5)
-                rotated_sprite = pygame.transform.rotate(
-                    sprite.get_sprite(self, front_or_back), 
-                    angle
-                )
-                window.blit(rotated_sprite, 
-                        (self.rect.x + offset_x, self.rect.y))
-                pygame.display.update(self.rect)
-                clock.tick(30)
-        
-        elif animation_type == "fall":
-            # Chute + rotation
-            for i in range(1, 30):
-                self.rect.y += i//3  # Accélération progressive
-                angle = i*6  # Rotation progressive
-                rotated_sprite = pygame.transform.rotate(
-                    sprite.get_sprite(self, front_or_back), 
-                    angle
-                )
-                # Ajuster la position pour que la rotation soit centrée
-                window.blit(rotated_sprite, 
-                        (self.rect.x - rotated_sprite.get_width()//2 + self.rect.width//2,
-                            self.rect.y))
-                pygame.display.update()
-                clock.tick(60)"""
-        
-        # Réinitialiser la position (au cas où)
-        self.rect = original_pos
-
-
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
      
