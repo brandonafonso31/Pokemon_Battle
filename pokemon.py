@@ -182,7 +182,7 @@ class Pokemon:
         if opponent.hp <= 0:
             opponent.hp = 0
             print(f"{opponent.name} fainted!")
-        return self, opponent
+        return self, opponent, damage
     
             
     def heal(self):
