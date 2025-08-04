@@ -178,11 +178,12 @@ class Pokemon:
         damage *= self.get_cm(opponent, move)
         damage = max(0, floor(damage))
         # Apply damage
+        old_hp = opponent.hp
         opponent.hp -= damage
         if opponent.hp <= 0:
             opponent.hp = 0
             print(f"{opponent.name} fainted!")
-        return self, opponent, damage
+        return self, opponent, old_hp
     
             
     def heal(self):
