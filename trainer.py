@@ -1,6 +1,4 @@
-from pokemon import Pokemon
-
-# Une class en plus poour pokemon_team ?
+# Une class en plus pour pokemon_team ?
 
 class Trainer:
     def __init__(self, name: str):
@@ -23,7 +21,7 @@ class Trainer:
             string += f"\n{self.pokemon_team[5]}"
         return string
     
-    def catch_pokemon(self, pokemon: Pokemon):
+    def catch_pokemon(self, pokemon):
         pokemon.dresseur = self
         self.pokemon_team.append(pokemon)
  
