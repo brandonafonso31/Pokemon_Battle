@@ -17,13 +17,21 @@ def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemo
     moves = pokemon_trainer.get_moveset()
     length = len(moves)
     if length > 0 and moves[0] is not None and draw_move(window,moves[0],x_move - 200, y_menu + 50):
-        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move1", window,res_scene,resolution)                            
+        if moves[0].pp <= 0:
+            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[0].name}")
+        else: pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move1", window,res_scene,resolution)                            
     if length > 1 and moves[1] is not None and draw_move(window,moves[1],x_move + 200, y_menu + 50):
-        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move2", window,res_scene,resolution)                
+        if moves[1].pp <= 0:
+            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[1].name}")
+        else: pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move2", window,res_scene,resolution)                
     if length > 2 and moves[2] is not None and draw_move(window,moves[2],x_move - 200, y_menu + 150):
-        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move3", window,res_scene,resolution)                
+        if moves[2].pp <= 0:
+            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[2].name}")
+        else: pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move3", window,res_scene,resolution)                
     if length > 3 and moves[3] is not None and draw_move(window,moves[3],x_move + 200, y_menu + 150):
-        pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move4", window,res_scene,resolution)
+        if moves[3].pp <= 0:
+            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[3].name}")
+        else: pokemon_trainer, pokemon_opponent, still_in_battle = battle_attack.turn(pokemon_trainer, pokemon_opponent, "move4", window,res_scene,resolution)
             
     return pokemon_trainer, pokemon_opponent, still_in_battle
 
