@@ -1,6 +1,6 @@
 # Pokemon Battle - Pygame Project
 
-This is a first project on pygame to test limits. Currently features a 1v1 battle system with no animations for moves.
+This is a first project on pygame to test limits. Currently features a 1v1 battle system up to 6 pokemon in each team !!! with no animations for moves.
 Health Bar with animation, and logs to check prio, damage dealt, KO and more ...
 
 ## Plans and Roadmap
