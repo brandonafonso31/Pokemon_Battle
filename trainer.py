@@ -1,4 +1,5 @@
 # Une class en plus pour pokemon_team ?
+import sprite
 
 class Trainer:
     def __init__(self, name: str):
@@ -35,11 +36,12 @@ class Trainer:
             self.pokemon_team.append(pokemon)
             print(f"{self.name} a capturé {pokemon.name}")
             
-    def send_next(self):
+    def send_next(self,front_or_back: str):
         team = self.pokemon_team
         for i in range(len(team)):
             if team[i].hp != 0:
                 # afficher un texte poour annoncer l'arrive du suivant
+                sprite.get_sprite(team[i],front_or_back)
                 return team[i],True
         return None,False
  
