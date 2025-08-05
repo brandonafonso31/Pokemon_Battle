@@ -128,18 +128,20 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
     window.blit(background, (0, 0))
 
     # Trainer
-    trainer_path = data["pokemon_trainer"]
-    trainer_sprite = pygame.image.load(trainer_path["path_sprite"]).convert()
-    trainer_sprite.set_colorkey(sprite.get_first_pixel(trainer_path["path_sprite"]))
-    trainer_sprite = pygame.transform.scale(trainer_sprite, (3 * 100, 3 * 100))
-    window.blit(trainer_sprite, (trainer_path["x"], trainer_path["y"]))
+    if not pokemon_trainer.is_ko:
+        trainer_path = data["pokemon_trainer"]
+        trainer_sprite = pygame.image.load(trainer_path["path_sprite"]).convert()
+        trainer_sprite.set_colorkey(sprite.get_first_pixel(trainer_path["path_sprite"]))
+        trainer_sprite = pygame.transform.scale(trainer_sprite, (3 * 100, 3 * 100))
+        window.blit(trainer_sprite, (trainer_path["x"], trainer_path["y"]))
 
     # Opponent
-    opponent_path = data["pokemon_opponent"]
-    opponent_sprite = pygame.image.load(opponent_path["path_sprite"]).convert()
-    opponent_sprite.set_colorkey(sprite.get_first_pixel(opponent_path["path_sprite"]))
-    opponent_sprite = pygame.transform.scale(opponent_sprite, (2 * 100, 2 * 100))
-    window.blit(opponent_sprite, (opponent_path["x"], opponent_path["y"]))
+    if not pokemon_opponent.is_ko:
+        opponent_path = data["pokemon_opponent"]
+        opponent_sprite = pygame.image.load(opponent_path["path_sprite"]).convert()
+        opponent_sprite.set_colorkey(sprite.get_first_pixel(opponent_path["path_sprite"]))
+        opponent_sprite = pygame.transform.scale(opponent_sprite, (2 * 100, 2 * 100))
+        window.blit(opponent_sprite, (opponent_path["x"], opponent_path["y"]))
 
     # HP Bars
     draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer, full_refresh_func=lambda: refresh_screen(window, pokemon_trainer, pokemon_opponent))

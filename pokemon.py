@@ -33,7 +33,7 @@ class Pokemon:
         self.hp_max = self.hp      
         
         self.legit = self.check_sum_EV() and self.check_each_EV()
-        
+        self.is_ko = False
         # Buff / Debuff
         self.stats_modifier = { 
             "hp": 0,
@@ -186,6 +186,7 @@ class Pokemon:
             
     def heal(self):
         self.hp = self.hp_max
+        self.is_ko = False
         print(f"{self.name} a été soigné")
         return self
     

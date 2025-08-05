@@ -85,6 +85,8 @@ while run :
                 pygame.time.delay(500)
                 
                 #animation de la mort du pokemon
+                pokemon_ko.is_ko = True
+                ui_battle.refresh_screen(window, pokemon_trainer, pokemon_opponent)
                 pokemon_ko.animate_death(window,front_or_back="back" if pokemon_ko is pokemon_trainer else "front")
                 if pokemon_ko is pokemon_trainer:
                     pokemon_trainer,in_battle = trainer.send_next()
@@ -92,7 +94,8 @@ while run :
                     pokemon_ai,in_battle = trainer_ai.send_next()
                 
                 pygame.time.delay(1000)
-                run = False
+                if not in_battle:
+                    run = False
             
             elif in_battle == "continue":
                 current_menu = "main"
