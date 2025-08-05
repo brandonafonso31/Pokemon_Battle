@@ -34,6 +34,14 @@ class Trainer:
             pokemon.nickname = nickname if nickname is not None else pokemon.name
             self.pokemon_team.append(pokemon)
             print(f"{self.name} a capturé {pokemon.name}")
+            
+    def send_next(self):
+        team = self.pokemon_team
+        for i in range(len(team)):
+            if team[i].pv != 0:
+                #afficher un texte poour annoncer l'arrive du suivant
+                return team[i],True
+        return None,False
  
 from pokemon_init import leviator,dracaufeu,ectoplasma    
 trainer_ai = Trainer("Ash")

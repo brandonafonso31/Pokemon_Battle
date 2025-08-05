@@ -4,6 +4,7 @@ from config import *
 from pygame.locals import *
 from pokemon_init import *
 from button import Button
+from trainer import trainer,trainer_ai
 
 #------|Init pygame
 pygame.init()
@@ -85,6 +86,10 @@ while run :
                 
                 #animation de la mort du pokemon
                 pokemon_ko.animate_death(window,front_or_back="back" if pokemon_ko is pokemon_trainer else "front")
+                if pokemon_ko is pokemon_trainer:
+                    pokemon_trainer,in_battle = trainer.send_next()
+                else:
+                    pokemon_ai,in_battle = trainer_ai.send_next()
                 
                 pygame.time.delay(1000)
                 run = False
