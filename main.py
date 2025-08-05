@@ -93,9 +93,12 @@ while run :
                 else:
                     pokemon_opponent,in_battle = trainer_ai.send_next("front")
                 
-                pygame.time.delay(1000)
-                ui_battle.refresh_screen(window, pokemon_trainer, pokemon_opponent)
-                pygame.time.delay(1000)
+                if in_battle:
+                    pygame.time.delay(1000)
+                    ui_battle.refresh_screen(window, pokemon_trainer, pokemon_opponent)
+                    pygame.time.delay(1000)
+                    current_menu  = "main"
+                    
                 if not in_battle:
                     run = False
             

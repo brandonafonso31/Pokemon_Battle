@@ -53,10 +53,11 @@ pikachu.learn_move("électacle")"""
 
 ectoplasma_Ev = {"hp":6,"atk":0,"def_":0,"atk_spe":252,"def_spe":0,"vit":252}
 ectoplasma = Pokemon("Ectoplasma",hp=60,atk=65,def_=60,atk_spe=130,def_spe=75,vit=110,gen=1,
-                    type1=Type.POISON,type2=Type.SPECTRE,num_on_sprite_sheet=94,EV=ectoplasma_Ev, nature=Nature.MODESTE)
+                    type1=Type.POISON,type2=Type.SPECTRE,num_on_sprite_sheet=108,EV=ectoplasma_Ev, nature=Nature.MODESTE)
 ectoplasma.change_talent(talents["Intimidation"]())
 
 tonnerre = SpecialMove("Tonnerre",Type.ELECTRIQUE,power=90,precision=100,pp=15, effect = dico_effect_move["Tonnerre"], prio = 0)
 balle_ombre = SpecialMove("Balle'Ombre",Type.SPECTRE,power=80,precision=100,pp=10, effect = dico_effect_move["Balle'Ombre"], prio = 0)
-
+ectoplasma.learn_move(tonnerre)
+ectoplasma.learn_move(balle_ombre)
 #print(ectoplasma)
