@@ -35,9 +35,10 @@ class Trainer:
             self.pokemon_team.append(pokemon)
             print(f"{self.name} a capturé {pokemon.name}")
  
-from pokemon_init import leviator,dracaufeu     
+from pokemon_init import leviator,dracaufeu,ectoplasma    
 trainer_ai = Trainer("Ash")
 trainer_ai.catch_pokemon(dracaufeu)
+trainer_ai.catch_pokemon(ectoplasma)
 trainer = Trainer("Brandon")
 trainer.catch_pokemon(leviator)
 print(trainer_ai,trainer,sep="\n")
