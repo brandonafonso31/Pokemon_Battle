@@ -38,8 +38,8 @@ class Trainer:
     def send_next(self):
         team = self.pokemon_team
         for i in range(len(team)):
-            if team[i].pv != 0:
-                #afficher un texte poour annoncer l'arrive du suivant
+            if team[i].hp != 0:
+                # afficher un texte poour annoncer l'arrive du suivant
                 return team[i],True
         return None,False
  
