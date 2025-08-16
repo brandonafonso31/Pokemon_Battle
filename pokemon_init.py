@@ -2,7 +2,7 @@ from pokemon import Pokemon
 from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
-from pokemon_talent import Talent,talents
+from pokemon_talent import talents
 
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
