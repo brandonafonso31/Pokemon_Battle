@@ -1,6 +1,5 @@
 - optimiser la fluidité de l'animation de la barre de vie car des fois semble bugger, l'app arrete de fonctionnner et contienue apres la barre de vie?
 - load une image pour le bloc contenant les hp, le niv et le nom
-- add function to change pokemon team from pc
 - bouger les menus dans un nouveau fichier menus
 - mieux gérer les transitions d'un pokemon à l'autre
 - ajouter le cri du pokemon à l'apparition et le faire bouger un peu de gauche à droite ?
@@ -12,3 +11,6 @@
 - add esquive et precision to pokemon ?
 - StatusMove à implémenter
 - implenter animations des attaques
+- ajouter une interface d'accueil (background + musique d'intro)
+- creer des dresseurs dans un json ? pour load les adversaires
+- ajouter une fonction PC pour choisir sa team avant le combat (utiliser les petits sprites pour l'affichage peut-être plutot commmencer par just des inpuits dans le terminal)
