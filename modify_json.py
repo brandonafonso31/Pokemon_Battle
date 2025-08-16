@@ -1,6 +1,7 @@
 from config import pokemon_data_json_path,data_dir_path
 import json, os
 from pokedex import get_pokemon
+from pokemon_type import Type
 
 gen1 = {"name": "gen1", "index": list(range(1, 152))}
 gen2 = {"name": "gen2", "index": list(range(152, 252))}
@@ -68,3 +69,47 @@ def remove_useless_attribut(json_file_path):
 """
 for i in range(1,9):
     remove_useless_attribut(f"pokedex_gen{i}.json")"""
+    
+def translate_type(json_file_path,tab_translate):
+    path = os.path.join(data_dir_path, json_file_path)
+    
+    # Lire le JSON existant
+    with open(path, "r", encoding="utf-8") as f:
+        data_gen = json.load(f)
+    
+    # Nettoyer chaque Pokémon
+    for poke_name, infos in data_gen.items():
+        if len(infos["types"]) == 2:
+            infos["types"][0] = tab_translate[infos["types"][0]]
+            infos["types"][1] = tab_translate[infos["types"][1]]
+        else:   
+            infos["types"][0] = tab_translate[infos["types"][0]]
+    print(data_gen)
+    # Réécrire le JSON nettoyé
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data_gen, f, indent=4, ensure_ascii=False)
+
+    print(f" Nettoyage terminé : {path}")
+    
+tab_translate = {"Normal":"NORMAL",
+                    "Fire":"FEU",
+                    "Grass":"PLANTE",
+                    "Water":"EAU",
+                    "Bug":"INSECTE",
+                    "Steel":"ACIER",
+                    "Poison":"POISON",
+                    "Electric":"ELECTRIQUE",
+                    "Ground":"SOL",
+                    "Fairy":"FEE",  
+                    "Fighting":"COMBAT",
+                    "Rock":"ROCHE",  
+                    "Psychic":"PSY",
+                    "Ice":"GLACE",
+                    "Dragon":"DRAGON",
+                    "Ghost":"SPECTRE",
+                    "Flying":"VOL",
+                    "Dark":"TENEBRE" }
+
+print(len(tab_translate))
+for i in range(1,9):
+    translate_type(f"pokedex_gen{i}.json",tab_translate)

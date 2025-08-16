@@ -3,7 +3,7 @@
         "num": 387,
         "name": "Turtwig",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 55,
@@ -22,7 +22,7 @@
         "num": 388,
         "name": "Grotle",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 75,
@@ -41,8 +41,8 @@
         "num": 389,
         "name": "Torterra",
         "types": [
-            "Grass",
-            "Ground"
+            "PLANTE",
+            "SOL"
         ],
         "baseStats": {
             "hp": 95,
@@ -61,7 +61,7 @@
         "num": 390,
         "name": "Chimchar",
         "types": [
-            "Fire"
+            "FEU"
         ],
         "baseStats": {
             "hp": 44,
@@ -80,8 +80,8 @@
         "num": 391,
         "name": "Monferno",
         "types": [
-            "Fire",
-            "Fighting"
+            "FEU",
+            "COMBAT"
         ],
         "baseStats": {
             "hp": 64,
@@ -100,8 +100,8 @@
         "num": 392,
         "name": "Infernape",
         "types": [
-            "Fire",
-            "Fighting"
+            "FEU",
+            "COMBAT"
         ],
         "baseStats": {
             "hp": 76,
@@ -120,7 +120,7 @@
         "num": 393,
         "name": "Piplup",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 53,
@@ -139,7 +139,7 @@
         "num": 394,
         "name": "Prinplup",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 64,
@@ -158,8 +158,8 @@
         "num": 395,
         "name": "Empoleon",
         "types": [
-            "Water",
-            "Steel"
+            "EAU",
+            "ACIER"
         ],
         "baseStats": {
             "hp": 84,
@@ -178,8 +178,8 @@
         "num": 396,
         "name": "Starly",
         "types": [
-            "Normal",
-            "Flying"
+            "NORMAL",
+            "VOL"
         ],
         "baseStats": {
             "hp": 40,
@@ -198,8 +198,8 @@
         "num": 397,
         "name": "Staravia",
         "types": [
-            "Normal",
-            "Flying"
+            "NORMAL",
+            "VOL"
         ],
         "baseStats": {
             "hp": 55,
@@ -218,8 +218,8 @@
         "num": 398,
         "name": "Staraptor",
         "types": [
-            "Normal",
-            "Flying"
+            "NORMAL",
+            "VOL"
         ],
         "baseStats": {
             "hp": 85,
@@ -238,7 +238,7 @@
         "num": 399,
         "name": "Bidoof",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 59,
@@ -258,8 +258,8 @@
         "num": 400,
         "name": "Bibarel",
         "types": [
-            "Normal",
-            "Water"
+            "NORMAL",
+            "EAU"
         ],
         "baseStats": {
             "hp": 79,
@@ -279,7 +279,7 @@
         "num": 401,
         "name": "Kricketot",
         "types": [
-            "Bug"
+            "INSECTE"
         ],
         "baseStats": {
             "hp": 37,
@@ -298,7 +298,7 @@
         "num": 402,
         "name": "Kricketune",
         "types": [
-            "Bug"
+            "INSECTE"
         ],
         "baseStats": {
             "hp": 77,
@@ -317,7 +317,7 @@
         "num": 403,
         "name": "Shinx",
         "types": [
-            "Electric"
+            "ELECTRIQUE"
         ],
         "baseStats": {
             "hp": 45,
@@ -337,7 +337,7 @@
         "num": 404,
         "name": "Luxio",
         "types": [
-            "Electric"
+            "ELECTRIQUE"
         ],
         "baseStats": {
             "hp": 60,
@@ -357,7 +357,7 @@
         "num": 405,
         "name": "Luxray",
         "types": [
-            "Electric"
+            "ELECTRIQUE"
         ],
         "baseStats": {
             "hp": 80,
@@ -377,8 +377,8 @@
         "num": 406,
         "name": "Budew",
         "types": [
-            "Grass",
-            "Poison"
+            "PLANTE",
+            "POISON"
         ],
         "baseStats": {
             "hp": 40,
@@ -398,8 +398,8 @@
         "num": 407,
         "name": "Roserade",
         "types": [
-            "Grass",
-            "Poison"
+            "PLANTE",
+            "POISON"
         ],
         "baseStats": {
             "hp": 60,
@@ -419,7 +419,7 @@
         "num": 408,
         "name": "Cranidos",
         "types": [
-            "Rock"
+            "ROCHE"
         ],
         "baseStats": {
             "hp": 67,
@@ -438,7 +438,7 @@
         "num": 409,
         "name": "Rampardos",
         "types": [
-            "Rock"
+            "ROCHE"
         ],
         "baseStats": {
             "hp": 97,
@@ -457,8 +457,8 @@
         "num": 410,
         "name": "Shieldon",
         "types": [
-            "Rock",
-            "Steel"
+            "ROCHE",
+            "ACIER"
         ],
         "baseStats": {
             "hp": 30,
@@ -477,8 +477,8 @@
         "num": 411,
         "name": "Bastiodon",
         "types": [
-            "Rock",
-            "Steel"
+            "ROCHE",
+            "ACIER"
         ],
         "baseStats": {
             "hp": 60,
@@ -497,7 +497,7 @@
         "num": 412,
         "name": "Burmy",
         "types": [
-            "Bug"
+            "INSECTE"
         ],
         "baseStats": {
             "hp": 40,
@@ -516,8 +516,8 @@
         "num": 413,
         "name": "Wormadam",
         "types": [
-            "Bug",
-            "Grass"
+            "INSECTE",
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 60,
@@ -536,8 +536,8 @@
         "num": 414,
         "name": "Mothim",
         "types": [
-            "Bug",
-            "Flying"
+            "INSECTE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 70,
@@ -556,8 +556,8 @@
         "num": 415,
         "name": "Combee",
         "types": [
-            "Bug",
-            "Flying"
+            "INSECTE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 30,
@@ -576,8 +576,8 @@
         "num": 416,
         "name": "Vespiquen",
         "types": [
-            "Bug",
-            "Flying"
+            "INSECTE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 70,
@@ -596,7 +596,7 @@
         "num": 417,
         "name": "Pachirisu",
         "types": [
-            "Electric"
+            "ELECTRIQUE"
         ],
         "baseStats": {
             "hp": 60,
@@ -616,7 +616,7 @@
         "num": 418,
         "name": "Buizel",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 55,
@@ -635,7 +635,7 @@
         "num": 419,
         "name": "Floatzel",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 85,
@@ -654,7 +654,7 @@
         "num": 420,
         "name": "Cherubi",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 45,
@@ -672,7 +672,7 @@
         "num": 421,
         "name": "Cherrim",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 70,
@@ -690,7 +690,7 @@
         "num": 422,
         "name": "Shellos",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 76,
@@ -710,8 +710,8 @@
         "num": 423,
         "name": "Gastrodon",
         "types": [
-            "Water",
-            "Ground"
+            "EAU",
+            "SOL"
         ],
         "baseStats": {
             "hp": 111,
@@ -731,7 +731,7 @@
         "num": 424,
         "name": "Ambipom",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 75,
@@ -751,8 +751,8 @@
         "num": 425,
         "name": "Drifloon",
         "types": [
-            "Ghost",
-            "Flying"
+            "SPECTRE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 90,
@@ -772,8 +772,8 @@
         "num": 426,
         "name": "Drifblim",
         "types": [
-            "Ghost",
-            "Flying"
+            "SPECTRE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 150,
@@ -793,7 +793,7 @@
         "num": 427,
         "name": "Buneary",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 55,
@@ -813,7 +813,7 @@
         "num": 428,
         "name": "Lopunny",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 65,
@@ -833,7 +833,7 @@
         "num": 429,
         "name": "Mismagius",
         "types": [
-            "Ghost"
+            "SPECTRE"
         ],
         "baseStats": {
             "hp": 60,
@@ -851,8 +851,8 @@
         "num": 430,
         "name": "Honchkrow",
         "types": [
-            "Dark",
-            "Flying"
+            "TENEBRE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 100,
@@ -872,7 +872,7 @@
         "num": 431,
         "name": "Glameow",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 49,
@@ -892,7 +892,7 @@
         "num": 432,
         "name": "Purugly",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 71,
@@ -912,7 +912,7 @@
         "num": 433,
         "name": "Chingling",
         "types": [
-            "Psychic"
+            "PSY"
         ],
         "baseStats": {
             "hp": 45,
@@ -930,8 +930,8 @@
         "num": 434,
         "name": "Stunky",
         "types": [
-            "Poison",
-            "Dark"
+            "POISON",
+            "TENEBRE"
         ],
         "baseStats": {
             "hp": 63,
@@ -951,8 +951,8 @@
         "num": 435,
         "name": "Skuntank",
         "types": [
-            "Poison",
-            "Dark"
+            "POISON",
+            "TENEBRE"
         ],
         "baseStats": {
             "hp": 103,
@@ -972,8 +972,8 @@
         "num": 436,
         "name": "Bronzor",
         "types": [
-            "Steel",
-            "Psychic"
+            "ACIER",
+            "PSY"
         ],
         "baseStats": {
             "hp": 57,
@@ -993,8 +993,8 @@
         "num": 437,
         "name": "Bronzong",
         "types": [
-            "Steel",
-            "Psychic"
+            "ACIER",
+            "PSY"
         ],
         "baseStats": {
             "hp": 67,
@@ -1014,7 +1014,7 @@
         "num": 438,
         "name": "Bonsly",
         "types": [
-            "Rock"
+            "ROCHE"
         ],
         "baseStats": {
             "hp": 50,
@@ -1034,8 +1034,8 @@
         "num": 439,
         "name": "Mime Jr.",
         "types": [
-            "Psychic",
-            "Fairy"
+            "PSY",
+            "FEE"
         ],
         "baseStats": {
             "hp": 20,
@@ -1055,7 +1055,7 @@
         "num": 440,
         "name": "Happiny",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 100,
@@ -1075,8 +1075,8 @@
         "num": 441,
         "name": "Chatot",
         "types": [
-            "Normal",
-            "Flying"
+            "NORMAL",
+            "VOL"
         ],
         "baseStats": {
             "hp": 76,
@@ -1096,8 +1096,8 @@
         "num": 442,
         "name": "Spiritomb",
         "types": [
-            "Ghost",
-            "Dark"
+            "SPECTRE",
+            "TENEBRE"
         ],
         "baseStats": {
             "hp": 50,
@@ -1116,8 +1116,8 @@
         "num": 443,
         "name": "Gible",
         "types": [
-            "Dragon",
-            "Ground"
+            "DRAGON",
+            "SOL"
         ],
         "baseStats": {
             "hp": 58,
@@ -1136,8 +1136,8 @@
         "num": 444,
         "name": "Gabite",
         "types": [
-            "Dragon",
-            "Ground"
+            "DRAGON",
+            "SOL"
         ],
         "baseStats": {
             "hp": 68,
@@ -1156,8 +1156,8 @@
         "num": 445,
         "name": "Garchomp",
         "types": [
-            "Dragon",
-            "Ground"
+            "DRAGON",
+            "SOL"
         ],
         "baseStats": {
             "hp": 108,
@@ -1176,7 +1176,7 @@
         "num": 446,
         "name": "Munchlax",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 135,
@@ -1196,7 +1196,7 @@
         "num": 447,
         "name": "Riolu",
         "types": [
-            "Fighting"
+            "COMBAT"
         ],
         "baseStats": {
             "hp": 40,
@@ -1216,8 +1216,8 @@
         "num": 448,
         "name": "Lucario",
         "types": [
-            "Fighting",
-            "Steel"
+            "COMBAT",
+            "ACIER"
         ],
         "baseStats": {
             "hp": 70,
@@ -1237,7 +1237,7 @@
         "num": 449,
         "name": "Hippopotas",
         "types": [
-            "Ground"
+            "SOL"
         ],
         "baseStats": {
             "hp": 68,
@@ -1256,7 +1256,7 @@
         "num": 450,
         "name": "Hippowdon",
         "types": [
-            "Ground"
+            "SOL"
         ],
         "baseStats": {
             "hp": 108,
@@ -1275,8 +1275,8 @@
         "num": 451,
         "name": "Skorupi",
         "types": [
-            "Poison",
-            "Bug"
+            "POISON",
+            "INSECTE"
         ],
         "baseStats": {
             "hp": 40,
@@ -1296,8 +1296,8 @@
         "num": 452,
         "name": "Drapion",
         "types": [
-            "Poison",
-            "Dark"
+            "POISON",
+            "TENEBRE"
         ],
         "baseStats": {
             "hp": 70,
@@ -1317,8 +1317,8 @@
         "num": 453,
         "name": "Croagunk",
         "types": [
-            "Poison",
-            "Fighting"
+            "POISON",
+            "COMBAT"
         ],
         "baseStats": {
             "hp": 48,
@@ -1338,8 +1338,8 @@
         "num": 454,
         "name": "Toxicroak",
         "types": [
-            "Poison",
-            "Fighting"
+            "POISON",
+            "COMBAT"
         ],
         "baseStats": {
             "hp": 83,
@@ -1359,7 +1359,7 @@
         "num": 455,
         "name": "Carnivine",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 74,
@@ -1377,7 +1377,7 @@
         "num": 456,
         "name": "Finneon",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 49,
@@ -1397,7 +1397,7 @@
         "num": 457,
         "name": "Lumineon",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 69,
@@ -1417,8 +1417,8 @@
         "num": 458,
         "name": "Mantyke",
         "types": [
-            "Water",
-            "Flying"
+            "EAU",
+            "VOL"
         ],
         "baseStats": {
             "hp": 45,
@@ -1438,8 +1438,8 @@
         "num": 459,
         "name": "Snover",
         "types": [
-            "Grass",
-            "Ice"
+            "PLANTE",
+            "GLACE"
         ],
         "baseStats": {
             "hp": 60,
@@ -1458,8 +1458,8 @@
         "num": 460,
         "name": "Abomasnow",
         "types": [
-            "Grass",
-            "Ice"
+            "PLANTE",
+            "GLACE"
         ],
         "baseStats": {
             "hp": 90,
@@ -1478,8 +1478,8 @@
         "num": 461,
         "name": "Weavile",
         "types": [
-            "Dark",
-            "Ice"
+            "TENEBRE",
+            "GLACE"
         ],
         "baseStats": {
             "hp": 70,
@@ -1498,8 +1498,8 @@
         "num": 462,
         "name": "Magnezone",
         "types": [
-            "Electric",
-            "Steel"
+            "ELECTRIQUE",
+            "ACIER"
         ],
         "baseStats": {
             "hp": 70,
@@ -1519,7 +1519,7 @@
         "num": 463,
         "name": "Lickilicky",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 110,
@@ -1539,8 +1539,8 @@
         "num": 464,
         "name": "Rhyperior",
         "types": [
-            "Ground",
-            "Rock"
+            "SOL",
+            "ROCHE"
         ],
         "baseStats": {
             "hp": 115,
@@ -1560,7 +1560,7 @@
         "num": 465,
         "name": "Tangrowth",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 100,
@@ -1580,7 +1580,7 @@
         "num": 466,
         "name": "Electivire",
         "types": [
-            "Electric"
+            "ELECTRIQUE"
         ],
         "baseStats": {
             "hp": 75,
@@ -1599,7 +1599,7 @@
         "num": 467,
         "name": "Magmortar",
         "types": [
-            "Fire"
+            "FEU"
         ],
         "baseStats": {
             "hp": 75,
@@ -1618,8 +1618,8 @@
         "num": 468,
         "name": "Togekiss",
         "types": [
-            "Fairy",
-            "Flying"
+            "FEE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 85,
@@ -1639,8 +1639,8 @@
         "num": 469,
         "name": "Yanmega",
         "types": [
-            "Bug",
-            "Flying"
+            "INSECTE",
+            "VOL"
         ],
         "baseStats": {
             "hp": 86,
@@ -1660,7 +1660,7 @@
         "num": 470,
         "name": "Leafeon",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 65,
@@ -1679,7 +1679,7 @@
         "num": 471,
         "name": "Glaceon",
         "types": [
-            "Ice"
+            "GLACE"
         ],
         "baseStats": {
             "hp": 65,
@@ -1698,8 +1698,8 @@
         "num": 472,
         "name": "Gliscor",
         "types": [
-            "Ground",
-            "Flying"
+            "SOL",
+            "VOL"
         ],
         "baseStats": {
             "hp": 75,
@@ -1719,8 +1719,8 @@
         "num": 473,
         "name": "Mamoswine",
         "types": [
-            "Ice",
-            "Ground"
+            "GLACE",
+            "SOL"
         ],
         "baseStats": {
             "hp": 110,
@@ -1740,7 +1740,7 @@
         "num": 474,
         "name": "Porygon-Z",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 85,
@@ -1760,8 +1760,8 @@
         "num": 475,
         "name": "Gallade",
         "types": [
-            "Psychic",
-            "Fighting"
+            "PSY",
+            "COMBAT"
         ],
         "baseStats": {
             "hp": 68,
@@ -1780,8 +1780,8 @@
         "num": 476,
         "name": "Probopass",
         "types": [
-            "Rock",
-            "Steel"
+            "ROCHE",
+            "ACIER"
         ],
         "baseStats": {
             "hp": 60,
@@ -1801,7 +1801,7 @@
         "num": 477,
         "name": "Dusknoir",
         "types": [
-            "Ghost"
+            "SPECTRE"
         ],
         "baseStats": {
             "hp": 45,
@@ -1820,8 +1820,8 @@
         "num": 478,
         "name": "Froslass",
         "types": [
-            "Ice",
-            "Ghost"
+            "GLACE",
+            "SPECTRE"
         ],
         "baseStats": {
             "hp": 70,
@@ -1840,8 +1840,8 @@
         "num": 479,
         "name": "Rotom",
         "types": [
-            "Electric",
-            "Ghost"
+            "ELECTRIQUE",
+            "SPECTRE"
         ],
         "baseStats": {
             "hp": 50,
@@ -1859,7 +1859,7 @@
         "num": 480,
         "name": "Uxie",
         "types": [
-            "Psychic"
+            "PSY"
         ],
         "baseStats": {
             "hp": 75,
@@ -1877,7 +1877,7 @@
         "num": 481,
         "name": "Mesprit",
         "types": [
-            "Psychic"
+            "PSY"
         ],
         "baseStats": {
             "hp": 80,
@@ -1895,7 +1895,7 @@
         "num": 482,
         "name": "Azelf",
         "types": [
-            "Psychic"
+            "PSY"
         ],
         "baseStats": {
             "hp": 75,
@@ -1913,8 +1913,8 @@
         "num": 483,
         "name": "Dialga",
         "types": [
-            "Steel",
-            "Dragon"
+            "ACIER",
+            "DRAGON"
         ],
         "baseStats": {
             "hp": 100,
@@ -1933,8 +1933,8 @@
         "num": 484,
         "name": "Palkia",
         "types": [
-            "Water",
-            "Dragon"
+            "EAU",
+            "DRAGON"
         ],
         "baseStats": {
             "hp": 90,
@@ -1953,8 +1953,8 @@
         "num": 485,
         "name": "Heatran",
         "types": [
-            "Fire",
-            "Steel"
+            "FEU",
+            "ACIER"
         ],
         "baseStats": {
             "hp": 91,
@@ -1973,7 +1973,7 @@
         "num": 486,
         "name": "Regigigas",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 110,
@@ -1991,8 +1991,8 @@
         "num": 487,
         "name": "Giratina",
         "types": [
-            "Ghost",
-            "Dragon"
+            "SPECTRE",
+            "DRAGON"
         ],
         "baseStats": {
             "hp": 150,
@@ -2011,7 +2011,7 @@
         "num": 488,
         "name": "Cresselia",
         "types": [
-            "Psychic"
+            "PSY"
         ],
         "baseStats": {
             "hp": 120,
@@ -2029,7 +2029,7 @@
         "num": 489,
         "name": "Phione",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 80,
@@ -2047,7 +2047,7 @@
         "num": 490,
         "name": "Manaphy",
         "types": [
-            "Water"
+            "EAU"
         ],
         "baseStats": {
             "hp": 100,
@@ -2065,7 +2065,7 @@
         "num": 491,
         "name": "Darkrai",
         "types": [
-            "Dark"
+            "TENEBRE"
         ],
         "baseStats": {
             "hp": 70,
@@ -2083,7 +2083,7 @@
         "num": 492,
         "name": "Shaymin",
         "types": [
-            "Grass"
+            "PLANTE"
         ],
         "baseStats": {
             "hp": 100,
@@ -2101,7 +2101,7 @@
         "num": 493,
         "name": "Arceus",
         "types": [
-            "Normal"
+            "NORMAL"
         ],
         "baseStats": {
             "hp": 120,
