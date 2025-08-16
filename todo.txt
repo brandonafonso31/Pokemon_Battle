@@ -1,12 +1,14 @@
 - optimiser la fluidité de l'animation de la barre de vie car des fois semble bugger, l'app arrete de fonctionnner et contienue apres la barre de vie?
+- load une image pour le bloc contenant les hp, le niv et le nom
 - add function to change pokemon team from pc
 - bouger les menus dans un nouveau fichier menus
 - mieux gérer les transitions d'un pokemon à l'autre
-- ajouter animation quand décédé (faire bouger le sprite dans le sol ou le fair diminuer ...)
-- ajouter sprite trainer for more life (oppoent always standing there or not ? + animation from player trainer when  sending a pokemon in battle)
+- ajouter le cri du pokemon à l'apparition et le faire bouger un peu de gauche à droite ?
+- ajouter animation quand décédé (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
+- ajouter sprite trainer pour plus de vie dans le coimbat (oppoent always standing there or not ? + animation from player trainer when  sending a pokemon in battle)
 - continuer d'implement trainer and pokemon_team
 - continuer les talents
-- continue implementing target
+- continuer d'implémenter le systeme de target
 - add esquive et precision to pokemon ?
 - StatusMove à implémenter
 - implenter animations des attaques
