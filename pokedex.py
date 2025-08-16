@@ -18,4 +18,29 @@ def get_pokemon(id):
             return infos
     return None
 
-print(get_pokemon(6))
+def create_pokemon(id,EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},nickname=""):
+    infos = get_pokemon(id)
+    if infos is None:
+        return None
+    
+    pokemon = Pokemon(name=infos["name"],
+                   hp=infos["baseStats"]["hp"],
+                   atk=infos["baseStats"]["atk"],
+                   def_=infos["baseStats"]["def"],
+                   atk_spe=infos["baseStats"]["spa"],
+                   def_spe=infos["baseStats"]["spd"],
+                   vit=infos["baseStats"]["spe"],
+                   gen=infos["gen"],
+                   type1=Type(infos["types"][0]),
+                   type2=Type(infos["types"][1]) if len(infos["types"]) > 1 else None,
+                   num_on_sprite_sheet=infos["num"],
+                   EV=EV,
+                   nature=infos[""],
+                   
+                   nickname=nickname
+    )
+    
+    return pokemon
+
+"""charizard = create_pokemon(6)
+print(charizard)"""
