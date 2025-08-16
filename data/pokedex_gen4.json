@@ -2,15 +2,9 @@
     "387": {
         "num": 387,
         "name": "Turtwig",
-        "alias": "turtwig",
-        "sprite": "turtwig",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 55,
             "atk": 68,
@@ -22,62 +16,14 @@
         "abilities": {
             "0": "Overgrow",
             "H": "Shell Armor"
-        },
-        "heightm": 0.4,
-        "weightkg": 10.2,
-        "color": "Green",
-        "evos": [
-            "Grotle"
-        ],
-        "eggGroups": [
-            "Monster",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "388": {
         "num": 388,
         "name": "Grotle",
-        "alias": "grotle",
-        "sprite": "grotle",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 75,
             "atk": 89,
@@ -89,63 +35,15 @@
         "abilities": {
             "0": "Overgrow",
             "H": "Shell Armor"
-        },
-        "heightm": 1.1,
-        "weightkg": 97,
-        "color": "Green",
-        "evos": [
-            "Torterra"
-        ],
-        "eggGroups": [
-            "Monster",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Turtwig",
-        "evoLevel": 18,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "389": {
         "num": 389,
         "name": "Torterra",
-        "alias": "torterra",
-        "sprite": "torterra",
         "types": [
             "Grass",
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 95,
             "atk": 109,
@@ -157,60 +55,14 @@
         "abilities": {
             "0": "Overgrow",
             "H": "Shell Armor"
-        },
-        "heightm": 2.2,
-        "weightkg": 310,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Monster",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Grotle",
-        "evoLevel": 32,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "390": {
         "num": 390,
         "name": "Chimchar",
-        "alias": "chimchar",
-        "sprite": "chimchar",
         "types": [
             "Fire"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 44,
             "atk": 58,
@@ -222,63 +74,15 @@
         "abilities": {
             "0": "Blaze",
             "H": "Iron Fist"
-        },
-        "heightm": 0.5,
-        "weightkg": 6.2,
-        "color": "Brown",
-        "evos": [
-            "Monferno"
-        ],
-        "eggGroups": [
-            "Field",
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "391": {
         "num": 391,
         "name": "Monferno",
-        "alias": "monferno",
-        "sprite": "monferno",
         "types": [
             "Fire",
             "Fighting"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 64,
             "atk": 78,
@@ -290,63 +94,15 @@
         "abilities": {
             "0": "Blaze",
             "H": "Iron Fist"
-        },
-        "heightm": 0.9,
-        "weightkg": 22,
-        "color": "Brown",
-        "evos": [
-            "Infernape"
-        ],
-        "eggGroups": [
-            "Field",
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Chimchar",
-        "evoLevel": 14,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "392": {
         "num": 392,
         "name": "Infernape",
-        "alias": "infernape",
-        "sprite": "infernape",
         "types": [
             "Fire",
             "Fighting"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 76,
             "atk": 104,
@@ -358,60 +114,14 @@
         "abilities": {
             "0": "Blaze",
             "H": "Iron Fist"
-        },
-        "heightm": 1.2,
-        "weightkg": 55,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Field",
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Monferno",
-        "evoLevel": 36,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "393": {
         "num": 393,
         "name": "Piplup",
-        "alias": "piplup",
-        "sprite": "piplup",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 53,
             "atk": 51,
@@ -423,62 +133,14 @@
         "abilities": {
             "0": "Torrent",
             "H": "Defiant"
-        },
-        "heightm": 0.4,
-        "weightkg": 5.2,
-        "color": "Blue",
-        "evos": [
-            "Prinplup"
-        ],
-        "eggGroups": [
-            "Water 1",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "394": {
         "num": 394,
         "name": "Prinplup",
-        "alias": "prinplup",
-        "sprite": "prinplup",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 64,
             "atk": 66,
@@ -490,63 +152,15 @@
         "abilities": {
             "0": "Torrent",
             "H": "Defiant"
-        },
-        "heightm": 0.8,
-        "weightkg": 23,
-        "color": "Blue",
-        "evos": [
-            "Empoleon"
-        ],
-        "eggGroups": [
-            "Water 1",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Piplup",
-        "evoLevel": 16,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "395": {
         "num": 395,
         "name": "Empoleon",
-        "alias": "empoleon",
-        "sprite": "empoleon",
         "types": [
             "Water",
             "Steel"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 84,
             "atk": 86,
@@ -558,61 +172,15 @@
         "abilities": {
             "0": "Torrent",
             "H": "Defiant"
-        },
-        "heightm": 1.7,
-        "weightkg": 84.5,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Water 1",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Prinplup",
-        "evoLevel": 36,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "396": {
         "num": 396,
         "name": "Starly",
-        "alias": "starly",
-        "sprite": "starly",
         "types": [
             "Normal",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 40,
             "atk": 55,
@@ -624,62 +192,15 @@
         "abilities": {
             "0": "Keen Eye",
             "H": "Reckless"
-        },
-        "heightm": 0.3,
-        "weightkg": 2,
-        "color": "Brown",
-        "evos": [
-            "Staravia"
-        ],
-        "eggGroups": [
-            "Flying"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "397": {
         "num": 397,
         "name": "Staravia",
-        "alias": "staravia",
-        "sprite": "staravia",
         "types": [
             "Normal",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 55,
             "atk": 75,
@@ -691,62 +212,15 @@
         "abilities": {
             "0": "Intimidate",
             "H": "Reckless"
-        },
-        "heightm": 0.6,
-        "weightkg": 15.5,
-        "color": "Brown",
-        "evos": [
-            "Staraptor"
-        ],
-        "eggGroups": [
-            "Flying"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Starly",
-        "evoLevel": 14,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "398": {
         "num": 398,
         "name": "Staraptor",
-        "alias": "staraptor",
-        "sprite": "staraptor",
         "types": [
             "Normal",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 85,
             "atk": 120,
@@ -758,59 +232,14 @@
         "abilities": {
             "0": "Intimidate",
             "H": "Reckless"
-        },
-        "heightm": 1.2,
-        "weightkg": 24.9,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Flying"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Staravia",
-        "evoLevel": 34,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "399": {
         "num": 399,
         "name": "Bidoof",
-        "alias": "bidoof",
-        "sprite": "bidoof",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 59,
             "atk": 45,
@@ -823,63 +252,15 @@
             "0": "Simple",
             "1": "Unaware",
             "H": "Moody"
-        },
-        "heightm": 0.5,
-        "weightkg": 20,
-        "color": "Brown",
-        "evos": [
-            "Bibarel"
-        ],
-        "eggGroups": [
-            "Water 1",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "400": {
         "num": 400,
         "name": "Bibarel",
-        "alias": "bibarel",
-        "sprite": "bibarel",
         "types": [
             "Normal",
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 79,
             "atk": 85,
@@ -892,60 +273,14 @@
             "0": "Simple",
             "1": "Unaware",
             "H": "Moody"
-        },
-        "heightm": 1,
-        "weightkg": 31.5,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Water 1",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Bidoof",
-        "evoLevel": 15,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "401": {
         "num": 401,
         "name": "Kricketot",
-        "alias": "kricketot",
-        "sprite": "kricketot",
         "types": [
             "Bug"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 37,
             "atk": 25,
@@ -957,61 +292,14 @@
         "abilities": {
             "0": "Shed Skin",
             "H": "Run Away"
-        },
-        "heightm": 0.3,
-        "weightkg": 2.2,
-        "color": "Red",
-        "evos": [
-            "Kricketune"
-        ],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "402": {
         "num": 402,
         "name": "Kricketune",
-        "alias": "kricketune",
-        "sprite": "kricketune",
         "types": [
             "Bug"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 77,
             "atk": 85,
@@ -1023,59 +311,14 @@
         "abilities": {
             "0": "Swarm",
             "H": "Technician"
-        },
-        "heightm": 1,
-        "weightkg": 25.5,
-        "color": "Red",
-        "evos": [],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Kricketot",
-        "evoLevel": 10,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "403": {
         "num": 403,
         "name": "Shinx",
-        "alias": "shinx",
-        "sprite": "shinx",
         "types": [
             "Electric"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 45,
             "atk": 65,
@@ -1088,61 +331,14 @@
             "0": "Rivalry",
             "1": "Intimidate",
             "H": "Guts"
-        },
-        "heightm": 0.5,
-        "weightkg": 9.5,
-        "color": "Blue",
-        "evos": [
-            "Luxio"
-        ],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "404": {
         "num": 404,
         "name": "Luxio",
-        "alias": "luxio",
-        "sprite": "luxio",
         "types": [
             "Electric"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 60,
             "atk": 85,
@@ -1155,61 +351,14 @@
             "0": "Rivalry",
             "1": "Intimidate",
             "H": "Guts"
-        },
-        "heightm": 0.9,
-        "weightkg": 30.5,
-        "color": "Blue",
-        "evos": [
-            "Luxray"
-        ],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Shinx",
-        "evoLevel": 15,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "405": {
         "num": 405,
         "name": "Luxray",
-        "alias": "luxray",
-        "sprite": "luxray",
         "types": [
             "Electric"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 80,
             "atk": 120,
@@ -1222,60 +371,15 @@
             "0": "Rivalry",
             "1": "Intimidate",
             "H": "Guts"
-        },
-        "heightm": 1.4,
-        "weightkg": 42,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Luxio",
-        "evoLevel": 30,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "406": {
         "num": 406,
         "name": "Budew",
-        "alias": "budew",
-        "sprite": "budew",
         "types": [
             "Grass",
             "Poison"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 40,
             "atk": 30,
@@ -1288,62 +392,15 @@
             "0": "Natural Cure",
             "1": "Poison Point",
             "H": "Leaf Guard"
-        },
-        "heightm": 0.2,
-        "weightkg": 1.2,
-        "color": "Green",
-        "evos": [
-            "Roselia"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "407": {
         "num": 407,
         "name": "Roserade",
-        "alias": "roserade",
-        "sprite": "roserade",
         "types": [
             "Grass",
             "Poison"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 60,
             "atk": 70,
@@ -1356,60 +413,14 @@
             "0": "Natural Cure",
             "1": "Poison Point",
             "H": "Technician"
-        },
-        "heightm": 0.9,
-        "weightkg": 14.5,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Fairy",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Roselia",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Shiny Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "408": {
         "num": 408,
         "name": "Cranidos",
-        "alias": "cranidos",
-        "sprite": "cranidos",
         "types": [
             "Rock"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 67,
             "atk": 125,
@@ -1421,61 +432,14 @@
         "abilities": {
             "0": "Mold Breaker",
             "H": "Sheer Force"
-        },
-        "heightm": 0.9,
-        "weightkg": 31.5,
-        "color": "Blue",
-        "evos": [
-            "Rampardos"
-        ],
-        "eggGroups": [
-            "Monster"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "409": {
         "num": 409,
         "name": "Rampardos",
-        "alias": "rampardos",
-        "sprite": "rampardos",
         "types": [
             "Rock"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 97,
             "atk": 165,
@@ -1487,60 +451,15 @@
         "abilities": {
             "0": "Mold Breaker",
             "H": "Sheer Force"
-        },
-        "heightm": 1.6,
-        "weightkg": 102.5,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Monster"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Cranidos",
-        "evoLevel": 30,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "410": {
         "num": 410,
         "name": "Shieldon",
-        "alias": "shieldon",
-        "sprite": "shieldon",
         "types": [
             "Rock",
             "Steel"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 30,
             "atk": 42,
@@ -1552,62 +471,15 @@
         "abilities": {
             "0": "Sturdy",
             "H": "Soundproof"
-        },
-        "heightm": 0.5,
-        "weightkg": 57,
-        "color": "Gray",
-        "evos": [
-            "Bastiodon"
-        ],
-        "eggGroups": [
-            "Monster"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "411": {
         "num": 411,
         "name": "Bastiodon",
-        "alias": "bastiodon",
-        "sprite": "bastiodon",
         "types": [
             "Rock",
             "Steel"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 60,
             "atk": 52,
@@ -1619,59 +491,14 @@
         "abilities": {
             "0": "Sturdy",
             "H": "Soundproof"
-        },
-        "heightm": 1.3,
-        "weightkg": 149.5,
-        "color": "Gray",
-        "evos": [],
-        "eggGroups": [
-            "Monster"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Shieldon",
-        "evoLevel": 30,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "412": {
         "num": 412,
         "name": "Burmy",
-        "alias": "burmy",
-        "sprite": "burmy",
         "types": [
             "Bug"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 40,
             "atk": 29,
@@ -1683,78 +510,15 @@
         "abilities": {
             "0": "Shed Skin",
             "H": "Overcoat"
-        },
-        "heightm": 0.2,
-        "weightkg": 3.4,
-        "color": "Green",
-        "evos": [
-            "Wormadam",
-            "Wormadam-Sandy",
-            "Wormadam-Trash",
-            "Mothim"
-        ],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": "Plant",
-        "baseFormeAlias": "burmyplant",
-        "baseFormeSprite": "burmy-plant",
-        "cosmeticFormes": [
-            "Burmy-Sandy",
-            "Burmy-Trash"
-        ],
-        "cosmeticFormesAliases": [
-            "burmysandy",
-            "burmytrash"
-        ],
-        "cosmeticFormesSprites": [
-            "burmy-sandy",
-            "burmy-trash"
-        ],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [
-            "Burmy",
-            "Burmy-Sandy",
-            "Burmy-Trash"
-        ],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "413": {
         "num": 413,
         "name": "Wormadam",
-        "alias": "wormadam",
-        "sprite": "wormadam",
         "types": [
             "Bug",
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 60,
             "atk": 59,
@@ -1766,73 +530,15 @@
         "abilities": {
             "0": "Anticipation",
             "H": "Overcoat"
-        },
-        "heightm": 0.5,
-        "weightkg": 6.5,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": "Plant",
-        "baseFormeAlias": "wormadamplant",
-        "baseFormeSprite": "wormadam-plant",
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Wormadam-Sandy",
-            "Wormadam-Trash"
-        ],
-        "otherFormesAliases": [
-            "wormadamsandy",
-            "wormadamtrash"
-        ],
-        "otherFormesSprites": [
-            "wormadam-sandy",
-            "wormadam-trash"
-        ],
-        "formeOrder": [
-            "Wormadam",
-            "Wormadam-Sandy",
-            "Wormadam-Trash"
-        ],
-        "prevo": "Burmy",
-        "evoLevel": 20,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "F",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "414": {
         "num": 414,
         "name": "Mothim",
-        "alias": "mothim",
-        "sprite": "mothim",
         "types": [
             "Bug",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 94,
@@ -1844,60 +550,15 @@
         "abilities": {
             "0": "Swarm",
             "H": "Tinted Lens"
-        },
-        "heightm": 0.9,
-        "weightkg": 23.3,
-        "color": "Yellow",
-        "evos": [],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Burmy",
-        "evoLevel": 20,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "M",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "415": {
         "num": 415,
         "name": "Combee",
-        "alias": "combee",
-        "sprite": "combee",
         "types": [
             "Bug",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 30,
             "atk": 30,
@@ -1909,62 +570,15 @@
         "abilities": {
             "0": "Honey Gather",
             "H": "Hustle"
-        },
-        "heightm": 0.3,
-        "weightkg": 5.5,
-        "color": "Yellow",
-        "evos": [
-            "Vespiquen"
-        ],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "416": {
         "num": 416,
         "name": "Vespiquen",
-        "alias": "vespiquen",
-        "sprite": "vespiquen",
         "types": [
             "Bug",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 80,
@@ -1976,59 +590,14 @@
         "abilities": {
             "0": "Pressure",
             "H": "Unnerve"
-        },
-        "heightm": 1.2,
-        "weightkg": 38.5,
-        "color": "Yellow",
-        "evos": [],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Combee",
-        "evoLevel": 21,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "F",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "417": {
         "num": 417,
         "name": "Pachirisu",
-        "alias": "pachirisu",
-        "sprite": "pachirisu",
         "types": [
             "Electric"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 60,
             "atk": 45,
@@ -2041,60 +610,14 @@
             "0": "Run Away",
             "1": "Pickup",
             "H": "Volt Absorb"
-        },
-        "heightm": 0.4,
-        "weightkg": 3.9,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Field",
-            "Fairy"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "418": {
         "num": 418,
         "name": "Buizel",
-        "alias": "buizel",
-        "sprite": "buizel",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 55,
             "atk": 65,
@@ -2106,62 +629,14 @@
         "abilities": {
             "0": "Swift Swim",
             "H": "Water Veil"
-        },
-        "heightm": 0.7,
-        "weightkg": 29.5,
-        "color": "Brown",
-        "evos": [
-            "Floatzel"
-        ],
-        "eggGroups": [
-            "Water 1",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "419": {
         "num": 419,
         "name": "Floatzel",
-        "alias": "floatzel",
-        "sprite": "floatzel",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 85,
             "atk": 105,
@@ -2173,60 +648,14 @@
         "abilities": {
             "0": "Swift Swim",
             "H": "Water Veil"
-        },
-        "heightm": 1.1,
-        "weightkg": 33.5,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Water 1",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Buizel",
-        "evoLevel": 26,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "420": {
         "num": 420,
         "name": "Cherubi",
-        "alias": "cherubi",
-        "sprite": "cherubi",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 45,
             "atk": 35,
@@ -2237,62 +666,14 @@
         },
         "abilities": {
             "0": "Chlorophyll"
-        },
-        "heightm": 0.4,
-        "weightkg": 3.3,
-        "color": "Pink",
-        "evos": [
-            "Cherrim"
-        ],
-        "eggGroups": [
-            "Fairy",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "421": {
         "num": 421,
         "name": "Cherrim",
-        "alias": "cherrim",
-        "sprite": "cherrim",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 60,
@@ -2303,69 +684,14 @@
         },
         "abilities": {
             "0": "Flower Gift"
-        },
-        "heightm": 0.5,
-        "weightkg": 9.3,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Fairy",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": "Overcast",
-        "baseFormeAlias": "cherrimovercast",
-        "baseFormeSprite": "cherrim-overcast",
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Cherrim-Sunshine"
-        ],
-        "otherFormesAliases": [
-            "cherrimsunshine"
-        ],
-        "otherFormesSprites": [
-            "cherrim-sunshine"
-        ],
-        "formeOrder": [
-            "Cherrim",
-            "Cherrim-Sunshine"
-        ],
-        "prevo": "Cherubi",
-        "evoLevel": 25,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "422": {
         "num": 422,
         "name": "Shellos",
-        "alias": "shellos",
-        "sprite": "shellos",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 76,
             "atk": 48,
@@ -2378,72 +704,15 @@
             "0": "Sticky Hold",
             "1": "Storm Drain",
             "H": "Sand Force"
-        },
-        "heightm": 0.3,
-        "weightkg": 6.3,
-        "color": "Purple",
-        "evos": [
-            "Gastrodon"
-        ],
-        "eggGroups": [
-            "Water 1",
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": "West",
-        "baseFormeAlias": "shelloswest",
-        "baseFormeSprite": "shellos-west",
-        "cosmeticFormes": [
-            "Shellos-East"
-        ],
-        "cosmeticFormesAliases": [
-            "shelloseast"
-        ],
-        "cosmeticFormesSprites": [
-            "shellos-east"
-        ],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [
-            "Shellos",
-            "Shellos-East"
-        ],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "423": {
         "num": 423,
         "name": "Gastrodon",
-        "alias": "gastrodon",
-        "sprite": "gastrodon",
         "types": [
             "Water",
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 111,
             "atk": 83,
@@ -2456,69 +725,14 @@
             "0": "Sticky Hold",
             "1": "Storm Drain",
             "H": "Sand Force"
-        },
-        "heightm": 0.9,
-        "weightkg": 29.9,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Water 1",
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": "West",
-        "baseFormeAlias": "gastrodonwest",
-        "baseFormeSprite": "gastrodon-west",
-        "cosmeticFormes": [
-            "Gastrodon-East"
-        ],
-        "cosmeticFormesAliases": [
-            "gastrodoneast"
-        ],
-        "cosmeticFormesSprites": [
-            "gastrodon-east"
-        ],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [
-            "Gastrodon",
-            "Gastrodon-East"
-        ],
-        "prevo": "Shellos",
-        "evoLevel": 30,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "424": {
         "num": 424,
         "name": "Ambipom",
-        "alias": "ambipom",
-        "sprite": "ambipom",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 75,
             "atk": 100,
@@ -2531,60 +745,15 @@
             "0": "Technician",
             "1": "Pickup",
             "H": "Skill Link"
-        },
-        "heightm": 1.2,
-        "weightkg": 20.3,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Aipom",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelMove",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": "Double Hit",
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "425": {
         "num": 425,
         "name": "Drifloon",
-        "alias": "drifloon",
-        "sprite": "drifloon",
         "types": [
             "Ghost",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 90,
             "atk": 50,
@@ -2597,62 +766,15 @@
             "0": "Aftermath",
             "1": "Unburden",
             "H": "Flare Boost"
-        },
-        "heightm": 0.4,
-        "weightkg": 1.2,
-        "color": "Purple",
-        "evos": [
-            "Drifblim"
-        ],
-        "eggGroups": [
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "426": {
         "num": 426,
         "name": "Drifblim",
-        "alias": "drifblim",
-        "sprite": "drifblim",
         "types": [
             "Ghost",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 150,
             "atk": 80,
@@ -2665,59 +787,14 @@
             "0": "Aftermath",
             "1": "Unburden",
             "H": "Flare Boost"
-        },
-        "heightm": 1.2,
-        "weightkg": 15,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Drifloon",
-        "evoLevel": 28,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "427": {
         "num": 427,
         "name": "Buneary",
-        "alias": "buneary",
-        "sprite": "buneary",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 55,
             "atk": 66,
@@ -2730,62 +807,14 @@
             "0": "Run Away",
             "1": "Klutz",
             "H": "Limber"
-        },
-        "heightm": 0.4,
-        "weightkg": 5.5,
-        "color": "Brown",
-        "evos": [
-            "Lopunny"
-        ],
-        "eggGroups": [
-            "Field",
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "428": {
         "num": 428,
         "name": "Lopunny",
-        "alias": "lopunny",
-        "sprite": "lopunny",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 65,
             "atk": 76,
@@ -2798,69 +827,14 @@
             "0": "Cute Charm",
             "1": "Klutz",
             "H": "Limber"
-        },
-        "heightm": 1.2,
-        "weightkg": 33.3,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Field",
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Lopunny-Mega"
-        ],
-        "otherFormesAliases": [
-            "lopunnymega"
-        ],
-        "otherFormesSprites": [
-            "lopunny-mega"
-        ],
-        "formeOrder": [
-            "Lopunny",
-            "Lopunny-Mega"
-        ],
-        "prevo": "Buneary",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelFriendship",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "429": {
         "num": 429,
         "name": "Mismagius",
-        "alias": "mismagius",
-        "sprite": "mismagius",
         "types": [
             "Ghost"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 60,
             "atk": 60,
@@ -2871,60 +845,15 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 0.9,
-        "weightkg": 4.4,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Misdreavus",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Dusk Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "430": {
         "num": 430,
         "name": "Honchkrow",
-        "alias": "honchkrow",
-        "sprite": "honchkrow",
         "types": [
             "Dark",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 100,
             "atk": 125,
@@ -2937,59 +866,14 @@
             "0": "Insomnia",
             "1": "Super Luck",
             "H": "Moxie"
-        },
-        "heightm": 0.9,
-        "weightkg": 27.3,
-        "color": "Black",
-        "evos": [],
-        "eggGroups": [
-            "Flying"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Murkrow",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Dusk Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "431": {
         "num": 431,
         "name": "Glameow",
-        "alias": "glameow",
-        "sprite": "glameow",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0.25,
-            "F": 0.75
-        },
         "baseStats": {
             "hp": 49,
             "atk": 55,
@@ -3002,61 +886,14 @@
             "0": "Limber",
             "1": "Own Tempo",
             "H": "Keen Eye"
-        },
-        "heightm": 0.5,
-        "weightkg": 3.9,
-        "color": "Gray",
-        "evos": [
-            "Purugly"
-        ],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "432": {
         "num": 432,
         "name": "Purugly",
-        "alias": "purugly",
-        "sprite": "purugly",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0.25,
-            "F": 0.75
-        },
         "baseStats": {
             "hp": 71,
             "atk": 82,
@@ -3069,59 +906,14 @@
             "0": "Thick Fat",
             "1": "Own Tempo",
             "H": "Defiant"
-        },
-        "heightm": 1,
-        "weightkg": 43.8,
-        "color": "Gray",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Glameow",
-        "evoLevel": 38,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "433": {
         "num": 433,
         "name": "Chingling",
-        "alias": "chingling",
-        "sprite": "chingling",
         "types": [
             "Psychic"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 45,
             "atk": 30,
@@ -3132,62 +924,15 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 0.2,
-        "weightkg": 0.6,
-        "color": "Yellow",
-        "evos": [
-            "Chimecho"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "434": {
         "num": 434,
         "name": "Stunky",
-        "alias": "stunky",
-        "sprite": "stunky",
         "types": [
             "Poison",
             "Dark"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 63,
             "atk": 63,
@@ -3200,62 +945,15 @@
             "0": "Stench",
             "1": "Aftermath",
             "H": "Keen Eye"
-        },
-        "heightm": 0.4,
-        "weightkg": 19.2,
-        "color": "Purple",
-        "evos": [
-            "Skuntank"
-        ],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "435": {
         "num": 435,
         "name": "Skuntank",
-        "alias": "skuntank",
-        "sprite": "skuntank",
         "types": [
             "Poison",
             "Dark"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 103,
             "atk": 93,
@@ -3268,60 +966,15 @@
             "0": "Stench",
             "1": "Aftermath",
             "H": "Keen Eye"
-        },
-        "heightm": 1,
-        "weightkg": 38,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Stunky",
-        "evoLevel": 34,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "436": {
         "num": 436,
         "name": "Bronzor",
-        "alias": "bronzor",
-        "sprite": "bronzor",
         "types": [
             "Steel",
             "Psychic"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 57,
             "atk": 24,
@@ -3334,62 +987,15 @@
             "0": "Levitate",
             "1": "Heatproof",
             "H": "Heavy Metal"
-        },
-        "heightm": 0.5,
-        "weightkg": 60.5,
-        "color": "Green",
-        "evos": [
-            "Bronzong"
-        ],
-        "eggGroups": [
-            "Mineral"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "437": {
         "num": 437,
         "name": "Bronzong",
-        "alias": "bronzong",
-        "sprite": "bronzong",
         "types": [
             "Steel",
             "Psychic"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 67,
             "atk": 89,
@@ -3402,59 +1008,14 @@
             "0": "Levitate",
             "1": "Heatproof",
             "H": "Heavy Metal"
-        },
-        "heightm": 1.3,
-        "weightkg": 187,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Mineral"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Bronzor",
-        "evoLevel": 33,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "438": {
         "num": 438,
         "name": "Bonsly",
-        "alias": "bonsly",
-        "sprite": "bonsly",
         "types": [
             "Rock"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 50,
             "atk": 80,
@@ -3467,62 +1028,15 @@
             "0": "Sturdy",
             "1": "Rock Head",
             "H": "Rattled"
-        },
-        "heightm": 0.5,
-        "weightkg": 15,
-        "color": "Brown",
-        "evos": [
-            "Sudowoodo"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "439": {
         "num": 439,
         "name": "Mime Jr.",
-        "alias": "mimejr",
-        "sprite": "mime-jr",
         "types": [
             "Psychic",
             "Fairy"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 20,
             "atk": 25,
@@ -3535,62 +1049,14 @@
             "0": "Soundproof",
             "1": "Filter",
             "H": "Technician"
-        },
-        "heightm": 0.6,
-        "weightkg": 13,
-        "color": "Pink",
-        "evos": [
-            "Mr. Mime",
-            "Mr. Mime-Galar"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "440": {
         "num": 440,
         "name": "Happiny",
-        "alias": "happiny",
-        "sprite": "happiny",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 100,
             "atk": 5,
@@ -3603,62 +1069,15 @@
             "0": "Natural Cure",
             "1": "Serene Grace",
             "H": "Friend Guard"
-        },
-        "heightm": 0.6,
-        "weightkg": 24.4,
-        "color": "Pink",
-        "evos": [
-            "Chansey"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "F",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "441": {
         "num": 441,
         "name": "Chatot",
-        "alias": "chatot",
-        "sprite": "chatot",
         "types": [
             "Normal",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 76,
             "atk": 65,
@@ -3671,60 +1090,15 @@
             "0": "Keen Eye",
             "1": "Tangled Feet",
             "H": "Big Pecks"
-        },
-        "heightm": 0.5,
-        "weightkg": 1.9,
-        "color": "Black",
-        "evos": [],
-        "eggGroups": [
-            "Flying"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "442": {
         "num": 442,
         "name": "Spiritomb",
-        "alias": "spiritomb",
-        "sprite": "spiritomb",
         "types": [
             "Ghost",
             "Dark"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 50,
             "atk": 92,
@@ -3736,60 +1110,15 @@
         "abilities": {
             "0": "Pressure",
             "H": "Infiltrator"
-        },
-        "heightm": 1,
-        "weightkg": 108,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "443": {
         "num": 443,
         "name": "Gible",
-        "alias": "gible",
-        "sprite": "gible",
         "types": [
             "Dragon",
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 58,
             "atk": 70,
@@ -3801,63 +1130,15 @@
         "abilities": {
             "0": "Sand Veil",
             "H": "Rough Skin"
-        },
-        "heightm": 0.7,
-        "weightkg": 20.5,
-        "color": "Blue",
-        "evos": [
-            "Gabite"
-        ],
-        "eggGroups": [
-            "Monster",
-            "Dragon"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "444": {
         "num": 444,
         "name": "Gabite",
-        "alias": "gabite",
-        "sprite": "gabite",
         "types": [
             "Dragon",
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 68,
             "atk": 90,
@@ -3869,63 +1150,15 @@
         "abilities": {
             "0": "Sand Veil",
             "H": "Rough Skin"
-        },
-        "heightm": 1.4,
-        "weightkg": 56,
-        "color": "Blue",
-        "evos": [
-            "Garchomp"
-        ],
-        "eggGroups": [
-            "Monster",
-            "Dragon"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Gible",
-        "evoLevel": 24,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "445": {
         "num": 445,
         "name": "Garchomp",
-        "alias": "garchomp",
-        "sprite": "garchomp",
         "types": [
             "Dragon",
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 108,
             "atk": 130,
@@ -3937,69 +1170,14 @@
         "abilities": {
             "0": "Sand Veil",
             "H": "Rough Skin"
-        },
-        "heightm": 1.9,
-        "weightkg": 95,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Monster",
-            "Dragon"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Garchomp-Mega"
-        ],
-        "otherFormesAliases": [
-            "garchompmega"
-        ],
-        "otherFormesSprites": [
-            "garchomp-mega"
-        ],
-        "formeOrder": [
-            "Garchomp",
-            "Garchomp-Mega"
-        ],
-        "prevo": "Gabite",
-        "evoLevel": 48,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "446": {
         "num": 446,
         "name": "Munchlax",
-        "alias": "munchlax",
-        "sprite": "munchlax",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 135,
             "atk": 85,
@@ -4012,61 +1190,14 @@
             "0": "Pickup",
             "1": "Thick Fat",
             "H": "Gluttony"
-        },
-        "heightm": 0.6,
-        "weightkg": 105,
-        "color": "Black",
-        "evos": [
-            "Snorlax"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "447": {
         "num": 447,
         "name": "Riolu",
-        "alias": "riolu",
-        "sprite": "riolu",
         "types": [
             "Fighting"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 40,
             "atk": 70,
@@ -4079,62 +1210,15 @@
             "0": "Steadfast",
             "1": "Inner Focus",
             "H": "Prankster"
-        },
-        "heightm": 0.7,
-        "weightkg": 20.2,
-        "color": "Blue",
-        "evos": [
-            "Lucario"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "448": {
         "num": 448,
         "name": "Lucario",
-        "alias": "lucario",
-        "sprite": "lucario",
         "types": [
             "Fighting",
             "Steel"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 70,
             "atk": 110,
@@ -4147,69 +1231,14 @@
             "0": "Steadfast",
             "1": "Inner Focus",
             "H": "Justified"
-        },
-        "heightm": 1.2,
-        "weightkg": 54,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Field",
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Lucario-Mega"
-        ],
-        "otherFormesAliases": [
-            "lucariomega"
-        ],
-        "otherFormesSprites": [
-            "lucario-mega"
-        ],
-        "formeOrder": [
-            "Lucario",
-            "Lucario-Mega"
-        ],
-        "prevo": "Riolu",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelFriendship",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": "during the day",
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "449": {
         "num": 449,
         "name": "Hippopotas",
-        "alias": "hippopotas",
-        "sprite": "hippopotas",
         "types": [
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 68,
             "atk": 72,
@@ -4221,70 +1250,14 @@
         "abilities": {
             "0": "Sand Stream",
             "H": "Sand Force"
-        },
-        "heightm": 0.8,
-        "weightkg": 49.5,
-        "color": "Brown",
-        "evos": [
-            "Hippowdon"
-        ],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [
-            "Hippopotas F"
-        ],
-        "cosmeticFormesAliases": [
-            "hippopotasf"
-        ],
-        "cosmeticFormesSprites": [
-            "hippopotas-f"
-        ],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [
-            "Hippopotas",
-            "Hippopotas F"
-        ],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "450": {
         "num": 450,
         "name": "Hippowdon",
-        "alias": "hippowdon",
-        "sprite": "hippowdon",
         "types": [
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 108,
             "atk": 112,
@@ -4296,69 +1269,15 @@
         "abilities": {
             "0": "Sand Stream",
             "H": "Sand Force"
-        },
-        "heightm": 2,
-        "weightkg": 300,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [
-            "Hippowdon F"
-        ],
-        "cosmeticFormesAliases": [
-            "hippowdonf"
-        ],
-        "cosmeticFormesSprites": [
-            "hippowdon-f"
-        ],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [
-            "Hippowdon",
-            "Hippowdon F"
-        ],
-        "prevo": "Hippopotas",
-        "evoLevel": 34,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "451": {
         "num": 451,
         "name": "Skorupi",
-        "alias": "skorupi",
-        "sprite": "skorupi",
         "types": [
             "Poison",
             "Bug"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 40,
             "atk": 50,
@@ -4371,63 +1290,15 @@
             "0": "Battle Armor",
             "1": "Sniper",
             "H": "Keen Eye"
-        },
-        "heightm": 0.8,
-        "weightkg": 12,
-        "color": "Purple",
-        "evos": [
-            "Drapion"
-        ],
-        "eggGroups": [
-            "Bug",
-            "Water 3"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "452": {
         "num": 452,
         "name": "Drapion",
-        "alias": "drapion",
-        "sprite": "drapion",
         "types": [
             "Poison",
             "Dark"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 90,
@@ -4440,61 +1311,15 @@
             "0": "Battle Armor",
             "1": "Sniper",
             "H": "Keen Eye"
-        },
-        "heightm": 1.3,
-        "weightkg": 61.5,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Bug",
-            "Water 3"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Skorupi",
-        "evoLevel": 40,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "453": {
         "num": 453,
         "name": "Croagunk",
-        "alias": "croagunk",
-        "sprite": "croagunk",
         "types": [
             "Poison",
             "Fighting"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 48,
             "atk": 61,
@@ -4507,62 +1332,15 @@
             "0": "Anticipation",
             "1": "Dry Skin",
             "H": "Poison Touch"
-        },
-        "heightm": 0.7,
-        "weightkg": 23,
-        "color": "Blue",
-        "evos": [
-            "Toxicroak"
-        ],
-        "eggGroups": [
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "454": {
         "num": 454,
         "name": "Toxicroak",
-        "alias": "toxicroak",
-        "sprite": "toxicroak",
         "types": [
             "Poison",
             "Fighting"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 83,
             "atk": 106,
@@ -4575,59 +1353,14 @@
             "0": "Anticipation",
             "1": "Dry Skin",
             "H": "Poison Touch"
-        },
-        "heightm": 1.3,
-        "weightkg": 44.4,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Croagunk",
-        "evoLevel": 37,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "455": {
         "num": 455,
         "name": "Carnivine",
-        "alias": "carnivine",
-        "sprite": "carnivine",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 74,
             "atk": 100,
@@ -4638,59 +1371,14 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 1.4,
-        "weightkg": 27,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "456": {
         "num": 456,
         "name": "Finneon",
-        "alias": "finneon",
-        "sprite": "finneon",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 49,
             "atk": 49,
@@ -4703,61 +1391,14 @@
             "0": "Swift Swim",
             "1": "Storm Drain",
             "H": "Water Veil"
-        },
-        "heightm": 0.4,
-        "weightkg": 7,
-        "color": "Blue",
-        "evos": [
-            "Lumineon"
-        ],
-        "eggGroups": [
-            "Water 2"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "457": {
         "num": 457,
         "name": "Lumineon",
-        "alias": "lumineon",
-        "sprite": "lumineon",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 69,
             "atk": 69,
@@ -4770,60 +1411,15 @@
             "0": "Swift Swim",
             "1": "Storm Drain",
             "H": "Water Veil"
-        },
-        "heightm": 1.2,
-        "weightkg": 24,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Water 2"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Finneon",
-        "evoLevel": 31,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "458": {
         "num": 458,
         "name": "Mantyke",
-        "alias": "mantyke",
-        "sprite": "mantyke",
         "types": [
             "Water",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 45,
             "atk": 20,
@@ -4836,62 +1432,15 @@
             "0": "Swift Swim",
             "1": "Water Absorb",
             "H": "Water Veil"
-        },
-        "heightm": 1,
-        "weightkg": 65,
-        "color": "Blue",
-        "evos": [
-            "Mantine"
-        ],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": true,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "459": {
         "num": 459,
         "name": "Snover",
-        "alias": "snover",
-        "sprite": "snover",
         "types": [
             "Grass",
             "Ice"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 60,
             "atk": 62,
@@ -4903,63 +1452,15 @@
         "abilities": {
             "0": "Snow Warning",
             "H": "Soundproof"
-        },
-        "heightm": 1,
-        "weightkg": 50.5,
-        "color": "White",
-        "evos": [
-            "Abomasnow"
-        ],
-        "eggGroups": [
-            "Monster",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "460": {
         "num": 460,
         "name": "Abomasnow",
-        "alias": "abomasnow",
-        "sprite": "abomasnow",
         "types": [
             "Grass",
             "Ice"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 90,
             "atk": 92,
@@ -4971,70 +1472,15 @@
         "abilities": {
             "0": "Snow Warning",
             "H": "Soundproof"
-        },
-        "heightm": 2.2,
-        "weightkg": 135.5,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Monster",
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Abomasnow-Mega"
-        ],
-        "otherFormesAliases": [
-            "abomasnowmega"
-        ],
-        "otherFormesSprites": [
-            "abomasnow-mega"
-        ],
-        "formeOrder": [
-            "Abomasnow",
-            "Abomasnow-Mega"
-        ],
-        "prevo": "Snover",
-        "evoLevel": 40,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "461": {
         "num": 461,
         "name": "Weavile",
-        "alias": "weavile",
-        "sprite": "weavile",
         "types": [
             "Dark",
             "Ice"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 120,
@@ -5046,60 +1492,15 @@
         "abilities": {
             "0": "Pressure",
             "H": "Pickpocket"
-        },
-        "heightm": 1.1,
-        "weightkg": 34,
-        "color": "Black",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Sneasel",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelHold",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Razor Claw",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "462": {
         "num": 462,
         "name": "Magnezone",
-        "alias": "magnezone",
-        "sprite": "magnezone",
         "types": [
             "Electric",
             "Steel"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 70,
@@ -5112,59 +1513,14 @@
             "0": "Magnet Pull",
             "1": "Sturdy",
             "H": "Analytic"
-        },
-        "heightm": 1.2,
-        "weightkg": 180,
-        "color": "Gray",
-        "evos": [],
-        "eggGroups": [
-            "Mineral"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Magneton",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": "N",
-        "gen": 0,
-        "evoItem": "Thunder Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "463": {
         "num": 463,
         "name": "Lickilicky",
-        "alias": "lickilicky",
-        "sprite": "lickilicky",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 110,
             "atk": 85,
@@ -5177,60 +1533,15 @@
             "0": "Own Tempo",
             "1": "Oblivious",
             "H": "Cloud Nine"
-        },
-        "heightm": 1.7,
-        "weightkg": 140,
-        "color": "Pink",
-        "evos": [],
-        "eggGroups": [
-            "Monster"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Lickitung",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelMove",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": "Rollout",
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "464": {
         "num": 464,
         "name": "Rhyperior",
-        "alias": "rhyperior",
-        "sprite": "rhyperior",
         "types": [
             "Ground",
             "Rock"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 115,
             "atk": 140,
@@ -5243,60 +1554,14 @@
             "0": "Lightning Rod",
             "1": "Solid Rock",
             "H": "Reckless"
-        },
-        "heightm": 2.4,
-        "weightkg": 282.8,
-        "color": "Gray",
-        "evos": [],
-        "eggGroups": [
-            "Monster",
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Rhydon",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "trade",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Protector",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "465": {
         "num": 465,
         "name": "Tangrowth",
-        "alias": "tangrowth",
-        "sprite": "tangrowth",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 100,
             "atk": 100,
@@ -5309,59 +1574,14 @@
             "0": "Chlorophyll",
             "1": "Leaf Guard",
             "H": "Regenerator"
-        },
-        "heightm": 2,
-        "weightkg": 128.6,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Grass"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Tangela",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelMove",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": "Ancient Power",
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "466": {
         "num": 466,
         "name": "Electivire",
-        "alias": "electivire",
-        "sprite": "electivire",
         "types": [
             "Electric"
         ],
-        "genderRatio": {
-            "M": 0.75,
-            "F": 0.25
-        },
         "baseStats": {
             "hp": 75,
             "atk": 123,
@@ -5373,59 +1593,14 @@
         "abilities": {
             "0": "Motor Drive",
             "H": "Vital Spirit"
-        },
-        "heightm": 1.8,
-        "weightkg": 138.6,
-        "color": "Yellow",
-        "evos": [],
-        "eggGroups": [
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Electabuzz",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "trade",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Electirizer",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "467": {
         "num": 467,
         "name": "Magmortar",
-        "alias": "magmortar",
-        "sprite": "magmortar",
         "types": [
             "Fire"
         ],
-        "genderRatio": {
-            "M": 0.75,
-            "F": 0.25
-        },
         "baseStats": {
             "hp": 75,
             "atk": 95,
@@ -5437,60 +1612,15 @@
         "abilities": {
             "0": "Flame Body",
             "H": "Vital Spirit"
-        },
-        "heightm": 1.6,
-        "weightkg": 68,
-        "color": "Red",
-        "evos": [],
-        "eggGroups": [
-            "Human-Like"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Magmar",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "trade",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Magmarizer",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "468": {
         "num": 468,
         "name": "Togekiss",
-        "alias": "togekiss",
-        "sprite": "togekiss",
         "types": [
             "Fairy",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 85,
             "atk": 50,
@@ -5503,61 +1633,15 @@
             "0": "Hustle",
             "1": "Serene Grace",
             "H": "Super Luck"
-        },
-        "heightm": 1.5,
-        "weightkg": 38,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Flying",
-            "Fairy"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Togetic",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Shiny Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "469": {
         "num": 469,
         "name": "Yanmega",
-        "alias": "yanmega",
-        "sprite": "yanmega",
         "types": [
             "Bug",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 86,
             "atk": 76,
@@ -5570,59 +1654,14 @@
             "0": "Speed Boost",
             "1": "Tinted Lens",
             "H": "Frisk"
-        },
-        "heightm": 1.9,
-        "weightkg": 51.5,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Yanma",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelMove",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": "Ancient Power",
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "470": {
         "num": 470,
         "name": "Leafeon",
-        "alias": "leafeon",
-        "sprite": "leafeon",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 65,
             "atk": 110,
@@ -5634,59 +1673,14 @@
         "abilities": {
             "0": "Leaf Guard",
             "H": "Chlorophyll"
-        },
-        "heightm": 1,
-        "weightkg": 25.5,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Eevee",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Leaf Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "471": {
         "num": 471,
         "name": "Glaceon",
-        "alias": "glaceon",
-        "sprite": "glaceon",
         "types": [
             "Ice"
         ],
-        "genderRatio": {
-            "M": 0.875,
-            "F": 0.125
-        },
         "baseStats": {
             "hp": 65,
             "atk": 60,
@@ -5698,60 +1692,15 @@
         "abilities": {
             "0": "Snow Cloak",
             "H": "Ice Body"
-        },
-        "heightm": 0.8,
-        "weightkg": 25.9,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Eevee",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Ice Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "472": {
         "num": 472,
         "name": "Gliscor",
-        "alias": "gliscor",
-        "sprite": "gliscor",
         "types": [
             "Ground",
             "Flying"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 75,
             "atk": 95,
@@ -5764,60 +1713,15 @@
             "0": "Hyper Cutter",
             "1": "Sand Veil",
             "H": "Poison Heal"
-        },
-        "heightm": 2,
-        "weightkg": 42.5,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Bug"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Gligar",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelHold",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Razor Fang",
-        "evoCondition": "at night",
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "473": {
         "num": 473,
         "name": "Mamoswine",
-        "alias": "mamoswine",
-        "sprite": "mamoswine",
         "types": [
             "Ice",
             "Ground"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 110,
             "atk": 130,
@@ -5830,59 +1734,14 @@
             "0": "Oblivious",
             "1": "Snow Cloak",
             "H": "Thick Fat"
-        },
-        "heightm": 2.5,
-        "weightkg": 291,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Field"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Piloswine",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelMove",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": "Ancient Power",
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "474": {
         "num": 474,
         "name": "Porygon-Z",
-        "alias": "porygonz",
-        "sprite": "porygon-z",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 85,
             "atk": 80,
@@ -5895,60 +1754,15 @@
             "0": "Adaptability",
             "1": "Download",
             "H": "Analytic"
-        },
-        "heightm": 0.9,
-        "weightkg": 34,
-        "color": "Red",
-        "evos": [],
-        "eggGroups": [
-            "Mineral"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Porygon2",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "trade",
-        "gender": "N",
-        "gen": 0,
-        "evoItem": "Dubious Disc",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "475": {
         "num": 475,
         "name": "Gallade",
-        "alias": "gallade",
-        "sprite": "gallade",
         "types": [
             "Psychic",
             "Fighting"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 68,
             "atk": 125,
@@ -5960,70 +1774,15 @@
         "abilities": {
             "0": "Steadfast",
             "H": "Justified"
-        },
-        "heightm": 1.6,
-        "weightkg": 52,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Human-Like",
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Gallade-Mega"
-        ],
-        "otherFormesAliases": [
-            "gallademega"
-        ],
-        "otherFormesSprites": [
-            "gallade-mega"
-        ],
-        "formeOrder": [
-            "Gallade",
-            "Gallade-Mega"
-        ],
-        "prevo": "Kirlia",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": "M",
-        "gen": 0,
-        "evoItem": "Dawn Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "476": {
         "num": 476,
         "name": "Probopass",
-        "alias": "probopass",
-        "sprite": "probopass",
         "types": [
             "Rock",
             "Steel"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 60,
             "atk": 55,
@@ -6036,59 +1795,14 @@
             "0": "Sturdy",
             "1": "Magnet Pull",
             "H": "Sand Force"
-        },
-        "heightm": 1.4,
-        "weightkg": 340,
-        "color": "Gray",
-        "evos": [],
-        "eggGroups": [
-            "Mineral"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Nosepass",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "levelExtra",
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": "near a special magnetic field",
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "477": {
         "num": 477,
         "name": "Dusknoir",
-        "alias": "dusknoir",
-        "sprite": "dusknoir",
         "types": [
             "Ghost"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 45,
             "atk": 100,
@@ -6100,60 +1814,15 @@
         "abilities": {
             "0": "Pressure",
             "H": "Frisk"
-        },
-        "heightm": 2.2,
-        "weightkg": 106.6,
-        "color": "Black",
-        "evos": [],
-        "eggGroups": [
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Dusclops",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "trade",
-        "gender": null,
-        "gen": 0,
-        "evoItem": "Reaper Cloth",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "478": {
         "num": 478,
         "name": "Froslass",
-        "alias": "froslass",
-        "sprite": "froslass",
         "types": [
             "Ice",
             "Ghost"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 80,
@@ -6165,61 +1834,15 @@
         "abilities": {
             "0": "Snow Cloak",
             "H": "Cursed Body"
-        },
-        "heightm": 1.3,
-        "weightkg": 26.6,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Fairy",
-            "Mineral"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": "Snorunt",
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": "useItem",
-        "gender": "F",
-        "gen": 0,
-        "evoItem": "Dawn Stone",
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "479": {
         "num": 479,
         "name": "Rotom",
-        "alias": "rotom",
-        "sprite": "rotom",
         "types": [
             "Electric",
             "Ghost"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 50,
             "atk": 50,
@@ -6230,84 +1853,14 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 0.3,
-        "weightkg": 0.3,
-        "color": "Red",
-        "evos": [],
-        "eggGroups": [
-            "Amorphous"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Rotom-Heat",
-            "Rotom-Wash",
-            "Rotom-Frost",
-            "Rotom-Fan",
-            "Rotom-Mow"
-        ],
-        "otherFormesAliases": [
-            "rotomheat",
-            "rotomwash",
-            "rotomfrost",
-            "rotomfan",
-            "rotommow"
-        ],
-        "otherFormesSprites": [
-            "rotom-heat",
-            "rotom-wash",
-            "rotom-frost",
-            "rotom-fan",
-            "rotom-mow"
-        ],
-        "formeOrder": [
-            "Rotom",
-            "Rotom-Heat",
-            "Rotom-Wash",
-            "Rotom-Frost",
-            "Rotom-Fan",
-            "Rotom-Mow"
-        ],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "480": {
         "num": 480,
         "name": "Uxie",
-        "alias": "uxie",
-        "sprite": "uxie",
         "types": [
             "Psychic"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 75,
             "atk": 75,
@@ -6318,59 +1871,14 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 0.3,
-        "weightkg": 0.3,
-        "color": "Yellow",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "481": {
         "num": 481,
         "name": "Mesprit",
-        "alias": "mesprit",
-        "sprite": "mesprit",
         "types": [
             "Psychic"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 80,
             "atk": 105,
@@ -6381,59 +1889,14 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 0.3,
-        "weightkg": 0.3,
-        "color": "Pink",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "482": {
         "num": 482,
         "name": "Azelf",
-        "alias": "azelf",
-        "sprite": "azelf",
         "types": [
             "Psychic"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 75,
             "atk": 125,
@@ -6444,60 +1907,15 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 0.3,
-        "weightkg": 0.3,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "483": {
         "num": 483,
         "name": "Dialga",
-        "alias": "dialga",
-        "sprite": "dialga",
         "types": [
             "Steel",
             "Dragon"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 100,
             "atk": 120,
@@ -6509,60 +1927,15 @@
         "abilities": {
             "0": "Pressure",
             "H": "Telepathy"
-        },
-        "heightm": 5.4,
-        "weightkg": 683,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "484": {
         "num": 484,
         "name": "Palkia",
-        "alias": "palkia",
-        "sprite": "palkia",
         "types": [
             "Water",
             "Dragon"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 90,
             "atk": 120,
@@ -6574,60 +1947,15 @@
         "abilities": {
             "0": "Pressure",
             "H": "Telepathy"
-        },
-        "heightm": 4.2,
-        "weightkg": 336,
-        "color": "Purple",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "485": {
         "num": 485,
         "name": "Heatran",
-        "alias": "heatran",
-        "sprite": "heatran",
         "types": [
             "Fire",
             "Steel"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 91,
             "atk": 90,
@@ -6639,59 +1967,14 @@
         "abilities": {
             "0": "Flash Fire",
             "H": "Flame Body"
-        },
-        "heightm": 1.7,
-        "weightkg": 430,
-        "color": "Brown",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": null,
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "486": {
         "num": 486,
         "name": "Regigigas",
-        "alias": "regigigas",
-        "sprite": "regigigas",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 110,
             "atk": 160,
@@ -6702,60 +1985,15 @@
         },
         "abilities": {
             "0": "Slow Start"
-        },
-        "heightm": 3.7,
-        "weightkg": 420,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "487": {
         "num": 487,
         "name": "Giratina",
-        "alias": "giratina",
-        "sprite": "giratina",
         "types": [
             "Ghost",
             "Dragon"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 150,
             "atk": 100,
@@ -6767,68 +2005,14 @@
         "abilities": {
             "0": "Pressure",
             "H": "Telepathy"
-        },
-        "heightm": 4.5,
-        "weightkg": 750,
-        "color": "Black",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": "Altered",
-        "baseFormeAlias": "giratinaaltered",
-        "baseFormeSprite": "giratina-altered",
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Giratina-Origin"
-        ],
-        "otherFormesAliases": [
-            "giratinaorigin"
-        ],
-        "otherFormesSprites": [
-            "giratina-origin"
-        ],
-        "formeOrder": [
-            "Giratina",
-            "Giratina-Origin"
-        ],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "488": {
         "num": 488,
         "name": "Cresselia",
-        "alias": "cresselia",
-        "sprite": "cresselia",
         "types": [
             "Psychic"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 120,
             "atk": 70,
@@ -6839,59 +2023,14 @@
         },
         "abilities": {
             "0": "Levitate"
-        },
-        "heightm": 1.5,
-        "weightkg": 85.6,
-        "color": "Yellow",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "F",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "489": {
         "num": 489,
         "name": "Phione",
-        "alias": "phione",
-        "sprite": "phione",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 80,
             "atk": 80,
@@ -6902,60 +2041,14 @@
         },
         "abilities": {
             "0": "Hydration"
-        },
-        "heightm": 0.4,
-        "weightkg": 3.1,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Water 1",
-            "Fairy"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "490": {
         "num": 490,
         "name": "Manaphy",
-        "alias": "manaphy",
-        "sprite": "manaphy",
         "types": [
             "Water"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 100,
             "atk": 100,
@@ -6966,60 +2059,14 @@
         },
         "abilities": {
             "0": "Hydration"
-        },
-        "heightm": 0.3,
-        "weightkg": 1.4,
-        "color": "Blue",
-        "evos": [],
-        "eggGroups": [
-            "Water 1",
-            "Fairy"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "491": {
         "num": 491,
         "name": "Darkrai",
-        "alias": "darkrai",
-        "sprite": "darkrai",
         "types": [
             "Dark"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 70,
             "atk": 90,
@@ -7030,59 +2077,14 @@
         },
         "abilities": {
             "0": "Bad Dreams"
-        },
-        "heightm": 1.5,
-        "weightkg": 50.5,
-        "color": "Black",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": null,
-        "baseFormeAlias": null,
-        "baseFormeSprite": null,
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [],
-        "otherFormesAliases": [],
-        "otherFormesSprites": [],
-        "formeOrder": [],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "492": {
         "num": 492,
         "name": "Shaymin",
-        "alias": "shaymin",
-        "sprite": "shaymin",
         "types": [
             "Grass"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 100,
             "atk": 100,
@@ -7093,68 +2095,14 @@
         },
         "abilities": {
             "0": "Natural Cure"
-        },
-        "heightm": 0.2,
-        "weightkg": 2.1,
-        "color": "Green",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": "Land",
-        "baseFormeAlias": "shayminland",
-        "baseFormeSprite": "shaymin-land",
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Shaymin-Sky"
-        ],
-        "otherFormesAliases": [
-            "shayminsky"
-        ],
-        "otherFormesSprites": [
-            "shaymin-sky"
-        ],
-        "formeOrder": [
-            "Shaymin",
-            "Shaymin-Sky"
-        ],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     },
     "493": {
         "num": 493,
         "name": "Arceus",
-        "alias": "arceus",
-        "sprite": "arceus",
         "types": [
             "Normal"
         ],
-        "genderRatio": {
-            "M": 0,
-            "F": 0
-        },
         "baseStats": {
             "hp": 120,
             "atk": 120,
@@ -7165,118 +2113,6 @@
         },
         "abilities": {
             "0": "Multitype"
-        },
-        "heightm": 3.2,
-        "weightkg": 320,
-        "color": "White",
-        "evos": [],
-        "eggGroups": [
-            "Undiscovered"
-        ],
-        "hasLearnset": true,
-        "baseForme": "Normal",
-        "baseFormeAlias": "arceusnormal",
-        "baseFormeSprite": "arceus-normal",
-        "cosmeticFormes": [],
-        "cosmeticFormesAliases": [],
-        "cosmeticFormesSprites": [],
-        "otherFormes": [
-            "Arceus-Bug",
-            "Arceus-Dark",
-            "Arceus-Dragon",
-            "Arceus-Electric",
-            "Arceus-Fairy",
-            "Arceus-Fighting",
-            "Arceus-Fire",
-            "Arceus-Flying",
-            "Arceus-Ghost",
-            "Arceus-Grass",
-            "Arceus-Ground",
-            "Arceus-Ice",
-            "Arceus-Poison",
-            "Arceus-Psychic",
-            "Arceus-Rock",
-            "Arceus-Steel",
-            "Arceus-Water"
-        ],
-        "otherFormesAliases": [
-            "arceusbug",
-            "arceusdark",
-            "arceusdragon",
-            "arceuselectric",
-            "arceusfairy",
-            "arceusfighting",
-            "arceusfire",
-            "arceusflying",
-            "arceusghost",
-            "arceusgrass",
-            "arceusground",
-            "arceusice",
-            "arceuspoison",
-            "arceuspsychic",
-            "arceusrock",
-            "arceussteel",
-            "arceuswater"
-        ],
-        "otherFormesSprites": [
-            "arceus-bug",
-            "arceus-dark",
-            "arceus-dragon",
-            "arceus-electric",
-            "arceus-fairy",
-            "arceus-fighting",
-            "arceus-fire",
-            "arceus-flying",
-            "arceus-ghost",
-            "arceus-grass",
-            "arceus-ground",
-            "arceus-ice",
-            "arceus-poison",
-            "arceus-psychic",
-            "arceus-rock",
-            "arceus-steel",
-            "arceus-water"
-        ],
-        "formeOrder": [
-            "Arceus",
-            "Arceus-Fighting",
-            "Arceus-Flying",
-            "Arceus-Poison",
-            "Arceus-Ground",
-            "Arceus-Rock",
-            "Arceus-Bug",
-            "Arceus-Ghost",
-            "Arceus-Steel",
-            "Arceus-Fire",
-            "Arceus-Water",
-            "Arceus-Grass",
-            "Arceus-Electric",
-            "Arceus-Psychic",
-            "Arceus-Ice",
-            "Arceus-Dragon",
-            "Arceus-Dark",
-            "Arceus-Fairy"
-        ],
-        "prevo": null,
-        "evoLevel": null,
-        "canGigantamax": null,
-        "baseSpecies": null,
-        "forme": null,
-        "requiredItem": null,
-        "changesFrom": null,
-        "evoType": null,
-        "gender": "N",
-        "gen": 0,
-        "evoItem": null,
-        "evoCondition": null,
-        "canHatch": false,
-        "evoMove": null,
-        "maxHP": 0,
-        "requiredAbility": null,
-        "battleOnly": null,
-        "requiredMove": null,
-        "requiredItems": [],
-        "unreleasedHidden": true,
-        "cannotDynamax": true
+        }
     }
 }

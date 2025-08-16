@@ -1,4 +1,4 @@
-from config import pokemon_data_json_path
+from config import pokemon_data_json_path,data_dir_path
 import json, os
 from pokedex import get_pokemon
 
@@ -17,7 +17,7 @@ all_gen = [gen1,gen2,gen3,gen4,gen5,gen6,gen7,gen8]
 def create_new_json(gen):
     with open(pokemon_data_json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
-        print(len(data))
+        #print(len(data))
     
     json_file = {}
     for i in gen["index"]:
@@ -32,6 +32,39 @@ def create_new_json(gen):
     
     return json_file
 
-
 #json_files = [create_new_json(gen) for gen in all_gen]
-print(len(json_files))
+#print(len(json_files))
+
+def remove_useless_attribut(json_file_path):
+    path = os.path.join(data_dir_path, json_file_path)
+    
+    # Lire le JSON existant
+    with open(path, "r", encoding="utf-8") as f:
+        data_gen = json.load(f)
+    
+    # Liste des clés à supprimer
+    useless_keys = [
+        "genderRatio","heightm","weightkg","color","evos","eggGroups","hasLearnset",
+        "baseForme","baseFormeAlias","baseFormeSprite",
+        "cosmeticFormes","cosmeticFormesAliases","cosmeticFormesSprites",
+        "otherFormes","otherFormesAliases","otherFormesSprites",
+        "formeOrder","prevo","evoLevel","canGigantamax","baseSpecies",
+        "forme","requiredItem","changesFrom","evoType","gender","gen",
+        "evoItem","evoCondition","canHatch","evoMove","maxHP",
+        "requiredAbility","battleOnly","requiredMove","requiredItems",
+        "unreleasedHidden","cannotDynamax","alias","sprite"
+    ]
+    
+    # Nettoyer chaque Pokémon
+    for poke_name, infos in data_gen.items():
+        for key in useless_keys:
+            infos.pop(key, None)  # supprime si existe, sinon ignore
+    
+    # Réécrire le JSON nettoyé
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data_gen, f, indent=4, ensure_ascii=False)
+
+    print(f" Nettoyage terminé : {path}")
+"""
+for i in range(1,9):
+    remove_useless_attribut(f"pokedex_gen{i}.json")"""
