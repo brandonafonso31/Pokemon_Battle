@@ -110,6 +110,31 @@ tab_translate = {"Normal":"NORMAL",
                     "Flying":"VOL",
                     "Dark":"TENEBRE" }
 
-print(len(tab_translate))
+"""print(len(tab_translate))
 for i in range(1,9):
-    translate_type(f"pokedex_gen{i}.json",tab_translate)
+    translate_type(f"pokedex_gen{i}.json",tab_translate)"""
+
+def translate_name(json_file_path,start = 0):
+    with open("data/fr.json","r") as f:
+        fr_data = json.load(f)
+        
+    path = os.path.join(data_dir_path, json_file_path)
+    with open(path, "r", encoding="utf-8") as f:
+        data_gen = json.load(f)
+    
+    i = start
+    for poke_name, infos in data_gen.items():
+        infos["name"] = fr_data[i]
+        i+=1
+    
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data_gen, f, indent=4, ensure_ascii=False)
+
+"""translate_name("pokedex_gen1.json")
+translate_name("pokedex_gen2.json",152)
+translate_name("pokedex_gen3.json",252)
+translate_name("pokedex_gen4.json",387)
+translate_name("pokedex_gen5.json",494)
+translate_name("pokedex_gen6.json",650)
+translate_name("pokedex_gen7.json",722)
+translate_name("pokedex_gen8.json",810)"""

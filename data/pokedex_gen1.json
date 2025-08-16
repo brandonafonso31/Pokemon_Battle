@@ -1,7 +1,7 @@
 {
     "1": {
         "num": 1,
-        "name": "Bulbasaur",
+        "name": "Bulbizarre",
         "types": [
             "PLANTE",
             "POISON"
@@ -21,7 +21,7 @@
     },
     "2": {
         "num": 2,
-        "name": "Ivysaur",
+        "name": "Herbizarre",
         "types": [
             "PLANTE",
             "POISON"
@@ -41,7 +41,7 @@
     },
     "3": {
         "num": 3,
-        "name": "Venusaur",
+        "name": "Florizarre",
         "types": [
             "PLANTE",
             "POISON"
@@ -61,7 +61,7 @@
     },
     "4": {
         "num": 4,
-        "name": "Charmander",
+        "name": "SalamÃ¨che",
         "types": [
             "FEU"
         ],
@@ -80,7 +80,7 @@
     },
     "5": {
         "num": 5,
-        "name": "Charmeleon",
+        "name": "Reptincel",
         "types": [
             "FEU"
         ],
@@ -99,7 +99,7 @@
     },
     "6": {
         "num": 6,
-        "name": "Charizard",
+        "name": "Dracaufeu",
         "types": [
             "FEU",
             "VOL"
@@ -119,7 +119,7 @@
     },
     "7": {
         "num": 7,
-        "name": "Squirtle",
+        "name": "Carapuce",
         "types": [
             "EAU"
         ],
@@ -138,7 +138,7 @@
     },
     "8": {
         "num": 8,
-        "name": "Wartortle",
+        "name": "Carabaffe",
         "types": [
             "EAU"
         ],
@@ -157,7 +157,7 @@
     },
     "9": {
         "num": 9,
-        "name": "Blastoise",
+        "name": "Tortank",
         "types": [
             "EAU"
         ],
@@ -176,7 +176,7 @@
     },
     "10": {
         "num": 10,
-        "name": "Caterpie",
+        "name": "Chenipan",
         "types": [
             "INSECTE"
         ],
@@ -195,7 +195,7 @@
     },
     "11": {
         "num": 11,
-        "name": "Metapod",
+        "name": "Chrysacier",
         "types": [
             "INSECTE"
         ],
@@ -213,7 +213,7 @@
     },
     "12": {
         "num": 12,
-        "name": "Butterfree",
+        "name": "Papilusion",
         "types": [
             "INSECTE",
             "VOL"
@@ -233,7 +233,7 @@
     },
     "13": {
         "num": 13,
-        "name": "Weedle",
+        "name": "Aspicot",
         "types": [
             "INSECTE",
             "POISON"
@@ -253,7 +253,7 @@
     },
     "14": {
         "num": 14,
-        "name": "Kakuna",
+        "name": "Coconfort",
         "types": [
             "INSECTE",
             "POISON"
@@ -272,7 +272,7 @@
     },
     "15": {
         "num": 15,
-        "name": "Beedrill",
+        "name": "Dardargnan",
         "types": [
             "INSECTE",
             "POISON"
@@ -292,7 +292,7 @@
     },
     "16": {
         "num": 16,
-        "name": "Pidgey",
+        "name": "Roucool",
         "types": [
             "NORMAL",
             "VOL"
@@ -313,7 +313,7 @@
     },
     "17": {
         "num": 17,
-        "name": "Pidgeotto",
+        "name": "Roucoups",
         "types": [
             "NORMAL",
             "VOL"
@@ -334,7 +334,7 @@
     },
     "18": {
         "num": 18,
-        "name": "Pidgeot",
+        "name": "Roucarnage",
         "types": [
             "NORMAL",
             "VOL"
@@ -375,7 +375,7 @@
     },
     "20": {
         "num": 20,
-        "name": "Raticate",
+        "name": "Rattatac",
         "types": [
             "NORMAL"
         ],
@@ -395,7 +395,7 @@
     },
     "21": {
         "num": 21,
-        "name": "Spearow",
+        "name": "Piafabec",
         "types": [
             "NORMAL",
             "VOL"
@@ -415,7 +415,7 @@
     },
     "22": {
         "num": 22,
-        "name": "Fearow",
+        "name": "Rapasdepic",
         "types": [
             "NORMAL",
             "VOL"
@@ -435,7 +435,7 @@
     },
     "23": {
         "num": 23,
-        "name": "Ekans",
+        "name": "Abo",
         "types": [
             "POISON"
         ],
@@ -513,7 +513,7 @@
     },
     "27": {
         "num": 27,
-        "name": "Sandshrew",
+        "name": "Sabelette",
         "types": [
             "SOL"
         ],
@@ -532,7 +532,7 @@
     },
     "28": {
         "num": 28,
-        "name": "Sandslash",
+        "name": "Sablaireau",
         "types": [
             "SOL"
         ],
@@ -551,7 +551,7 @@
     },
     "29": {
         "num": 29,
-        "name": "Nidoran-F",
+        "name": "Nidoranâ™€",
         "types": [
             "POISON"
         ],
@@ -612,7 +612,7 @@
     },
     "32": {
         "num": 32,
-        "name": "Nidoran-M",
+        "name": "Nidoranâ™‚",
         "types": [
             "POISON"
         ],
@@ -673,7 +673,7 @@
     },
     "35": {
         "num": 35,
-        "name": "Clefairy",
+        "name": "MÃ©lofÃ©e",
         "types": [
             "FEE"
         ],
@@ -693,7 +693,7 @@
     },
     "36": {
         "num": 36,
-        "name": "Clefable",
+        "name": "MÃ©lodelfe",
         "types": [
             "FEE"
         ],
@@ -713,7 +713,7 @@
     },
     "37": {
         "num": 37,
-        "name": "Vulpix",
+        "name": "Goupix",
         "types": [
             "FEU"
         ],
@@ -732,7 +732,7 @@
     },
     "38": {
         "num": 38,
-        "name": "Ninetales",
+        "name": "Feunard",
         "types": [
             "FEU"
         ],
@@ -751,7 +751,7 @@
     },
     "39": {
         "num": 39,
-        "name": "Jigglypuff",
+        "name": "Rondoudou",
         "types": [
             "NORMAL",
             "FEE"
@@ -772,7 +772,7 @@
     },
     "40": {
         "num": 40,
-        "name": "Wigglytuff",
+        "name": "Grodoudou",
         "types": [
             "NORMAL",
             "FEE"
@@ -793,7 +793,7 @@
     },
     "41": {
         "num": 41,
-        "name": "Zubat",
+        "name": "Nosferapti",
         "types": [
             "POISON",
             "VOL"
@@ -813,7 +813,7 @@
     },
     "42": {
         "num": 42,
-        "name": "Golbat",
+        "name": "Nosferalto",
         "types": [
             "POISON",
             "VOL"
@@ -833,7 +833,7 @@
     },
     "43": {
         "num": 43,
-        "name": "Oddish",
+        "name": "Mystherbe",
         "types": [
             "PLANTE",
             "POISON"
@@ -853,7 +853,7 @@
     },
     "44": {
         "num": 44,
-        "name": "Gloom",
+        "name": "Ortide",
         "types": [
             "PLANTE",
             "POISON"
@@ -873,7 +873,7 @@
     },
     "45": {
         "num": 45,
-        "name": "Vileplume",
+        "name": "Rafflesia",
         "types": [
             "PLANTE",
             "POISON"
@@ -935,7 +935,7 @@
     },
     "48": {
         "num": 48,
-        "name": "Venonat",
+        "name": "Mimitoss",
         "types": [
             "INSECTE",
             "POISON"
@@ -956,7 +956,7 @@
     },
     "49": {
         "num": 49,
-        "name": "Venomoth",
+        "name": "AÃ©romite",
         "types": [
             "INSECTE",
             "POISON"
@@ -977,7 +977,7 @@
     },
     "50": {
         "num": 50,
-        "name": "Diglett",
+        "name": "Taupiqueur",
         "types": [
             "SOL"
         ],
@@ -997,7 +997,7 @@
     },
     "51": {
         "num": 51,
-        "name": "Dugtrio",
+        "name": "Triopikeur",
         "types": [
             "SOL"
         ],
@@ -1017,7 +1017,7 @@
     },
     "52": {
         "num": 52,
-        "name": "Meowth",
+        "name": "Miaouss",
         "types": [
             "NORMAL"
         ],
@@ -1057,7 +1057,7 @@
     },
     "54": {
         "num": 54,
-        "name": "Psyduck",
+        "name": "Psykokwak",
         "types": [
             "EAU"
         ],
@@ -1077,7 +1077,7 @@
     },
     "55": {
         "num": 55,
-        "name": "Golduck",
+        "name": "Akwakwak",
         "types": [
             "EAU"
         ],
@@ -1097,7 +1097,7 @@
     },
     "56": {
         "num": 56,
-        "name": "Mankey",
+        "name": "FÃ©rosinge",
         "types": [
             "COMBAT"
         ],
@@ -1117,7 +1117,7 @@
     },
     "57": {
         "num": 57,
-        "name": "Primeape",
+        "name": "Colossinge",
         "types": [
             "COMBAT"
         ],
@@ -1137,7 +1137,7 @@
     },
     "58": {
         "num": 58,
-        "name": "Growlithe",
+        "name": "Caninos",
         "types": [
             "FEU"
         ],
@@ -1157,7 +1157,7 @@
     },
     "59": {
         "num": 59,
-        "name": "Arcanine",
+        "name": "Arcanin",
         "types": [
             "FEU"
         ],
@@ -1177,7 +1177,7 @@
     },
     "60": {
         "num": 60,
-        "name": "Poliwag",
+        "name": "Ptitard",
         "types": [
             "EAU"
         ],
@@ -1197,7 +1197,7 @@
     },
     "61": {
         "num": 61,
-        "name": "Poliwhirl",
+        "name": "TÃªtarte",
         "types": [
             "EAU"
         ],
@@ -1217,7 +1217,7 @@
     },
     "62": {
         "num": 62,
-        "name": "Poliwrath",
+        "name": "Tartard",
         "types": [
             "EAU",
             "COMBAT"
@@ -1298,7 +1298,7 @@
     },
     "66": {
         "num": 66,
-        "name": "Machop",
+        "name": "Machoc",
         "types": [
             "COMBAT"
         ],
@@ -1318,7 +1318,7 @@
     },
     "67": {
         "num": 67,
-        "name": "Machoke",
+        "name": "Machopeur",
         "types": [
             "COMBAT"
         ],
@@ -1338,7 +1338,7 @@
     },
     "68": {
         "num": 68,
-        "name": "Machamp",
+        "name": "Mackogneur",
         "types": [
             "COMBAT"
         ],
@@ -1358,7 +1358,7 @@
     },
     "69": {
         "num": 69,
-        "name": "Bellsprout",
+        "name": "ChÃ©tiflor",
         "types": [
             "PLANTE",
             "POISON"
@@ -1378,7 +1378,7 @@
     },
     "70": {
         "num": 70,
-        "name": "Weepinbell",
+        "name": "Boustiflor",
         "types": [
             "PLANTE",
             "POISON"
@@ -1398,7 +1398,7 @@
     },
     "71": {
         "num": 71,
-        "name": "Victreebel",
+        "name": "Empiflor",
         "types": [
             "PLANTE",
             "POISON"
@@ -1460,7 +1460,7 @@
     },
     "74": {
         "num": 74,
-        "name": "Geodude",
+        "name": "Racaillou",
         "types": [
             "ROCHE",
             "SOL"
@@ -1481,7 +1481,7 @@
     },
     "75": {
         "num": 75,
-        "name": "Graveler",
+        "name": "Gravalanch",
         "types": [
             "ROCHE",
             "SOL"
@@ -1502,7 +1502,7 @@
     },
     "76": {
         "num": 76,
-        "name": "Golem",
+        "name": "Grolem",
         "types": [
             "ROCHE",
             "SOL"
@@ -1543,7 +1543,7 @@
     },
     "78": {
         "num": 78,
-        "name": "Rapidash",
+        "name": "Galopa",
         "types": [
             "FEU"
         ],
@@ -1563,7 +1563,7 @@
     },
     "79": {
         "num": 79,
-        "name": "Slowpoke",
+        "name": "Ramoloss",
         "types": [
             "EAU",
             "PSY"
@@ -1584,7 +1584,7 @@
     },
     "80": {
         "num": 80,
-        "name": "Slowbro",
+        "name": "Flagadoss",
         "types": [
             "EAU",
             "PSY"
@@ -1605,7 +1605,7 @@
     },
     "81": {
         "num": 81,
-        "name": "Magnemite",
+        "name": "MagnÃ©ti",
         "types": [
             "ELECTRIQUE",
             "ACIER"
@@ -1626,7 +1626,7 @@
     },
     "82": {
         "num": 82,
-        "name": "Magneton",
+        "name": "MagnÃ©ton",
         "types": [
             "ELECTRIQUE",
             "ACIER"
@@ -1647,7 +1647,7 @@
     },
     "83": {
         "num": 83,
-        "name": "Farfetch’d",
+        "name": "Canarticho",
         "types": [
             "NORMAL",
             "VOL"
@@ -1710,7 +1710,7 @@
     },
     "86": {
         "num": 86,
-        "name": "Seel",
+        "name": "Otaria",
         "types": [
             "EAU"
         ],
@@ -1730,7 +1730,7 @@
     },
     "87": {
         "num": 87,
-        "name": "Dewgong",
+        "name": "Lamantine",
         "types": [
             "EAU",
             "GLACE"
@@ -1751,7 +1751,7 @@
     },
     "88": {
         "num": 88,
-        "name": "Grimer",
+        "name": "Tadmorv",
         "types": [
             "POISON"
         ],
@@ -1771,7 +1771,7 @@
     },
     "89": {
         "num": 89,
-        "name": "Muk",
+        "name": "Grotadmorv",
         "types": [
             "POISON"
         ],
@@ -1791,7 +1791,7 @@
     },
     "90": {
         "num": 90,
-        "name": "Shellder",
+        "name": "Kokiyas",
         "types": [
             "EAU"
         ],
@@ -1811,7 +1811,7 @@
     },
     "91": {
         "num": 91,
-        "name": "Cloyster",
+        "name": "Crustabri",
         "types": [
             "EAU",
             "GLACE"
@@ -1832,7 +1832,7 @@
     },
     "92": {
         "num": 92,
-        "name": "Gastly",
+        "name": "Fantominus",
         "types": [
             "SPECTRE",
             "POISON"
@@ -1851,7 +1851,7 @@
     },
     "93": {
         "num": 93,
-        "name": "Haunter",
+        "name": "Spectrum",
         "types": [
             "SPECTRE",
             "POISON"
@@ -1870,7 +1870,7 @@
     },
     "94": {
         "num": 94,
-        "name": "Gengar",
+        "name": "Ectoplasma",
         "types": [
             "SPECTRE",
             "POISON"
@@ -1910,7 +1910,7 @@
     },
     "96": {
         "num": 96,
-        "name": "Drowzee",
+        "name": "Soporifik",
         "types": [
             "PSY"
         ],
@@ -1930,7 +1930,7 @@
     },
     "97": {
         "num": 97,
-        "name": "Hypno",
+        "name": "Hypnomade",
         "types": [
             "PSY"
         ],
@@ -1970,7 +1970,7 @@
     },
     "99": {
         "num": 99,
-        "name": "Kingler",
+        "name": "Krabboss",
         "types": [
             "EAU"
         ],
@@ -1990,7 +1990,7 @@
     },
     "100": {
         "num": 100,
-        "name": "Voltorb",
+        "name": "Voltorbe",
         "types": [
             "ELECTRIQUE"
         ],
@@ -2010,7 +2010,7 @@
     },
     "101": {
         "num": 101,
-        "name": "Electrode",
+        "name": "Ã‰lectrode",
         "types": [
             "ELECTRIQUE"
         ],
@@ -2030,7 +2030,7 @@
     },
     "102": {
         "num": 102,
-        "name": "Exeggcute",
+        "name": "NÅ“unÅ“uf",
         "types": [
             "PLANTE",
             "PSY"
@@ -2050,7 +2050,7 @@
     },
     "103": {
         "num": 103,
-        "name": "Exeggutor",
+        "name": "Noadkoko",
         "types": [
             "PLANTE",
             "PSY"
@@ -2070,7 +2070,7 @@
     },
     "104": {
         "num": 104,
-        "name": "Cubone",
+        "name": "Osselait",
         "types": [
             "SOL"
         ],
@@ -2090,7 +2090,7 @@
     },
     "105": {
         "num": 105,
-        "name": "Marowak",
+        "name": "Ossatueur",
         "types": [
             "SOL"
         ],
@@ -2110,7 +2110,7 @@
     },
     "106": {
         "num": 106,
-        "name": "Hitmonlee",
+        "name": "Kicklee",
         "types": [
             "COMBAT"
         ],
@@ -2130,7 +2130,7 @@
     },
     "107": {
         "num": 107,
-        "name": "Hitmonchan",
+        "name": "Tygnon",
         "types": [
             "COMBAT"
         ],
@@ -2150,7 +2150,7 @@
     },
     "108": {
         "num": 108,
-        "name": "Lickitung",
+        "name": "Excelangue",
         "types": [
             "NORMAL"
         ],
@@ -2170,7 +2170,7 @@
     },
     "109": {
         "num": 109,
-        "name": "Koffing",
+        "name": "Smogo",
         "types": [
             "POISON"
         ],
@@ -2190,7 +2190,7 @@
     },
     "110": {
         "num": 110,
-        "name": "Weezing",
+        "name": "Smogogo",
         "types": [
             "POISON"
         ],
@@ -2210,7 +2210,7 @@
     },
     "111": {
         "num": 111,
-        "name": "Rhyhorn",
+        "name": "Rhinocorne",
         "types": [
             "SOL",
             "ROCHE"
@@ -2231,7 +2231,7 @@
     },
     "112": {
         "num": 112,
-        "name": "Rhydon",
+        "name": "RhinofÃ©ros",
         "types": [
             "SOL",
             "ROCHE"
@@ -2252,7 +2252,7 @@
     },
     "113": {
         "num": 113,
-        "name": "Chansey",
+        "name": "Leveinard",
         "types": [
             "NORMAL"
         ],
@@ -2272,7 +2272,7 @@
     },
     "114": {
         "num": 114,
-        "name": "Tangela",
+        "name": "Saquedeneu",
         "types": [
             "PLANTE"
         ],
@@ -2292,7 +2292,7 @@
     },
     "115": {
         "num": 115,
-        "name": "Kangaskhan",
+        "name": "Kangourex",
         "types": [
             "NORMAL"
         ],
@@ -2312,7 +2312,7 @@
     },
     "116": {
         "num": 116,
-        "name": "Horsea",
+        "name": "Hypotrempe",
         "types": [
             "EAU"
         ],
@@ -2332,7 +2332,7 @@
     },
     "117": {
         "num": 117,
-        "name": "Seadra",
+        "name": "HypocÃ©an",
         "types": [
             "EAU"
         ],
@@ -2352,7 +2352,7 @@
     },
     "118": {
         "num": 118,
-        "name": "Goldeen",
+        "name": "PoissirÃ¨ne",
         "types": [
             "EAU"
         ],
@@ -2372,7 +2372,7 @@
     },
     "119": {
         "num": 119,
-        "name": "Seaking",
+        "name": "Poissoroy",
         "types": [
             "EAU"
         ],
@@ -2392,7 +2392,7 @@
     },
     "120": {
         "num": 120,
-        "name": "Staryu",
+        "name": "Stari",
         "types": [
             "EAU"
         ],
@@ -2412,7 +2412,7 @@
     },
     "121": {
         "num": 121,
-        "name": "Starmie",
+        "name": "Staross",
         "types": [
             "EAU",
             "PSY"
@@ -2433,7 +2433,7 @@
     },
     "122": {
         "num": 122,
-        "name": "Mr. Mime",
+        "name": "M. Mime",
         "types": [
             "PSY",
             "FEE"
@@ -2454,7 +2454,7 @@
     },
     "123": {
         "num": 123,
-        "name": "Scyther",
+        "name": "InsÃ©cateur",
         "types": [
             "INSECTE",
             "VOL"
@@ -2475,7 +2475,7 @@
     },
     "124": {
         "num": 124,
-        "name": "Jynx",
+        "name": "Lippoutou",
         "types": [
             "GLACE",
             "PSY"
@@ -2496,7 +2496,7 @@
     },
     "125": {
         "num": 125,
-        "name": "Electabuzz",
+        "name": "Ã‰lektek",
         "types": [
             "ELECTRIQUE"
         ],
@@ -2534,7 +2534,7 @@
     },
     "127": {
         "num": 127,
-        "name": "Pinsir",
+        "name": "Scarabrute",
         "types": [
             "INSECTE"
         ],
@@ -2574,7 +2574,7 @@
     },
     "129": {
         "num": 129,
-        "name": "Magikarp",
+        "name": "Magicarpe",
         "types": [
             "EAU"
         ],
@@ -2593,7 +2593,7 @@
     },
     "130": {
         "num": 130,
-        "name": "Gyarados",
+        "name": "LÃ©viator",
         "types": [
             "EAU",
             "VOL"
@@ -2613,7 +2613,7 @@
     },
     "131": {
         "num": 131,
-        "name": "Lapras",
+        "name": "Lokhlass",
         "types": [
             "EAU",
             "GLACE"
@@ -2634,7 +2634,7 @@
     },
     "132": {
         "num": 132,
-        "name": "Ditto",
+        "name": "MÃ©tamorph",
         "types": [
             "NORMAL"
         ],
@@ -2653,7 +2653,7 @@
     },
     "133": {
         "num": 133,
-        "name": "Eevee",
+        "name": "Ã‰voli",
         "types": [
             "NORMAL"
         ],
@@ -2673,7 +2673,7 @@
     },
     "134": {
         "num": 134,
-        "name": "Vaporeon",
+        "name": "Aquali",
         "types": [
             "EAU"
         ],
@@ -2692,7 +2692,7 @@
     },
     "135": {
         "num": 135,
-        "name": "Jolteon",
+        "name": "Voltali",
         "types": [
             "ELECTRIQUE"
         ],
@@ -2711,7 +2711,7 @@
     },
     "136": {
         "num": 136,
-        "name": "Flareon",
+        "name": "Pyroli",
         "types": [
             "FEU"
         ],
@@ -2750,7 +2750,7 @@
     },
     "138": {
         "num": 138,
-        "name": "Omanyte",
+        "name": "Amonita",
         "types": [
             "ROCHE",
             "EAU"
@@ -2771,7 +2771,7 @@
     },
     "139": {
         "num": 139,
-        "name": "Omastar",
+        "name": "Amonistar",
         "types": [
             "ROCHE",
             "EAU"
@@ -2834,7 +2834,7 @@
     },
     "142": {
         "num": 142,
-        "name": "Aerodactyl",
+        "name": "PtÃ©ra",
         "types": [
             "ROCHE",
             "VOL"
@@ -2855,7 +2855,7 @@
     },
     "143": {
         "num": 143,
-        "name": "Snorlax",
+        "name": "Ronflex",
         "types": [
             "NORMAL"
         ],
@@ -2875,7 +2875,7 @@
     },
     "144": {
         "num": 144,
-        "name": "Articuno",
+        "name": "Artikodin",
         "types": [
             "GLACE",
             "VOL"
@@ -2895,7 +2895,7 @@
     },
     "145": {
         "num": 145,
-        "name": "Zapdos",
+        "name": "Ã‰lecthor",
         "types": [
             "ELECTRIQUE",
             "VOL"
@@ -2915,7 +2915,7 @@
     },
     "146": {
         "num": 146,
-        "name": "Moltres",
+        "name": "Sulfura",
         "types": [
             "FEU",
             "VOL"
@@ -2935,7 +2935,7 @@
     },
     "147": {
         "num": 147,
-        "name": "Dratini",
+        "name": "Minidraco",
         "types": [
             "DRAGON"
         ],
@@ -2954,7 +2954,7 @@
     },
     "148": {
         "num": 148,
-        "name": "Dragonair",
+        "name": "Draco",
         "types": [
             "DRAGON"
         ],
@@ -2973,7 +2973,7 @@
     },
     "149": {
         "num": 149,
-        "name": "Dragonite",
+        "name": "Dracolosse",
         "types": [
             "DRAGON",
             "VOL"
