@@ -1,7 +1,5 @@
 from pokemon_type import Type
 from collections import defaultdict
-import os,pygame,json
-from config import principal_dir_path,img_dir_path
 from move_target import Target
 
 class Move:
