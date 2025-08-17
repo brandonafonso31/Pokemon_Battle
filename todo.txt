@@ -1,3 +1,4 @@
+- Modifier les fonctions du pokedex et probablement la class pokemon pour avoir le numero nationtal (du pokédex)
 - optimiser la fluidité de l'animation de la barre de vie car des fois semble bugger, l'app arrete de fonctionnner et contienue apres la barre de vie?
 - load une image pour le bloc contenant les hp, le niv et le nom
 - bouger les menus dans un nouveau fichier menus
