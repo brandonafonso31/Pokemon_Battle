@@ -673,7 +673,7 @@
     },
     "35": {
         "num": 35,
-        "name": "MÃ©lofÃ©e",
+        "name": "Mélofée",
         "types": [
             "FEE"
         ],
@@ -693,7 +693,7 @@
     },
     "36": {
         "num": 36,
-        "name": "MÃ©lodelfe",
+        "name": "Mélodelfe",
         "types": [
             "FEE"
         ],
@@ -956,7 +956,7 @@
     },
     "49": {
         "num": 49,
-        "name": "AÃ©romite",
+        "name": "Aéromite",
         "types": [
             "INSECTE",
             "POISON"
@@ -1097,7 +1097,7 @@
     },
     "56": {
         "num": 56,
-        "name": "FÃ©rosinge",
+        "name": "Férosinge",
         "types": [
             "COMBAT"
         ],
@@ -1358,7 +1358,7 @@
     },
     "69": {
         "num": 69,
-        "name": "ChÃ©tiflor",
+        "name": "Chétiflor",
         "types": [
             "PLANTE",
             "POISON"
@@ -1605,7 +1605,7 @@
     },
     "81": {
         "num": 81,
-        "name": "MagnÃ©ti",
+        "name": "Magnéti",
         "types": [
             "ELECTRIQUE",
             "ACIER"
@@ -1626,7 +1626,7 @@
     },
     "82": {
         "num": 82,
-        "name": "MagnÃ©ton",
+        "name": "Magnéton",
         "types": [
             "ELECTRIQUE",
             "ACIER"
@@ -2231,7 +2231,7 @@
     },
     "112": {
         "num": 112,
-        "name": "RhinofÃ©ros",
+        "name": "Rhinoféros",
         "types": [
             "SOL",
             "ROCHE"
@@ -2332,7 +2332,7 @@
     },
     "117": {
         "num": 117,
-        "name": "HypocÃ©an",
+        "name": "Hypocéan",
         "types": [
             "EAU"
         ],
@@ -2454,7 +2454,7 @@
     },
     "123": {
         "num": 123,
-        "name": "InsÃ©cateur",
+        "name": "Insécateur",
         "types": [
             "INSECTE",
             "VOL"
@@ -2593,7 +2593,7 @@
     },
     "130": {
         "num": 130,
-        "name": "LÃ©viator",
+        "name": "Léviator",
         "types": [
             "EAU",
             "VOL"
@@ -2634,7 +2634,7 @@
     },
     "132": {
         "num": 132,
-        "name": "MÃ©tamorph",
+        "name": "Métamorph",
         "types": [
             "NORMAL"
         ],
@@ -2834,7 +2834,7 @@
     },
     "142": {
         "num": 142,
-        "name": "PtÃ©ra",
+        "name": "Ptéra",
         "types": [
             "ROCHE",
             "VOL"

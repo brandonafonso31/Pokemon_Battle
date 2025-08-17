@@ -138,3 +138,23 @@ translate_name("pokedex_gen5.json",494)
 translate_name("pokedex_gen6.json",650)
 translate_name("pokedex_gen7.json",722)
 translate_name("pokedex_gen8.json",810)"""
+
+def remove_wrong_accent(json_file_path):
+    path = os.path.join(data_dir_path, json_file_path)
+    with open(path, "r", encoding="utf-8") as f:
+        data_gen = json.load(f)
+    
+    for poke_name, infos in data_gen.items():
+        infos["name"] = infos["name"].replace("Ã©","é")
+    
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data_gen, f, indent=4, ensure_ascii=False)
+    
+remove_wrong_accent("pokedex_gen1.json")
+remove_wrong_accent("pokedex_gen2.json")
+remove_wrong_accent("pokedex_gen3.json")
+remove_wrong_accent("pokedex_gen4.json")
+remove_wrong_accent("pokedex_gen5.json")
+remove_wrong_accent("pokedex_gen6.json")
+remove_wrong_accent("pokedex_gen7.json")
+remove_wrong_accent("pokedex_gen8.json")

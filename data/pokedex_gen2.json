@@ -20,7 +20,7 @@
     },
     "153": {
         "num": 153,
-        "name": "MÃ©ganium",
+        "name": "Méganium",
         "types": [
             "PLANTE"
         ],
@@ -39,7 +39,7 @@
     },
     "154": {
         "num": 154,
-        "name": "HÃ©ricendre",
+        "name": "Héricendre",
         "types": [
             "PLANTE"
         ],
@@ -400,7 +400,7 @@
     },
     "172": {
         "num": 172,
-        "name": "MÃ©lo",
+        "name": "Mélo",
         "types": [
             "ELECTRIQUE"
         ],
@@ -784,7 +784,7 @@
     },
     "191": {
         "num": 191,
-        "name": "HÃ©liatronc",
+        "name": "Héliatronc",
         "types": [
             "PLANTE"
         ],
@@ -985,7 +985,7 @@
     },
     "201": {
         "num": 201,
-        "name": "QulbutokÃ©",
+        "name": "Qulbutoké",
         "types": [
             "PSY"
         ],
@@ -1412,7 +1412,7 @@
     },
     "222": {
         "num": 222,
-        "name": "RÃ©moraid",
+        "name": "Rémoraid",
         "types": [
             "EAU",
             "ROCHE"
@@ -1473,7 +1473,7 @@
     },
     "225": {
         "num": 225,
-        "name": "DÃ©manta",
+        "name": "Démanta",
         "types": [
             "GLACE",
             "VOL"
@@ -1536,7 +1536,7 @@
     },
     "228": {
         "num": 228,
-        "name": "DÃ©molosse",
+        "name": "Démolosse",
         "types": [
             "TENEBRE",
             "FEU"
@@ -1777,7 +1777,7 @@
     },
     "240": {
         "num": 240,
-        "name": "Ã‰crÃ©meuh",
+        "name": "Ã‰crémeuh",
         "types": [
             "FEU"
         ],

@@ -21,7 +21,7 @@
     },
     "723": {
         "num": 723,
-        "name": "ArchÃ©duc",
+        "name": "Archéduc",
         "types": [
             "PLANTE",
             "VOL"
@@ -80,7 +80,7 @@
     },
     "726": {
         "num": 726,
-        "name": "FÃ©linferno",
+        "name": "Félinferno",
         "types": [
             "FEU"
         ],
@@ -479,7 +479,7 @@
     },
     "746": {
         "num": 746,
-        "name": "VorastÃ©rie",
+        "name": "Vorastérie",
         "types": [
             "EAU"
         ],
@@ -497,7 +497,7 @@
     },
     "747": {
         "num": 747,
-        "name": "PrÃ©dastÃ©rie",
+        "name": "Prédastérie",
         "types": [
             "POISON",
             "EAU"
@@ -821,7 +821,7 @@
     },
     "763": {
         "num": 763,
-        "name": "GuÃ©rilande",
+        "name": "Guérilande",
         "types": [
             "PLANTE"
         ],
@@ -939,7 +939,7 @@
     },
     "769": {
         "num": 769,
-        "name": "TrÃ©passable",
+        "name": "Trépassable",
         "types": [
             "SPECTRE",
             "SOL"
@@ -998,7 +998,7 @@
     },
     "772": {
         "num": 772,
-        "name": "SilvalliÃ©",
+        "name": "Silvallié",
         "types": [
             "NORMAL"
         ],
@@ -1016,7 +1016,7 @@
     },
     "773": {
         "num": 773,
-        "name": "MÃ©tÃ©no",
+        "name": "Météno",
         "types": [
             "NORMAL"
         ],
@@ -1172,7 +1172,7 @@
     },
     "781": {
         "num": 781,
-        "name": "BÃ©bÃ©caille",
+        "name": "Bébécaille",
         "types": [
             "SPECTRE",
             "PLANTE"
@@ -1388,7 +1388,7 @@
     },
     "792": {
         "num": 792,
-        "name": "ZÃ©roÃ¯d",
+        "name": "ZéroÃ¯d",
         "types": [
             "PSY",
             "SPECTRE"
@@ -1576,7 +1576,7 @@
     },
     "802": {
         "num": 802,
-        "name": "VÃ©mini",
+        "name": "Vémini",
         "types": [
             "COMBAT",
             "SPECTRE"

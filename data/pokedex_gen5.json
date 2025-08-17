@@ -1,7 +1,7 @@
 {
     "494": {
         "num": 494,
-        "name": "VipÃ©lierre",
+        "name": "Vipélierre",
         "types": [
             "PSY",
             "FEU"
@@ -293,7 +293,7 @@
     },
     "509": {
         "num": 509,
-        "name": "LÃ©opardus",
+        "name": "Léopardus",
         "types": [
             "TENEBRE"
         ],
@@ -508,7 +508,7 @@
     },
     "520": {
         "num": 520,
-        "name": "DÃ©flaisan",
+        "name": "Déflaisan",
         "types": [
             "NORMAL",
             "VOL"
@@ -529,7 +529,7 @@
     },
     "521": {
         "num": 521,
-        "name": "ZÃ©bibron",
+        "name": "Zébibron",
         "types": [
             "NORMAL",
             "VOL"
@@ -550,7 +550,7 @@
     },
     "522": {
         "num": 522,
-        "name": "ZÃ©blitz",
+        "name": "Zéblitz",
         "types": [
             "ELECTRIQUE"
         ],
@@ -590,7 +590,7 @@
     },
     "524": {
         "num": 524,
-        "name": "GÃ©olithe",
+        "name": "Géolithe",
         "types": [
             "ROCHE"
         ],
@@ -712,7 +712,7 @@
     },
     "530": {
         "num": 530,
-        "name": "NanmÃ©ouÃ¯e",
+        "name": "NanméouÃ¯e",
         "types": [
             "SOL",
             "ACIER"
@@ -773,7 +773,7 @@
     },
     "533": {
         "num": 533,
-        "name": "BÃ©tochef",
+        "name": "Bétochef",
         "types": [
             "COMBAT"
         ],
@@ -813,7 +813,7 @@
     },
     "535": {
         "num": 535,
-        "name": "BatracnÃ©",
+        "name": "Batracné",
         "types": [
             "EAU"
         ],
@@ -875,7 +875,7 @@
     },
     "538": {
         "num": 538,
-        "name": "KaraclÃ©e",
+        "name": "Karaclée",
         "types": [
             "COMBAT"
         ],
@@ -1327,7 +1327,7 @@
     },
     "560": {
         "num": 560,
-        "name": "CryptÃ©ro",
+        "name": "Cryptéro",
         "types": [
             "TENEBRE",
             "COMBAT"
@@ -1405,7 +1405,7 @@
     },
     "564": {
         "num": 564,
-        "name": "MÃ©gapagos",
+        "name": "Mégapagos",
         "types": [
             "EAU",
             "ROCHE"
@@ -1426,7 +1426,7 @@
     },
     "565": {
         "num": 565,
-        "name": "ArkÃ©apti",
+        "name": "Arkéapti",
         "types": [
             "EAU",
             "ROCHE"
@@ -1447,7 +1447,7 @@
     },
     "566": {
         "num": 566,
-        "name": "AÃ©roptÃ©ryx",
+        "name": "Aéroptéryx",
         "types": [
             "ROCHE",
             "VOL"
@@ -1601,7 +1601,7 @@
     },
     "574": {
         "num": 574,
-        "name": "MesmÃ©rella",
+        "name": "Mesmérella",
         "types": [
             "PSY"
         ],
@@ -1621,7 +1621,7 @@
     },
     "575": {
         "num": 575,
-        "name": "SidÃ©rella",
+        "name": "Sidérella",
         "types": [
             "PSY"
         ],
@@ -1641,7 +1641,7 @@
     },
     "576": {
         "num": 576,
-        "name": "NuclÃ©os",
+        "name": "Nucléos",
         "types": [
             "PSY"
         ],
@@ -1661,7 +1661,7 @@
     },
     "577": {
         "num": 577,
-        "name": "MÃ©ios",
+        "name": "Méios",
         "types": [
             "PSY"
         ],
@@ -1721,7 +1721,7 @@
     },
     "580": {
         "num": 580,
-        "name": "LakmÃ©cygne",
+        "name": "Lakmécygne",
         "types": [
             "EAU",
             "VOL"
@@ -1742,7 +1742,7 @@
     },
     "581": {
         "num": 581,
-        "name": "SorbÃ©bÃ©",
+        "name": "Sorbébé",
         "types": [
             "EAU",
             "VOL"
@@ -2169,7 +2169,7 @@
     },
     "602": {
         "num": 602,
-        "name": "LampÃ©roie",
+        "name": "Lampéroie",
         "types": [
             "ELECTRIQUE"
         ],
@@ -2243,7 +2243,7 @@
     },
     "606": {
         "num": 606,
-        "name": "FunÃ©cire",
+        "name": "Funécire",
         "types": [
             "PSY"
         ],
@@ -2263,7 +2263,7 @@
     },
     "607": {
         "num": 607,
-        "name": "MÃ©lancolux",
+        "name": "Mélancolux",
         "types": [
             "SPECTRE",
             "FEU"
@@ -2929,7 +2929,7 @@
     },
     "640": {
         "num": 640,
-        "name": "BorÃ©as",
+        "name": "Boréas",
         "types": [
             "PLANTE",
             "COMBAT"
@@ -3006,7 +3006,7 @@
     },
     "644": {
         "num": 644,
-        "name": "DÃ©mÃ©tÃ©ros",
+        "name": "Démétéros",
         "types": [
             "DRAGON",
             "ELECTRIQUE"

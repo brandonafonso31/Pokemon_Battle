@@ -96,7 +96,7 @@
     },
     "815": {
         "num": 815,
-        "name": "LarmÃ©lÃ©on",
+        "name": "Larméléon",
         "types": [
             "FEU"
         ],
@@ -134,7 +134,7 @@
     },
     "817": {
         "num": 817,
-        "name": "LÃ©zargus",
+        "name": "Lézargus",
         "types": [
             "EAU"
         ],
@@ -271,7 +271,7 @@
     },
     "824": {
         "num": 824,
-        "name": "ColÃ©odÃ´me",
+        "name": "ColéodÃ´me",
         "types": [
             "INSECTE"
         ],
@@ -433,7 +433,7 @@
     },
     "832": {
         "num": 832,
-        "name": "KhÃ©locrok",
+        "name": "Khélocrok",
         "types": [
             "NORMAL"
         ],
@@ -857,7 +857,7 @@
     },
     "853": {
         "num": 853,
-        "name": "ThÃ©ffroi",
+        "name": "Théffroi",
         "types": [
             "COMBAT"
         ],
@@ -876,7 +876,7 @@
     },
     "854": {
         "num": 854,
-        "name": "PolthÃ©geist",
+        "name": "Polthégeist",
         "types": [
             "SPECTRE"
         ],
@@ -1117,7 +1117,7 @@
     },
     "866": {
         "num": 866,
-        "name": "TutÃ©tÃ©kri",
+        "name": "Tutétékri",
         "types": [
             "GLACE",
             "PSY"

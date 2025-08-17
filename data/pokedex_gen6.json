@@ -1,7 +1,7 @@
 {
     "650": {
         "num": 650,
-        "name": "BoguÃ©risse",
+        "name": "Boguérisse",
         "types": [
             "PLANTE"
         ],
@@ -20,7 +20,7 @@
     },
     "651": {
         "num": 651,
-        "name": "BlindÃ©pique",
+        "name": "Blindépique",
         "types": [
             "PLANTE"
         ],
@@ -257,7 +257,7 @@
     },
     "663": {
         "num": 663,
-        "name": "LÃ©pidonille",
+        "name": "Lépidonille",
         "types": [
             "FEU",
             "VOL"
@@ -277,7 +277,7 @@
     },
     "664": {
         "num": 664,
-        "name": "PÃ©rÃ©grain",
+        "name": "Pérégrain",
         "types": [
             "INSECTE"
         ],
@@ -316,7 +316,7 @@
     },
     "666": {
         "num": 666,
-        "name": "HÃ©lionceau",
+        "name": "Hélionceau",
         "types": [
             "INSECTE",
             "VOL"
@@ -337,7 +337,7 @@
     },
     "667": {
         "num": 667,
-        "name": "NÃ©mÃ©lios",
+        "name": "Némélios",
         "types": [
             "FEU",
             "NORMAL"
@@ -358,7 +358,7 @@
     },
     "668": {
         "num": 668,
-        "name": "FlabÃ©bÃ©",
+        "name": "Flabébé",
         "types": [
             "FEU",
             "NORMAL"
@@ -990,7 +990,7 @@
     },
     "700": {
         "num": 700,
-        "name": "BrutalibrÃ©",
+        "name": "Brutalibré",
         "types": [
             "FEE"
         ],
@@ -1131,7 +1131,7 @@
     },
     "707": {
         "num": 707,
-        "name": "BrocÃ©lÃ´me",
+        "name": "BrocélÃ´me",
         "types": [
             "ACIER",
             "FEE"
@@ -1151,7 +1151,7 @@
     },
     "708": {
         "num": 708,
-        "name": "DessÃ©liande",
+        "name": "Desséliande",
         "types": [
             "SPECTRE",
             "PLANTE"
@@ -1235,7 +1235,7 @@
     },
     "712": {
         "num": 712,
-        "name": "SÃ©racrawl",
+        "name": "Séracrawl",
         "types": [
             "GLACE"
         ],

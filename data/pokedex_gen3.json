@@ -77,7 +77,7 @@
     },
     "256": {
         "num": 256,
-        "name": "BrasÃ©gali",
+        "name": "Braségali",
         "types": [
             "FEU",
             "COMBAT"
@@ -216,7 +216,7 @@
     },
     "263": {
         "num": 263,
-        "name": "LinÃ©on",
+        "name": "Linéon",
         "types": [
             "NORMAL"
         ],
@@ -331,7 +331,7 @@
     },
     "269": {
         "num": 269,
-        "name": "NÃ©nupiot",
+        "name": "Nénupiot",
         "types": [
             "INSECTE",
             "POISON"
@@ -476,7 +476,7 @@
     },
     "276": {
         "num": 276,
-        "name": "HÃ©lÃ©delle",
+        "name": "Hélédelle",
         "types": [
             "NORMAL",
             "VOL"
@@ -496,7 +496,7 @@
     },
     "277": {
         "num": 277,
-        "name": "GoÃ©lise",
+        "name": "Goélise",
         "types": [
             "NORMAL",
             "VOL"
@@ -973,7 +973,7 @@
     },
     "301": {
         "num": 301,
-        "name": "TÃ©nÃ©fix",
+        "name": "Ténéfix",
         "types": [
             "NORMAL"
         ],
@@ -1077,7 +1077,7 @@
     },
     "306": {
         "num": 306,
-        "name": "MÃ©ditikka",
+        "name": "Méditikka",
         "types": [
             "ACIER",
             "ROCHE"
@@ -1178,7 +1178,7 @@
     },
     "311": {
         "num": 311,
-        "name": "NÃ©gapi",
+        "name": "Négapi",
         "types": [
             "ELECTRIQUE"
         ],
@@ -1236,7 +1236,7 @@
     },
     "314": {
         "num": 314,
-        "name": "RosÃ©lia",
+        "name": "Rosélia",
         "types": [
             "INSECTE"
         ],
@@ -1397,7 +1397,7 @@
     },
     "322": {
         "num": 322,
-        "name": "CamÃ©rupt",
+        "name": "Camérupt",
         "types": [
             "FEU",
             "SOL"
@@ -1539,7 +1539,7 @@
     },
     "329": {
         "num": 329,
-        "name": "LibÃ©gon",
+        "name": "Libégon",
         "types": [
             "SOL",
             "DRAGON"
@@ -1656,7 +1656,7 @@
     },
     "335": {
         "num": 335,
-        "name": "SÃ©viper",
+        "name": "Séviper",
         "types": [
             "NORMAL"
         ],
@@ -1675,7 +1675,7 @@
     },
     "336": {
         "num": 336,
-        "name": "SÃ©lÃ©roc",
+        "name": "Séléroc",
         "types": [
             "POISON"
         ],
@@ -1953,7 +1953,7 @@
     },
     "350": {
         "num": 350,
-        "name": "MorphÃ©o",
+        "name": "Morphéo",
         "types": [
             "EAU"
         ],
@@ -2030,7 +2030,7 @@
     },
     "354": {
         "num": 354,
-        "name": "SkelÃ©nox",
+        "name": "Skelénox",
         "types": [
             "SPECTRE"
         ],
@@ -2050,7 +2050,7 @@
     },
     "355": {
         "num": 355,
-        "name": "TÃ©raclope",
+        "name": "Téraclope",
         "types": [
             "SPECTRE"
         ],
@@ -2127,7 +2127,7 @@
     },
     "359": {
         "num": 359,
-        "name": "OkÃ©okÃ©",
+        "name": "Okéoké",
         "types": [
             "TENEBRE"
         ],
@@ -2424,7 +2424,7 @@
     },
     "374": {
         "num": 374,
-        "name": "MÃ©tang",
+        "name": "Métang",
         "types": [
             "ACIER",
             "PSY"
@@ -2444,7 +2444,7 @@
     },
     "375": {
         "num": 375,
-        "name": "MÃ©talosse",
+        "name": "Métalosse",
         "types": [
             "ACIER",
             "PSY"
