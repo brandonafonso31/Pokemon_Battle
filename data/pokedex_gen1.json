@@ -61,7 +61,7 @@
     },
     "4": {
         "num": 4,
-        "name": "SalamÃ¨che",
+        "name": "Salamèche",
         "types": [
             "FEU"
         ],
@@ -551,7 +551,7 @@
     },
     "29": {
         "num": 29,
-        "name": "Nidoranâ™€",
+        "name": "Nidoran♀",
         "types": [
             "POISON"
         ],
@@ -612,7 +612,7 @@
     },
     "32": {
         "num": 32,
-        "name": "Nidoranâ™‚",
+        "name": "Nidoran♂",
         "types": [
             "POISON"
         ],
@@ -1197,7 +1197,7 @@
     },
     "61": {
         "num": 61,
-        "name": "TÃªtarte",
+        "name": "Têtarte",
         "types": [
             "EAU"
         ],
@@ -2010,7 +2010,7 @@
     },
     "101": {
         "num": 101,
-        "name": "Ã‰lectrode",
+        "name": "Électrode",
         "types": [
             "ELECTRIQUE"
         ],
@@ -2030,7 +2030,7 @@
     },
     "102": {
         "num": 102,
-        "name": "NÅ“unÅ“uf",
+        "name": "Nœunœuf",
         "types": [
             "PLANTE",
             "PSY"
@@ -2352,7 +2352,7 @@
     },
     "118": {
         "num": 118,
-        "name": "PoissirÃ¨ne",
+        "name": "Poissirène",
         "types": [
             "EAU"
         ],
@@ -2496,7 +2496,7 @@
     },
     "125": {
         "num": 125,
-        "name": "Ã‰lektek",
+        "name": "Élektek",
         "types": [
             "ELECTRIQUE"
         ],
@@ -2653,7 +2653,7 @@
     },
     "133": {
         "num": 133,
-        "name": "Ã‰voli",
+        "name": "Évoli",
         "types": [
             "NORMAL"
         ],
@@ -2895,7 +2895,7 @@
     },
     "145": {
         "num": 145,
-        "name": "Ã‰lecthor",
+        "name": "Électhor",
         "types": [
             "ELECTRIQUE",
             "VOL"
