@@ -3,11 +3,11 @@ from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
 from pokemon_talent import talents
+from pokedex import create_pokemon
 
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
-dracaufeu = Pokemon("Dracaufeu",hp=78,atk=84,def_=78,atk_spe=109,def_spe=85,vit=100,gen=1,
-                    type1=Type.FEU,type2=Type.VOL,num_on_sprite_sheet=7,EV=dracaufeu_EV,nature=Nature.MODESTE)
+dracaufeu = create_pokemon(6,nature=Nature.MODESTE,EV=dracaufeu_EV,num_on_sprite_sheet=7)
 
 lance_flamme = SpecialMove("Lance-Flammes",Type.FEU,power=90,precision=100,pp=15, effect = dico_effect_move["Lance-Flammes"], prio = 0)
 crocs_eclair = SpecialMove("Croc-éclair",Type.ELECTRIQUE,power=90,precision=100,pp=15, effect = dico_effect_move["Croc-éclair"], prio = 0)
@@ -22,8 +22,8 @@ dracaufeu.change_talent(talents["Intimidation"]())
 #print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"hp":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
-leviator = Pokemon("Léviator",hp=95,atk=125,def_=79,atk_spe=60,def_spe=100,vit=81,gen=1,
-                   type1=Type.EAU,type2=Type.VOL,num_on_sprite_sheet=151,EV=leviator_EV, nature=Nature.RIGIDE)
+leviator = create_pokemon(130, EV=leviator_EV, nature=Nature.RIGIDE, num_on_sprite_sheet=151)
+
 
 crocgivre = PhysicalMove("Crocs Givre",Type.GLACE,power=65,precision=95,pp=15, effect = dico_effect_move["Crocs Givre"], prio = 0)
 cascade = PhysicalMove("Cascade",Type.EAU,power=80,precision=100,pp=15, effect = dico_effect_move["Cascade"], prio = 0)
