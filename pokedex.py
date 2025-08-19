@@ -3,19 +3,20 @@ from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
 from pokemon_talent import talents
-from config import pokemon_data_json_path
-import json
+from config import pokemon_data_json_path,data_dir_path
+import json,os
 
-def get_pokedex():
+
+def get_pokedex(num_gen: int = -1):
+    if num_gen != -1: path = f"data/pokedex_gen{num_gen}.json"
+    else: pokemon_data_json_path
     with open(pokemon_data_json_path,"r",encoding="utf-8") as f:
         return json.load(f)
-    
-def get_pokemon(id):
-    """Retourne le Pokémon dont le champ 'num' correspond à l'id"""
-    pokedex = get_pokedex()
+
+def get_pokemon(id,num_gen: int = -1):
+    pokedex = get_pokedex(num_gen)
     for name, infos in pokedex.items():
-        if infos["num"] == id :
-            return infos
+        if infos["num"] == id :  return infos
     return None
 
 def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},nickname="",num_on_sprite_sheet=1):
