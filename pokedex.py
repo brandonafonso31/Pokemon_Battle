@@ -59,5 +59,6 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
     
     return pokemon
 
-"""charizard = create_pokemon(6)
-print(charizard)"""
+charizard_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
+charizard = create_pokemon(6,nature=Nature.MODESTE,EV=charizard_EV,num_on_sprite_sheet=7)
+print(charizard)
