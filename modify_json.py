@@ -25,7 +25,7 @@ def remove_useless_attribut(json_file_path):
     with open(path, "r", encoding="utf-8") as f:
         data_gen = json.load(f)
     
-    useless_keys = [
+    useless_keys = ["num",
         "genderRatio","heightm","weightkg","color","evos","eggGroups","hasLearnset",
         "baseForme","baseFormeAlias","baseFormeSprite",
         "cosmeticFormes","cosmeticFormesAliases","cosmeticFormesSprites",
@@ -112,7 +112,6 @@ tab_translate = {"Normal":"NORMAL",
                     "Ghost":"SPECTRE",
                     "Flying":"VOL",
                     "Dark":"TENEBRE" }
-
 
 def index_json():
     with open("data/fr.json", "r", encoding="utf-8") as f:

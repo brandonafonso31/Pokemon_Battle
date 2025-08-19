@@ -1,6 +1,5 @@
 {
     "810": {
-        "num": 810,
         "name": "Ouistempo",
         "types": [
             "PLANTE"
@@ -19,7 +18,6 @@
         }
     },
     "811": {
-        "num": 811,
         "name": "Badabouin",
         "types": [
             "PLANTE"
@@ -38,7 +36,6 @@
         }
     },
     "812": {
-        "num": 812,
         "name": "Gorythmic",
         "types": [
             "PLANTE"
@@ -57,7 +54,6 @@
         }
     },
     "813": {
-        "num": 813,
         "name": "Flambino",
         "types": [
             "FEU"
@@ -76,7 +72,6 @@
         }
     },
     "814": {
-        "num": 814,
         "name": "Lapyro",
         "types": [
             "FEU"
@@ -95,7 +90,6 @@
         }
     },
     "815": {
-        "num": 815,
         "name": "Pyrobut",
         "types": [
             "FEU"
@@ -114,7 +108,6 @@
         }
     },
     "816": {
-        "num": 816,
         "name": "Larméléon",
         "types": [
             "EAU"
@@ -133,7 +126,6 @@
         }
     },
     "817": {
-        "num": 817,
         "name": "Arrozard",
         "types": [
             "EAU"
@@ -152,7 +144,6 @@
         }
     },
     "818": {
-        "num": 818,
         "name": "Lézargus",
         "types": [
             "EAU"
@@ -171,7 +162,6 @@
         }
     },
     "819": {
-        "num": 819,
         "name": "Rongourmand",
         "types": [
             "NORMAL"
@@ -190,7 +180,6 @@
         }
     },
     "820": {
-        "num": 820,
         "name": "Rongrigou",
         "types": [
             "NORMAL"
@@ -209,7 +198,6 @@
         }
     },
     "821": {
-        "num": 821,
         "name": "Minisange",
         "types": [
             "VOL"
@@ -229,7 +217,6 @@
         }
     },
     "822": {
-        "num": 822,
         "name": "Bleuseille",
         "types": [
             "VOL"
@@ -249,7 +236,6 @@
         }
     },
     "823": {
-        "num": 823,
         "name": "Corvaillus",
         "types": [
             "VOL",
@@ -270,7 +256,6 @@
         }
     },
     "824": {
-        "num": 824,
         "name": "Larvadar",
         "types": [
             "INSECTE"
@@ -290,7 +275,6 @@
         }
     },
     "825": {
-        "num": 825,
         "name": "Coléodôme",
         "types": [
             "INSECTE",
@@ -311,7 +295,6 @@
         }
     },
     "826": {
-        "num": 826,
         "name": "Astronelle",
         "types": [
             "INSECTE",
@@ -332,7 +315,6 @@
         }
     },
     "827": {
-        "num": 827,
         "name": "Goupilou",
         "types": [
             "TENEBRE"
@@ -352,7 +334,6 @@
         }
     },
     "828": {
-        "num": 828,
         "name": "Roublenard",
         "types": [
             "TENEBRE"
@@ -372,7 +353,6 @@
         }
     },
     "829": {
-        "num": 829,
         "name": "Tournicoton",
         "types": [
             "PLANTE"
@@ -392,7 +372,6 @@
         }
     },
     "830": {
-        "num": 830,
         "name": "Blancoton",
         "types": [
             "PLANTE"
@@ -412,7 +391,6 @@
         }
     },
     "831": {
-        "num": 831,
         "name": "Moumouton",
         "types": [
             "NORMAL"
@@ -432,7 +410,6 @@
         }
     },
     "832": {
-        "num": 832,
         "name": "Moumouflon",
         "types": [
             "NORMAL"
@@ -452,7 +429,6 @@
         }
     },
     "833": {
-        "num": 833,
         "name": "Khélocrok",
         "types": [
             "EAU"
@@ -472,7 +448,6 @@
         }
     },
     "834": {
-        "num": 834,
         "name": "Torgamord",
         "types": [
             "EAU",
@@ -493,7 +468,6 @@
         }
     },
     "835": {
-        "num": 835,
         "name": "Voltoutou",
         "types": [
             "ELECTRIQUE"
@@ -512,7 +486,6 @@
         }
     },
     "836": {
-        "num": 836,
         "name": "Fulgudog",
         "types": [
             "ELECTRIQUE"
@@ -531,7 +504,6 @@
         }
     },
     "837": {
-        "num": 837,
         "name": "Charbi",
         "types": [
             "ROCHE"
@@ -551,7 +523,6 @@
         }
     },
     "838": {
-        "num": 838,
         "name": "Wagomine",
         "types": [
             "ROCHE",
@@ -572,7 +543,6 @@
         }
     },
     "839": {
-        "num": 839,
         "name": "Monthracite",
         "types": [
             "ROCHE",
@@ -593,7 +563,6 @@
         }
     },
     "840": {
-        "num": 840,
         "name": "Verpom",
         "types": [
             "PLANTE",
@@ -614,7 +583,6 @@
         }
     },
     "841": {
-        "num": 841,
         "name": "Pomdrapi",
         "types": [
             "PLANTE",
@@ -635,7 +603,6 @@
         }
     },
     "842": {
-        "num": 842,
         "name": "Dratatin",
         "types": [
             "PLANTE",
@@ -656,7 +623,6 @@
         }
     },
     "843": {
-        "num": 843,
         "name": "Dunaja",
         "types": [
             "SOL"
@@ -676,7 +642,6 @@
         }
     },
     "844": {
-        "num": 844,
         "name": "Dunaconda",
         "types": [
             "SOL"
@@ -696,7 +661,6 @@
         }
     },
     "845": {
-        "num": 845,
         "name": "Nigosier",
         "types": [
             "VOL",
@@ -715,7 +679,6 @@
         }
     },
     "846": {
-        "num": 846,
         "name": "Embrochet",
         "types": [
             "EAU"
@@ -734,7 +697,6 @@
         }
     },
     "847": {
-        "num": 847,
         "name": "Hastacuda",
         "types": [
             "EAU"
@@ -753,7 +715,6 @@
         }
     },
     "848": {
-        "num": 848,
         "name": "Toxizap",
         "types": [
             "ELECTRIQUE",
@@ -774,7 +735,6 @@
         }
     },
     "849": {
-        "num": 849,
         "name": "Salarsen",
         "types": [
             "ELECTRIQUE",
@@ -795,7 +755,6 @@
         }
     },
     "850": {
-        "num": 850,
         "name": "Grillepattes",
         "types": [
             "FEU",
@@ -816,7 +775,6 @@
         }
     },
     "851": {
-        "num": 851,
         "name": "Scolocendre",
         "types": [
             "FEU",
@@ -837,7 +795,6 @@
         }
     },
     "852": {
-        "num": 852,
         "name": "Poulpaf",
         "types": [
             "COMBAT"
@@ -856,7 +813,6 @@
         }
     },
     "853": {
-        "num": 853,
         "name": "Krakos",
         "types": [
             "COMBAT"
@@ -875,7 +831,6 @@
         }
     },
     "854": {
-        "num": 854,
         "name": "Théffroi",
         "types": [
             "SPECTRE"
@@ -894,7 +849,6 @@
         }
     },
     "855": {
-        "num": 855,
         "name": "Polthégeist",
         "types": [
             "SPECTRE"
@@ -913,7 +867,6 @@
         }
     },
     "856": {
-        "num": 856,
         "name": "Bibichut",
         "types": [
             "PSY"
@@ -933,7 +886,6 @@
         }
     },
     "857": {
-        "num": 857,
         "name": "Chapotus",
         "types": [
             "PSY"
@@ -953,7 +905,6 @@
         }
     },
     "858": {
-        "num": 858,
         "name": "Sorcilence",
         "types": [
             "PSY",
@@ -974,7 +925,6 @@
         }
     },
     "859": {
-        "num": 859,
         "name": "Grimalin",
         "types": [
             "TENEBRE",
@@ -995,7 +945,6 @@
         }
     },
     "860": {
-        "num": 860,
         "name": "Fourbelin",
         "types": [
             "TENEBRE",
@@ -1016,7 +965,6 @@
         }
     },
     "861": {
-        "num": 861,
         "name": "Angoliath",
         "types": [
             "TENEBRE",
@@ -1037,7 +985,6 @@
         }
     },
     "862": {
-        "num": 862,
         "name": "Ixon",
         "types": [
             "TENEBRE",
@@ -1058,7 +1005,6 @@
         }
     },
     "863": {
-        "num": 863,
         "name": "Berserkatt",
         "types": [
             "ACIER"
@@ -1078,7 +1024,6 @@
         }
     },
     "864": {
-        "num": 864,
         "name": "Corayôme",
         "types": [
             "SPECTRE"
@@ -1097,7 +1042,6 @@
         }
     },
     "865": {
-        "num": 865,
         "name": "Palarticho",
         "types": [
             "COMBAT"
@@ -1116,7 +1060,6 @@
         }
     },
     "866": {
-        "num": 866,
         "name": "M. Glaquette",
         "types": [
             "GLACE",
@@ -1137,7 +1080,6 @@
         }
     },
     "867": {
-        "num": 867,
         "name": "Tutétékri",
         "types": [
             "SOL",
@@ -1156,7 +1098,6 @@
         }
     },
     "868": {
-        "num": 868,
         "name": "Crèmy",
         "types": [
             "FEE"
@@ -1175,7 +1116,6 @@
         }
     },
     "869": {
-        "num": 869,
         "name": "Charmilly",
         "types": [
             "FEE"
@@ -1194,7 +1134,6 @@
         }
     },
     "870": {
-        "num": 870,
         "name": "Hexadron",
         "types": [
             "COMBAT"
@@ -1213,7 +1152,6 @@
         }
     },
     "871": {
-        "num": 871,
         "name": "Wattapik",
         "types": [
             "ELECTRIQUE"
@@ -1232,7 +1170,6 @@
         }
     },
     "872": {
-        "num": 872,
         "name": "Frissonille",
         "types": [
             "GLACE",
@@ -1252,7 +1189,6 @@
         }
     },
     "873": {
-        "num": 873,
         "name": "Beldeneige",
         "types": [
             "GLACE",
@@ -1272,7 +1208,6 @@
         }
     },
     "874": {
-        "num": 874,
         "name": "Dolman",
         "types": [
             "ROCHE"
@@ -1290,7 +1225,6 @@
         }
     },
     "875": {
-        "num": 875,
         "name": "Bekaglaçon",
         "types": [
             "GLACE"
@@ -1308,7 +1242,6 @@
         }
     },
     "876": {
-        "num": 876,
         "name": "Wimessir",
         "types": [
             "PSY",
@@ -1329,7 +1262,6 @@
         }
     },
     "877": {
-        "num": 877,
         "name": "Morpeko",
         "types": [
             "ELECTRIQUE",
@@ -1348,7 +1280,6 @@
         }
     },
     "878": {
-        "num": 878,
         "name": "Charibari",
         "types": [
             "ACIER"
@@ -1367,7 +1298,6 @@
         }
     },
     "879": {
-        "num": 879,
         "name": "Pachyradjah",
         "types": [
             "ACIER"
@@ -1386,7 +1316,6 @@
         }
     },
     "880": {
-        "num": 880,
         "name": "Galvagon",
         "types": [
             "ELECTRIQUE",
@@ -1407,7 +1336,6 @@
         }
     },
     "881": {
-        "num": 881,
         "name": "Galvagla",
         "types": [
             "ELECTRIQUE",
@@ -1428,7 +1356,6 @@
         }
     },
     "882": {
-        "num": 882,
         "name": "Hydragon",
         "types": [
             "EAU",
@@ -1449,7 +1376,6 @@
         }
     },
     "883": {
-        "num": 883,
         "name": "Hydragla",
         "types": [
             "EAU",
@@ -1470,7 +1396,6 @@
         }
     },
     "884": {
-        "num": 884,
         "name": "Duralugon",
         "types": [
             "ACIER",
@@ -1491,7 +1416,6 @@
         }
     },
     "885": {
-        "num": 885,
         "name": "Fantyrm",
         "types": [
             "DRAGON",
@@ -1512,7 +1436,6 @@
         }
     },
     "886": {
-        "num": 886,
         "name": "Dispareptil",
         "types": [
             "DRAGON",
@@ -1533,7 +1456,6 @@
         }
     },
     "887": {
-        "num": 887,
         "name": "Lanssorien",
         "types": [
             "DRAGON",
@@ -1554,7 +1476,6 @@
         }
     },
     "888": {
-        "num": 888,
         "name": "Zacian",
         "types": [
             "FEE"
@@ -1572,7 +1493,6 @@
         }
     },
     "889": {
-        "num": 889,
         "name": "Zamazenta",
         "types": [
             "COMBAT"
@@ -1590,7 +1510,6 @@
         }
     },
     "890": {
-        "num": 890,
         "name": "Éthernatos",
         "types": [
             "POISON",
@@ -1609,7 +1528,6 @@
         }
     },
     "891": {
-        "num": 891,
         "name": "Wushours",
         "types": [
             "COMBAT"
@@ -1627,7 +1545,6 @@
         }
     },
     "892": {
-        "num": 892,
         "name": "Shifours",
         "types": [
             "COMBAT",
@@ -1646,7 +1563,6 @@
         }
     },
     "893": {
-        "num": 893,
         "name": "Zarude",
         "types": [
             "TENEBRE",
@@ -1665,7 +1581,6 @@
         }
     },
     "894": {
-        "num": 894,
         "name": "Regieleki",
         "types": [
             "ELECTRIQUE"
@@ -1683,7 +1598,6 @@
         }
     },
     "895": {
-        "num": 895,
         "name": "Regidrago",
         "types": [
             "DRAGON"
@@ -1701,7 +1615,6 @@
         }
     },
     "896": {
-        "num": 896,
         "name": "Blizzeval",
         "types": [
             "GLACE"
@@ -1719,7 +1632,6 @@
         }
     },
     "897": {
-        "num": 897,
         "name": "Spectreval",
         "types": [
             "SPECTRE"
@@ -1737,7 +1649,6 @@
         }
     },
     "898": {
-        "num": 898,
         "name": "Sylveroy",
         "types": [
             "PSY",

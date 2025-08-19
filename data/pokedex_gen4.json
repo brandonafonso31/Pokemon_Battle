@@ -1,6 +1,5 @@
 {
     "387": {
-        "num": 387,
         "name": "Tortipouss",
         "types": [
             "PLANTE"
@@ -19,7 +18,6 @@
         }
     },
     "388": {
-        "num": 388,
         "name": "Boskara",
         "types": [
             "PLANTE"
@@ -38,7 +36,6 @@
         }
     },
     "389": {
-        "num": 389,
         "name": "Torterra",
         "types": [
             "PLANTE",
@@ -58,7 +55,6 @@
         }
     },
     "390": {
-        "num": 390,
         "name": "Ouisticram",
         "types": [
             "FEU"
@@ -77,7 +73,6 @@
         }
     },
     "391": {
-        "num": 391,
         "name": "Chimpenfeu",
         "types": [
             "FEU",
@@ -97,7 +92,6 @@
         }
     },
     "392": {
-        "num": 392,
         "name": "Simiabraz",
         "types": [
             "FEU",
@@ -117,7 +111,6 @@
         }
     },
     "393": {
-        "num": 393,
         "name": "Tiplouf",
         "types": [
             "EAU"
@@ -136,7 +129,6 @@
         }
     },
     "394": {
-        "num": 394,
         "name": "Prinplouf",
         "types": [
             "EAU"
@@ -155,7 +147,6 @@
         }
     },
     "395": {
-        "num": 395,
         "name": "Pingoléon",
         "types": [
             "EAU",
@@ -175,7 +166,6 @@
         }
     },
     "396": {
-        "num": 396,
         "name": "Étourmi",
         "types": [
             "NORMAL",
@@ -195,7 +185,6 @@
         }
     },
     "397": {
-        "num": 397,
         "name": "Étourvol",
         "types": [
             "NORMAL",
@@ -215,7 +204,6 @@
         }
     },
     "398": {
-        "num": 398,
         "name": "Étouraptor",
         "types": [
             "NORMAL",
@@ -235,7 +223,6 @@
         }
     },
     "399": {
-        "num": 399,
         "name": "Keunotor",
         "types": [
             "NORMAL"
@@ -255,7 +242,6 @@
         }
     },
     "400": {
-        "num": 400,
         "name": "Castorno",
         "types": [
             "NORMAL",
@@ -276,7 +262,6 @@
         }
     },
     "401": {
-        "num": 401,
         "name": "Crikzik",
         "types": [
             "INSECTE"
@@ -295,7 +280,6 @@
         }
     },
     "402": {
-        "num": 402,
         "name": "Mélokrik",
         "types": [
             "INSECTE"
@@ -314,7 +298,6 @@
         }
     },
     "403": {
-        "num": 403,
         "name": "Lixy",
         "types": [
             "ELECTRIQUE"
@@ -334,7 +317,6 @@
         }
     },
     "404": {
-        "num": 404,
         "name": "Luxio",
         "types": [
             "ELECTRIQUE"
@@ -354,7 +336,6 @@
         }
     },
     "405": {
-        "num": 405,
         "name": "Luxray",
         "types": [
             "ELECTRIQUE"
@@ -374,7 +355,6 @@
         }
     },
     "406": {
-        "num": 406,
         "name": "Rozbouton",
         "types": [
             "PLANTE",
@@ -395,7 +375,6 @@
         }
     },
     "407": {
-        "num": 407,
         "name": "Roserade",
         "types": [
             "PLANTE",
@@ -416,7 +395,6 @@
         }
     },
     "408": {
-        "num": 408,
         "name": "Kranidos",
         "types": [
             "ROCHE"
@@ -435,7 +413,6 @@
         }
     },
     "409": {
-        "num": 409,
         "name": "Charkos",
         "types": [
             "ROCHE"
@@ -454,7 +431,6 @@
         }
     },
     "410": {
-        "num": 410,
         "name": "Dinoclier",
         "types": [
             "ROCHE",
@@ -474,7 +450,6 @@
         }
     },
     "411": {
-        "num": 411,
         "name": "Bastiodon",
         "types": [
             "ROCHE",
@@ -494,7 +469,6 @@
         }
     },
     "412": {
-        "num": 412,
         "name": "Cheniti",
         "types": [
             "INSECTE"
@@ -513,7 +487,6 @@
         }
     },
     "413": {
-        "num": 413,
         "name": "Cheniselle",
         "types": [
             "INSECTE",
@@ -533,7 +506,6 @@
         }
     },
     "414": {
-        "num": 414,
         "name": "Papilord",
         "types": [
             "INSECTE",
@@ -553,7 +525,6 @@
         }
     },
     "415": {
-        "num": 415,
         "name": "Apitrini",
         "types": [
             "INSECTE",
@@ -573,7 +544,6 @@
         }
     },
     "416": {
-        "num": 416,
         "name": "Apireine",
         "types": [
             "INSECTE",
@@ -593,7 +563,6 @@
         }
     },
     "417": {
-        "num": 417,
         "name": "Pachirisu",
         "types": [
             "ELECTRIQUE"
@@ -613,7 +582,6 @@
         }
     },
     "418": {
-        "num": 418,
         "name": "Mustébouée",
         "types": [
             "EAU"
@@ -632,7 +600,6 @@
         }
     },
     "419": {
-        "num": 419,
         "name": "Mustéflott",
         "types": [
             "EAU"
@@ -651,7 +618,6 @@
         }
     },
     "420": {
-        "num": 420,
         "name": "Ceribou",
         "types": [
             "PLANTE"
@@ -669,7 +635,6 @@
         }
     },
     "421": {
-        "num": 421,
         "name": "Ceriflor",
         "types": [
             "PLANTE"
@@ -687,7 +652,6 @@
         }
     },
     "422": {
-        "num": 422,
         "name": "Sancoki",
         "types": [
             "EAU"
@@ -707,7 +671,6 @@
         }
     },
     "423": {
-        "num": 423,
         "name": "Tritosor",
         "types": [
             "EAU",
@@ -728,7 +691,6 @@
         }
     },
     "424": {
-        "num": 424,
         "name": "Capidextre",
         "types": [
             "NORMAL"
@@ -748,7 +710,6 @@
         }
     },
     "425": {
-        "num": 425,
         "name": "Baudrive",
         "types": [
             "SPECTRE",
@@ -769,7 +730,6 @@
         }
     },
     "426": {
-        "num": 426,
         "name": "Grodrive",
         "types": [
             "SPECTRE",
@@ -790,7 +750,6 @@
         }
     },
     "427": {
-        "num": 427,
         "name": "Laporeille",
         "types": [
             "NORMAL"
@@ -810,7 +769,6 @@
         }
     },
     "428": {
-        "num": 428,
         "name": "Lockpin",
         "types": [
             "NORMAL"
@@ -830,7 +788,6 @@
         }
     },
     "429": {
-        "num": 429,
         "name": "Magirêve",
         "types": [
             "SPECTRE"
@@ -848,7 +805,6 @@
         }
     },
     "430": {
-        "num": 430,
         "name": "Corboss",
         "types": [
             "TENEBRE",
@@ -869,7 +825,6 @@
         }
     },
     "431": {
-        "num": 431,
         "name": "Chaglam",
         "types": [
             "NORMAL"
@@ -889,7 +844,6 @@
         }
     },
     "432": {
-        "num": 432,
         "name": "Chaffreux",
         "types": [
             "NORMAL"
@@ -909,7 +863,6 @@
         }
     },
     "433": {
-        "num": 433,
         "name": "Korillon",
         "types": [
             "PSY"
@@ -927,7 +880,6 @@
         }
     },
     "434": {
-        "num": 434,
         "name": "Moufouette",
         "types": [
             "POISON",
@@ -948,7 +900,6 @@
         }
     },
     "435": {
-        "num": 435,
         "name": "Moufflair",
         "types": [
             "POISON",
@@ -969,7 +920,6 @@
         }
     },
     "436": {
-        "num": 436,
         "name": "Archéomire",
         "types": [
             "ACIER",
@@ -990,7 +940,6 @@
         }
     },
     "437": {
-        "num": 437,
         "name": "Archéodong",
         "types": [
             "ACIER",
@@ -1011,7 +960,6 @@
         }
     },
     "438": {
-        "num": 438,
         "name": "Manzaï",
         "types": [
             "ROCHE"
@@ -1031,7 +979,6 @@
         }
     },
     "439": {
-        "num": 439,
         "name": "Mime Jr.",
         "types": [
             "PSY",
@@ -1052,7 +999,6 @@
         }
     },
     "440": {
-        "num": 440,
         "name": "Ptiravi",
         "types": [
             "NORMAL"
@@ -1072,7 +1018,6 @@
         }
     },
     "441": {
-        "num": 441,
         "name": "Pijako",
         "types": [
             "NORMAL",
@@ -1093,7 +1038,6 @@
         }
     },
     "442": {
-        "num": 442,
         "name": "Spiritomb",
         "types": [
             "SPECTRE",
@@ -1113,7 +1057,6 @@
         }
     },
     "443": {
-        "num": 443,
         "name": "Griknot",
         "types": [
             "DRAGON",
@@ -1133,7 +1076,6 @@
         }
     },
     "444": {
-        "num": 444,
         "name": "Carmache",
         "types": [
             "DRAGON",
@@ -1153,7 +1095,6 @@
         }
     },
     "445": {
-        "num": 445,
         "name": "Carchacrok",
         "types": [
             "DRAGON",
@@ -1173,7 +1114,6 @@
         }
     },
     "446": {
-        "num": 446,
         "name": "Goinfrex",
         "types": [
             "NORMAL"
@@ -1193,7 +1133,6 @@
         }
     },
     "447": {
-        "num": 447,
         "name": "Riolu",
         "types": [
             "COMBAT"
@@ -1213,7 +1152,6 @@
         }
     },
     "448": {
-        "num": 448,
         "name": "Lucario",
         "types": [
             "COMBAT",
@@ -1234,7 +1172,6 @@
         }
     },
     "449": {
-        "num": 449,
         "name": "Hippopotas",
         "types": [
             "SOL"
@@ -1253,7 +1190,6 @@
         }
     },
     "450": {
-        "num": 450,
         "name": "Hippodocus",
         "types": [
             "SOL"
@@ -1272,7 +1208,6 @@
         }
     },
     "451": {
-        "num": 451,
         "name": "Rapion",
         "types": [
             "POISON",
@@ -1293,7 +1228,6 @@
         }
     },
     "452": {
-        "num": 452,
         "name": "Drascore",
         "types": [
             "POISON",
@@ -1314,7 +1248,6 @@
         }
     },
     "453": {
-        "num": 453,
         "name": "Cradopaud",
         "types": [
             "POISON",
@@ -1335,7 +1268,6 @@
         }
     },
     "454": {
-        "num": 454,
         "name": "Coatox",
         "types": [
             "POISON",
@@ -1356,7 +1288,6 @@
         }
     },
     "455": {
-        "num": 455,
         "name": "Vortente",
         "types": [
             "PLANTE"
@@ -1374,7 +1305,6 @@
         }
     },
     "456": {
-        "num": 456,
         "name": "Écayon",
         "types": [
             "EAU"
@@ -1394,7 +1324,6 @@
         }
     },
     "457": {
-        "num": 457,
         "name": "Luminéon",
         "types": [
             "EAU"
@@ -1414,7 +1343,6 @@
         }
     },
     "458": {
-        "num": 458,
         "name": "Babimanta",
         "types": [
             "EAU",
@@ -1435,7 +1363,6 @@
         }
     },
     "459": {
-        "num": 459,
         "name": "Blizzi",
         "types": [
             "PLANTE",
@@ -1455,7 +1382,6 @@
         }
     },
     "460": {
-        "num": 460,
         "name": "Blizzaroi",
         "types": [
             "PLANTE",
@@ -1475,7 +1401,6 @@
         }
     },
     "461": {
-        "num": 461,
         "name": "Dimoret",
         "types": [
             "TENEBRE",
@@ -1495,7 +1420,6 @@
         }
     },
     "462": {
-        "num": 462,
         "name": "Magnézone",
         "types": [
             "ELECTRIQUE",
@@ -1516,7 +1440,6 @@
         }
     },
     "463": {
-        "num": 463,
         "name": "Coudlangue",
         "types": [
             "NORMAL"
@@ -1536,7 +1459,6 @@
         }
     },
     "464": {
-        "num": 464,
         "name": "Rhinastoc",
         "types": [
             "SOL",
@@ -1557,7 +1479,6 @@
         }
     },
     "465": {
-        "num": 465,
         "name": "Bouldeneu",
         "types": [
             "PLANTE"
@@ -1577,7 +1498,6 @@
         }
     },
     "466": {
-        "num": 466,
         "name": "Élekable",
         "types": [
             "ELECTRIQUE"
@@ -1596,7 +1516,6 @@
         }
     },
     "467": {
-        "num": 467,
         "name": "Maganon",
         "types": [
             "FEU"
@@ -1615,7 +1534,6 @@
         }
     },
     "468": {
-        "num": 468,
         "name": "Togekiss",
         "types": [
             "FEE",
@@ -1636,7 +1554,6 @@
         }
     },
     "469": {
-        "num": 469,
         "name": "Yanméga",
         "types": [
             "INSECTE",
@@ -1657,7 +1574,6 @@
         }
     },
     "470": {
-        "num": 470,
         "name": "Phyllali",
         "types": [
             "PLANTE"
@@ -1676,7 +1592,6 @@
         }
     },
     "471": {
-        "num": 471,
         "name": "Givrali",
         "types": [
             "GLACE"
@@ -1695,7 +1610,6 @@
         }
     },
     "472": {
-        "num": 472,
         "name": "Scorvol",
         "types": [
             "SOL",
@@ -1716,7 +1630,6 @@
         }
     },
     "473": {
-        "num": 473,
         "name": "Mammochon",
         "types": [
             "GLACE",
@@ -1737,7 +1650,6 @@
         }
     },
     "474": {
-        "num": 474,
         "name": "Porygon-Z",
         "types": [
             "NORMAL"
@@ -1757,7 +1669,6 @@
         }
     },
     "475": {
-        "num": 475,
         "name": "Gallame",
         "types": [
             "PSY",
@@ -1777,7 +1688,6 @@
         }
     },
     "476": {
-        "num": 476,
         "name": "Tarinorme",
         "types": [
             "ROCHE",
@@ -1798,7 +1708,6 @@
         }
     },
     "477": {
-        "num": 477,
         "name": "Noctunoir",
         "types": [
             "SPECTRE"
@@ -1817,7 +1726,6 @@
         }
     },
     "478": {
-        "num": 478,
         "name": "Momartik",
         "types": [
             "GLACE",
@@ -1837,7 +1745,6 @@
         }
     },
     "479": {
-        "num": 479,
         "name": "Motisma",
         "types": [
             "ELECTRIQUE",
@@ -1856,7 +1763,6 @@
         }
     },
     "480": {
-        "num": 480,
         "name": "Créhelf",
         "types": [
             "PSY"
@@ -1874,7 +1780,6 @@
         }
     },
     "481": {
-        "num": 481,
         "name": "Créfollet",
         "types": [
             "PSY"
@@ -1892,7 +1797,6 @@
         }
     },
     "482": {
-        "num": 482,
         "name": "Créfadet",
         "types": [
             "PSY"
@@ -1910,7 +1814,6 @@
         }
     },
     "483": {
-        "num": 483,
         "name": "Dialga",
         "types": [
             "ACIER",
@@ -1930,7 +1833,6 @@
         }
     },
     "484": {
-        "num": 484,
         "name": "Palkia",
         "types": [
             "EAU",
@@ -1950,7 +1852,6 @@
         }
     },
     "485": {
-        "num": 485,
         "name": "Heatran",
         "types": [
             "FEU",
@@ -1970,7 +1871,6 @@
         }
     },
     "486": {
-        "num": 486,
         "name": "Regigigas",
         "types": [
             "NORMAL"
@@ -1988,7 +1888,6 @@
         }
     },
     "487": {
-        "num": 487,
         "name": "Giratina",
         "types": [
             "SPECTRE",
@@ -2008,7 +1907,6 @@
         }
     },
     "488": {
-        "num": 488,
         "name": "Cresselia",
         "types": [
             "PSY"
@@ -2026,7 +1924,6 @@
         }
     },
     "489": {
-        "num": 489,
         "name": "Phione",
         "types": [
             "EAU"
@@ -2044,7 +1941,6 @@
         }
     },
     "490": {
-        "num": 490,
         "name": "Manaphy",
         "types": [
             "EAU"
@@ -2062,7 +1958,6 @@
         }
     },
     "491": {
-        "num": 491,
         "name": "Darkrai",
         "types": [
             "TENEBRE"
@@ -2080,7 +1975,6 @@
         }
     },
     "492": {
-        "num": 492,
         "name": "Shaymin",
         "types": [
             "PLANTE"
@@ -2098,7 +1992,6 @@
         }
     },
     "493": {
-        "num": 493,
         "name": "Arceus",
         "types": [
             "NORMAL"
