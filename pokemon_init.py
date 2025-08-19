@@ -1,4 +1,3 @@
-from pokemon import Pokemon
 from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
