@@ -39,8 +39,7 @@ leviator.change_talent(talents["Intimidation"]())
 #print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
 pikachu_EV = {"hp":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
-pikachu = Pokemon("Pikachu",hp=35,atk=55,def_=40,atk_spe=50,def_spe=50,vit=90,gen=1,
-                   type1=Type.ELECTRIQUE,num_on_sprite_sheet=30,EV=pikachu_EV, nature=Nature.BRAVE)
+pikachu = create_pokemon(25,nature=Nature.BRAVE,EV=dracaufeu_EV,num_on_sprite_sheet=30)
 
 cage_eclair = StatusMove("Cage-Éclair",Type.ELECTRIQUE,precision=90,pp=20, effect = dico_effect_move["Cage-Éclair"], prio = 0)
 
@@ -52,8 +51,7 @@ pikachu.learn_move("électacle")"""
 #--------------------------------------| Ectoplasma |----------------------------------------#
 
 ectoplasma_Ev = {"hp":6,"atk":0,"def_":0,"atk_spe":252,"def_spe":0,"vit":252}
-ectoplasma = Pokemon("Ectoplasma",hp=60,atk=65,def_=60,atk_spe=130,def_spe=75,vit=110,gen=1,
-                    type1=Type.POISON,type2=Type.SPECTRE,num_on_sprite_sheet=108,EV=ectoplasma_Ev, nature=Nature.MODESTE)
+ectoplasma = create_pokemon(94,nature=Nature.MODESTE,EV=ectoplasma_Ev,num_on_sprite_sheet=108)
 ectoplasma.change_talent(talents["Intimidation"]())
 
 tonnerre = SpecialMove("Tonnerre",Type.ELECTRIQUE,power=90,precision=100,pp=15, effect = dico_effect_move["Tonnerre"], prio = 0)
