@@ -63,12 +63,12 @@ class Pokemon:
         self.talent = talent 
         
         # A implementer
-        self.trainer = None        # Dresseur ? je sais plus pour quoi faire ... 
+        self.trainer = None        # Dresseur ? je sais plus pour quoi faire ... pour différencier 2 pokemons identiques ?
         self.shiny = False          # change uniquement les scripts
         self.item = item            # objet tenu par le pokémon
     
     def __str__(self):
-        output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} \n{LINE_PRINT}"
+        output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} | Nature: {self.nature}\n{LINE_PRINT}"
         return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n"
     
     def __eq__(self, other):
