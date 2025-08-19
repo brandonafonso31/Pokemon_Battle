@@ -15,8 +15,8 @@ def get_pokedex(num_gen: int = -1):
 
 def get_pokemon(id,num_gen: int = -1):
     pokedex = get_pokedex(num_gen)
-    for name, infos in pokedex.items():
-        if infos["num"] == id :  return infos
+    for index, infos in pokedex.items():
+        if int(index) == id :  return infos
     return None
 
 def get_gen(id: int):
@@ -71,9 +71,9 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
     
     return pokemon
 
-"""charizard_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
+charizard_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
 charizard = create_pokemon(6,nature=Nature.MODESTE,EV=charizard_EV,num_on_sprite_sheet=7)
 print(charizard)
 leviator_EV = {"hp":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
 leviator = create_pokemon(130, EV=leviator_EV, nature=Nature.RIGIDE, num_on_sprite_sheet=151)
-print(leviator)"""
+print(leviator)
