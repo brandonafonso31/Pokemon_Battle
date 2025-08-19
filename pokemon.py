@@ -9,7 +9,7 @@ from pokemon_talent import Talent
 from random import randint,choice
 import os, pygame
 
-LINE_PRINT = "-"*70
+LINE_PRINT = "-"*100
 
 class Pokemon:
     def __init__(self,name: str,hp: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
