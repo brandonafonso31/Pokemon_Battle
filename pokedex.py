@@ -32,6 +32,12 @@ def get_gen(id: int):
     elif id <= 1010: return 9
     return None
 
+def choice_talent(talents):
+    input_choice = ""
+    for keys,talent in talents.items():
+        input_choice += f"{keys}: {talent}\n"
+    return str.upper(input(input_choice))
+    
 def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},nickname="",num_on_sprite_sheet=1):
     num_gen = get_gen(id)
     infos = get_pokemon(id,num_gen)
@@ -40,7 +46,8 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
     
     stats = infos["baseStats"]
     types = infos["types"]
-        
+    talents = infos["abilities"]
+    
     pokemon = Pokemon(name=infos["name"],
                    hp=stats["hp"],
                    atk=stats["atk"],
@@ -54,7 +61,8 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
                    num_on_sprite_sheet=num_on_sprite_sheet,
                    EV=EV,
                    nature=nature,                   
-                   nickname=nickname
+                   nickname=nickname,
+                   talent=talents[choice_talent(talents)]
     )
     
     return pokemon
