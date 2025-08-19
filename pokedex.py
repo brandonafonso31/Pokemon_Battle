@@ -19,6 +19,19 @@ def get_pokemon(id,num_gen: int = -1):
         if infos["num"] == id :  return infos
     return None
 
+def get_gen(id: str):
+    id = int(id)
+    if id <= 151: return 1
+    elif id <= 251: return 2
+    elif id <= 386: return 3
+    elif id <= 493: return 4
+    elif id <= 649: return 5
+    elif id <= 721: return 6
+    elif id <= 809: return 7
+    elif id <= 905: return 8
+    elif id <= 1010: return 9
+    return None
+
 def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},nickname="",num_on_sprite_sheet=1):
     infos = get_pokemon(id)
     if infos is None:
