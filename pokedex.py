@@ -36,7 +36,11 @@ def choice_talent(talents):
     input_choice = ""
     for keys,talent in talents.items():
         input_choice += f"{keys}: {talent}\n"
-    return str.upper(input(input_choice))
+    
+    choice = str.upper(input(input_choice))
+    while choice not in talents.keys():
+        choice = str.upper(input(input_choice))
+    return choice
     
 def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0},nickname="",num_on_sprite_sheet=1):
     num_gen = get_gen(id)
