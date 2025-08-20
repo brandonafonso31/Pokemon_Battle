@@ -39,10 +39,12 @@ class Trainer:
     def send_next(self,front_or_back: str):
         team = self.pokemon_team
         for i in range(len(team)):
-            if team[i].hp != 0:
+            pokemon = team[i]
+            if pokemon.hp != 0:
                 # afficher un texte poour annoncer l'arrive du suivant
-                sprite.get_sprite(team[i],front_or_back)
-                return team[i],True
+                sprite.get_sprite(pokemon,front_or_back)
+                pokemon.play_howl()
+                return pokemon,True
         return None,False
  
 from pokemon_init import leviator,dracaufeu,ectoplasma    
