@@ -1,5 +1,5 @@
-- optimiser la fluidité de l'animation de la barre de vie car des fois semble bugger, l'app arrete de fonctionnner et contienue apres la barre de vie?
-    --> changer comment la barre de vie bouge : une fonction qui augmente ou diminue la barre plutot que de'acutaliser bcp d'element sur la window
+- ajouter animation sortie de pokeball
+- ajouter le cri du pokemon quand sorti de la pokeball
 - load une image pour le bloc contenant les hp, le niv et le nom
 - bouger les menus dans un nouveau fichier menus
 - mieux gérer les transitions d'un pokemon à l'autre
