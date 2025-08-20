@@ -1,3 +1,4 @@
+- corriger l'animlation de ko
 - ajouter animation sortie de pokeball
 - ajouter le cri du pokemon quand sorti de la pokeball
 - load une image pour le bloc contenant les hp, le niv et le nom
