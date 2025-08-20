@@ -43,7 +43,7 @@ def get_color(ratio):
     else:
         return (255, 0, 0)       # Rouge
         
-def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=None):
+def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
     hp_bar_length = 250
     hp_bar_height = 20
     padding = 10  # Espacement autour des éléments
@@ -70,7 +70,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=No
         40 + hp_bar_height + 2*padding  # Texte + barre + padding
     )
 
-    if current_length > target_length and full_refresh_func:
+    if current_length > target_length :
         hp_step = max(1, (previous_hp - current_hp) // 20)
         anim_hp = previous_hp
         
@@ -83,7 +83,6 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None, full_refresh_func=No
                 current_length = target_length
             
             color = get_color(current_length / hp_bar_length)
-            full_refresh_func()
 
             # Dessiner le fond blanc (ou autre couleur)
             pygame.draw.rect(window, WHITE, background_rect)
@@ -144,7 +143,7 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
         window.blit(opponent_sprite, (opponent_path["x"], opponent_path["y"]))
 
     # HP Bars
-    draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer, full_refresh_func=lambda: refresh_screen(window, pokemon_trainer, pokemon_opponent))
-    draw_hp_bar(window, pokemon_opponent, False, old_hp_opponent, full_refresh_func=lambda: refresh_screen(window, pokemon_trainer, pokemon_opponent))
+    draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer)
+    draw_hp_bar(window, pokemon_opponent, False, old_hp_opponent)
 
     pygame.display.flip()
