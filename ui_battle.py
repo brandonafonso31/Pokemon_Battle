@@ -98,7 +98,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
             window.blit(text, (x, y - 40))
             
             pygame.display.update(background_rect)
-            pygame.time.delay(30)
+            pygame.time.delay(50)
     else:
         # Affichage direct sans animation
         bar_length = int(hp_bar_length * (current_hp / hp_max))
