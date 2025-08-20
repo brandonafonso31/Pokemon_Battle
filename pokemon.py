@@ -258,7 +258,7 @@ class Pokemon:
         pygame.time.delay(100)
         sound = pygame.mixer.Sound(self.howl_path)
         sound.play()        
-        pygame.time.delay(int(sound.get_length() + 300))
+        pygame.time.delay(int(sound.get_length() + 500))
         
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
