@@ -66,7 +66,7 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
                    EV=EV,
                    nature=nature,                   
                    nickname=nickname,
-                   talent=talents[choice_talent(talents)]
+                   talent=talents["0"] #     pour l'instant par défault toujours le 1er talent mais plus tard choice_talent(talents)
     )
     
     return pokemon
