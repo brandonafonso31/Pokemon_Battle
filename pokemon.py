@@ -2,7 +2,7 @@ from sprite import *
 from pokemon_type import *
 from pokemon_move import *
 from random import randint
-from config import img_dir_path
+from config import img_dir_path,sound_effect_dir
 from pokemon_nature import Nature
 from math import floor
 from pokemon_talent import Talent
@@ -63,7 +63,8 @@ class Pokemon:
         self.talent = talent 
         
         # A implementer
-        self.trainer = None        # Dresseur ? je sais plus pour quoi faire ... pour différencier 2 pokemons identiques ?
+        self.howl_path = os.path.join(sound_effect_dir,"charizard.mp3")         # cri du pokemon a ajouter dans les json (du moins rajouter leurs path)
+        self.trainer = None         # Dresseur ? je sais plus pour quoi faire ... pour différencier 2 pokemons identiques ?
         self.shiny = False          # change uniquement les scripts
         self.item = item            # objet tenu par le pokémon
     
@@ -119,16 +120,16 @@ class Pokemon:
     
     
     def sprites(self,front_or_back):
-        sprites = os.path.join(img_dir_path,"sprites/sprites_gen"+str(self.gen))
+        sprites = os.path.join(img_dir_path,f"sprites/sprites_gen{self.gen}")
         return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back)
         
     
     
-    def get_cm(self, opponent, move : Move, objets=None):
+    def get_cm(self, opponent, move : Move, objects=None):
         """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""
         msg = ""
         rand = randint(85,100)
-        #check type 1 et 2 il y ai au moins un diff de none a ajouter
+        
         if self.type1 is None and self.type2 is not None :
             self.type1, self.type2 = self.type2, None
             
@@ -249,8 +250,13 @@ class Pokemon:
 
     def animate_death(self, window, front_or_back):
         """Animation de mort simplifiée mais fonctionnelle"""
-        pass
+        pygame.time.delay(100)
+        sound = pygame.mixer.Sound(self.howl_path)
+        sound.play()
+        pygame.time.delay(100)
         
+        # faire l'animation de KO
+        pygame.display.update(self)
         
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
