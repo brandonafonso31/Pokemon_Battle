@@ -86,8 +86,8 @@ while run :
                 
                 #animation de la mort du pokemon
                 pokemon_ko.is_ko = True
-                #ui_battle.refresh_screen(window, pokemon_trainer, pokemon_opponent)
                 pokemon_ko.animate_death(window,front_or_back="back" if pokemon_ko is pokemon_trainer else "front")
+                
                 if pokemon_ko is pokemon_trainer:
                     pokemon_trainer,in_battle = trainer.send_next("back")
                 else:

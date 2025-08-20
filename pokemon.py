@@ -250,9 +250,23 @@ class Pokemon:
 
     def animate_death(self, window, front_or_back):
         """Animation de mort simplifiée mais fonctionnelle"""
-        self.play_howl()    
-        # faire l'animation de KO
-        pygame.display.update(self)
+        self.play_howl()         
+        pygame.time.delay(1000)
+        
+        with open("data/actual_battle.json") as f:
+            json_data = json.load(f)
+
+        background = pygame.image.load(json_data["background"]).convert()
+        pokemon = "pokemon_opponent" if front_or_back == "front" else "pokemon_trainer"
+        x, y = json_data[pokemon]["x"], json_data[pokemon]["y"]
+        w = 64*4 if front_or_back == "back" else 64*3
+        
+        rect = pygame.Rect(x, y, w, w)
+        window.blit(background, rect, rect)
+        pygame.display.update(rect)
+
+        pygame.time.delay(500)
+        
         
     def play_howl(self):
         pygame.time.delay(100)
