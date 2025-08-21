@@ -34,5 +34,5 @@ def check_timing_talent(pokemon_1, pokemon_2):
         pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)         
     return pokemon_1, pokemon_2
   
-current_timing = Timing.Start
+current_timing = Timing.START
 timing_lock = threading.Lock()
