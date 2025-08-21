@@ -3,7 +3,7 @@ from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
 from pokemon_talent import talents
-from config import pokemon_data_json_path,data_dir_path
+from config import pokemon_data_json_path,data_dir_path,cries_dir_path
 import json,os
 
 
@@ -52,6 +52,7 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
     stats = infos["baseStats"]
     types = infos["types"]
     talents = infos["abilities"]
+    english_name = infos["name"]
     
     pokemon = Pokemon(name=infos["name"],
                    hp=stats["hp"],
@@ -67,9 +68,9 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
                    EV=EV,
                    nature=nature,                   
                    nickname=nickname,
-                   talent=talents["0"] #     pour l'instant par défault toujours le 1er talent mais plus tard choice_talent(talents)
+                   talent=talents["0"], #     pour l'instant par défault toujours le 1er talent mais plus tard choice_talent(talents)
+                   howl_path=os.path.join(cries_dir_path,f"{english_name}.mp3")
     )
-    
     return pokemon
 
 """charizard_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
