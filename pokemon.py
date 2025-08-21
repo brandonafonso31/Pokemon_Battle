@@ -2,7 +2,7 @@ from sprite import *
 from pokemon_type import *
 from pokemon_move import *
 from random import randint
-from config import img_dir_path,sound_effect_dir
+from config import img_dir_path,cries_dir_path
 from pokemon_nature import Nature
 from math import floor
 from pokemon_talent import Talent
@@ -63,7 +63,7 @@ class Pokemon:
         self.talent = talent 
         
         # A implementer
-        self.howl_path = os.path.join(sound_effect_dir,"charizard.mp3")         # cri du pokemon a ajouter dans les json (du moins rajouter leurs path)
+        self.howl_path = os.path.join(cries_dir_path,"charizard.mp3")         # cri du pokemon a ajouter dans les json (du moins rajouter leurs path)
         self.trainer = None         # Dresseur ? je sais plus pour quoi faire ... pour différencier 2 pokemons identiques ?
         self.shiny = False          # change uniquement les scripts
         self.item = item            # objet tenu par le pokémon
