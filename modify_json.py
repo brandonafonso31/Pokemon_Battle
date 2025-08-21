@@ -34,7 +34,7 @@ def remove_useless_attribut(json_file_path):
         "forme","requiredItem","changesFrom","evoType","gender","gen",
         "evoItem","evoCondition","canHatch","evoMove","maxHP",
         "requiredAbility","battleOnly","requiredMove","requiredItems",
-        "unreleasedHidden","cannotDynamax","alias","sprite"
+        "unreleasedHidden","cannotDynamax","sprite"
     ]
     
     for poke_name, infos in data_gen.items():

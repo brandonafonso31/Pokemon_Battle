@@ -1,3 +1,4 @@
+- executer modify json et utiliser l'aliaas pour assigner le cri 
 - corriger l'animlation de ko
 - ajouter animation sortie de pokeball
 - bouger les menus dans un nouveau fichier menus

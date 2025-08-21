@@ -16,7 +16,8 @@ def get_pokedex(num_gen: int = -1):
 def get_pokemon(id,num_gen: int = -1):
     pokedex = get_pokedex(num_gen)
     for index, infos in pokedex.items():
-        if int(index) == id :  return infos
+        if num_gen != -1 and int(index) == id :  return infos
+        elif num_gen == -1 and infos["num"] == id: return infos
     return None
 
 def get_gen(id: int):

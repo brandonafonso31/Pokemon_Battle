@@ -1,6 +1,7 @@
 {
     "252": {
         "name": "Arcko",
+        "alias": "treecko",
         "types": [
             "PLANTE"
         ],
@@ -19,6 +20,7 @@
     },
     "253": {
         "name": "Massko",
+        "alias": "grovyle",
         "types": [
             "PLANTE"
         ],
@@ -37,6 +39,7 @@
     },
     "254": {
         "name": "Jungko",
+        "alias": "sceptile",
         "types": [
             "PLANTE"
         ],
@@ -55,6 +58,7 @@
     },
     "255": {
         "name": "Poussifeu",
+        "alias": "torchic",
         "types": [
             "FEU"
         ],
@@ -73,6 +77,7 @@
     },
     "256": {
         "name": "Galifeu",
+        "alias": "combusken",
         "types": [
             "FEU",
             "COMBAT"
@@ -92,6 +97,7 @@
     },
     "257": {
         "name": "Braségali",
+        "alias": "blaziken",
         "types": [
             "FEU",
             "COMBAT"
@@ -111,6 +117,7 @@
     },
     "258": {
         "name": "Gobou",
+        "alias": "mudkip",
         "types": [
             "EAU"
         ],
@@ -129,6 +136,7 @@
     },
     "259": {
         "name": "Flobio",
+        "alias": "marshtomp",
         "types": [
             "EAU",
             "SOL"
@@ -148,6 +156,7 @@
     },
     "260": {
         "name": "Laggron",
+        "alias": "swampert",
         "types": [
             "EAU",
             "SOL"
@@ -167,6 +176,7 @@
     },
     "261": {
         "name": "Medhyèna",
+        "alias": "poochyena",
         "types": [
             "TENEBRE"
         ],
@@ -186,6 +196,7 @@
     },
     "262": {
         "name": "Grahyèna",
+        "alias": "mightyena",
         "types": [
             "TENEBRE"
         ],
@@ -205,6 +216,7 @@
     },
     "263": {
         "name": "Zigzaton",
+        "alias": "zigzagoon",
         "types": [
             "NORMAL"
         ],
@@ -224,6 +236,7 @@
     },
     "264": {
         "name": "Linéon",
+        "alias": "linoone",
         "types": [
             "NORMAL"
         ],
@@ -243,6 +256,7 @@
     },
     "265": {
         "name": "Chenipotte",
+        "alias": "wurmple",
         "types": [
             "INSECTE"
         ],
@@ -261,6 +275,7 @@
     },
     "266": {
         "name": "Armulys",
+        "alias": "silcoon",
         "types": [
             "INSECTE"
         ],
@@ -278,6 +293,7 @@
     },
     "267": {
         "name": "Charmillon",
+        "alias": "beautifly",
         "types": [
             "INSECTE",
             "VOL"
@@ -297,6 +313,7 @@
     },
     "268": {
         "name": "Blindalys",
+        "alias": "cascoon",
         "types": [
             "INSECTE"
         ],
@@ -314,6 +331,7 @@
     },
     "269": {
         "name": "Papinox",
+        "alias": "dustox",
         "types": [
             "INSECTE",
             "POISON"
@@ -333,6 +351,7 @@
     },
     "270": {
         "name": "Nénupiot",
+        "alias": "lotad",
         "types": [
             "EAU",
             "PLANTE"
@@ -353,6 +372,7 @@
     },
     "271": {
         "name": "Lombre",
+        "alias": "lombre",
         "types": [
             "EAU",
             "PLANTE"
@@ -373,6 +393,7 @@
     },
     "272": {
         "name": "Ludicolo",
+        "alias": "ludicolo",
         "types": [
             "EAU",
             "PLANTE"
@@ -393,6 +414,7 @@
     },
     "273": {
         "name": "Grainipiot",
+        "alias": "seedot",
         "types": [
             "PLANTE"
         ],
@@ -412,6 +434,7 @@
     },
     "274": {
         "name": "Pifeuil",
+        "alias": "nuzleaf",
         "types": [
             "PLANTE",
             "TENEBRE"
@@ -432,6 +455,7 @@
     },
     "275": {
         "name": "Tengalice",
+        "alias": "shiftry",
         "types": [
             "PLANTE",
             "TENEBRE"
@@ -452,6 +476,7 @@
     },
     "276": {
         "name": "Nirondelle",
+        "alias": "taillow",
         "types": [
             "NORMAL",
             "VOL"
@@ -471,6 +496,7 @@
     },
     "277": {
         "name": "Hélédelle",
+        "alias": "swellow",
         "types": [
             "NORMAL",
             "VOL"
@@ -490,6 +516,7 @@
     },
     "278": {
         "name": "Goélise",
+        "alias": "wingull",
         "types": [
             "EAU",
             "VOL"
@@ -510,6 +537,7 @@
     },
     "279": {
         "name": "Bekipan",
+        "alias": "pelipper",
         "types": [
             "EAU",
             "VOL"
@@ -530,6 +558,7 @@
     },
     "280": {
         "name": "Tarsal",
+        "alias": "ralts",
         "types": [
             "PSY",
             "FEE"
@@ -550,6 +579,7 @@
     },
     "281": {
         "name": "Kirlia",
+        "alias": "kirlia",
         "types": [
             "PSY",
             "FEE"
@@ -570,6 +600,7 @@
     },
     "282": {
         "name": "Gardevoir",
+        "alias": "gardevoir",
         "types": [
             "PSY",
             "FEE"
@@ -590,6 +621,7 @@
     },
     "283": {
         "name": "Arakdo",
+        "alias": "surskit",
         "types": [
             "INSECTE",
             "EAU"
@@ -609,6 +641,7 @@
     },
     "284": {
         "name": "Maskadra",
+        "alias": "masquerain",
         "types": [
             "INSECTE",
             "VOL"
@@ -628,6 +661,7 @@
     },
     "285": {
         "name": "Balignon",
+        "alias": "shroomish",
         "types": [
             "PLANTE"
         ],
@@ -647,6 +681,7 @@
     },
     "286": {
         "name": "Chapignon",
+        "alias": "breloom",
         "types": [
             "PLANTE",
             "COMBAT"
@@ -667,6 +702,7 @@
     },
     "287": {
         "name": "Parecool",
+        "alias": "slakoth",
         "types": [
             "NORMAL"
         ],
@@ -684,6 +720,7 @@
     },
     "288": {
         "name": "Vigoroth",
+        "alias": "vigoroth",
         "types": [
             "NORMAL"
         ],
@@ -701,6 +738,7 @@
     },
     "289": {
         "name": "Monaflèmit",
+        "alias": "slaking",
         "types": [
             "NORMAL"
         ],
@@ -718,6 +756,7 @@
     },
     "290": {
         "name": "Ningale",
+        "alias": "nincada",
         "types": [
             "INSECTE",
             "SOL"
@@ -737,6 +776,7 @@
     },
     "291": {
         "name": "Ninjask",
+        "alias": "ninjask",
         "types": [
             "INSECTE",
             "VOL"
@@ -756,6 +796,7 @@
     },
     "292": {
         "name": "Munja",
+        "alias": "shedinja",
         "types": [
             "INSECTE",
             "SPECTRE"
@@ -774,6 +815,7 @@
     },
     "293": {
         "name": "Chuchmur",
+        "alias": "whismur",
         "types": [
             "NORMAL"
         ],
@@ -792,6 +834,7 @@
     },
     "294": {
         "name": "Ramboum",
+        "alias": "loudred",
         "types": [
             "NORMAL"
         ],
@@ -810,6 +853,7 @@
     },
     "295": {
         "name": "Brouhabam",
+        "alias": "exploud",
         "types": [
             "NORMAL"
         ],
@@ -828,6 +872,7 @@
     },
     "296": {
         "name": "Makuhita",
+        "alias": "makuhita",
         "types": [
             "COMBAT"
         ],
@@ -847,6 +892,7 @@
     },
     "297": {
         "name": "Hariyama",
+        "alias": "hariyama",
         "types": [
             "COMBAT"
         ],
@@ -866,6 +912,7 @@
     },
     "298": {
         "name": "Azurill",
+        "alias": "azurill",
         "types": [
             "NORMAL",
             "FEE"
@@ -886,6 +933,7 @@
     },
     "299": {
         "name": "Tarinor",
+        "alias": "nosepass",
         "types": [
             "ROCHE"
         ],
@@ -905,6 +953,7 @@
     },
     "300": {
         "name": "Skitty",
+        "alias": "skitty",
         "types": [
             "NORMAL"
         ],
@@ -924,6 +973,7 @@
     },
     "301": {
         "name": "Delcatty",
+        "alias": "delcatty",
         "types": [
             "NORMAL"
         ],
@@ -943,6 +993,7 @@
     },
     "302": {
         "name": "Ténéfix",
+        "alias": "sableye",
         "types": [
             "TENEBRE",
             "SPECTRE"
@@ -963,6 +1014,7 @@
     },
     "303": {
         "name": "Mysdibule",
+        "alias": "mawile",
         "types": [
             "ACIER",
             "FEE"
@@ -983,6 +1035,7 @@
     },
     "304": {
         "name": "Galekid",
+        "alias": "aron",
         "types": [
             "ACIER",
             "ROCHE"
@@ -1003,6 +1056,7 @@
     },
     "305": {
         "name": "Galegon",
+        "alias": "lairon",
         "types": [
             "ACIER",
             "ROCHE"
@@ -1023,6 +1077,7 @@
     },
     "306": {
         "name": "Galeking",
+        "alias": "aggron",
         "types": [
             "ACIER",
             "ROCHE"
@@ -1043,6 +1098,7 @@
     },
     "307": {
         "name": "Méditikka",
+        "alias": "meditite",
         "types": [
             "COMBAT",
             "PSY"
@@ -1062,6 +1118,7 @@
     },
     "308": {
         "name": "Charmina",
+        "alias": "medicham",
         "types": [
             "COMBAT",
             "PSY"
@@ -1081,6 +1138,7 @@
     },
     "309": {
         "name": "Dynavolt",
+        "alias": "electrike",
         "types": [
             "ELECTRIQUE"
         ],
@@ -1100,6 +1158,7 @@
     },
     "310": {
         "name": "Élecsprint",
+        "alias": "manectric",
         "types": [
             "ELECTRIQUE"
         ],
@@ -1119,6 +1178,7 @@
     },
     "311": {
         "name": "Posipi",
+        "alias": "plusle",
         "types": [
             "ELECTRIQUE"
         ],
@@ -1137,6 +1197,7 @@
     },
     "312": {
         "name": "Négapi",
+        "alias": "minun",
         "types": [
             "ELECTRIQUE"
         ],
@@ -1155,6 +1216,7 @@
     },
     "313": {
         "name": "Muciole",
+        "alias": "volbeat",
         "types": [
             "INSECTE"
         ],
@@ -1174,6 +1236,7 @@
     },
     "314": {
         "name": "Lumivole",
+        "alias": "illumise",
         "types": [
             "INSECTE"
         ],
@@ -1193,6 +1256,7 @@
     },
     "315": {
         "name": "Rosélia",
+        "alias": "roselia",
         "types": [
             "PLANTE",
             "POISON"
@@ -1213,6 +1277,7 @@
     },
     "316": {
         "name": "Gloupti",
+        "alias": "gulpin",
         "types": [
             "POISON"
         ],
@@ -1232,6 +1297,7 @@
     },
     "317": {
         "name": "Avaltout",
+        "alias": "swalot",
         "types": [
             "POISON"
         ],
@@ -1251,6 +1317,7 @@
     },
     "318": {
         "name": "Carvanha",
+        "alias": "carvanha",
         "types": [
             "EAU",
             "TENEBRE"
@@ -1270,6 +1337,7 @@
     },
     "319": {
         "name": "Sharpedo",
+        "alias": "sharpedo",
         "types": [
             "EAU",
             "TENEBRE"
@@ -1289,6 +1357,7 @@
     },
     "320": {
         "name": "Wailmer",
+        "alias": "wailmer",
         "types": [
             "EAU"
         ],
@@ -1308,6 +1377,7 @@
     },
     "321": {
         "name": "Wailord",
+        "alias": "wailord",
         "types": [
             "EAU"
         ],
@@ -1327,6 +1397,7 @@
     },
     "322": {
         "name": "Chamallot",
+        "alias": "numel",
         "types": [
             "FEU",
             "SOL"
@@ -1347,6 +1418,7 @@
     },
     "323": {
         "name": "Camérupt",
+        "alias": "camerupt",
         "types": [
             "FEU",
             "SOL"
@@ -1367,6 +1439,7 @@
     },
     "324": {
         "name": "Chartor",
+        "alias": "torkoal",
         "types": [
             "FEU"
         ],
@@ -1386,6 +1459,7 @@
     },
     "325": {
         "name": "Spoink",
+        "alias": "spoink",
         "types": [
             "PSY"
         ],
@@ -1405,6 +1479,7 @@
     },
     "326": {
         "name": "Groret",
+        "alias": "grumpig",
         "types": [
             "PSY"
         ],
@@ -1424,6 +1499,7 @@
     },
     "327": {
         "name": "Spinda",
+        "alias": "spinda",
         "types": [
             "NORMAL"
         ],
@@ -1443,6 +1519,7 @@
     },
     "328": {
         "name": "Kraknoix",
+        "alias": "trapinch",
         "types": [
             "SOL"
         ],
@@ -1462,6 +1539,7 @@
     },
     "329": {
         "name": "Vibraninf",
+        "alias": "vibrava",
         "types": [
             "SOL",
             "DRAGON"
@@ -1480,6 +1558,7 @@
     },
     "330": {
         "name": "Libégon",
+        "alias": "flygon",
         "types": [
             "SOL",
             "DRAGON"
@@ -1498,6 +1577,7 @@
     },
     "331": {
         "name": "Cacnea",
+        "alias": "cacnea",
         "types": [
             "PLANTE"
         ],
@@ -1516,6 +1596,7 @@
     },
     "332": {
         "name": "Cacturne",
+        "alias": "cacturne",
         "types": [
             "PLANTE",
             "TENEBRE"
@@ -1535,6 +1616,7 @@
     },
     "333": {
         "name": "Tylton",
+        "alias": "swablu",
         "types": [
             "NORMAL",
             "VOL"
@@ -1554,6 +1636,7 @@
     },
     "334": {
         "name": "Altaria",
+        "alias": "altaria",
         "types": [
             "DRAGON",
             "VOL"
@@ -1573,6 +1656,7 @@
     },
     "335": {
         "name": "Mangriff",
+        "alias": "zangoose",
         "types": [
             "NORMAL"
         ],
@@ -1591,6 +1675,7 @@
     },
     "336": {
         "name": "Séviper",
+        "alias": "seviper",
         "types": [
             "POISON"
         ],
@@ -1609,6 +1694,7 @@
     },
     "337": {
         "name": "Séléroc",
+        "alias": "lunatone",
         "types": [
             "ROCHE",
             "PSY"
@@ -1627,6 +1713,7 @@
     },
     "338": {
         "name": "Solaroc",
+        "alias": "solrock",
         "types": [
             "ROCHE",
             "PSY"
@@ -1645,6 +1732,7 @@
     },
     "339": {
         "name": "Barloche",
+        "alias": "barboach",
         "types": [
             "EAU",
             "SOL"
@@ -1665,6 +1753,7 @@
     },
     "340": {
         "name": "Barbicha",
+        "alias": "whiscash",
         "types": [
             "EAU",
             "SOL"
@@ -1685,6 +1774,7 @@
     },
     "341": {
         "name": "Écrapince",
+        "alias": "corphish",
         "types": [
             "EAU"
         ],
@@ -1704,6 +1794,7 @@
     },
     "342": {
         "name": "Colhomard",
+        "alias": "crawdaunt",
         "types": [
             "EAU",
             "TENEBRE"
@@ -1724,6 +1815,7 @@
     },
     "343": {
         "name": "Balbuto",
+        "alias": "baltoy",
         "types": [
             "SOL",
             "PSY"
@@ -1742,6 +1834,7 @@
     },
     "344": {
         "name": "Kaorine",
+        "alias": "claydol",
         "types": [
             "SOL",
             "PSY"
@@ -1760,6 +1853,7 @@
     },
     "345": {
         "name": "Lilia",
+        "alias": "lileep",
         "types": [
             "ROCHE",
             "PLANTE"
@@ -1779,6 +1873,7 @@
     },
     "346": {
         "name": "Vacilys",
+        "alias": "cradily",
         "types": [
             "ROCHE",
             "PLANTE"
@@ -1798,6 +1893,7 @@
     },
     "347": {
         "name": "Anorith",
+        "alias": "anorith",
         "types": [
             "ROCHE",
             "INSECTE"
@@ -1817,6 +1913,7 @@
     },
     "348": {
         "name": "Armaldo",
+        "alias": "armaldo",
         "types": [
             "ROCHE",
             "INSECTE"
@@ -1836,6 +1933,7 @@
     },
     "349": {
         "name": "Barpau",
+        "alias": "feebas",
         "types": [
             "EAU"
         ],
@@ -1855,6 +1953,7 @@
     },
     "350": {
         "name": "Milobellus",
+        "alias": "milotic",
         "types": [
             "EAU"
         ],
@@ -1874,6 +1973,7 @@
     },
     "351": {
         "name": "Morphéo",
+        "alias": "castform",
         "types": [
             "NORMAL"
         ],
@@ -1891,6 +1991,7 @@
     },
     "352": {
         "name": "Kecleon",
+        "alias": "kecleon",
         "types": [
             "NORMAL"
         ],
@@ -1909,6 +2010,7 @@
     },
     "353": {
         "name": "Polichombr",
+        "alias": "shuppet",
         "types": [
             "SPECTRE"
         ],
@@ -1928,6 +2030,7 @@
     },
     "354": {
         "name": "Branette",
+        "alias": "banette",
         "types": [
             "SPECTRE"
         ],
@@ -1947,6 +2050,7 @@
     },
     "355": {
         "name": "Skelénox",
+        "alias": "duskull",
         "types": [
             "SPECTRE"
         ],
@@ -1965,6 +2069,7 @@
     },
     "356": {
         "name": "Téraclope",
+        "alias": "dusclops",
         "types": [
             "SPECTRE"
         ],
@@ -1983,6 +2088,7 @@
     },
     "357": {
         "name": "Tropius",
+        "alias": "tropius",
         "types": [
             "PLANTE",
             "VOL"
@@ -2003,6 +2109,7 @@
     },
     "358": {
         "name": "Éoko",
+        "alias": "chimecho",
         "types": [
             "PSY"
         ],
@@ -2020,6 +2127,7 @@
     },
     "359": {
         "name": "Absol",
+        "alias": "absol",
         "types": [
             "TENEBRE"
         ],
@@ -2039,6 +2147,7 @@
     },
     "360": {
         "name": "Okéoké",
+        "alias": "wynaut",
         "types": [
             "PSY"
         ],
@@ -2057,6 +2166,7 @@
     },
     "361": {
         "name": "Stalgamin",
+        "alias": "snorunt",
         "types": [
             "GLACE"
         ],
@@ -2076,6 +2186,7 @@
     },
     "362": {
         "name": "Oniglali",
+        "alias": "glalie",
         "types": [
             "GLACE"
         ],
@@ -2095,6 +2206,7 @@
     },
     "363": {
         "name": "Obalie",
+        "alias": "spheal",
         "types": [
             "GLACE",
             "EAU"
@@ -2115,6 +2227,7 @@
     },
     "364": {
         "name": "Phogleur",
+        "alias": "sealeo",
         "types": [
             "GLACE",
             "EAU"
@@ -2135,6 +2248,7 @@
     },
     "365": {
         "name": "Kaimorse",
+        "alias": "walrein",
         "types": [
             "GLACE",
             "EAU"
@@ -2155,6 +2269,7 @@
     },
     "366": {
         "name": "Coquiperl",
+        "alias": "clamperl",
         "types": [
             "EAU"
         ],
@@ -2173,6 +2288,7 @@
     },
     "367": {
         "name": "Serpang",
+        "alias": "huntail",
         "types": [
             "EAU"
         ],
@@ -2191,6 +2307,7 @@
     },
     "368": {
         "name": "Rosabyss",
+        "alias": "gorebyss",
         "types": [
             "EAU"
         ],
@@ -2209,6 +2326,7 @@
     },
     "369": {
         "name": "Relicanth",
+        "alias": "relicanth",
         "types": [
             "EAU",
             "ROCHE"
@@ -2229,6 +2347,7 @@
     },
     "370": {
         "name": "Lovdisc",
+        "alias": "luvdisc",
         "types": [
             "EAU"
         ],
@@ -2247,6 +2366,7 @@
     },
     "371": {
         "name": "Draby",
+        "alias": "bagon",
         "types": [
             "DRAGON"
         ],
@@ -2265,6 +2385,7 @@
     },
     "372": {
         "name": "Drackhaus",
+        "alias": "shelgon",
         "types": [
             "DRAGON"
         ],
@@ -2283,6 +2404,7 @@
     },
     "373": {
         "name": "Drattak",
+        "alias": "salamence",
         "types": [
             "DRAGON",
             "VOL"
@@ -2302,6 +2424,7 @@
     },
     "374": {
         "name": "Terhal",
+        "alias": "beldum",
         "types": [
             "ACIER",
             "PSY"
@@ -2321,6 +2444,7 @@
     },
     "375": {
         "name": "Métang",
+        "alias": "metang",
         "types": [
             "ACIER",
             "PSY"
@@ -2340,6 +2464,7 @@
     },
     "376": {
         "name": "Métalosse",
+        "alias": "metagross",
         "types": [
             "ACIER",
             "PSY"
@@ -2359,6 +2484,7 @@
     },
     "377": {
         "name": "Regirock",
+        "alias": "regirock",
         "types": [
             "ROCHE"
         ],
@@ -2377,6 +2503,7 @@
     },
     "378": {
         "name": "Regice",
+        "alias": "regice",
         "types": [
             "GLACE"
         ],
@@ -2395,6 +2522,7 @@
     },
     "379": {
         "name": "Registeel",
+        "alias": "registeel",
         "types": [
             "ACIER"
         ],
@@ -2413,6 +2541,7 @@
     },
     "380": {
         "name": "Latias",
+        "alias": "latias",
         "types": [
             "DRAGON",
             "PSY"
@@ -2431,6 +2560,7 @@
     },
     "381": {
         "name": "Latios",
+        "alias": "latios",
         "types": [
             "DRAGON",
             "PSY"
@@ -2449,6 +2579,7 @@
     },
     "382": {
         "name": "Kyogre",
+        "alias": "kyogre",
         "types": [
             "EAU"
         ],
@@ -2466,6 +2597,7 @@
     },
     "383": {
         "name": "Groudon",
+        "alias": "groudon",
         "types": [
             "SOL"
         ],
@@ -2483,6 +2615,7 @@
     },
     "384": {
         "name": "Rayquaza",
+        "alias": "rayquaza",
         "types": [
             "DRAGON",
             "VOL"
@@ -2501,6 +2634,7 @@
     },
     "385": {
         "name": "Jirachi",
+        "alias": "jirachi",
         "types": [
             "ACIER",
             "PSY"
@@ -2519,6 +2653,7 @@
     },
     "386": {
         "name": "Deoxys",
+        "alias": "deoxys",
         "types": [
             "PSY"
         ],
