@@ -1,4 +1,5 @@
 principal:
+    - load tous les sprites à l'avance plutot  que re calculer a cahque fois (depuis team pokemon justement ?)
     - mieux gérer les transitions d'un pokemon à l'autre
     - ajouter animation sortie de pokeball
     - bouger les menus dans un nouveau fichier menus
