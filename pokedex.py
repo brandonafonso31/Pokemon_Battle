@@ -52,7 +52,7 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
     stats = infos["baseStats"]
     types = infos["types"]
     talents = infos["abilities"]
-    english_name = infos["name"]
+    english_name = infos["alias"]
     
     pokemon = Pokemon(name=infos["name"],
                    hp=stats["hp"],
