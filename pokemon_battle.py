@@ -79,21 +79,23 @@ def start_battle(window, res, trainer = trainer, trainer_ia  = trainer_ai, \
     pygame.display.flip()
     #-------------------------| SPRITE ENNEMI |--------------------------#
     pygame.time.delay(500)
+    
+    # remplacer ces lignes par la fonction trainer.send_next() modifié
     pokemon_opponent,opponent_pokemon_sprite,coord_opp = get_opponent_sprite(res, trainer_ia.pokemon_team[0])
     window.blit(opponent_pokemon_sprite,coord_opp)
-    
     pokemon_opponent.play_howl()
     pokemon_opponent.add_rect(coord_opp,scale=3)
-    #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.display.flip()
+    #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.time.delay(500)
+    
+    # remplacer ces lignes par la fonction trainer.send_next() modifié
     pokemon_trainer,trainer_pokemon_sprite,coord_trainer = get_trainer_sprite(res, trainer.pokemon_team[0])
     window.blit(trainer_pokemon_sprite,coord_trainer)
-    
     pokemon_trainer.play_howl()
     pokemon_trainer.add_rect(coord_trainer,scale=2)
-    #----------------------------| HP BAR |-----------------------------#
     pygame.display.flip()
+    #----------------------------| HP BAR |-----------------------------#
     pygame.time.delay(500)
     ui_battle.draw_hp_bar(window, pokemon_trainer, from_trainer=True)
     ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)

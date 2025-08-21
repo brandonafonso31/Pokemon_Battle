@@ -53,6 +53,8 @@ while run :
         pygame.mixer.music.stop()
         draw_text("Press left click to start battle", font, WHITE,250,resolution[1]//2)
         
+        # page d'intro
+        
     #check les variables afin de faire divers actions
     if battle_start and not in_battle:
         pokemon_trainer,pokemon_opponent,window = pokemon_battle.start_battle(window,resolution)
