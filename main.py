@@ -1,10 +1,10 @@
 import os,ui_battle,pokemon_battle,pygame
-from battle_timing  import Timing,timing_lock,current_timing,check_timing_talent
+import battle_timing as bt
 from config import *
 from pygame.locals import *
 from pokemon_init import *
 from button import Button
-from trainer import trainer,trainer_ai
+from trainer import trainer,trainer_ai  # a deplacer dans un autre fichier
 
 #------|Init pygame
 pygame.init()
@@ -63,9 +63,9 @@ while run :
         #refresh_screen(window,resolution)
         
         if current_menu == "main":
-            with timing_lock:
-                current_timing = Timing.Start
-            pokemon_trainer,pokemon_opponent = check_timing_talent(pokemon_trainer,pokemon_opponent) 
+            with bt.timing_lock:
+                current_timing = bt.Timing.Start
+            pokemon_trainer,pokemon_opponent = bt.check_timing_talent(pokemon_trainer,pokemon_opponent) 
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
             if attack_button.draw(window):
                 current_menu = "attack"

@@ -83,7 +83,7 @@ def start_battle(window, res, trainer = trainer, trainer_ia  = trainer_ai, \
     window.blit(opponent_pokemon_sprite,coord_opp)
     
     pokemon_opponent.play_howl()
-    pokemon_opponent.add_rect(coord_opp)
+    pokemon_opponent.add_rect(coord_opp,scale=3)
     #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.display.flip()
     pygame.time.delay(500)
@@ -91,7 +91,7 @@ def start_battle(window, res, trainer = trainer, trainer_ia  = trainer_ai, \
     window.blit(trainer_pokemon_sprite,coord_trainer)
     
     pokemon_trainer.play_howl()
-    pokemon_trainer.add_rect(coord_trainer)
+    pokemon_trainer.add_rect(coord_trainer,scale=2)
     #----------------------------| HP BAR |-----------------------------#
     pygame.display.flip()
     pygame.time.delay(500)
