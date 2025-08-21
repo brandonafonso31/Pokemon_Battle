@@ -130,7 +130,7 @@ while run :
             run = False
         if event.type == pygame.MOUSEBUTTONDOWN:
             battle_start = True
-    pygame.display.update()
+    pygame.display.flip()
     
 pygame.mixer.music.stop()
 pygame.time.delay(1000)

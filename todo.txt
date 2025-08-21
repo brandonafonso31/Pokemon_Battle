@@ -2,7 +2,7 @@ principal:
     - mieux gérer les transitions d'un pokemon à l'autre
     - ajouter animation sortie de pokeball
     - bouger les menus dans un nouveau fichier menus
-    - ajouter animation quand décédé (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
+    - ajouter animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
     - ajouter sprite trainer pour plus de vie dans le combat (oppoent always standing there or not ? + animation from player trainer when  sending a pokemon in battle)
     - continuer d'implementer trainer et pokemon_team
     - continuer les talents
