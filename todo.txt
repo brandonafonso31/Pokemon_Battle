@@ -1,7 +1,5 @@
 - corriger l'animlation de ko
 - ajouter animation sortie de pokeball
-- ajouter le cri du pokemon quand sorti de la pokeball
-- load une image pour le bloc contenant les hp, le niv et le nom
 - bouger les menus dans un nouveau fichier menus
 - mieux gérer les transitions d'un pokemon à l'autre
 - ajouter le cri du pokemon à l'apparition et le faire bouger un peu de gauche à droite ?
@@ -16,3 +14,6 @@
 - ajouter une interface d'accueil (background + musique d'intro)
 - creer des dresseurs dans un json ? pour load les adversaires
 - ajouter une fonction PC pour choisir sa team avant le combat (utiliser les petits sprites pour l'affichage peut-être plutot commmencer par just des inpuits dans le terminal)
+
+optionel :
+    - load une image pour le bloc contenant les hp, le niv et le nom
