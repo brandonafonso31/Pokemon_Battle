@@ -1,6 +1,6 @@
 principal:
-    - load tous les sprites à l'avance plutot  que re calculer a cahque fois (depuis team pokemon justement ?)
-    - mieux gérer les transitions d'un pokemon à l'autre
+    - mieux gérer les transitions d'un pokemon à l'autre + ajuster le display.update car cri du pokemon trop early
+    - load tous les sprites à l'avance plutot  que re calculer a chaque fois (depuis team pokemon justement ?)
     - ajouter animation sortie de pokeball
     - bouger les menus dans un nouveau fichier menus
     - ajouter animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
