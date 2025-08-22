@@ -33,6 +33,19 @@ def check_timing_talent(pokemon_1, pokemon_2):
         pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
         pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)         
     return pokemon_1, pokemon_2
-  
+
+def change_timing():
+    with timing_lock:
+        global current_timing
+        if current_timing == Timing.START:
+            current_timing = Timing.ABOUT_TO_GET_HIT
+        elif current_timing == Timing.ABOUT_TO_GET_HIT:
+            current_timing = Timing.GOT_HIT
+        elif current_timing == Timing.GOT_HIT:
+            current_timing = Timing.END
+        elif current_timing == Timing.END:
+            current_timing = Timing.START
+    return current_timing
+
 current_timing = Timing.START
 timing_lock = threading.Lock()

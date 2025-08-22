@@ -65,8 +65,7 @@ while run :
         #refresh_screen(window,resolution)
         
         if current_menu == "main":
-            with bt.timing_lock:
-                current_timing = bt.Timing.START
+            current_timing = bt.change_timing()
             pokemon_trainer,pokemon_opponent = bt.check_timing_talent(pokemon_trainer,pokemon_opponent) 
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
             if attack_button.draw(window):

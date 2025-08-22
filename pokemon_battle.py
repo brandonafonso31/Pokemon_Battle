@@ -4,7 +4,7 @@ import ui_battle, os, sprite, pygame, json
 
 from config import BLACK
 from random import randint
-from battle_timing  import Timing,timing_lock,current_timing,check_timing_talent
+import battle_timing as bt
 
 def get_sprite(pokemon,front_or_back):
     pokemon_sprite = pokemon.sprites(front_or_back)
@@ -132,14 +132,12 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     move_ia = getattr(pokemon_2, move_id_ia)
 
     # Détermination de l'ordre : priorité > vitesse
-    first_from_trainer = True
     if move_player.prio > move_ia.prio:
         first, first_move_id = pokemon_1, move_id_player
         second, second_move_id = pokemon_2, move_id_ia
     elif move_ia.prio > move_player.prio:
         first, first_move_id = pokemon_2, move_id_ia
         second, second_move_id = pokemon_1, move_id_player
-        first_from_trainer = False
     else:
         if pokemon_1.vit >= pokemon_2.vit:
             first, first_move_id = pokemon_1, move_id_player
@@ -147,12 +145,10 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         else:
             first, first_move_id = pokemon_2, move_id_ia
             second, second_move_id = pokemon_1, move_id_player
-            first_from_trainer = False
 
     # TIMING : ABOUT_TO_GET_HIT
-    with timing_lock:
-        Timing.current_timing = Timing.ABOUT_TO_GET_HIT
-    check_timing_talent(first, second)
+    current_timing = bt.change_timing()
+    bt.check_timing_talent(first, second)
 
     # ATTAQUE DU PREMIER
     pygame.time.delay(1000)
@@ -163,9 +159,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_opponent=old_hp)
 
     # TIMING : GOT_HIT
-    with timing_lock:
-        Timing.current_timing = Timing.GOT_HIT
-    check_timing_talent(first, second)
+    current_timing = bt.change_timing()
+    bt.check_timing_talent(first, second)
 
     # Log
     move = getattr(first, first_move_id)
@@ -176,9 +171,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     # ATTAQUE DU SECOND SI VIVANT
     if not second.is_dead():
         
-        with timing_lock:
-            Timing.current_timing = Timing.ABOUT_TO_GET_HIT
-        check_timing_talent(second, first)
+        current_timing = bt.change_timing()
+        bt.check_timing_talent(second,first)
 
         second, first, old_hp = second.use_move(second_move_id, first, window)
         if first is pokemon_1:
@@ -186,16 +180,14 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         else:
             ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_opponent=old_hp)
             
-        with timing_lock:
-            Timing.current_timing = Timing.GOT_HIT
-        check_timing_talent(second, first)
+        current_timing = bt.change_timing()
+        bt.check_timing_talent(second,first)
 
         move = getattr(second, second_move_id)
         print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
 
         pygame.time.delay(1000)
 
-    with timing_lock:
-        Timing.current_timing = Timing.END
+    current_timing = bt.change_timing()
 
     return pokemon_1, pokemon_2, "ko" if (pokemon_1.is_dead() or pokemon_2.is_dead()) else "continue"
