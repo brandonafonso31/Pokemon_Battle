@@ -254,16 +254,21 @@ class Pokemon:
         """Efface le sprite KO en rebattant le background sur son rect"""
         self.play_howl()         
         pygame.time.delay(1000)
-
         with open("data/actual_battle.json") as f:
             json_data = json.load(f)
-
         background = pygame.image.load(json_data["background"]).convert()
-
-        # On suppose que self.rect est déjà bien défini (voir get_sprite)
-        if self.rect:
+        current_pokemon_id = json_data["current"]
+        pokemon = "opponent" if front_or_back == "front" else "trainer"
+        x, y = json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["x"], \
+            json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"] 
+        scale = 2 + (front_or_back == "back")
+        w = 100 * scale
+        rect = pygame.Rect(x, y, w, w)
+        window.blit(background, rect, rect)
+        pygame.display.update(rect)
+        """if self.rect:
             window.blit(background, self.rect, self.rect)
-            pygame.display.update(self.rect)
+            pygame.display.update(self.rect)"""
 
         pygame.time.delay(500)
 
