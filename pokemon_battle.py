@@ -10,21 +10,18 @@ def start_battle(window, trainer, trainer_ia):
     with open(battle_json_path,"r") as f:
         battle_data = json.load(f)
         
-    sprite.update_battle_json({
-        "music": music_path,
-        "background": background_path
-    })  
-        
     #-----------------------------| MUSIC |------------------------------#
     music_path = battle_data["music"]
     pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
+    sprite.update_battle_json({"music": music_path})
     #---------------------------| BACKGROUND |---------------------------#
     background_path = battle_data["background"]
     background = pygame.image.load(background_path).convert()
     window.blit(background,(0,0))
     pygame.display.flip()
+    sprite.update_battle_json({"background": background_path})
     #-------------------------| SPRITE ENNEMI |--------------------------#
     pygame.time.delay(500)
     pokemon_opponent,boolean = trainer_ia.send_next("front")    
@@ -50,8 +47,9 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     """Exécute un tour complet de combat entre deux Pokémon."""
 
     # Nettoyage interface
-    pygame.draw.rect(window, (0, 0, 0), (0, res_scene[1], resolution[0], resolution[1] - res_scene[1]))
-    pygame.display.flip()
+    menu_rect = pygame.Rect(0, res_scene[1], resolution[0], resolution[1] - res_scene[1])
+    pygame.draw.rect(window, BLACK, menu_rect)
+    pygame.display.update(menu_rect)
 
     # Vérification validité du move joueur
     if not check_move(move_id_player):

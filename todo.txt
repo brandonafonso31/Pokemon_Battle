@@ -1,6 +1,7 @@
 principal:
     - corriger un bug ou selectionner une attaque utilsie automaiquement cascade ? ou la deuxieme attaque ?
     - toujours ce bug qui interveint de temps en temps ou la fenetre freeze (pb : fonction qui dessine la HP bar ou besoiin d'ajouter delta time ?)
+    - modifier tous les display.flip() au debut du combat
     - mieux gérer les transitions d'un pokemon à l'autre + ajuster le display.update car cri du pokemon trop early
     - ajouter animation sortie de pokeball
     - bouger les menus dans un nouveau fichier menus
