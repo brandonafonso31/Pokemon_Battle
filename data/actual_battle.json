@@ -1,32 +1,32 @@
 {
     "trainer": {
         "1": {
-            "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_back_1.png",
+            "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_back_1.png",
             "x": 187,
             "y": 177
         },
         "2": {
-            "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_back_2.png",
+            "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_back_2.png",
             "x": 187,
             "y": 205
         }
     },
     "opponent": {
         "1": {
-            "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_1.png",
+            "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_1.png",
             "x": 612.5,
             "y": 111
         },
         "2": {
-            "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_2.png",
+            "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_2.png",
             "x": 612.5,
             "y": 136
         }
     },
-    "music": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\song\\elite_four/Battle_Elite_Four_BW.mp3",
-    "background": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\background/forest.jpg",
+    "music": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\song\\elite_four/Battle_Elite_Four_BW.mp3",
+    "background": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\background\\forest.jpg",
     "current": [
-        2,
-        2
+        1,
+        1
     ]
 }

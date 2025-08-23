@@ -1,23 +1,24 @@
-from config import img_dir_path,song_dir_path,battle_json_path,sprites_dir_path
+from config import img_dir_path,song_dir_path,battle_json_path,sprites_dir_path,background_dir_path
 import ui_battle, os, sprite, pygame, json
 
 from config import BLACK
 from random import randint
 import battle_timing as bt
 
-def start_battle(window, trainer, trainer_ia):
+def start_battle(window, trainer, trainer_ia, \
+    music_path = "elite_four/Battle_Elite_Four_BW.mp3", background = "forest.jpg"):
     """Instancie les premiers éléments de la scène."""
     with open(battle_json_path,"r") as f:
         battle_data = json.load(f)
         
     #-----------------------------| MUSIC |------------------------------#
-    music_path = battle_data["music"]
+    music_path = os.path.join(song_dir_path,music_path)
     pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     sprite.update_battle_json({"music": music_path})
     #---------------------------| BACKGROUND |---------------------------#
-    background_path = battle_data["background"]
+    background_path = os.path.join(background_dir_path, background)
     background = pygame.image.load(background_path).convert()
     window.blit(background,(0,0))
     pygame.display.flip()
