@@ -9,6 +9,12 @@ def start_battle(window, trainer, trainer_ia):
     """Instancie les premiers éléments de la scène."""
     with open(battle_json_path,"r") as f:
         battle_data = json.load(f)
+        
+    sprite.update_battle_json({
+        "music": music_path,
+        "background": background_path
+    })  
+        
     #-----------------------------| MUSIC |------------------------------#
     music_path = battle_data["music"]
     pygame.mixer.music.load(music_path)
@@ -33,11 +39,6 @@ def start_battle(window, trainer, trainer_ia):
     pygame.time.delay(500)
     ui_battle.draw_hp_bar(window, pokemon_trainer, from_trainer=True)
     ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
-    
-    sprite.update_battle_json({
-        "music": music_path,
-        "background": background_path
-    })  
     
     ui_battle.refresh_screen(window,pokemon_trainer, pokemon_opponent)
     return pokemon_trainer,pokemon_opponent,window
