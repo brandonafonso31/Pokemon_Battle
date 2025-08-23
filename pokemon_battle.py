@@ -1,72 +1,15 @@
-from config import img_dir_path,song_dir_path,battle_json_path
-from trainer import trainer,trainer_ai
+from config import img_dir_path,song_dir_path,battle_json_path,sprites_dir_path
 import ui_battle, os, sprite, pygame, json
 
 from config import BLACK
 from random import randint
 import battle_timing as bt
 
-def get_sprite(pokemon,front_or_back):
-    pokemon_sprite = pokemon.sprites(front_or_back)
-    pokemon_path = os.path.join(img_dir_path,f"sprites/pokemon_{front_or_back}.png")
-    pokemon_sprite = pygame.image.load(pokemon_path).convert()
-    pokemon_sprite.set_colorkey(sprite.get_first_pixel(pokemon_path))
-    scale = 2 + (front_or_back == "back")
-    pokemon_sprite = pygame.transform.scale(pokemon_sprite, (scale * 100,scale * 100))
-    return pokemon_sprite
-
-def get_opponent_sprite(res, pokemon):
-    
-    opponent_pokemon_sprite = get_sprite(pokemon,"front")
-    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_front.png")
-    y_opponent = sprite.get_base_pixel(path_sprite)
-    y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
-    x_opponent = res[0]//2 + 75
-    pokemon_json = {
-        "path_sprite": path_sprite,
-        "x": x_opponent,
-        "y": y_opponent
-    }
-    update_battle_json({"pokemon_opponent": pokemon_json})
-    
-    return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
-
-def get_trainer_sprite(res, pokemon):
-    trainer_pokemon_sprite = get_sprite(pokemon,"back")
-    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_back.png")
-    y_trainer = sprite.get_top_pixel(path_sprite)
-    y_trainer = res[1] - 3*(96 - y_trainer) - 350
-    x_trainer = res[0]//2 - 75*2 - 96*2
-    pokemon_json = {
-        "path_sprite": path_sprite,
-        "x": x_trainer,
-        "y": y_trainer
-    }
-    update_battle_json({"pokemon_trainer": pokemon_json})
-    return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
-
-def update_battle_json(updates: dict):
-    path = battle_json_path
-
-    if os.path.exists(path):
-        with open(path, "r") as f:
-            data = json.load(f)
-    else:
-        data = {}
-
-    data.update(updates)
-
-    with open(path, "w") as f:
-        json.dump(data, f, indent=4)
-
-def get_image(image_path):
-    image = pygame.image.load(image_path).convert()
-    image.set_colorkey(sprite.get_first_pixel(image_path))
-    return image,image.get_size()
-
-def start_battle(window, res, trainer = trainer, trainer_ia  = trainer_ai, \
+def start_battle(window, res, trainer, trainer_ia , \
     music_path = "elite_four/Battle_Elite_Four_BW.mp3", background_path = "background/forest.jpg"):
     """Instancie les premiers éléments de la scène."""
+    with open(battle_json_path,"r") as f:
+        battle_data = json.load(f)
     #-----------------------------| MUSIC |------------------------------#
     music_path = os.path.join(song_dir_path,music_path)
     pygame.mixer.music.load(music_path)
@@ -79,31 +22,31 @@ def start_battle(window, res, trainer = trainer, trainer_ia  = trainer_ai, \
     pygame.display.flip()
     #-------------------------| SPRITE ENNEMI |--------------------------#
     pygame.time.delay(500)
-    
-    # remplacer ces lignes par la fonction trainer.send_next() modifié
-    pokemon_opponent,opponent_pokemon_sprite,coord_opp = get_opponent_sprite(res, trainer_ia.pokemon_team[0])
-    window.blit(opponent_pokemon_sprite,coord_opp)
-    pokemon_opponent.play_howl()
-    pokemon_opponent.add_rect(coord_opp,scale=3)
+    pokemon_opponent,boolean = trainer_ia.send_next("front")
+    pokemon_opponent_sprite_path = os.path.join(sprites_dir_path,f"pokemon_front_1.png")
+    pokemon_opponent_sprite = sprite.get_image(pokemon_opponent_sprite_path,scale=2)
+    coord_opp = battle_data["opponent"]["1"]["x"],battle_data["opponent"]["1"]["y"]
+    window.blit(pokemon_opponent_sprite,coord_opp)
+    pokemon_opponent.add_rect(coord_opp,scale=2)
     pygame.display.flip()
     #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.time.delay(500)
-    
-    # remplacer ces lignes par la fonction trainer.send_next() modifié
-    pokemon_trainer,trainer_pokemon_sprite,coord_trainer = get_trainer_sprite(res, trainer.pokemon_team[0])
-    window.blit(trainer_pokemon_sprite,coord_trainer)
-    pokemon_trainer.play_howl()
-    pokemon_trainer.add_rect(coord_trainer,scale=2)
+    pokemon_trainer,boolean = trainer.send_next("back")    
+    pokemon_trainer_sprite_path = os.path.join(sprites_dir_path,f"pokemon_back_1.png")
+    pokemon_trainer_sprite = sprite.get_image(pokemon_trainer_sprite_path,scale=3)
+    coord_opp = battle_data["trainer"]["1"]["x"],battle_data["trainer"]["1"]["y"] 
+    window.blit(pokemon_trainer_sprite,coord_opp)
+    pokemon_opponent.add_rect(coord_opp,scale=3)
     pygame.display.flip()
     #----------------------------| HP BAR |-----------------------------#
     pygame.time.delay(500)
     ui_battle.draw_hp_bar(window, pokemon_trainer, from_trainer=True)
     ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
     
-    update_battle_json({
+    sprite.update_battle_json({
         "music": music_path,
         "background": background_path
-    })
+    })  
     
     ui_battle.refresh_screen(window,pokemon_trainer, pokemon_opponent)
     return pokemon_trainer,pokemon_opponent,window

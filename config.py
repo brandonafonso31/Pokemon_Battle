@@ -5,6 +5,7 @@ resolution = (res_scene[0],260+res_scene[1])
 
 principal_dir_path = os.getcwd()
 img_dir_path = os.path.join(principal_dir_path,"images")
+sprites_dir_path = os.path.join(img_dir_path,"sprites")
 song_dir_path = os.path.join(principal_dir_path,"song")
 data_dir_path = os.path.join(principal_dir_path,"data")
 battle_json_path = os.path.join(data_dir_path, "actual_battle.json")

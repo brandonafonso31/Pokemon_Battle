@@ -121,9 +121,9 @@ class Pokemon:
         
     
     
-    def sprites(self,front_or_back):
-        sprites = os.path.join(img_dir_path,f"sprites/sprites_gen{self.gen}")
-        return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back)
+    def sprites(self,front_or_back,save_to_filename):
+        sprites = os.path.join(sprites_dir_path,f"sprites_gen{self.gen}")
+        return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back,self.id)
         
     
     
@@ -257,15 +257,18 @@ class Pokemon:
         
         with open("data/actual_battle.json") as f:
             json_data = json.load(f)
-
-        background = pygame.image.load(json_data["background"]).convert()
-        pokemon = "pokemon_opponent" if front_or_back == "front" else "pokemon_trainer"
-        x, y = json_data[pokemon]["x"], json_data[pokemon]["y"]
-        w = 64*4 if front_or_back == "back" else 64*3
+            
+        current_pokemon_id = json_data["current"]
+        
+        """background = pygame.image.load(json_data["background"]).convert()
+        pokemon = "opponent" if front_or_back == "front" else "trainer"
+        x, y = json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["x"], \
+                json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"]
+        w = 64*3 if front_or_back == "back" else 64*2
         
         rect = pygame.Rect(x, y, w, w)
         window.blit(background, rect, rect)
-        pygame.display.update(rect)
+        pygame.display.update(rect)"""
 
         pygame.time.delay(500)
         

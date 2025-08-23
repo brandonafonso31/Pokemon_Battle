@@ -116,7 +116,9 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         # Texte
         text = font.render(f"{pokemon.name} HP: {current_hp}/{hp_max}", True, BLACK)
         window.blit(text, (x, y - 40))
-   
+
+
+
 def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
     """Refresh the screen with the background and all sprites."""
     with open(battle_json_path, "r") as f:
@@ -126,9 +128,10 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
     background = pygame.image.load(data["background"]).convert()
     window.blit(background, (0, 0))
 
+    current_pokemon_id = data["current"]
     # Trainer
     if not pokemon_trainer.is_ko:
-        trainer_path = data["pokemon_trainer"]
+        trainer_path = data["trainer"][str(current_pokemon_id[0])]
         trainer_sprite = pygame.image.load(trainer_path["path_sprite"]).convert()
         trainer_sprite.set_colorkey(sprite.get_first_pixel(trainer_path["path_sprite"]))
         trainer_sprite = pygame.transform.scale(trainer_sprite, (3 * 100, 3 * 100))
@@ -136,7 +139,7 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
 
     # Opponent
     if not pokemon_opponent.is_ko:
-        opponent_path = data["pokemon_opponent"]
+        opponent_path = data["opponent"][str(current_pokemon_id[1])]
         opponent_sprite = pygame.image.load(opponent_path["path_sprite"]).convert()
         opponent_sprite.set_colorkey(sprite.get_first_pixel(opponent_path["path_sprite"]))
         opponent_sprite = pygame.transform.scale(opponent_sprite, (2 * 100, 2 * 100))

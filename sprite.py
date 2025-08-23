@@ -1,14 +1,13 @@
 from PIL import Image
-from config import img_dir_path,battle_json_path
+from config import img_dir_path,battle_json_path,sprites_dir_path,WHITE
 import os, sprite, pygame, json
 
 LEN_NAME_POKEMON = 7
 NB_POKEMON_PER_ROW = 8
-WHITE = (255, 255, 255, 0)
 RES_SPRITE_POKEMON = (96, 96)
 
 
-def recup_sprite_pokemon(sprite_gen_path, num_pokemon, front_or_back):
+def recup_sprite_pokemon(sprite_gen_path, num_pokemon, front_or_back,id):
     global LEN_NAME_POKEMON,WHITE,NB_POKEMON_PER_ROW,RES_SPRITE_POKEMON
     image = Image.open(f"{sprite_gen_path}_{front_or_back}.png")
     res_image = image.size
@@ -26,7 +25,7 @@ def recup_sprite_pokemon(sprite_gen_path, num_pokemon, front_or_back):
             pixel = image.getpixel((i,j))
             sprite_pokemon.putpixel((i-indice_row,j-indice_col), pixel)
             
-    sprite_pokemon.save(os.path.join(img_dir_path,f"sprites/pokemon_{front_or_back}.png"))
+    sprite_pokemon.save(os.path.join(sprites_dir_path,f"pokemon_{front_or_back}_{id}.png"))
     return sprite_pokemon
     
 def get_first_pixel(image_path):
@@ -65,19 +64,19 @@ def get_top_pixel(image_path):
             j+=1
     return j
 
-def get_sprite(pokemon,front_or_back):
-    pokemon_sprite = pokemon.sprites(front_or_back)
-    pokemon_path = os.path.join(img_dir_path,f"sprites/pokemon_{front_or_back}.png")
+def get_sprite(pokemon,id,front_or_back):
+    path = f"pokemon_{front_or_back}_{id}.png"
+    pokemon_sprite = pokemon.sprites(front_or_back,path)
+    pokemon_path = os.path.join(sprites_dir_path,path)
     pokemon_sprite = pygame.image.load(pokemon_path).convert()
     pokemon_sprite.set_colorkey(sprite.get_first_pixel(pokemon_path))
     scale = 2 + (front_or_back == "back")
     pokemon_sprite = pygame.transform.scale(pokemon_sprite, (scale * 100,scale * 100))
     return pokemon_sprite
 
-def get_opponent_sprite(res, pokemon):
-    
-    opponent_pokemon_sprite = get_sprite(pokemon,"front")
-    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_front.png")
+def get_opponent_sprite(res, pokemon, id, save_to_filename:str):
+    opponent_pokemon_sprite = get_sprite(pokemon, id, "front")
+    path_sprite = os.path.join(sprites_dir_path,save_to_filename)
     y_opponent = sprite.get_base_pixel(path_sprite)
     y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
     x_opponent = res[0]//2 + 75
@@ -85,14 +84,12 @@ def get_opponent_sprite(res, pokemon):
         "path_sprite": path_sprite,
         "x": x_opponent,
         "y": y_opponent
-    }
-    update_battle_json({"pokemon_opponent": pokemon_json})
-    
-    return pokemon,opponent_pokemon_sprite, (x_opponent, y_opponent)
+    }    
+    return pokemon_json
 
-def get_trainer_sprite(res, pokemon):
-    trainer_pokemon_sprite = get_sprite(pokemon,"back")
-    path_sprite = os.path.join(img_dir_path,"sprites/pokemon_back.png")
+def get_trainer_sprite(res, pokemon, id, save_to_filename:str):
+    trainer_pokemon_sprite = get_sprite(pokemon, id, "back")
+    path_sprite = os.path.join(sprites_dir_path,save_to_filename)
     y_trainer = sprite.get_top_pixel(path_sprite)
     y_trainer = res[1] - 3*(96 - y_trainer) - 350
     x_trainer = res[0]//2 - 75*2 - 96*2
@@ -101,8 +98,7 @@ def get_trainer_sprite(res, pokemon):
         "x": x_trainer,
         "y": y_trainer
     }
-    update_battle_json({"pokemon_trainer": pokemon_json})
-    return pokemon,trainer_pokemon_sprite, (x_trainer, y_trainer)
+    return pokemon_json
 
 def update_battle_json(updates: dict):
 
@@ -117,7 +113,8 @@ def update_battle_json(updates: dict):
     with open(battle_json_path, "w") as f:
         json.dump(data, f, indent=4)
 
-def get_image(image_path):
+def get_image(image_path,scale=1):
     image = pygame.image.load(image_path).convert()
     image.set_colorkey(sprite.get_first_pixel(image_path))
-    return image,image.get_size()
+    image = pygame.transform.scale(image, (scale * 100, scale * 100))
+    return image

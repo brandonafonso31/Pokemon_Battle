@@ -4,7 +4,7 @@ from config import *
 from pygame.locals import *
 from pokemon_init import *
 from button import Button
-from trainer import trainer,trainer_ai  # a deplacer dans un autre fichier
+import pokemon_trainer
 
 #------|Init pygame
 pygame.init()
@@ -43,6 +43,10 @@ battle_start = False
 in_battle = False
 current_menu = ""
 fight_continue = True
+
+#------|Trainer
+trainer,opponent = pokemon_trainer.get_trainer()
+
 #------|Boucle qui fait tourner le jeu  
 run = True
 while run :
@@ -57,7 +61,7 @@ while run :
         
     #check les variables afin de faire divers actions
     if battle_start and not in_battle:
-        pokemon_trainer,pokemon_opponent,window = pokemon_battle.start_battle(window,resolution)
+        pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,resolution,trainer,opponent)
         in_battle = True
         current_menu = "main"
         
@@ -66,7 +70,7 @@ while run :
         
         if current_menu == "main":
             current_timing = bt.change_timing()
-            pokemon_trainer,pokemon_opponent = bt.check_timing_talent(pokemon_trainer,pokemon_opponent) 
+            pokemon_player,pokemon_opponent = bt.check_timing_talent(pokemon_player,pokemon_opponent) 
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
             if attack_button.draw(window):
                 current_menu = "attack"
@@ -76,27 +80,27 @@ while run :
                 current_menu = "bag"
             
         elif current_menu == "attack":
-            pokemon_trainer, pokemon_opponent, in_battle = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent)
+            pokemon_player, pokemon_opponent, in_battle = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_player,pokemon_opponent)
             if in_battle == "ko":   # l'un des 2 pokemon est KO
                 pygame.time.delay(500)
                 pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-                pokemon_ko = pokemon_trainer if pokemon_trainer.hp <= 0 else pokemon_opponent
+                pokemon_ko = pokemon_player if pokemon_player.hp <= 0 else pokemon_opponent
                 draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
                 pygame.display.flip()
                 pygame.time.delay(500)
                 
                 #animation de la mort du pokemon
                 pokemon_ko.is_ko = True
-                pokemon_ko.animate_death(window,front_or_back="back" if pokemon_ko is pokemon_trainer else "front")
+                pokemon_ko.animate_death(window,front_or_back="back" if pokemon_ko is pokemon_player else "front")
                 
-                if pokemon_ko is pokemon_trainer:
-                    pokemon_trainer,in_battle = trainer.send_next("back")
+                if pokemon_ko is pokemon_player:
+                    pokemon_player,in_battle = trainer.send_next("back")
                 else:
-                    pokemon_opponent,in_battle = trainer_ai.send_next("front")
+                    pokemon_opponent,in_battle = opponent.send_next("front")
                 
                 if in_battle:
                     pygame.time.delay(1000)
-                    ui_battle.refresh_screen(window, pokemon_trainer, pokemon_opponent)
+                    ui_battle.refresh_screen(window, pokemon_player, pokemon_opponent)
                     pygame.time.delay(1000)
                     current_menu  = "main"
                     
