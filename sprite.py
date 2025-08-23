@@ -36,14 +36,15 @@ def get_base_pixel(image_path):
     """itère sur tous les pixel en les parcourant en ligne, jusqu'à 
     trouver un pixel (le pixel le plus bas), puis retourne le j"""
     image = Image.open(image_path)
+    image_height = image.size[1]
     border = get_first_pixel(image_path)
     
-    i,j=0,96
+    i,j=0,image_height
     pixel_cur = image.getpixel((i,j-1))
     while j!=0 and pixel_cur == border:
         pixel_cur = image.getpixel((i,j-1))
         i+=1
-        if i==96:
+        if i==image_height:
             i=0
             j-=1
     return j
@@ -52,14 +53,15 @@ def get_top_pixel(image_path):
     """itère sur tous les pixel en les parcourant en ligne, jusqu'à 
     trouver un pixel (le pixel le plus haut), puis retourne le j"""
     image = Image.open(image_path)
+    image_height = image.size[1]
     border = get_first_pixel(image_path)
     
     i,j=0,0
     pixel_cur = image.getpixel((i,j))
-    while j!=96 and pixel_cur == border:
+    while j!=image_height and pixel_cur == border:
         pixel_cur = image.getpixel((i,j))
         i+=1
-        if i==96:
+        if i==image_height:
             i=0
             j+=1
     return j
@@ -81,32 +83,37 @@ def get_sprite(pokemon,id,front_or_back):
     return pokemon_sprite
 
 
-def create_pokemon_opponent(res, pokemon, id, save_to_filename:str):
+def create_pokemon_opponent(res, pokemon, id, save_to_filename: str):
     opponent_pokemon_sprite = get_sprite(pokemon, id, "front")
-    path_sprite = os.path.join(sprites_dir_path,save_to_filename)
-    y_opponent = sprite.get_base_pixel(path_sprite)
-    y_opponent = res[1]//2 - opponent_pokemon_sprite.get_height() + y_opponent - 50
-    x_opponent = res[0]//2 + 75
+    path_sprite = os.path.join(sprites_dir_path, save_to_filename)
+    
+    base_offset = sprite.get_base_pixel(path_sprite) - opponent_pokemon_sprite.get_height() 
+    x_opponent = res[0]*0.75 - opponent_pokemon_sprite.get_width()//2 - 75
+    y_opponent = res[1]//2 - base_offset  - 175
+
     pokemon_json = {
         "path_sprite": path_sprite,
         "x": x_opponent,
         "y": y_opponent
-    }    
-    pokemon.add_rect((x_opponent,y_opponent),scale=2)
+    }
+    pokemon.add_rect((x_opponent, y_opponent), scale=2)
     return pokemon_json
 
-def create_pokemon_trainer(res, pokemon, id, save_to_filename:str):
+
+def create_pokemon_trainer(res, pokemon, id, save_to_filename: str):
     trainer_pokemon_sprite = get_sprite(pokemon, id, "back")
-    path_sprite = os.path.join(sprites_dir_path,save_to_filename)
-    y_trainer = sprite.get_top_pixel(path_sprite)
-    y_trainer = res[1] - trainer_pokemon_sprite.get_height() + y_trainer - 100
-    x_trainer = res[0]//2 - 75*2 - 96*2
+    path_sprite = os.path.join(sprites_dir_path, save_to_filename)
+
+    base_offset = sprite.get_base_pixel(path_sprite) - trainer_pokemon_sprite.get_height()
+    x_trainer = (res[0]//2 - trainer_pokemon_sprite.get_width())//2 + 75
+    y_trainer = res[1] - base_offset - 400
+
     pokemon_json = {
         "path_sprite": path_sprite,
         "x": x_trainer,
         "y": y_trainer
     }
-    pokemon.add_rect((x_trainer,y_trainer),scale=3)
+    pokemon.add_rect((x_trainer, y_trainer), scale=3)
     return pokemon_json
 
 def update_battle_json(updates: dict):
