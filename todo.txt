@@ -1,10 +1,13 @@
 principal:
+    - ajouter une interface d'accueil (background + musique d'intro)
+    - ajuster le trainer.send_next() car cri du pokemon trop early
+    - déplacer les prites de all_gen dans un dossier gen_id ou id est le num de gen
     - add_rect à modifier pour degager le scale et mettre juste le vrai rect
     - modifier la barre de vie pour que si le texte est trop long -> diminuer la police du nom uniqument
-    - corriger un bug ou selectionner une attaque utilsie automaiquement cascade ? ou la deuxieme attaque ?
-    - toujours ce bug qui interveint de temps en temps ou la fenetre freeze (pb : fonction qui dessine la HP bar ou besoiin d'ajouter delta time ?)
+    - corriger un bug ou selectionner une attaque utilise la deuxieme attaque (aperçu qu'avec leviator ... le seul avec 4 attaques)?
+    - toujours ce bug qui interveint de temps en temps où la fenetre freeze (pb : fonction qui dessine la HP bar ou besoiin d'ajouter delta time ?)
     - modifier tous les display.flip() au debut du combat
-    - mieux gérer les transitions d'un pokemon à l'autre + ajuster le display.update car cri du pokemon trop early
+    - mieux gérer les transitions d'un pokemon à l'autre
     - ajouter animation sortie de pokeball
     - bouger les menus dans un nouveau fichier menus
     - implémenter sac et le switch de pokemon
@@ -21,7 +24,6 @@ secondaire :
     - agrandir l'écran du dessous afin d'obteniur un effet DS
     - ajouter des boutons averc le bon texte pour Attaque, Sac, Pokemon
     - implenter animations des attaques
-    - ajouter une interface d'accueil (background + musique d'intro)
     - creer des dresseurs dans un json ? pour load les adversaires
     - ajouter une fonction PC pour choisir sa team avant le combat (utiliser les petits sprites pour l'affichage peut-être plutot commmencer par just des inpuits dans le terminal)
 
