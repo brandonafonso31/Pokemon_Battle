@@ -47,9 +47,7 @@ class Pokemon_trainer:
         for i in range(len(team)):
             pokemon = team[i]
             if pokemon.hp != 0:
-                # afficher un texte pour annoncer l'arrive du suivant                
-                with open(battle_json_path, "r") as f:
-                    data = json.load(f)
+                # afficher un texte pour annoncer l'arrive du suivant
                 dic = data["current"]
                 dic = {"current": [dic[0],i+1]} if front_or_back == "front" else {"current": [i+1,dic[1]]}
                 sprite.update_battle_json(dic)

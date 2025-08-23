@@ -92,7 +92,7 @@ while run :
                 pygame.time.delay(500)
                 
                 #animation de la mort du pokemon
-                print(f"{pokemon_ko.name} est KO ({front_or_back}). Taille Rect: {pokemon_ko.rect}")
+                # print(f"{pokemon_ko.name} est KO ({front_or_back}). Taille Rect: {pokemon_ko.rect}")
                 pokemon_ko.animate_death(window,front_or_back)
                 pokemon_ko.is_ko = True
                 

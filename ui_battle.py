@@ -121,7 +121,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
 def refresh_pokemon_sprite(window,pokemon,data,trainer_or_opponent):
     if not pokemon.is_ko:
         current_pokemon_id = data["current"]
-        path = data[trainer_or_opponent][str(current_pokemon_id[0])]
+        path = data[trainer_or_opponent][str(current_pokemon_id[trainer_or_opponent == "opponent"])]
         pokemon_sprite = pygame.image.load(path["path_sprite"]).convert()
         pokemon_sprite.set_colorkey(sprite.get_first_pixel(path["path_sprite"]))
         window.blit(pokemon_sprite, (path["x"], path["y"]))
