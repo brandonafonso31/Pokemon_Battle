@@ -77,13 +77,15 @@ def get_sprite(pokemon,id,front_or_back):
     # base_w, base_h = pokemon_sprite.get_size()
     # pokemon_sprite = pygame.transform.scale(pokemon_sprite, (base_w * scale, base_h * scale))
     # print(pokemon_sprite.get_size())
+    pygame.image.save(pokemon_sprite, pokemon_path)
     return pokemon_sprite
+
 
 def create_pokemon_opponent(res, pokemon, id, save_to_filename:str):
     opponent_pokemon_sprite = get_sprite(pokemon, id, "front")
     path_sprite = os.path.join(sprites_dir_path,save_to_filename)
     y_opponent = sprite.get_base_pixel(path_sprite)
-    y_opponent = res[1]//2 + 2*(96 - y_opponent) - 300
+    y_opponent = res[1]//2 - opponent_pokemon_sprite.get_height() + y_opponent - 50
     x_opponent = res[0]//2 + 75
     pokemon_json = {
         "path_sprite": path_sprite,
@@ -97,7 +99,7 @@ def create_pokemon_trainer(res, pokemon, id, save_to_filename:str):
     trainer_pokemon_sprite = get_sprite(pokemon, id, "back")
     path_sprite = os.path.join(sprites_dir_path,save_to_filename)
     y_trainer = sprite.get_top_pixel(path_sprite)
-    y_trainer = res[1] - 3*(96 - y_trainer) - 350
+    y_trainer = res[1] - trainer_pokemon_sprite.get_height() + y_trainer - 75
     x_trainer = res[0]//2 - 75*2 - 96*2
     pokemon_json = {
         "path_sprite": path_sprite,
@@ -119,6 +121,7 @@ def update_battle_json(updates: dict):
 
 def get_image(image_path,scale=1):
     image = pygame.image.load(image_path).convert()
+    w,h = image.get_size()
     image.set_colorkey(sprite.get_first_pixel(image_path))
-    image = pygame.transform.scale(image, (scale * 100, scale * 100))
+    image = pygame.transform.scale(image, (scale * w, scale * h))
     return image

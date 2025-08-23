@@ -118,6 +118,13 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         window.blit(text, (x, y - 40))
 
 
+def refresh_pokemon_sprite(window,pokemon,data,trainer_or_opponent):
+    if not pokemon.is_ko:
+        current_pokemon_id = data["current"]
+        path = data[trainer_or_opponent][str(current_pokemon_id[0])]
+        pokemon_sprite = pygame.image.load(path["path_sprite"]).convert()
+        pokemon_sprite.set_colorkey(sprite.get_first_pixel(path["path_sprite"]))
+        window.blit(pokemon_sprite, (path["x"], path["y"]))
 
 def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
     """Refresh the screen with the background and all sprites."""
@@ -128,22 +135,8 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
     background = pygame.image.load(data["background"]).convert()
     window.blit(background, (0, 0))
 
-    current_pokemon_id = data["current"]
-    # Trainer
-    if not pokemon_trainer.is_ko:
-        trainer_path = data["trainer"][str(current_pokemon_id[0])]
-        trainer_sprite = pygame.image.load(trainer_path["path_sprite"]).convert()
-        trainer_sprite.set_colorkey(sprite.get_first_pixel(trainer_path["path_sprite"]))
-        trainer_sprite = pygame.transform.scale(trainer_sprite, (3 * 100, 3 * 100))
-        window.blit(trainer_sprite, (trainer_path["x"], trainer_path["y"]))
-
-    # Opponent
-    if not pokemon_opponent.is_ko:
-        opponent_path = data["opponent"][str(current_pokemon_id[1])]
-        opponent_sprite = pygame.image.load(opponent_path["path_sprite"]).convert()
-        opponent_sprite.set_colorkey(sprite.get_first_pixel(opponent_path["path_sprite"]))
-        opponent_sprite = pygame.transform.scale(opponent_sprite, (2 * 100, 2 * 100))
-        window.blit(opponent_sprite, (opponent_path["x"], opponent_path["y"]))
+    refresh_pokemon_sprite(window, pokemon_trainer, data, "trainer")
+    refresh_pokemon_sprite(window, pokemon_opponent, data, "opponent")
 
     # HP Bars
     draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer)

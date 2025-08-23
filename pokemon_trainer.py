@@ -1,6 +1,7 @@
 # Une class en plus pour pokemon_team ?
 import sprite,pygame,json,os
-from config import battle_json_path,resolution
+from config import battle_json_path,res_scene
+from copy import deepcopy
 
 class Pokemon_trainer:
     def __init__(self, name: str):
@@ -39,13 +40,14 @@ class Pokemon_trainer:
             print(f"{self.name} a capturé {pokemon.name}")
             
     def send_next(self,front_or_back: str):
+        "for now only send the next in list, no choice"
         with open(battle_json_path, "r") as f:
             data = json.load(f)
         team = self.pokemon_team
         for i in range(len(team)):
             pokemon = team[i]
             if pokemon.hp != 0:
-                # afficher un texte poour annoncer l'arrive du suivant                
+                # afficher un texte pour annoncer l'arrive du suivant                
                 with open(battle_json_path, "r") as f:
                     data = json.load(f)
                 dic = data["current"]
@@ -55,25 +57,30 @@ class Pokemon_trainer:
                 return pokemon,True
         return None,False
     
-    def set_team_into_json(self,trainer_or_opponent: str):      
+    def set_team_into_json(self,trainer_or_opponent: str):     
+        global res_scene
         pokemon_team = {}
         for i in range(len(self.pokemon_team)):
             pokemon = self.pokemon_team[i]
             if trainer_or_opponent == "trainer":
-                data = sprite.create_pokemon_trainer(resolution, pokemon, i+1, f"pokemon_back_{i+1}.png")
+                data = sprite.create_pokemon_trainer(res_scene, pokemon, i+1, f"pokemon_back_{i+1}.png")
             else:
-                data = sprite.create_pokemon_opponent(resolution, pokemon, i+1, f"pokemon_front_{i+1}.png")
+                data = sprite.create_pokemon_opponent(res_scene, pokemon, i+1, f"pokemon_front_{i+1}.png")
             pokemon_team[str(i+1)] = data      
         
         sprite.update_battle_json({trainer_or_opponent: pokemon_team})   
 
-def get_trainer():       
-    from pokemon_init import leviator,dracaufeu,ectoplasma    
+def init_trainer():       
+    from pokemon_init import leviator,dracaufeu,gengar    
     trainer_ai = Pokemon_trainer("Ash")
     trainer_ai.catch_pokemon(dracaufeu)
-    trainer_ai.catch_pokemon(ectoplasma)
+    trainer_ai.catch_pokemon(gengar)
     trainer = Pokemon_trainer("Brandon")
     trainer.catch_pokemon(leviator)
+    gengar_trainer = deepcopy(gengar)
+    trainer.catch_pokemon(gengar_trainer)
+    
+    assert gengar_trainer != gengar
     print(trainer_ai,trainer,sep="\n")
 
     trainer.set_team_into_json("trainer")

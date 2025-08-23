@@ -45,7 +45,7 @@ current_menu = ""
 fight_continue = True
 
 #------|Trainer
-trainer,opponent = pokemon_trainer.get_trainer()
+trainer,opponent = pokemon_trainer.init_trainer()
 
 #------|Boucle qui fait tourner le jeu  
 run = True
@@ -61,7 +61,7 @@ while run :
         
     #check les variables afin de faire divers actions
     if battle_start and not in_battle:
-        pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,resolution,trainer,opponent)
+        pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent)
         in_battle = True
         current_menu = "main"
         

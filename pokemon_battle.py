@@ -5,37 +5,29 @@ from config import BLACK
 from random import randint
 import battle_timing as bt
 
-def start_battle(window, res, trainer, trainer_ia , \
-    music_path = "elite_four/Battle_Elite_Four_BW.mp3", background_path = "background/forest.jpg"):
+def start_battle(window, trainer, trainer_ia):
     """Instancie les premiers éléments de la scène."""
     with open(battle_json_path,"r") as f:
         battle_data = json.load(f)
     #-----------------------------| MUSIC |------------------------------#
-    music_path = os.path.join(song_dir_path,music_path)
+    music_path = battle_data["music"]
     pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     #---------------------------| BACKGROUND |---------------------------#
-    background_path = os.path.join(img_dir_path,background_path)
+    background_path = battle_data["background"]
     background = pygame.image.load(background_path).convert()
     window.blit(background,(0,0))
     pygame.display.flip()
     #-------------------------| SPRITE ENNEMI |--------------------------#
     pygame.time.delay(500)
-    pokemon_opponent,boolean = trainer_ia.send_next("front")
-    pokemon_opponent_sprite_path = os.path.join(sprites_dir_path,f"pokemon_front_1.png")
-    pokemon_opponent_sprite = sprite.get_image(pokemon_opponent_sprite_path,scale=2)
-    coord_opp = battle_data["opponent"]["1"]["x"],battle_data["opponent"]["1"]["y"]
-    window.blit(pokemon_opponent_sprite,coord_opp)
+    pokemon_opponent,boolean = trainer_ia.send_next("front")    
+    ui_battle.refresh_pokemon_sprite(window, pokemon_opponent, battle_data, "opponent")
     pygame.display.flip()
     #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.time.delay(500)
     pokemon_trainer,boolean = trainer.send_next("back")    
-    pokemon_trainer_sprite_path = os.path.join(sprites_dir_path,f"pokemon_back_1.png")
-    pokemon_trainer_sprite = sprite.get_image(pokemon_trainer_sprite_path,scale=3)
-    coord_opp = battle_data["trainer"]["1"]["x"],battle_data["trainer"]["1"]["y"] 
-    window.blit(pokemon_trainer_sprite,coord_opp)
-    pokemon_opponent.add_rect(coord_opp,scale=3)
+    ui_battle.refresh_pokemon_sprite(window, pokemon_trainer, battle_data, "trainer")
     pygame.display.flip()
     #----------------------------| HP BAR |-----------------------------#
     pygame.time.delay(500)

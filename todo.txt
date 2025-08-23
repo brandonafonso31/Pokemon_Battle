@@ -1,9 +1,10 @@
 principal:
+    - corriger un bug ou selectionner une attaque utilsie automaiquement cascade ? ou la deuxieme attaque ?
+    - toujours ce bug qui interveint de temps en temps ou la fenetre freeze (pb : fonction qui dessine la HP bar ou besoiin d'ajouter delta time ?)
     - mieux gérer les transitions d'un pokemon à l'autre + ajuster le display.update car cri du pokemon trop early
-    - load tous les sprites à l'avance plutot  que re calculer a chaque fois (depuis team pokemon justement ?)
     - ajouter animation sortie de pokeball
     - bouger les menus dans un nouveau fichier menus
-    - ajouter animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
+    - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
     - ajouter sprite trainer pour plus de vie dans le combat (oppoent always standing there or not ? + animation from player trainer when  sending a pokemon in battle)
     - continuer d'implementer trainer et pokemon_team
     - continuer les talents
