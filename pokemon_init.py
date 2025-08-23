@@ -14,7 +14,7 @@ lance_soleil = SpecialMove("Lance-Soleil",Type.PLANTE,power=90,precision=100,pp=
 atterisage = StatusMove("Atterisage",Type.VOL,precision=100,pp=15, effect = dico_effect_move["Atterissage"], prio = 0)
 
 dracaufeu.learn_move(lance_flamme)
-#dracaufeu.learn_move(crocs_eclair)
+dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
 #dracaufeu.learn_move(atterisage)
 dracaufeu.change_talent(talents["Intimidation"]())
