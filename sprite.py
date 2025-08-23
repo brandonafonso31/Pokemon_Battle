@@ -99,7 +99,7 @@ def create_pokemon_trainer(res, pokemon, id, save_to_filename:str):
     trainer_pokemon_sprite = get_sprite(pokemon, id, "back")
     path_sprite = os.path.join(sprites_dir_path,save_to_filename)
     y_trainer = sprite.get_top_pixel(path_sprite)
-    y_trainer = res[1] - trainer_pokemon_sprite.get_height() + y_trainer - 75
+    y_trainer = res[1] - trainer_pokemon_sprite.get_height() + y_trainer - 100
     x_trainer = res[0]//2 - 75*2 - 96*2
     pokemon_json = {
         "path_sprite": path_sprite,
