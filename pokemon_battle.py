@@ -27,7 +27,6 @@ def start_battle(window, res, trainer, trainer_ia , \
     pokemon_opponent_sprite = sprite.get_image(pokemon_opponent_sprite_path,scale=2)
     coord_opp = battle_data["opponent"]["1"]["x"],battle_data["opponent"]["1"]["y"]
     window.blit(pokemon_opponent_sprite,coord_opp)
-    pokemon_opponent.add_rect(coord_opp,scale=2)
     pygame.display.flip()
     #--------------------------| SPRITE ALLIE |--------------------------#    
     pygame.time.delay(500)

@@ -206,7 +206,7 @@ class Pokemon:
         return all([_ <= 252 for _ in self.EV.values()])
 
     def add_rect(self,coord,scale = 2):
-        self.rect = pygame.Rect(coord[0], coord[1], 64*scale, 64*scale)
+        self.rect = pygame.Rect(coord[0], coord[1], 100*scale, 100*scale)
     
     
     def change_talent(self, talent: Talent):
@@ -251,26 +251,22 @@ class Pokemon:
 
 
     def animate_death(self, window, front_or_back):
-        """Animation de mort simplifiée mais fonctionnelle"""
+        """Efface le sprite KO en rebattant le background sur son rect"""
         self.play_howl()         
         pygame.time.delay(1000)
-        
+
         with open("data/actual_battle.json") as f:
             json_data = json.load(f)
-            
-        current_pokemon_id = json_data["current"]
-        
-        """background = pygame.image.load(json_data["background"]).convert()
-        pokemon = "opponent" if front_or_back == "front" else "trainer"
-        x, y = json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["x"], \
-                json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"]
-        w = 64*3 if front_or_back == "back" else 64*2
-        
-        rect = pygame.Rect(x, y, w, w)
-        window.blit(background, rect, rect)
-        pygame.display.update(rect)"""
+
+        background = pygame.image.load(json_data["background"]).convert()
+
+        # On suppose que self.rect est déjà bien défini (voir get_sprite)
+        if self.rect:
+            window.blit(background, self.rect, self.rect)
+            pygame.display.update(self.rect)
 
         pygame.time.delay(500)
+
         
         
     def play_howl(self):

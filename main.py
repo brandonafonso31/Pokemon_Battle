@@ -85,6 +85,7 @@ while run :
                 pygame.time.delay(500)
                 pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
                 pokemon_ko = pokemon_player if pokemon_player.hp <= 0 else pokemon_opponent
+                print(pokemon_ko)
                 draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
                 pygame.display.flip()
                 pygame.time.delay(500)

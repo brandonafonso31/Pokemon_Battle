@@ -60,9 +60,9 @@ class Pokemon_trainer:
         for i in range(len(self.pokemon_team)):
             pokemon = self.pokemon_team[i]
             if trainer_or_opponent == "trainer":
-                data = sprite.get_trainer_sprite(resolution, pokemon, i+1, f"pokemon_back_{i+1}.png")
+                data = sprite.create_pokemon_trainer(resolution, pokemon, i+1, f"pokemon_back_{i+1}.png")
             else:
-                data = sprite.get_opponent_sprite(resolution, pokemon, i+1, f"pokemon_front_{i+1}.png")
+                data = sprite.create_pokemon_opponent(resolution, pokemon, i+1, f"pokemon_front_{i+1}.png")
             pokemon_team[str(i+1)] = data      
         
         sprite.update_battle_json({trainer_or_opponent: pokemon_team})   
