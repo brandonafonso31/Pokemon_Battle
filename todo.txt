@@ -1,10 +1,13 @@
 principal:
+    - add_rect à modifier pour degager le scale et mettre juste le vrai rect
+    - modifier la barre de vie pour que si le texte est trop long -> diminuer la police du nom uniqument
     - corriger un bug ou selectionner une attaque utilsie automaiquement cascade ? ou la deuxieme attaque ?
     - toujours ce bug qui interveint de temps en temps ou la fenetre freeze (pb : fonction qui dessine la HP bar ou besoiin d'ajouter delta time ?)
     - modifier tous les display.flip() au debut du combat
     - mieux gérer les transitions d'un pokemon à l'autre + ajuster le display.update car cri du pokemon trop early
     - ajouter animation sortie de pokeball
     - bouger les menus dans un nouveau fichier menus
+    - implémenter sac et le switch de pokemon
     - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
     - ajouter sprite trainer pour plus de vie dans le combat (oppoent always standing there or not ? + animation from player trainer when  sending a pokemon in battle)
     - continuer d'implementer trainer et pokemon_team
@@ -12,8 +15,11 @@ principal:
     - continuer d'implémenter le systeme de target
     - ajouter esquive et precision au constructeur pokemon ?
     - StatusMove à implémenter
+    - méga-évolution ?
 
 secondaire :
+    - agrandir l'écran du dessous afin d'obteniur un effet DS
+    - ajouter des boutons averc le bon texte pour Attaque, Sac, Pokemon
     - implenter animations des attaques
     - ajouter une interface d'accueil (background + musique d'intro)
     - creer des dresseurs dans un json ? pour load les adversaires
