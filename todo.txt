@@ -1,6 +1,5 @@
 principal:
     - ajouter une interface d'accueil (background + musique d'intro)
-    - ajuster le trainer.send_next() car cri du pokemon trop early
     - déplacer les prites de all_gen dans un dossier gen_id ou id est le num de gen
     - add_rect à modifier pour degager le scale et mettre juste le vrai rect
     - modifier la barre de vie pour que si le texte est trop long -> diminuer la police du nom uniqument

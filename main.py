@@ -9,7 +9,8 @@ import pokemon_trainer
 #------|Init pygame
 pygame.init()
 pygame.mixer.init()
- 
+# clock = pygame.time.Clock()
+
 #------|Resolution
 res_scene = (1050,540)
 resolution = (res_scene[0],260+res_scene[1])
@@ -50,6 +51,7 @@ trainer,opponent = pokemon_trainer.init_trainer()
 #------|Boucle qui fait tourner le jeu  
 run = True
 while run :
+    # dt = clock.tick(30)
     
     if not battle_start and run:
         pygame.time.delay(500)
@@ -102,7 +104,6 @@ while run :
                     pokemon_opponent,in_battle = opponent.send_next("front")
                 
                 if in_battle:
-                    pygame.time.delay(1000)
                     ui_battle.refresh_screen(window, pokemon_player, pokemon_opponent)
                     pygame.time.delay(1000)
                     current_menu  = "main"
