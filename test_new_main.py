@@ -11,7 +11,7 @@ dt = 0
 #------|Resolution
 res_scene = (1050,540)
 window = pygame.display.set_mode(res_scene)
-pygame.display.set_caption("Pokemon Battle")
+pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
 
 #------|Fonts
@@ -37,16 +37,22 @@ OPTIONS_BUTTON = create_button("Options", 200,300)
 BACK_BUTTON = create_button("Back", 200,400)
 QUIT_BUTTON = create_button("Quit", 200,400)
 
-#------|create button instances
+#------|Var
 y_menu = res_scene[1] + 50
 x_menu = 50
+BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
+BACKGROUND_LENTH,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
+ratio = res_scene[1] / BACKGROUND_HEIGHT
+scale = (BACKGROUND_LENTH*ratio,BACKGROUND_HEIGHT*ratio)
+BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
 
 #------|function
 def play():
     run = True
     while run :
         dt = clock.tick(30)
-        window.fill(BLACK)
+        window.fill(BLACK)        
+        window.blit(BACKGROUND_INTRO,(0,0))
         fps_counter()
         
         pos = pygame.mouse.get_pos()
@@ -69,7 +75,8 @@ def options():
     run = True
     while run :
         dt = clock.tick(30)
-        window.fill(BLACK)
+        window.fill(BLACK)        
+        window.blit(BACKGROUND_INTRO,(0,0))
         fps_counter()
         
         pos = pygame.mouse.get_pos()
@@ -92,17 +99,11 @@ def main_menu():
     run = True
     while run :
         dt = clock.tick(30)
-        window.fill(BLACK)
+        window.fill(BLACK)        
+        window.blit(BACKGROUND_INTRO,(0,0))
         fps_counter()
         
-        BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
-        BACKGROUND_LENTH,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
-        ratio = res_scene[1] / BACKGROUND_HEIGHT
-        scale = (BACKGROUND_LENTH*ratio,BACKGROUND_HEIGHT*ratio)
-        BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
-        window.blit(BACKGROUND_INTRO,(0,0))
-        
-        draw_text("", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+        draw_text(project_name, font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2 - 100)
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
             button.draw(window)
