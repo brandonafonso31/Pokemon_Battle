@@ -1,9 +1,12 @@
 principal:
+    - modifier le code de base pour avoir plusieurs fonctions, une par menu avec une boucle while run et un break ou return
+    - ajouter un handle_event.py qui sera appeler dans les differentes boucle while run des divers menu
+    - corriger un bug ou selectionner une attaque utilise la deuxieme attaque (aperçu qu'avec leviator ... le seul avec 4 attaques)? --> le menu suivant s'affiche trop vite donc click trop long = move selectioné
     - ajouter une interface d'accueil (background + musique d'intro)
-    - déplacer les prites de all_gen dans un dossier gen_id ou id est le num de gen
+    - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
     - add_rect à modifier pour degager le scale et mettre juste le vrai rect
     - modifier la barre de vie pour que si le texte est trop long -> diminuer la police du nom uniqument
-    - corriger un bug ou selectionner une attaque utilise la deuxieme attaque (aperçu qu'avec leviator ... le seul avec 4 attaques)?
+    
     - toujours ce bug qui interveint de temps en temps où la fenetre freeze (pb : fonction qui dessine la HP bar ou besoiin d'ajouter delta time ?)
     - modifier tous les display.flip() au debut du combat
     - mieux gérer les transitions d'un pokemon à l'autre
