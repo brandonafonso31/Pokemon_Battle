@@ -48,6 +48,11 @@ def start_battle(window, trainer, trainer_ia, \
             pygame.display.flip()
             step = 2
             running = False
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
     return pokemon_player, pokemon_opponent, window
 
