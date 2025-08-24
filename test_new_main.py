@@ -9,7 +9,8 @@ clock = pygame.time.Clock()
 dt = 0
 
 #------|Resolution
-res_scene = (1050,540)
+res_scene = (700,500)
+resolution = (res_scene[0],res_scene[1]+200)
 window = pygame.display.set_mode(res_scene)
 pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
