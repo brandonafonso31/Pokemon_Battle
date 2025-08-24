@@ -1,5 +1,5 @@
 import os,sys,pygame
-from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path
+from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path,background_dir_path
 from pygame.locals import *
 from button_test import Button_test
 import pokemon_trainer
@@ -13,7 +13,7 @@ dt = 0
 #------|Resolution
 res_scene = (700,500)
 resolution = (res_scene[0],res_scene[1]+200)
-window = pygame.display.set_mode(res_scene)
+window = pygame.display.set_mode(resolution)
 pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
 
@@ -49,29 +49,30 @@ PLAY_BUTTON = create_button("Jouer", 200 ,200)
 OPTIONS_BUTTON = create_button("Options", 200,300)
 BACK_BUTTON = create_button("Retour", 200,400)
 QUIT_BUTTON = create_button("Quitter", 200,400)
-ATTACK_BUTTON = create_button("Attaquer", resolution[0] - 400, resolution[1] - 300)
-POKEMON_BUTTON = create_button("Pokémon", resolution[0] - 200, resolution[1] - 100)
-BAG_BUTTON = create_button("Sac", resolution[0] + 50, resolution[1] - 100)
 
+ATTACK_BUTTON = create_button("Attaquer", (resolution[0] - 191)//2, res_scene[1] + 18)
+POKEMON_BUTTON = create_button("Pokémon", resolution[0] - 191 - 18, resolution[1] - 82 - 18)
+BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
+print(BAG_BUTTON.rect)
 #------|function
 def play():
+    pygame.mixer.music.stop()
+    pygame.mixer.music.load(os.path.join(song_dir_path,"battle/trainer_BW.mp3"))
+    pygame.mixer.music.play(loops=-1)
+    pygame.mixer.music.set_volume(0.3)
     
     #------|Variable
-    battle_start = False
-    in_battle = False
-    current_menu = ""
-    fight_continue = True
-    run = True
+    play_running = True
     
-    while run :
+    while play_running :
         dt = clock.tick(30)
         window.fill(BLACK)        
-        window.blit(BACKGROUND_INTRO,(0,0))
+        window.blit
         fps_counter()
-        
-        pos = pygame.mouse.get_pos()
+        bg = pygame.image.load(os.path.join(background_dir_path,"bg-forest.png"))
+        window.blit(bg,(0,0))
 
-        for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON, BACK_BUTTON]:
+        for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
             button.draw(window)
             
         for event in pygame.event.get():
@@ -79,25 +80,21 @@ def play():
                 pygame.quit()
                 sys.exit()
             if ATTACK_BUTTON.handle_event(event):
-                run = False
+                play_running = False
             if BAG_BUTTON.handle_event(event):
-                run = False
+                play_running = False
             if POKEMON_BUTTON.handle_event(event):
-                run = False  
-            if BACK_BUTTON.handle_event(event):
-                run = False
+                play_running = False
 
         pygame.display.flip()
 
 def options():
-    run = True
-    while run :
+    options_running = True
+    while options_running :
         dt = clock.tick(30)
-        window.fill(BLACK)        
-        window.blit(BACKGROUND_INTRO,(0,0))
+        window.fill(BLACK)
         fps_counter()
         
-        pos = pygame.mouse.get_pos()
         draw_text("OPTIONS", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
 
         for button in [BACK_BUTTON]:
@@ -109,11 +106,12 @@ def options():
                 sys.exit()
                 
             if BACK_BUTTON.handle_event(event):
-                run = False
+                options_running = False
 
         pygame.display.flip()
 
 def main_menu():
+    pygame.mixer.music.stop()
     pygame.mixer.music.load(os.path.join(song_dir_path,"sys/title.mp3"))
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
