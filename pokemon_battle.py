@@ -6,7 +6,7 @@ from random import randint
 import battle_timing as bt
 
 def start_battle(window, trainer, trainer_ia, \
-    music_path = "elite_four/Battle_Elite_Four_BW.mp3", background = "forest.jpg"):
+    music_path = "battle/wild_BW.mp3", background = "forest.jpg"):
     """Instancie les premiers éléments de la scène."""
     with open(battle_json_path,"r") as f:
         battle_data = json.load(f)
