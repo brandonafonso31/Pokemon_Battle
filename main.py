@@ -14,10 +14,10 @@ pygame.mixer.init()
 
 #------|Resolution
 res_scene = (1050,540)
-resolution = (res_scene[0],260+res_scene[1])
+resolution = (res_scene[0],2 * res_scene[1])
 window = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Pokemon Battle")
-pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/pokeball.png")))
+pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
 
 #------|Fonts
 font = pygame.font.SysFont("arialblack",40)
@@ -29,7 +29,7 @@ bag_img = pygame.image.load(os.path.join(img_dir_path,"battle_ui/button_bag.png"
 
 #------|create button instances
 y_menu = resolution[1]-260
-x_menu = resolution[0]-500
+x_menu = 50
 attack_button = Button(x_menu, y_menu + 5, attack_img, 1)
 pokemon_button = Button(x_menu, y_menu + 95, pokemon_img, 1)
 bag_button = Button(x_menu, y_menu + 185, bag_img, 1)
