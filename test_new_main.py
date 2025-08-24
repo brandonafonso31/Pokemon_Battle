@@ -1,6 +1,6 @@
 import os,sys,pygame
 from config import *
-from button import Button
+from button_test import Button_test
 
 #------|Init pygame
 pygame.init()
@@ -26,6 +26,11 @@ def create_button(text,x,y):
     button_img = pygame.image.load(button_img_path).convert_alpha()
     return Button(x, y, button_img, 1, text)
 
+def fps_counter():
+    fps = str(int(clock.get_fps()))
+    fps_t = font.render(f"{fps} fps" , 1, pygame.Color("RED"))
+    window.blit(fps_t,(0,0))
+    
 #------|Button
 PLAY_BUTTON = create_button("Play", 200 ,200)
 OPTIONS_BUTTON = create_button("Options", 200,300)
@@ -42,13 +47,13 @@ def play():
     while run :
         dt = clock.tick(30)
         window.fill(BLACK)
+        fps_counter()
         
         pos = pygame.mouse.get_pos()
         draw_text("PLAY", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
 
         for button in [BACK_BUTTON]:
-            window.blit(button.image, (button.rect.x, button.rect.y))
-            window.blit(button.text_surface,button.text_rect)
+            button.draw(window)
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -66,13 +71,13 @@ def options():
     while run :
         dt = clock.tick(30)
         window.fill(BLACK)
+        fps_counter()
         
         pos = pygame.mouse.get_pos()
         draw_text("OPTIONS", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
 
         for button in [BACK_BUTTON]:
-            window.blit(button.image, (button.rect.x, button.rect.y))
-            window.blit(button.text_surface,button.text_rect)
+            button.draw(window)
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -90,27 +95,25 @@ def main_menu():
     while run :
         dt = clock.tick(30)
         window.fill(BLACK)
+        fps_counter()
         
         pos = pygame.mouse.get_pos()
         draw_text("MAIN MENU", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
-            window.blit(button.image, (button.rect.x, button.rect.y))
-            window.blit(button.text_surface,button.text_rect)
+            button.draw(window)
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                
-                if PLAY_BUTTON.rect.collidepoint(pos):
-                    play()
-                if OPTIONS_BUTTON.rect.collidepoint(pos):
-                    options()
-                if QUIT_BUTTON.rect.collidepoint(pos):
-                    pygame.quit()
-                    sys.exit()
+            if PLAY_BUTTON.handle_event(event):
+                play()
+            if OPTIONS_BUTTON.handle_event(event):
+                options()
+            if QUIT_BUTTON.handle_event(event):
+                pygame.quit()
+                sys.exit()
 
         pygame.display.flip()
 
