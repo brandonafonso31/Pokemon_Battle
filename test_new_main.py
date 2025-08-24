@@ -102,7 +102,7 @@ def main_menu():
         BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
         window.blit(BACKGROUND_INTRO,(0,0))
         
-        draw_text("MAIN MENU", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+        draw_text("", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
             button.draw(window)
