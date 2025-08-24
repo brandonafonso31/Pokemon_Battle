@@ -1,45 +1,79 @@
-from config import img_dir_path,song_dir_path,battle_json_path,sprites_dir_path,background_dir_path
+from config import img_dir_path,song_dir_path,battle_json_path,sprites_dir_path,background_dir_path,BLACK
 import ui_battle, os, sprite, pygame, json
-
-from config import BLACK
 from random import randint
 import battle_timing as bt
 
 def start_battle(window, trainer, trainer_ia, \
-    music_path = "battle/wild_BW.mp3", background = "forest.jpg"):
-    """Instancie les premiers éléments de la scène."""
+    music_path="battle/wild_BW.mp3", background="forest.jpg"):
+    """Instancie les premiers éléments de la scène avec un système basé sur dt."""
+    
+    # Charger les infos JSON
     with open(battle_json_path,"r") as f:
         battle_data = json.load(f)
-        
-    #-----------------------------| MUSIC |------------------------------#
-    music_path = os.path.join(song_dir_path,music_path)
+
+    # Préparer la musique
+    music_path = os.path.join(song_dir_path, music_path)
     pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     sprite.update_battle_json({"music": music_path})
-    #---------------------------| BACKGROUND |---------------------------#
-    background_path = os.path.join(background_dir_path, background)
-    background = pygame.image.load(background_path).convert()
-    window.blit(background,(0,0))
-    pygame.display.flip()
-    sprite.update_battle_json({"background": background_path})
-    #-------------------------| SPRITE ENNEMI |--------------------------#
-    pygame.time.delay(500)
-    pokemon_opponent,boolean = trainer_ia.send_next("front")    
-    ui_battle.refresh_pokemon_sprite(window, pokemon_opponent, battle_data, "opponent")
-    pygame.display.flip()
-    #--------------------------| SPRITE ALLIE |--------------------------#    
-    pygame.time.delay(500)
-    pokemon_trainer,boolean = trainer.send_next("back")    
-    ui_battle.refresh_pokemon_sprite(window, pokemon_trainer, battle_data, "trainer")
-    pygame.display.flip()
-    #----------------------------| HP BAR |-----------------------------#
-    pygame.time.delay(500)
-    ui_battle.draw_hp_bar(window, pokemon_trainer, from_trainer=True)
-    ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
     
-    ui_battle.refresh_screen(window,pokemon_trainer, pokemon_opponent)
-    return pokemon_trainer,pokemon_opponent,window
+    # preparer le background
+    background_path = os.path.join(background_dir_path, background)
+    bg = pygame.image.load(background_path).convert()
+    sprite.update_battle_json({"background": background_path})
+    
+    # Variables d’état
+    state = "show_background"
+    timer = 0
+    pokemon_player, pokemon_opponent = None, None
+
+    running = True
+    while running:
+        dt = pygame.time.Clock.tick(30) / 1000  # temps en secondes
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                raise SystemExit
+
+        # ---------------- MACHINE A ETATS ---------------- #
+        if state == "show_background":
+            window.blit(bg, (0,0))
+            pygame.display.flip()
+            timer = 0
+            state = "wait_opponent"
+
+        elif state == "wait_opponent":
+            timer += dt
+            if timer >= 0.5:  # 500 ms
+                pokemon_opponent, _ = trainer_ia.send_next("front")    
+                ui_battle.refresh_pokemon_sprite(window, pokemon_opponent, battle_data, "opponent")
+                pygame.display.flip()
+                timer = 0
+                state = "wait_trainer"
+
+        elif state == "wait_trainer":
+            timer += dt
+            if timer >= 0.5:
+                pokemon_player, _ = trainer.send_next("back")    
+                ui_battle.refresh_pokemon_sprite(window, pokemon_player, battle_data, "trainer")
+                pygame.display.flip()
+                timer = 0
+                state = "wait_hp"
+
+        elif state == "wait_hp":
+            timer += dt
+            if timer >= 0.5:
+                ui_battle.draw_hp_bar(window, pokemon_player, from_trainer=True)
+                ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
+                pygame.display.flip()
+                state = "done"
+
+        elif state == "done":
+            running = False  # fin de l’intro
+
+    return pokemon_player, pokemon_opponent, window
 
 def check_move(move_id: str):
     return move_id in ["move1", "move2", "move3", "move4"]
