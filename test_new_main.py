@@ -65,7 +65,7 @@ def play(window):
         fps_counter()
         bg_path = os.path.join(background_dir_path,"bg-forest.png")
         if not battle_start:
-            pokemon_player,pokemon_opponent,window = start_battle(window,trainer,opponent,background=bg_path)
+            pokemon_player,pokemon_opponent,window = ui_battle.start_battle(window,trainer,opponent,background=bg_path)
             battle_start = True
         ui_battle.refresh_screen(window,pokemon_player,pokemon_opponent)
         
