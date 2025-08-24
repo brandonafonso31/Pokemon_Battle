@@ -1,6 +1,8 @@
 import os,sys,pygame
-from config import *
+from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path
+from pygame.locals import *
 from button_test import Button_test
+import pokemon_trainer
 
 #------|Init pygame
 pygame.init()
@@ -31,12 +33,6 @@ def fps_counter():
     fps = str(int(clock.get_fps()))
     fps_t = font.render(f"{fps} fps" , 1, pygame.Color("RED"))
     window.blit(fps_t,(0,0))
-    
-#------|Button
-PLAY_BUTTON = create_button("Play", 200 ,200)
-OPTIONS_BUTTON = create_button("Options", 200,300)
-BACK_BUTTON = create_button("Back", 200,400)
-QUIT_BUTTON = create_button("Quit", 200,400)
 
 #------|Var
 y_menu = res_scene[1] + 50
@@ -46,10 +42,27 @@ BACKGROUND_LENTH,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
 ratio = res_scene[1] / BACKGROUND_HEIGHT
 scale = (BACKGROUND_LENTH*ratio,BACKGROUND_HEIGHT*ratio)
 BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
+trainer,opponent = pokemon_trainer.init_trainer()
+ 
+#------|Button
+PLAY_BUTTON = create_button("Jouer", 200 ,200)
+OPTIONS_BUTTON = create_button("Options", 200,300)
+BACK_BUTTON = create_button("Retour", 200,400)
+QUIT_BUTTON = create_button("Quitter", 200,400)
+ATTACK_BUTTON = create_button("Attaquer", resolution[0] - 400, resolution[1] - 300)
+POKEMON_BUTTON = create_button("Pokémon", resolution[0] - 200, resolution[1] - 100)
+BAG_BUTTON = create_button("Sac", resolution[0] + 50, resolution[1] - 100)
 
 #------|function
 def play():
+    
+    #------|Variable
+    battle_start = False
+    in_battle = False
+    current_menu = ""
+    fight_continue = True
     run = True
+    
     while run :
         dt = clock.tick(30)
         window.fill(BLACK)        
@@ -57,16 +70,20 @@ def play():
         fps_counter()
         
         pos = pygame.mouse.get_pos()
-        draw_text("PLAY", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
 
-        for button in [BACK_BUTTON]:
+        for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON, BACK_BUTTON]:
             button.draw(window)
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-                
+            if ATTACK_BUTTON.handle_event(event):
+                run = False
+            if BAG_BUTTON.handle_event(event):
+                run = False
+            if POKEMON_BUTTON.handle_event(event):
+                run = False  
             if BACK_BUTTON.handle_event(event):
                 run = False
 
