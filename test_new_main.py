@@ -59,10 +59,9 @@ def play():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
                 
-                if BACK_BUTTON.rect.collidepoint(pos):
-                    run = False # break
+            if BACK_BUTTON.handle_event(event):
+                run = False
 
         pygame.display.flip()
 
@@ -83,10 +82,9 @@ def options():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
                 
-                if BACK_BUTTON.rect.collidepoint(pos):
-                    run = False
+            if BACK_BUTTON.handle_event(event):
+                run = False
 
         pygame.display.flip()
 
@@ -97,7 +95,13 @@ def main_menu():
         window.fill(BLACK)
         fps_counter()
         
-        pos = pygame.mouse.get_pos()
+        BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
+        BACKGROUND_LENTH,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
+        ratio = res_scene[1] / BACKGROUND_HEIGHT
+        scale = (BACKGROUND_LENTH*ratio,BACKGROUND_HEIGHT*ratio)
+        BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
+        window.blit(BACKGROUND_INTRO,(0,0))
+        
         draw_text("MAIN MENU", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
