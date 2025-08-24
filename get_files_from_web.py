@@ -6,7 +6,7 @@ from config import background_dir_path
 BASE_URL = "https://play.pokemonshowdown.com/fx/"
 DOWNLOAD_DIR = background_dir_path
 file_extension = ".png"
-start_file = "bg-"
+start_file = "bg"
 
 # 1. Crée le dossier s’il n’existe pas
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
@@ -17,10 +17,11 @@ soup = BeautifulSoup(resp.text, 'html.parser')
 
 # 3. Filtrer les liens vers les fichiers file_extension
 links = soup.find_all('a')
-audio_files = [a['href'] for a in links if a['href'].endswith(file_extension) and a['href'].startswith(start_file)]
+all_files = [a['href'] for a in links if a['href'].endswith(file_extension) and a['href'].startswith(start_file)]
+print(len(all_files))
 
 # 4. Télécharger chaque fichier
-for filename in audio_files:
+for filename in all_files:
     url = BASE_URL + filename
     print(f"Téléchargement de : {filename}")
     r = requests.get(url)
