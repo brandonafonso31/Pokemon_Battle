@@ -1,4 +1,4 @@
-import os,sys,pygame
+import os,sys,pygame,pokemon_battle
 from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path,background_dir_path
 from pygame.locals import *
 from button_test import Button_test
@@ -38,9 +38,9 @@ def fps_counter():
 y_menu = res_scene[1] + 50
 x_menu = 50
 BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
-BACKGROUND_LENTH,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
-ratio = res_scene[1] / BACKGROUND_HEIGHT
-scale = (BACKGROUND_LENTH*ratio,BACKGROUND_HEIGHT*ratio)
+BACKGROUND_LENGHT,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
+ratio = resolution[0] / BACKGROUND_LENGHT
+scale = (BACKGROUND_LENGHT*ratio,BACKGROUND_HEIGHT*ratio)
 BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
 trainer,opponent = pokemon_trainer.init_trainer()
  
@@ -53,17 +53,18 @@ QUIT_BUTTON = create_button("Quitter", 200,400)
 ATTACK_BUTTON = create_button("Attaquer", (resolution[0] - 191)//2, res_scene[1] + 18)
 POKEMON_BUTTON = create_button("Pokémon", resolution[0] - 191 - 18, resolution[1] - 82 - 18)
 BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
-print(BAG_BUTTON.rect)
+# taille du boutton sans texte : 191 x 82
+
 #------|function
-def play():
+def play(window):
     pygame.mixer.music.stop()
     pygame.mixer.music.load(os.path.join(song_dir_path,"battle/trainer_BW.mp3"))
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
     
     #------|Variable
+    battle_start = False
     play_running = True
-    
     while play_running :
         dt = clock.tick(30)
         window.fill(BLACK)        
@@ -71,7 +72,9 @@ def play():
         fps_counter()
         bg = pygame.image.load(os.path.join(background_dir_path,"bg-forest.png"))
         window.blit(bg,(0,0))
-
+        if not battle_start:
+            pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent)
+            battle_start = True
         for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
             button.draw(window)
             
@@ -110,7 +113,7 @@ def options():
 
         pygame.display.flip()
 
-def main_menu():
+def main_menu(window):
     pygame.mixer.music.stop()
     pygame.mixer.music.load(os.path.join(song_dir_path,"sys/title.mp3"))
     pygame.mixer.music.play(loops=-1)
@@ -132,7 +135,7 @@ def main_menu():
                 pygame.quit()
                 sys.exit()
             if PLAY_BUTTON.handle_event(event):
-                play()
+                play(window)
             if OPTIONS_BUTTON.handle_event(event):
                 options()
             if QUIT_BUTTON.handle_event(event):
@@ -141,4 +144,4 @@ def main_menu():
 
         pygame.display.flip()
 
-main_menu()
+main_menu(window)
