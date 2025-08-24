@@ -1,6 +1,6 @@
 import os
 
-project_name = "Pokemon\nBattle Project"
+project_name = "Pokemon: Battle Project"
 res_scene = (1050,540)
 resolution = (res_scene[0],260+res_scene[1])
 

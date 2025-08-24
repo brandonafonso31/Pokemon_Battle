@@ -13,9 +13,6 @@ pygame.mixer.init()
 # dt = 0
 
 #------|Resolution
-res_scene = (1050,540)
-y_res = 260 + res_scene[1] # 2*res_scene[1]
-resolution = (res_scene[0],y_res)
 window = pygame.display.set_mode(resolution)
 pygame.display.set_caption("Pokemon Battle")
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
