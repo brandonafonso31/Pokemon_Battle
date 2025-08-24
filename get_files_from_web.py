@@ -1,9 +1,11 @@
 import os
 import requests
 from bs4 import BeautifulSoup
+from config import background_dir_path
 
-BASE_URL = "https://play.pokemonshowdown.com/audio/cries/"
-DOWNLOAD_DIR = "song/cries"
+BASE_URL = "https://play.pokemonshowdown.com/fx/"
+DOWNLOAD_DIR = background_dir_path
+file_extension = ".png"
 
 # 1. Crée le dossier s’il n’existe pas
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
@@ -12,9 +14,9 @@ os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 resp = requests.get(BASE_URL)
 soup = BeautifulSoup(resp.text, 'html.parser')
 
-# 3. Filtrer les liens vers les fichiers .mp3 ou .ogg
+# 3. Filtrer les liens vers les fichiers file_extension
 links = soup.find_all('a')
-audio_files = [a['href'] for a in links if a['href'].endswith(('.mp3'))]
+audio_files = [a['href'] for a in links if a['href'].endswith((file_extension))]
 
 # 4. Télécharger chaque fichier
 for filename in audio_files:
