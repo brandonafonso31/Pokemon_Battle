@@ -31,24 +31,23 @@ def start_battle(window, trainer, trainer_ia, \
     running = True
 
     while running:
-        dt = clock(30) / 1000 # accumulate le temps passé (en secondes)
+        dt = clock.tick(30) / 1000 # accumulate le temps passé (en secondes)
         elapsed += dt
-        if step == 0 and elapsed >= 5:  # après 5s : afficher ennemi
+        
+        if step == 0 and elapsed >= 2.5:  # après 2.5s : afficher ennemi
             pokemon_opponent, _ = trainer_ia.send_next("front")
             ui_battle.refresh_pokemon_sprite(window, pokemon_opponent, battle_data, "opponent")
             ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
             pygame.display.flip()
             step = 1
-            elapsed = 0
-        elif step == 1 and elapsed >= 5:  # après 10s : afficher joueur
+            
+        elif step == 1 and elapsed >= 5:  # après 5s : afficher joueur
             pokemon_player, _ = trainer.send_next("back")
             ui_battle.refresh_pokemon_sprite(window, pokemon_player, battle_data, "trainer")
             ui_battle.draw_hp_bar(window, pokemon_player, from_trainer=True)
             pygame.display.flip()
             step = 2
-
-        elif step == 2 :
-            running = False  # sortie de la boucle
+            running = False
 
     return pokemon_player, pokemon_opponent, window
 
