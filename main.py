@@ -10,6 +10,7 @@ import pokemon_trainer
 pygame.init()
 pygame.mixer.init()
 # clock = pygame.time.Clock()
+# dt = 0
 
 #------|Resolution
 res_scene = (1050,540)
