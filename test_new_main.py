@@ -1,5 +1,5 @@
-import os,sys,pygame,pokemon_battle
-from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path,background_dir_path
+import os,sys,pygame,pokemon_battle,ui_battle,json,sprite
+from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path,background_dir_path,battle_json_path
 from pygame.locals import *
 from button_test import Button_test
 import pokemon_trainer
@@ -13,7 +13,7 @@ dt = 0
 #------|Resolution
 res_scene = (700,500)
 resolution = (res_scene[0],res_scene[1]+200)
-window = pygame.display.set_mode(resolution)
+window = pygame.display.set_mode(resolution,vsync=1)
 pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
 
@@ -56,25 +56,19 @@ BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
 # taille du boutton sans texte : 191 x 82
 
 #------|function
-def play(window):
-    pygame.mixer.music.stop()
-    pygame.mixer.music.load(os.path.join(song_dir_path,"battle/trainer_BW.mp3"))
-    pygame.mixer.music.play(loops=-1)
-    pygame.mixer.music.set_volume(0.3)
-    
+def play(window):    
     #------|Variable
     battle_start = False
     play_running = True
     while play_running :
         dt = clock.tick(30)
-        window.fill(BLACK)        
-        window.blit
         fps_counter()
-        bg = pygame.image.load(os.path.join(background_dir_path,"bg-forest.png"))
-        window.blit(bg,(0,0))
+        bg_path = os.path.join(background_dir_path,"bg-forest.png")
         if not battle_start:
-            pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent)
+            pokemon_player,pokemon_opponent,window = start_battle(window,trainer,opponent,background=bg_path)
             battle_start = True
+        ui_battle.refresh_screen(window,pokemon_player,pokemon_opponent)
+        
         for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
             button.draw(window)
             
