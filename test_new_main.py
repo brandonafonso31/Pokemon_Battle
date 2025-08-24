@@ -24,7 +24,7 @@ def draw_text(text, font, text_col, x, y):
 def create_button(text,x,y):
     button_img_path = os.path.join(img_dir_path,f"battle_ui/move_button.png")
     button_img = pygame.image.load(button_img_path).convert_alpha()
-    return Button(x, y, button_img, 1, text)
+    return Button_test(x, y, button_img, 1, text)
 
 def fps_counter():
     fps = str(int(clock.get_fps()))
