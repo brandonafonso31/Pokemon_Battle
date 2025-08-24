@@ -1,0 +1,117 @@
+import os,sys,pygame
+from config import *
+from button import Button
+
+#------|Init pygame
+pygame.init()
+pygame.mixer.init()
+clock = pygame.time.Clock()
+dt = 0
+
+#------|Resolution
+res_scene = (1050,540)
+window = pygame.display.set_mode(res_scene)
+pygame.display.set_caption("Pokemon Battle")
+pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
+
+#------|Fonts
+font = pygame.font.SysFont("arialblack",40)
+
+def draw_text(text, font, text_col, x, y):
+    img = font.render(text, True, text_col)
+    window.blit(img, (x, y))
+
+def create_button(text,x,y):
+    button_img_path = os.path.join(img_dir_path,f"battle_ui/move_button.png")
+    button_img = pygame.image.load(button_img_path).convert_alpha()
+    return Button(x, y, button_img, 1, text)
+
+#------|Button
+PLAY_BUTTON = create_button("Play", 200 ,200)
+OPTIONS_BUTTON = create_button("Options", 200,300)
+BACK_BUTTON = create_button("Back", 200,400)
+QUIT_BUTTON = create_button("Quit", 200,400)
+
+#------|create button instances
+y_menu = res_scene[1] + 50
+x_menu = 50
+
+#------|function
+def play():
+    run = True
+    while run :
+        dt = clock.tick(30)
+        window.fill(BLACK)
+        
+        pos = pygame.mouse.get_pos()
+        draw_text("PLAY", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+
+        for button in [BACK_BUTTON]:
+            window.blit(button.image, (button.rect.x, button.rect.y))
+            window.blit(button.text_surface,button.text_rect)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                
+                if BACK_BUTTON.rect.collidepoint(pos):
+                    run = False # break
+
+        pygame.display.flip()
+
+def options():
+    run = True
+    while run :
+        dt = clock.tick(30)
+        window.fill(BLACK)
+        
+        pos = pygame.mouse.get_pos()
+        draw_text("OPTIONS", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+
+        for button in [BACK_BUTTON]:
+            window.blit(button.image, (button.rect.x, button.rect.y))
+            window.blit(button.text_surface,button.text_rect)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                
+                if BACK_BUTTON.rect.collidepoint(pos):
+                    run = False
+
+        pygame.display.flip()
+
+def main_menu():
+    run = True
+    while run :
+        dt = clock.tick(30)
+        window.fill(BLACK)
+        
+        pos = pygame.mouse.get_pos()
+        draw_text("MAIN MENU", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+
+        for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
+            window.blit(button.image, (button.rect.x, button.rect.y))
+            window.blit(button.text_surface,button.text_rect)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                
+                if PLAY_BUTTON.rect.collidepoint(pos):
+                    play()
+                if OPTIONS_BUTTON.rect.collidepoint(pos):
+                    options()
+                if QUIT_BUTTON.rect.collidepoint(pos):
+                    pygame.quit()
+                    sys.exit()
+
+        pygame.display.flip()
+
+main_menu()
