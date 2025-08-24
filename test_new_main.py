@@ -97,6 +97,9 @@ def options():
         pygame.display.flip()
 
 def main_menu():
+    pygame.mixer.music.load(os.path.join(song_dir_path,"sys/title.mp3"))
+    pygame.mixer.music.play(loops=-1)
+    pygame.mixer.music.set_volume(0.3)
     run = True
     while run :
         dt = clock.tick(30)
@@ -104,7 +107,7 @@ def main_menu():
         window.blit(BACKGROUND_INTRO,(0,0))
         fps_counter()
         
-        draw_text(project_name, font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2 - 100)
+        draw_text(project_name, font, "#b68f40", res_scene[0]//2 - 200, res_scene[1]//3 - 100)
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
             button.draw(window)
