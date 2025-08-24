@@ -76,32 +76,36 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
     if current_length > target_length :
         hp_step = max(1, (previous_hp - current_hp) // 20)
         anim_hp = previous_hp
-        
+        clock = pygame.time.Clock()
         while anim_hp > current_hp or current_length > target_length:
-            if anim_hp > current_hp:
-                anim_hp = max(current_hp, anim_hp - hp_step)
+            dt = clock.tick(30) / 1000 # accumulate le temps passé (en secondes)
+            elapsed += dt
             
-            current_length = int(hp_bar_length * (anim_hp / hp_max))
-            if current_length < target_length:
-                current_length = target_length
+            if elapsed >= 0.05:
+                if anim_hp > current_hp:
+                    anim_hp = max(current_hp, anim_hp - hp_step)
             
-            color = get_color(current_length / hp_bar_length)
+                current_length = int(hp_bar_length * (anim_hp / hp_max))
+                if current_length < target_length:
+                    current_length = target_length
+                
+                color = get_color(current_length / hp_bar_length)
 
-            # Dessiner le fond blanc (ou autre couleur)
-            pygame.draw.rect(window, WHITE, background_rect)
-            pygame.draw.rect(window, BLACK, background_rect, 2)  # Bordure noire
+                # Dessiner le fond blanc (ou autre couleur)
+                pygame.draw.rect(window, WHITE, background_rect)
+                pygame.draw.rect(window, BLACK, background_rect, 2)  # Bordure noire
 
-            # Barre de vie
-            pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
-            bar_rect = (x, y, current_length, hp_bar_height)
-            pygame.draw.rect(window, color, bar_rect)
+                # Barre de vie
+                pygame.draw.rect(window, (50, 50, 50), (x, y, hp_bar_length, hp_bar_height))
+                bar_rect = (x, y, current_length, hp_bar_height)
+                pygame.draw.rect(window, color, bar_rect)
             
-            # Texte
-            text = font.render(f"{pokemon.name} HP: {anim_hp}/{hp_max}", True, BLACK)
-            window.blit(text, (x, y - 40))
-            
-            pygame.display.update(background_rect)
-            pygame.time.delay(50)
+                # Texte
+                text = font.render(f"{pokemon.name} HP: {anim_hp}/{hp_max}", True, BLACK)
+                window.blit(text, (x, y - 40))
+                
+                pygame.display.update(background_rect)
+                elapsed = 0
     else:
         # Affichage direct sans animation
         bar_length = int(hp_bar_length * (current_hp / hp_max))
