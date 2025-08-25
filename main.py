@@ -96,7 +96,7 @@ def ko(window, pokemon_player, pokemon_opponent):
             state = 2
             elapsed = 0 
         
-        elif state == 2 and elapsed >= 2:    
+        elif state == 2 and elapsed >= 4:    
             if pokemon_ko is pokemon_player:
                 pokemon_player = trainer.send_next("back")
                 ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
