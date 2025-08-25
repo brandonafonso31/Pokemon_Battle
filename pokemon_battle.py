@@ -117,7 +117,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     move = getattr(first, first_move_id)
     print(f"PP {first.name} {first_move_id}: {move.pp}, hp {second.name}: {second.hp}\n")
 
-    turn_running = True
+    turn_running = not pokemon_2.is_dead()
+
     clock = pygame.time.Clock()
     elapsed = 0    
     state = 0
