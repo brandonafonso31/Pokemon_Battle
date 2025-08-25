@@ -97,17 +97,18 @@ def ko(window, pokemon_player, pokemon_opponent):
             
         # État 2 : envoie du pokemon suivant après 4s apres le state 1
         elif state == 2 and elapsed >= 4:    
+            pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+            text = f"{pokemon_ko.name} est envoyé par {trainer.name if pokemon_ko is pokemon_player else opponent.name} !"
+            draw_text(text, font, WHITE, 100, 600)
             if pokemon_ko is pokemon_player:
                 pokemon_player = trainer.send_next("back")
-
+                ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
+                ui_battle.draw_hp_bar(window, pokemon_player, True)
             else:
                 pokemon_opponent = opponent.send_next("front")
-
-            """ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
-            ui_battle.draw_hp_bar(window, pokemon_player, True)
-            ui_battle.refresh_pokemon_sprite(window,pokemon_opponent,"opponent") 
-            ui_battle.draw_hp_bar(window, pokemon_opponent, False)"""
-            ui_battle.refresh_screen(window,pokemon_player,pokemon_opponent)
+                ui_battle.refresh_pokemon_sprite(window,pokemon_opponent,"opponent") 
+                ui_battle.draw_hp_bar(window, pokemon_opponent, False)
+                
             ko_running = False
             
         pygame.display.flip()
