@@ -14,12 +14,12 @@
     "opponent": {
         "1": {
             "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_1.png",
-            "x": 472,
+            "x": 432,
             "y": 66
         },
         "2": {
             "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_2.png",
-            "x": 472,
+            "x": 432,
             "y": 90
         }
     },

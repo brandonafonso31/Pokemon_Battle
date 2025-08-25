@@ -106,17 +106,27 @@ def ko(window, pokemon_player, pokemon_opponent):
         # État 2 : envoie du pokemon suivant après 4s apres le state 1
         elif state == 2 and elapsed >= 2:    
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-            text = f"{pokemon_ko.name} est envoyé par {trainer.name if pokemon_ko is pokemon_player else opponent.name} !"
-            draw_text(text, font, WHITE, 100, 600)
             if pokemon_ko is pokemon_player:
                 pokemon_player = trainer.send_next("back")
+                if pokemon_player is None:
+                    return pokemon_player,pokemon_opponent, False
+                text = f"{pokemon_player.name} est envoyé par {trainer.name} !"
+                draw_text(text, font, WHITE, 100, 600)
                 ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
                 ui_battle.draw_hp_bar(window, pokemon_player, True)
             else:
                 pokemon_opponent = opponent.send_next("front")
+                if pokemon_player is None:
+                    return pokemon_player,pokemon_opponent, False
+                text = f"{pokemon_opponent.name} est envoyé par {opponent.name} !"
+                draw_text(text, font, WHITE, 100, 600)
                 ui_battle.refresh_pokemon_sprite(window,pokemon_opponent,"opponent") 
                 ui_battle.draw_hp_bar(window, pokemon_opponent, False)
-                
+            
+            state = 3
+            elapsed = 0
+        
+        elif state == 3 and elapsed >= 2: 
             ko_running = False
             
         pygame.display.flip()
@@ -188,6 +198,12 @@ def battle(window):
                 pass
 
         pygame.display.flip()
+         
+    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+    winner,loser = pokemon_trainer.get_winner(pokemon_player.trainer,pokemon_opponent.trainer)
+    text = f"{winner.name} a vaincu {loser.name} !"
+    draw_text(text, font, WHITE, 100, 600)
+    pygame.time.delay(1000)
 
 def options():
     options_running = True
