@@ -276,12 +276,16 @@ class Pokemon:
             
             if state == 0 and elapsed >= 1:
                 window.blit(background, rect, rect)
-                pygame.display.update(rect)
                 state = 0
                 elapsed = 0
             
             elif state == 1 and elapsed >= 0.5:
                 waiting_for_death = False
+            
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+        pygame.display.flip()
 
     def play_howl(self):
         clock = pygame.time.Clock()
