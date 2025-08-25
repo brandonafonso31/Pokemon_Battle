@@ -206,7 +206,8 @@ class Pokemon:
         return all([_ <= 252 for _ in self.EV.values()])
 
     def add_rect(self,coord,scale = 2):
-        self.rect = pygame.Rect(coord[0], coord[1], 100*scale, 100*scale)
+        default_size = 64,64
+        self.rect = pygame.Rect(coord[0], coord[1], default_size[0]*scale, default_size[1]*scale)
     
     
     def change_talent(self, talent: Talent):
@@ -271,11 +272,13 @@ class Pokemon:
             json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"]
 
         scale = 2 + (front_or_back == "back")
-        w = 100 * scale
+        w = 100 * scale * 64    #64 taille par default des images
         rect = pygame.Rect(x, y, w, w)
 
         # Exemple très simple : après 1s, efface le sprite
         if elapsed >= 1:
+            self.play_howl()
+        elif elapsed >= 3:
             window.blit(background, rect, rect)  # on efface le sprite
             return True  # animation terminée
         return False  # animation encore en cours
