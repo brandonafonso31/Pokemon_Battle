@@ -276,9 +276,8 @@ class Pokemon:
         rect = pygame.Rect(x, y, w, w)
 
         # Exemple très simple : après 1s, efface le sprite
-        if elapsed >= 1:
+        if elapsed >= 2:
             self.play_howl()
-        elif elapsed >= 3:
             window.blit(background, rect, rect)  # on efface le sprite
             return True  # animation terminée
         return False  # animation encore en cours
