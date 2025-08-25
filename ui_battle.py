@@ -50,6 +50,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         hp_step = max(1, (previous_hp - current_hp) // 20)
         anim_hp = previous_hp
         clock = pygame.time.Clock()
+        elapsed = 0
         while anim_hp > current_hp or current_length > target_length:
             dt = clock.tick(30) / 1000 # accumulate le temps passé (en secondes)
             elapsed += dt
