@@ -1,15 +1,15 @@
 from button import *
 from PIL import ImageColor
 from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution
-import os,pokemon_battle,json,sprite
+import os,pokemon_battle,json,sprite,button_test
 
-def draw_move(window,move,x,y,func_to_create = None):
+def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
     move_img_path = os.path.join(img_dir_path,f"battle_ui/{move.type.name}_attack_button.png")
     move_img = pygame.image.load(move_img_path).convert_alpha()
-    move_button = Button(x, y, move_img, 1,move.name,ImageColor.getrgb(move.type.color()))
-    if func_to_create is None: move_button.draw(window)
-    else: return func_to_create(move.name,x,y,move_img_path)
+    move_button = button_test.Button_test(x, y, move_img, 1,move.name,ImageColor.getrgb(move.type.color()))
+    move_button.draw(window)
+    return move_button
                                 
 def get_color(ratio):
     if ratio > 0.5:

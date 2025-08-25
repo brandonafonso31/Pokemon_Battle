@@ -24,7 +24,9 @@ def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     window.blit(img, (x, y))
 
-def create_button(text,x,y,path):
+def create_button(text,x,y,path=""):
+    if path == "":
+        path = os.path.join(img_dir_path,"battle_ui/move_button.png")
     button_img = pygame.image.load(path).convert_alpha()
     return Button_test(x, y, button_img, 1, text)
 
@@ -75,14 +77,13 @@ def battle(window,pokemon_player,pokemon_opponent):
         window.fill(BLACK)
         fps_counter()
         
-        draw_text("OPTIONS", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+        ui_battle.refresh_screen(window,pokemon_player,pokemon_opponent)
         
         moves_available = pokemon_player.get_moveset()
         list_coord = [(18,res_scene[1] + 18),(resolution[0] - 191 - 18, res_scene[1] + 18), \
             (18,resolution[1] - 18),(resolution[0] - 191 - 18,resolution[1] - 18)]
         
-        moves_button = [ui_battle.draw_move(window,move,coord[0], coord[1],create_button) for move,coord in zip(moves_available,list_coord) ]
-            
+        moves_button = [ui_battle.draw_move(window,move,coord[0], coord[1]) for move,coord in zip(moves_available,list_coord)] 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -102,9 +103,10 @@ def battle(window,pokemon_player,pokemon_opponent):
                 
             
             if BACK_BUTTON.handle_event(event):
-                options_running = False
+                battle_running = False
 
         pygame.display.flip()
+    return pokemon_player,pokemon_opponent,still_in_battle
 
 def play(window):    
     #------|Variable
