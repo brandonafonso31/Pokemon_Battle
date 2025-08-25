@@ -35,15 +35,15 @@ def start_battle(window, trainer, trainer_ia, \
         elapsed += dt
         
         if step == 0 and elapsed >= 2.5:  # après 2.5s : afficher ennemi
-            pokemon_opponent, _ = trainer_ia.send_next("front")
-            ui_battle.refresh_pokemon_sprite(window, pokemon_opponent, battle_data, "opponent")
+            pokemon_opponent = trainer_ia.send_next("front")
+            ui_battle.refresh_pokemon_sprite(window, pokemon_opponent, "opponent",battle_data)
             ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
             pygame.display.flip()
             step = 1
             
         elif step == 1 and elapsed >= 5:  # après 5s : afficher joueur
-            pokemon_player, _ = trainer.send_next("back")
-            ui_battle.refresh_pokemon_sprite(window, pokemon_player, battle_data, "trainer")
+            pokemon_player = trainer.send_next("back")
+            ui_battle.refresh_pokemon_sprite(window, pokemon_player, "trainer",battle_data)
             ui_battle.draw_hp_bar(window, pokemon_player, from_trainer=True)
             pygame.display.flip()
             step = 2
@@ -142,9 +142,9 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
             move = getattr(second, second_move_id)
             print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
             state = 1
-            if state == 1 and elapsed >= 3:
-                turn_running = False
-                state = 0
+        if state == 1 and elapsed >= 3:
+            turn_running = False
+            state = 0
     current_timing = bt.change_timing()
 
     return pokemon_1, pokemon_2, "ko" if (pokemon_1.is_dead() or pokemon_2.is_dead()) else "continue"

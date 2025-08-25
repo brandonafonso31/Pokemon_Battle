@@ -1,7 +1,7 @@
 from button import *
 from PIL import ImageColor
 from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution
-import os,pokemon_battle,json,sprite,button_test
+import os,json,sprite,button_test
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
@@ -99,7 +99,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         window.blit(text, (x, y - 40))
 
 
-def refresh_pokemon_sprite(window,pokemon,data,trainer_or_opponent):
+def refresh_pokemon_sprite(window,pokemon,trainer_or_opponent,data = json.load(open(battle_json_path,"r"))):
     if not pokemon.is_ko:
         current_pokemon_id = data["current"]
         path = data[trainer_or_opponent][str(current_pokemon_id[trainer_or_opponent == "opponent"])]
@@ -116,11 +116,11 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
     background = pygame.image.load(data["background"]).convert()
     window.blit(background, (0, 0))
 
-    refresh_pokemon_sprite(window, pokemon_trainer, data, "trainer")
-    refresh_pokemon_sprite(window, pokemon_opponent, data, "opponent")
+    refresh_pokemon_sprite(window, pokemon_trainer, "trainer")
+    refresh_pokemon_sprite(window, pokemon_opponent, "opponent")
 
     # HP Bars
     draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer)
     draw_hp_bar(window, pokemon_opponent, False, old_hp_opponent)
 
-    pygame.display.flip()
+    #pygame.display.flip()
