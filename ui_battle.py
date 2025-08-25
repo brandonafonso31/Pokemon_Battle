@@ -1,13 +1,13 @@
 from button import *
 from PIL import ImageColor
 from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution
-import os,json,sprite,button_test
+import os,json,sprite,button
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
     move_img_path = os.path.join(img_dir_path,f"battle_ui/{move.type.name}_attack_button.png")
     move_img = pygame.image.load(move_img_path).convert_alpha()
-    move_button = button_test.Button_test(x, y, move_img, 1,move.name,ImageColor.getrgb(move.type.color()))
+    move_button = button.Button(x, y, move_img, 1,move.name,ImageColor.getrgb(move.type.color()))
     move_button.draw(window)
     return move_button
                                 

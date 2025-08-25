@@ -1,7 +1,7 @@
 import os,sys,pygame,pokemon_battle,ui_battle,json,sprite,pokemon_trainer
 from config import project_name,img_dir_path,sys_dir_path,BLACK,WHITE,song_dir_path,background_dir_path,battle_json_path
 from pygame.locals import *
-from button_test import Button_test
+from button import Button
 
 #------|Init pygame
 pygame.init()
@@ -28,7 +28,7 @@ def create_button(text,x,y,path=""):
     if path == "":
         path = os.path.join(img_dir_path,"battle_ui/move_button.png")
     button_img = pygame.image.load(path).convert_alpha()
-    return Button_test(x, y, button_img, 1, text)
+    return Button(x, y, button_img, 1, text)
 
 def fps_counter():
     fps = str(int(clock.get_fps()))
@@ -99,13 +99,15 @@ def ko(window, pokemon_player, pokemon_opponent):
         elif state == 2 and elapsed >= 4:    
             if pokemon_ko is pokemon_player:
                 pokemon_player = trainer.send_next("back")
-                ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
-                ui_battle.draw_hp_bar(window, pokemon_player, True)
+
             else:
                 pokemon_opponent = opponent.send_next("front")
-                ui_battle.refresh_pokemon_sprite(window,pokemon_opponent,"opponent") 
-                ui_battle.draw_hp_bar(window, pokemon_opponent, False)
-            
+
+            """ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
+            ui_battle.draw_hp_bar(window, pokemon_player, True)
+            ui_battle.refresh_pokemon_sprite(window,pokemon_opponent,"opponent") 
+            ui_battle.draw_hp_bar(window, pokemon_opponent, False)"""
+            ui_battle.refresh_screen(window,pokemon_player,pokemon_opponent)
             ko_running = False
             
         pygame.display.flip()
