@@ -84,7 +84,7 @@ def ko(window,pokemon_player,pokemon_opponent):
         if state ==0 and elapsed >= 0.5 :
             draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
             pygame.display.flip()
-            state = 2
+            state = 1
         if state == 1 and elapsed >= 2:    
             # animation de la mort du pokemon
             pokemon_ko.animate_death(window,front_or_back)
