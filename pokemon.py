@@ -285,18 +285,15 @@ class Pokemon:
     def play_howl(self):
         clock = pygame.time.Clock()
         elapsed = 0
-        state = 0
         waiting_for_howl = True
         sound = pygame.mixer.Sound(self.howl_path)
         while waiting_for_howl:
             dt = clock.tick(30) / 1000
             elapsed += dt
             
-            if state == 0 and elapsed >= 0.3:
+            if elapsed >= 0.3:
                 sound.play()
-                state = 1 
-                
-            elif state == 1 and elapsed >= sound.get_length() + 5:
+                elapsed = 0
                 waiting_for_howl = False
                 
             for event in pygame.event.get():
