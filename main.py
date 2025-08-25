@@ -107,17 +107,19 @@ def ko(window, pokemon_player, pokemon_opponent):
         elif state == 2 and elapsed >= 2:    
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             if pokemon_ko is pokemon_player:
-                pokemon_player = trainer.send_next("back")
-                if pokemon_player is None:
-                    return pokemon_player,pokemon_opponent, False
+                new_pokemon = trainer.send_next("back")
+                if new_pokemon is None:
+                    return new_pokemon,pokemon_opponent, False
+                pokemon_player = new_pokemon
                 text = f"{pokemon_player.name} est envoyé par {trainer.name} !"
                 draw_text(text, font, WHITE, 100, 600)
                 ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
                 ui_battle.draw_hp_bar(window, pokemon_player, True)
             else:
-                pokemon_opponent = opponent.send_next("front")
-                if pokemon_player is None:
+                new_pokemon = opponent.send_next("front")
+                if new_pokemon is None:
                     return pokemon_player,pokemon_opponent, False
+                pokemon_opponent = new_pokemon
                 text = f"{pokemon_opponent.name} est envoyé par {opponent.name} !"
                 draw_text(text, font, WHITE, 100, 600)
                 ui_battle.refresh_pokemon_sprite(window,pokemon_opponent,"opponent") 
@@ -179,11 +181,26 @@ def battle(window):
     # random background()
     bg_path = os.path.join(background_dir_path,"bg-forest.png")
     pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent,background=bg_path)
+    elapsed = 0
+    state =""
     while battle_running :
-        dt = clock.tick(30)
-                    
-        for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
-            button.draw(window)
+        dt = clock.tick(30) / 1000
+        elapsed += dt
+        
+        if state != "ko":
+            for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
+                button.draw(window)
+        
+        if state == "ko" and elapsed >= 2:
+            pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+            winner,loser = pokemon_trainer.get_winner(pokemon_player.trainer,pokemon_opponent.trainer)
+            text = f"{winner.name} a vaincu {loser.name} !"
+            draw_text(text, font, WHITE, 100, 600)
+            elapsed = 0
+            state = "end"
+        
+        elif state == "end" and elapsed >= 5:
+            battle_running = False
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -192,6 +209,9 @@ def battle(window):
             if ATTACK_BUTTON.handle_event(event):
                 pokemon_player,pokemon_opponent,battle_running = \
                     turn(window,pokemon_player,pokemon_opponent)
+                if not battle_running: 
+                    state = "ko"
+                    battle_running = True
             if BAG_BUTTON.handle_event(event):
                 pass
             if POKEMON_BUTTON.handle_event(event):
@@ -199,12 +219,6 @@ def battle(window):
 
         pygame.display.flip()
          
-    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-    winner,loser = pokemon_trainer.get_winner(pokemon_player.trainer,pokemon_opponent.trainer)
-    text = f"{winner.name} a vaincu {loser.name} !"
-    draw_text(text, font, WHITE, 100, 600)
-    pygame.time.delay(1000)
-
 def options():
     options_running = True
     while options_running :
@@ -247,6 +261,9 @@ def main_menu(window):
                 sys.exit()
             if PLAY_BUTTON.handle_event(event):
                 battle(window)
+                pygame.quit()
+                sys.exit()
+
             if OPTIONS_BUTTON.handle_event(event):
                 options()
             if QUIT_BUTTON.handle_event(event):

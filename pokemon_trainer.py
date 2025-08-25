@@ -87,7 +87,7 @@ def init_trainer():
     return trainer,trainer_ai
 
 def get_winner(trainer1,trainer2):
-    winners,loser = None,None
+    winner,loser = None,None
     hp_total_trainer1 = sum([pokemon.hp for pokemon in trainer1.pokemon_team])
     hp_total_trainer2 = sum([pokemon.hp for pokemon in trainer2.pokemon_team])
     
