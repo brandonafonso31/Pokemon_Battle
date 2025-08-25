@@ -85,7 +85,7 @@ def create_pokemon_opponent(res, pokemon, id, save_to_filename: str):
     path_sprite = os.path.join(sprites_dir_path, save_to_filename)
     
     base_offset = sprite.get_base_pixel(path_sprite) - opponent_pokemon_sprite.get_height() 
-    x_opponent = (res[0] + opponent_pokemon_sprite.get_width())//2
+    x_opponent = (res[0] + opponent_pokemon_sprite.get_width())//2 - 40
     y_opponent = res[1]//2 - base_offset  - 200
 
     pokemon_json = {
