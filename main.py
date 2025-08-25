@@ -95,7 +95,8 @@ def ko(window, pokemon_player, pokemon_opponent):
             pokemon_ko.is_ko = True
             state = 2
             elapsed = 0 
-        
+            
+        # État 2 : envoie du pokemon suivant après 4s apres le state 1
         elif state == 2 and elapsed >= 4:    
             if pokemon_ko is pokemon_player:
                 pokemon_player = trainer.send_next("back")
