@@ -70,32 +70,38 @@ BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
 # taille du boutton sans texte : 191 x 82
 
 #------|function
-def ko(window,pokemon_player,pokemon_opponent):
+def ko(window, pokemon_player, pokemon_opponent):
+    trainer = pokemon_player.trainer
+    opponent = pokemon_opponent.trainer
     clock = pygame.time.Clock()
     elapsed = 0
-    pokemon_ko,front_or_back = (pokemon_player,"back") if pokemon_player.hp <= 0 else (pokemon_opponent,"front")
-    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+    pokemon_ko, front_or_back = (pokemon_player, "back") if pokemon_player.hp <= 0 else (pokemon_opponent, "front")
+    
     ko_running = True
     state = 0
+
     while ko_running:
         dt = clock.tick(30) / 1000
         elapsed += dt
-        
-        if state ==0 and elapsed >= 0.5 :
-            draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
+
+        # État 0 : afficher le message KO
+        if state == 0 and elapsed >= 0.5:
+            text = f"{pokemon_ko.name} {'ennemi' if pokemon_ko is pokemon_opponent else 'allié'} est KO"
+            draw_text(text, font, WHITE, 100, 600)
             pygame.display.flip()
             state = 1
-        if state == 1 and elapsed >= 2:    
-            # animation de la mort du pokemon
-            pokemon_ko.animate_death(window,front_or_back)
+            elapsed = 0  # reset timer
+
+        # État 1 : jouer l'animation après 2s
+        elif state == 1 and elapsed >= 2:
+            pokemon_ko.animate_death(window, front_or_back)
             pokemon_ko.is_ko = True
-                
-            state = 0
+            pygame.display.flip()
+
             if pokemon_ko is pokemon_player:
                 return trainer.send_next("back")
             else:
-                return opponent.send_next("front")
-            
+                return opponent.send_next("front")            
     
 def battle(window,pokemon_player,pokemon_opponent):
     battle_running = True
