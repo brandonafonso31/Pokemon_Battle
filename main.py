@@ -70,6 +70,7 @@ BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
 
 #------|function
 def ko(window, pokemon_player, pokemon_opponent):
+    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     print("entrée dans pokemon_ko")
     trainer = pokemon_player.trainer
     opponent = pokemon_opponent.trainer
@@ -104,6 +105,7 @@ def ko(window, pokemon_player, pokemon_opponent):
                 return opponent.send_next("front")            
     
 def battle(window, pokemon_player, pokemon_opponent):
+    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     battle_running = True
     while battle_running:
         dt = clock.tick(30)
@@ -131,7 +133,7 @@ def battle(window, pokemon_player, pokemon_opponent):
                 if button.handle_event(event):
                     pokemon_player, pokemon_opponent, still_in_battle = \
                         start_turn(window, pokemon_player, pokemon_opponent, moves_available, i)
-
+                    print("retour dans battle")
                     # 🔹 Détection KO ici, pas dans start_turn
                     if still_in_battle == "ko":
                         new_pokemon, still_alive = ko(window, pokemon_player, pokemon_opponent)
