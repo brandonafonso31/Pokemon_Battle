@@ -55,7 +55,6 @@ BACKGROUND_LENGHT,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
 ratio = resolution[0] / BACKGROUND_LENGHT
 scale = (BACKGROUND_LENGHT*ratio,BACKGROUND_HEIGHT*ratio)
 BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
-trainer,opponent = pokemon_trainer.init_trainer()
  
 #------|Button
 PLAY_BUTTON = create_button("Jouer", 200 ,200)
