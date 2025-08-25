@@ -250,63 +250,36 @@ class Pokemon:
                 print(f"{self.name} a diminué {stat_name} de {-scale} stages.")
 
 
-    def animate_death(self, window, front_or_back):
-        """Efface le sprite KO en rebattant le background sur son rect"""
-        self.play_howl()  
-        self.is_ko = True       
+    def play_howl(self):
+        """Joue le cri du Pokémon KO"""
+        sound = pygame.mixer.Sound(self.howl_path)
+        sound.play()
+
+
+    def animate_death(self, window, front_or_back, elapsed):
+        """
+        Anime la disparition du Pokémon KO (appelée à chaque frame par ko()).
+        - elapsed : temps écoulé depuis le début de l’anim
+        """
         with open("data/actual_battle.json") as f:
             json_data = json.load(f)
-            
+
         background = pygame.image.load(json_data["background"]).convert()
         current_pokemon_id = json_data["current"]
         pokemon = "opponent" if front_or_back == "front" else "trainer"
         x, y = json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["x"], \
-            json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"] 
+            json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"]
+
         scale = 2 + (front_or_back == "back")
         w = 100 * scale
         rect = pygame.Rect(x, y, w, w)
-        state = 0
-        clock = pygame.time.Clock()
-        elapsed = 0
-        waiting_for_death = True  
-              
-        while waiting_for_death:
-            dt = clock.tick(30) / 1000
-            elapsed += dt
-            
-            if state == 0 and elapsed >= 1:
-                window.blit(background, rect, rect)
-                state = 0
-                elapsed = 0
-            
-            elif state == 1 and elapsed >= 0.5:
-                waiting_for_death = False
-            
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    
-            pygame.display.flip()
 
-    def play_howl(self):
-        clock = pygame.time.Clock()
-        elapsed = 0
-        waiting_for_howl = True
-        sound = pygame.mixer.Sound(self.howl_path)
-        while waiting_for_howl:
-            dt = clock.tick(30) / 1000
-            elapsed += dt
-            
-            if elapsed >= 0.3:
-                sound.play()
-                elapsed = 0
-                waiting_for_howl = False
-                
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    
-            pygame.display.flip()
+        # Exemple très simple : après 1s, efface le sprite
+        if elapsed >= 1:
+            window.blit(background, rect, rect)  # on efface le sprite
+            return True  # animation terminée
+        return False  # animation encore en cours
+
         
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
