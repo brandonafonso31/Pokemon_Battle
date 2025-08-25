@@ -253,9 +253,9 @@ class Pokemon:
     def animate_death(self, window, front_or_back):
         """Efface le sprite KO en rebattant le background sur son rect"""
         self.play_howl()         
-        pygame.time.delay(1000)
         with open("data/actual_battle.json") as f:
             json_data = json.load(f)
+            
         background = pygame.image.load(json_data["background"]).convert()
         current_pokemon_id = json_data["current"]
         pokemon = "opponent" if front_or_back == "front" else "trainer"
@@ -264,21 +264,44 @@ class Pokemon:
         scale = 2 + (front_or_back == "back")
         w = 100 * scale
         rect = pygame.Rect(x, y, w, w)
-        window.blit(background, rect, rect)
-        pygame.display.update(rect)
-        """if self.rect:
-            window.blit(background, self.rect, self.rect)
-            pygame.display.update(self.rect)"""
+        state = 0
+        clock = pygame.time.Clock()
+        elapsed = 0
+        waiting_for_death = True  
+              
+        while waiting_for_death:
+            dt = clock.tick(30) / 1000
+            elapsed += dt
+            
+            if state == 0 and elapsed >= 1:
+                window.blit(background, rect, rect)
+                pygame.display.update(rect)
+                state = 0
+                elapsed = 0
+            
+            elif state == 1 and elapsed >= 0.5:
+                waiting_for_death = False
 
-        pygame.time.delay(500)
-
-        
-        
     def play_howl(self):
-        pygame.time.delay(100)
+        clock = pygame.time.Clock()
+        elapsed = 0
+        state = 0
+        waiting_for_howl = True
         sound = pygame.mixer.Sound(self.howl_path)
-        sound.play()        
-        pygame.time.delay(int(sound.get_length() + 500))
+        while waiting_for_howl:
+            dt = clock.tick(30) / 1000
+            elapsed += dt
+            
+            if state == 0 and elapsed >= 0.3:
+                sound.play()
+                state = 1 
+                
+            elif state == 1 and elapsed >= sound.get_length() + 5:
+                waiting_for_howl = False
+                
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
         
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
