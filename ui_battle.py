@@ -101,8 +101,10 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
 
 def refresh_pokemon_sprite(window,pokemon,trainer_or_opponent,data = None):
     if not pokemon.is_dead():
-        with open(battle_json_path, "r") as f:
-            data = json.load(f)
+        
+        if data is None: 
+            with open(battle_json_path, "r") as f:
+                data = json.load(f)
         
         current_pokemon_id = data["current"]
         path = data[trainer_or_opponent][str(current_pokemon_id[trainer_or_opponent == "opponent"])]
