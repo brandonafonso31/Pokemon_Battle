@@ -119,12 +119,13 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     turn_running = True
     clock = pygame.time.Clock()
     elapsed = 0    
+    state = 0
     while turn_running:
         dt = clock.tick(30) / 1000
         elapsed += dt
         
         # ATTAQUE DU SECOND SI VIVANT
-        if elapsed >= 1.5 and not second.is_dead():
+        if state == 0 and elapsed >= 1.5 and not second.is_dead():
         
             current_timing = bt.change_timing()
             bt.check_timing_talent(second,first)
@@ -140,8 +141,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
 
             move = getattr(second, second_move_id)
             print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
-
-            if elapsed >= 3:
+            state = 1
+            if state == 1 and elapsed >= 3:
                 turn_running = False
 
     current_timing = bt.change_timing()
