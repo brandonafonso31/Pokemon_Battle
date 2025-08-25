@@ -252,7 +252,8 @@ class Pokemon:
 
     def animate_death(self, window, front_or_back):
         """Efface le sprite KO en rebattant le background sur son rect"""
-        self.play_howl()         
+        self.play_howl()  
+        self.is_ko = True       
         with open("data/actual_battle.json") as f:
             json_data = json.load(f)
             

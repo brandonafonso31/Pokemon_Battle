@@ -92,7 +92,6 @@ def ko(window, pokemon_player, pokemon_opponent):
         # État 1 : jouer l'animation après 2s
         elif state == 1 and elapsed >= 2:
             pokemon_ko.animate_death(window, front_or_back)
-            pokemon_ko.is_ko = True
             state = 2
             elapsed = 0 
             
