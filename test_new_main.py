@@ -76,19 +76,21 @@ def ko(window,pokemon_player,pokemon_opponent):
     pokemon_ko,front_or_back = (pokemon_player,"back") if pokemon_player.hp <= 0 else (pokemon_opponent,"front")
     pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     ko_running = True
+    state = 0
     while ko_running:
         dt = clock.tick(30) / 1000
         elapsed += dt
         
-        if elapsed >= 0.5 :
+        if state ==0 and elapsed >= 0.5 :
             draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
             pygame.display.flip()
-        
-        elif elapsed >= 2:    
+            state = 2
+        if state == 1 and elapsed >= 2:    
             # animation de la mort du pokemon
             pokemon_ko.animate_death(window,front_or_back)
             pokemon_ko.is_ko = True
                 
+            state = 0
             if pokemon_ko is pokemon_player:
                 return trainer.send_next("back")
             else:
