@@ -2,25 +2,25 @@
     "trainer": {
         "1": {
             "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_back_1.png",
-            "x": 187,
-            "y": 177
+            "x": 100,
+            "y": 137
         },
         "2": {
             "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_back_2.png",
-            "x": 187,
-            "y": 205
+            "x": 100,
+            "y": 165
         }
     },
     "opponent": {
         "1": {
             "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_1.png",
-            "x": 612.5,
-            "y": 111
+            "x": 350.0,
+            "y": 91
         },
         "2": {
             "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\images\\sprites\\pokemon_front_2.png",
-            "x": 612.5,
-            "y": 136
+            "x": 350.0,
+            "y": 116
         }
     },
     "music": "C:\\Users\\Brandon\\Documents\\test_jeux\\pokemon\\song\\battle/wild_BW.mp3",

@@ -24,9 +24,8 @@ def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     window.blit(img, (x, y))
 
-def create_button(text,x,y):
-    button_img_path = os.path.join(img_dir_path,f"battle_ui/move_button.png")
-    button_img = pygame.image.load(button_img_path).convert_alpha()
+def create_button(text,x,y,path):
+    button_img = pygame.image.load(path).convert_alpha()
     return Button_test(x, y, button_img, 1, text)
 
 def fps_counter():
@@ -34,6 +33,18 @@ def fps_counter():
     fps_t = font.render(f"{fps} fps" , 1, pygame.Color("RED"))
     window.blit(fps_t,(0,0))
 
+def start_turn(pokemon_player,pokemon_opponent,moves,move_id):
+    if moves[move_id].pp <= 0:
+        print(f"{pokemon_player.name} n'a plus de PP pour {moves[0].name}")
+        return pokemon_player,pokemon_opponent,True
+    else:
+        pokemon_player,pokemon_opponent,still_in_battle = \
+            pokemon_battle.turn(pokemon_trainer, pokemon_opponent, f"move{move_id + 1}", window,res_scene,resolution) 
+        if still_in_battle == "ko":
+            still_in_battle = False
+        return pokemon_player,pokemon_opponent,still_in_battle
+            
+            
 #------|Var
 y_menu = res_scene[1] + 50
 x_menu = 50
@@ -56,6 +67,45 @@ BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
 # taille du boutton sans texte : 191 x 82
 
 #------|function
+def battle(window,pokemon_player,pokemon_opponent):
+    battle_running = True
+    still_in_battle = True
+    while battle_running :
+        dt = clock.tick(30)
+        window.fill(BLACK)
+        fps_counter()
+        
+        draw_text("OPTIONS", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+        
+        moves_available = pokemon_player.get_moveset()
+        list_coord = [(18,res_scene[1] + 18),(resolution[0] - 191 - 18, res_scene[1] + 18), \
+            (18,resolution[1] - 18),(resolution[0] - 191 - 18,resolution[1] - 18)]
+        
+        moves_button = [ui_battle.draw_move(window,move,coord[0], coord[1],create_button) for move,coord in zip(moves_available,list_coord) ]
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if len(moves_button) > 0 and moves_button[0].handle_event(event):
+                pokemon_player,pokemon_opponent,still_in_battle = \
+                    start_turn(pokemon_player,pokemon_opponent,moves_available,0)
+            if len(moves_button) > 1 and moves_button[1].handle_event(event):
+                pokemon_player,pokemon_opponent,still_in_battle = \
+                    start_turn(pokemon_player,pokemon_opponent,moves_available,1)
+            if len(moves_button) > 2 and moves_button[2].handle_event(event):
+                pokemon_player,pokemon_opponent,still_in_battle = \
+                    start_turn(pokemon_player,pokemon_opponent,moves_available,2)
+            if len(moves_button) > 3 and moves_button[3].handle_event(event):
+                pokemon_player,pokemon_opponent,still_in_battle = \
+                    start_turn(pokemon_player,pokemon_opponent,moves_available,3)          
+                
+            
+            if BACK_BUTTON.handle_event(event):
+                options_running = False
+
+        pygame.display.flip()
+
 def play(window):    
     #------|Variable
     battle_start = False
@@ -77,7 +127,8 @@ def play(window):
                 pygame.quit()
                 sys.exit()
             if ATTACK_BUTTON.handle_event(event):
-                play_running = False
+                pokemon_player,pokemon_opponent,still_in_battle = \
+                    battle(window,pokemon_player,pokemon_opponent)
             if BAG_BUTTON.handle_event(event):
                 play_running = False
             if POKEMON_BUTTON.handle_event(event):

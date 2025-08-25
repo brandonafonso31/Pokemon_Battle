@@ -1,43 +1,16 @@
 from button import *
 from PIL import ImageColor
-from config import img_dir_path,BLACK,battle_json_path,res_scene,WHITE
+from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution
 import os,pokemon_battle,json,sprite
 
-def draw_move(window,move,x,y):
+def draw_move(window,move,x,y,func_to_create = None):
     """return a bool which is did the button got draw ?"""
     move_img_path = os.path.join(img_dir_path,f"battle_ui/{move.type.name}_attack_button.png")
     move_img = pygame.image.load(move_img_path).convert_alpha()
     move_button = Button(x, y, move_img, 1,move.name,ImageColor.getrgb(move.type.color()))
-    return move_button.draw(window)
-
-def choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_trainer,pokemon_opponent):
-    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-    still_in_battle = True
-    move_string = ""
-    
-    moves = pokemon_trainer.get_moveset()
-    length = len(moves)
-    if length > 0 and moves[0] is not None and draw_move(window,moves[0],x_move - 200, y_menu + 50):
-        if moves[0].pp <= 0:
-            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[0].name}")
-        else: move_string = "move1"                            
-    if length > 1 and moves[1] is not None and draw_move(window,moves[1],x_move + 200, y_menu + 50):
-        if moves[1].pp <= 0:
-            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[1].name}")
-        else:  move_string = "move2"    
-    if length > 2 and moves[2] is not None and draw_move(window,moves[2],x_move - 200, y_menu + 150):
-        if moves[2].pp <= 0:
-            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[2].name}")
-        else:  move_string = "move3"
-    if length > 3 and moves[3] is not None and draw_move(window,moves[3],x_move + 200, y_menu + 150):
-        if moves[3].pp <= 0:
-            print(f"{pokemon_trainer.name} n'a plus de PP pour {moves[3].name}")
-        else:  move_string = "move4" 
-        
-    if move_string == "":
-        return pokemon_trainer,pokemon_opponent,still_in_battle
-    return pokemon_battle.turn(pokemon_trainer, pokemon_opponent, move_string, window,res_scene,resolution) 
-
+    if func_to_create is None: move_button.draw(window)
+    else: return func_to_create(move.name,x,y,move_img_path)
+                                
 def get_color(ratio):
     if ratio > 0.5:
         return (0, 255, 0)       # Vert
