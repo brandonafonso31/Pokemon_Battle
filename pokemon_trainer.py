@@ -52,8 +52,8 @@ class Pokemon_trainer:
                 dic = {"current": [dic[0],i+1]} if front_or_back == "front" else {"current": [i+1,dic[1]]}
                 sprite.update_battle_json(dic)
                 pokemon.play_howl()
-                return pokemon,True
-        return None,False
+                return pokemon
+        return None
     
     def set_team_into_json(self,trainer_or_opponent: str):     
         global res_scene
