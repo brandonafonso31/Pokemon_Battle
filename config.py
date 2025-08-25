@@ -1,8 +1,8 @@
 import os
 
 project_name = "Pokemon: Battle Project"
-res_scene = (700,500)
-resolution = (res_scene[0],200+res_scene[1])
+res_scene = (753,500)
+resolution = (res_scene[0],253+res_scene[1])
 
 principal_dir_path = os.getcwd()
 img_dir_path = os.path.join(principal_dir_path,"images")
