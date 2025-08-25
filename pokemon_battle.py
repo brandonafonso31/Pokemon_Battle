@@ -144,7 +144,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
             state = 1
             if state == 1 and elapsed >= 3:
                 turn_running = False
-
+                state = 0
     current_timing = bt.change_timing()
 
     return pokemon_1, pokemon_2, "ko" if (pokemon_1.is_dead() or pokemon_2.is_dead()) else "continue"
