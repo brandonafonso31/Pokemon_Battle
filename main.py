@@ -69,8 +69,11 @@ BACK_BUTTON = create_button("Retour", (resolution[0] - 191)//2, resolution[1] - 
 
 #------|function
 def ko(window, pokemon_player, pokemon_opponent):
+    print("entree dans KO menu")
     trainer = pokemon_player.trainer
     opponent = pokemon_opponent.trainer
+    print(trainer.name,opponent.name)
+    
     clock = pygame.time.Clock()
     elapsed = 0
     pokemon_ko, front_or_back = (pokemon_player, "back") if pokemon_player.hp <= 0 else (pokemon_opponent, "front")
@@ -81,6 +84,11 @@ def ko(window, pokemon_player, pokemon_opponent):
         dt = clock.tick(30) / 1000
         elapsed += dt
         
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+                
         # État 0 : afficher le message KO
         if state == 0 and elapsed >= 0.5:
             text = f"{pokemon_ko.name} {'ennemi' if pokemon_ko is pokemon_opponent else 'allié'} est KO"
@@ -95,7 +103,7 @@ def ko(window, pokemon_player, pokemon_opponent):
             elapsed = 0 
             
         # État 2 : envoie du pokemon suivant après 4s apres le state 1
-        elif state == 2 and elapsed >= 4:    
+        elif state == 2 and elapsed >= 2:    
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             text = f"{pokemon_ko.name} est envoyé par {trainer.name if pokemon_ko is pokemon_player else opponent.name} !"
             draw_text(text, font, WHITE, 100, 600)
