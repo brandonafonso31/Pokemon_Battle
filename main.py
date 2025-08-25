@@ -1,146 +1,235 @@
-import os,ui_battle,pokemon_battle,pygame
-import battle_timing as bt
-from config import *
+import os,sys,pygame,pokemon_battle,ui_battle,json,sprite,pokemon_trainer
+from config import project_name,img_dir_path,sys_dir_path,BLACK,WHITE,song_dir_path,background_dir_path,battle_json_path
 from pygame.locals import *
-from pokemon_init import *
-from button import Button
-import pokemon_trainer
+from button_test import Button_test
 
 #------|Init pygame
 pygame.init()
 pygame.mixer.init()
-# clock = pygame.time.Clock()
-# dt = 0
+clock = pygame.time.Clock()
+dt = 0
 
 #------|Resolution
-window = pygame.display.set_mode(resolution)
-pygame.display.set_caption("Pokemon Battle")
+res_scene = (700,500)
+resolution = (res_scene[0],res_scene[1]+200)
+window = pygame.display.set_mode(resolution,vsync=1)
+pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
 
 #------|Fonts
 font = pygame.font.SysFont("arialblack",40)
 
-#------|Button
-attack_img = pygame.image.load(os.path.join(img_dir_path,"battle_ui/button_attack.png")).convert_alpha()
-pokemon_img = pygame.image.load(os.path.join(img_dir_path,"battle_ui/button_pokemon.png")).convert_alpha()
-bag_img = pygame.image.load(os.path.join(img_dir_path,"battle_ui/button_bag.png")).convert_alpha()
-
-#------|create button instances
-y_menu = resolution[1]-260
-x_menu = 50
-attack_button = Button(x_menu, y_menu + 5, attack_img, 1)
-pokemon_button = Button(x_menu, y_menu + 95, pokemon_img, 1)
-bag_button = Button(x_menu, y_menu + 185, bag_img, 1)
-x_move = resolution[0]//2
-
-#------|Functions
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     window.blit(img, (x, y))
-    
-#------|Variable
-battle_start = False
-in_battle = False
-current_menu = ""
-fight_continue = True
 
-#------|Trainer
+def create_button(text,x,y,path=""):
+    if path == "":
+        path = os.path.join(img_dir_path,"battle_ui/move_button.png")
+    button_img = pygame.image.load(path).convert_alpha()
+    return Button_test(x, y, button_img, 1, text)
+
+def fps_counter():
+    fps = str(int(clock.get_fps()))
+    fps_t = font.render(f"{fps} fps" , 1, pygame.Color("RED"))
+    window.blit(fps_t,(0,0))
+
+def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
+    """Joue un tour de combat avec le move choisi et retourne l'état."""
+    if moves[move_id].pp <= 0:
+        print(f"{pokemon_player.name} n'a plus de PP pour {moves[move_id].name}")
+        return pokemon_player, pokemon_opponent, True  # toujours en combat, mais pas d'action
+    else:
+        # Lance le tour de combat (animations, dégâts…)
+        pokemon_player, pokemon_opponent, still_in_battle = \
+            pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window, res_scene, resolution)
+
+        return pokemon_player, pokemon_opponent, still_in_battle
+            
+            
+#------|Var
+y_menu = res_scene[1] + 50
+x_menu = 50
+BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
+BACKGROUND_LENGHT,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
+ratio = resolution[0] / BACKGROUND_LENGHT
+scale = (BACKGROUND_LENGHT*ratio,BACKGROUND_HEIGHT*ratio)
+BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
 trainer,opponent = pokemon_trainer.init_trainer()
+ 
+#------|Button
+PLAY_BUTTON = create_button("Jouer", 200 ,200)
+OPTIONS_BUTTON = create_button("Options", 200,300)
+BACK_BUTTON = create_button("Retour", 200,400)
+QUIT_BUTTON = create_button("Quitter", 200,400)
 
-#------|Boucle qui fait tourner le jeu  
-run = True
-while run :
-    # dt = clock.tick(30)
+ATTACK_BUTTON = create_button("Attaquer", (resolution[0] - 191)//2, res_scene[1] + 18)
+POKEMON_BUTTON = create_button("Pokémon", resolution[0] - 191 - 18, resolution[1] - 82 - 18)
+BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
+# taille du boutton sans texte : 191 x 82
+
+#------|function
+def ko(window, pokemon_player, pokemon_opponent):
+    print("entrée dans pokemon_ko")
+    trainer = pokemon_player.trainer
+    opponent = pokemon_opponent.trainer
+    clock = pygame.time.Clock()
+    elapsed = 0
+    pokemon_ko, front_or_back = (pokemon_player, "back") if pokemon_player.hp <= 0 else (pokemon_opponent, "front")
     
-    if not battle_start and run:
-        pygame.time.delay(500)
-        window.fill((0,0,0))
-        pygame.mixer.music.stop()
-        draw_text("Press left click to start battle", font, WHITE,250,resolution[1]//2)
-        
-        # page d'intro
-        
-    #check les variables afin de faire divers actions
-    if battle_start and not in_battle:
-        pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent)
-        in_battle = True
-        current_menu = "main"
-        
-    if in_battle:
-        #refresh_screen(window,resolution)
-        
-        if current_menu == "main":
-            current_timing = bt.change_timing()
-            pokemon_player,pokemon_opponent = bt.check_timing_talent(pokemon_player,pokemon_opponent) 
-            pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))   
-            if attack_button.draw(window):
-                current_menu = "attack"
-            elif pokemon_button.draw(window):
-                current_menu = "team_pokemon"
-            elif bag_button.draw(window):
-                current_menu = "bag"
-            
-        elif current_menu == "attack":
-            pokemon_player, pokemon_opponent, in_battle = ui_battle.choice_move(window,res_scene,resolution,x_move,y_menu,pokemon_player,pokemon_opponent)
-            if in_battle == "ko":   # l'un des 2 pokemon est KO
-                pygame.time.delay(500)
-                pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-                pokemon_ko,front_or_back = (pokemon_player,"back") if pokemon_player.hp <= 0 else (pokemon_opponent,"front")
+    ko_running = True
+    state = 0
 
-                # print(pokemon_ko)
-                draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
-                pygame.display.flip()
-                pygame.time.delay(500)
-                
-                #animation de la mort du pokemon
-                # print(f"{pokemon_ko.name} est KO ({front_or_back}). Taille Rect: {pokemon_ko.rect}")
-                pokemon_ko.animate_death(window,front_or_back)
-                pokemon_ko.is_ko = True
-                
-                if pokemon_ko is pokemon_player:
-                    pokemon_player,in_battle = trainer.send_next("back")
-                else:
-                    pokemon_opponent,in_battle = opponent.send_next("front")
-                
-                if in_battle:
-                    ui_battle.refresh_screen(window, pokemon_player, pokemon_opponent)
-                    pygame.time.delay(1000)
-                    current_menu  = "main"
-                    
-                if not in_battle:
-                    run = False
-            
-            elif in_battle == "continue":
-                current_menu = "main"
-            
+    while ko_running:
+        dt = clock.tick(30) / 1000
+        elapsed += dt
+
+        # État 0 : afficher le message KO
+        if state == 0 and elapsed >= 0.5:
+            text = f"{pokemon_ko.name} {'ennemi' if pokemon_ko is pokemon_opponent else 'allié'} est KO"
+            draw_text(text, font, WHITE, 100, 600)
+            pygame.display.flip()
+            state = 1
+            elapsed = 0  # reset timer
+
+        # État 1 : jouer l'animation après 2s
+        elif state == 1 and elapsed >= 2:
+            pokemon_ko.animate_death(window, front_or_back)
+            pokemon_ko.is_ko = True
+            pygame.display.flip()
+            state = 0
+            if pokemon_ko is pokemon_player:
+                return trainer.send_next("back")
             else:
-                current_menu = "attack"
-            
-        elif current_menu == "team_pokemon":
-            pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-            # open_pokemon_team()
-            draw_text("LA TEAM POKEMON EST SELECTIONNEE", font, WHITE, 250, 600)
-            pygame.display.flip()
-            pygame.time.delay(500)
-            current_menu = "main"
-        
-        elif current_menu == "bag":
-            pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-            # open_bag()
-            draw_text("LE SAC EST SELECTIONNE", font, WHITE, 100, 600)
-            pygame.display.flip()
-            pygame.time.delay(500)
-            current_menu = "main"
-     
-    #event handler
-    for event in pygame.event.get():        
-        if event.type == pygame.QUIT:
-            run = False
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            battle_start = True
-    pygame.display.flip()
+                return opponent.send_next("front")            
     
-pygame.mixer.music.stop()
-pygame.time.delay(1000)
-pygame.quit()
-exit()
+def battle(window, pokemon_player, pokemon_opponent):
+    battle_running = True
+    while battle_running:
+        dt = clock.tick(30)
+        fps_counter()
+
+        # --- refresh écran
+        ui_battle.refresh_screen(window, pokemon_player, pokemon_opponent)
+
+        # --- créer boutons des attaques
+        moves_available = pokemon_player.get_moveset()
+        list_coord = [(18,res_scene[1] + 18),
+                      (resolution[0] - 191 - 18, res_scene[1] + 18),
+                      (18,resolution[1] - 18),
+                      (resolution[0] - 191 - 18,resolution[1] - 18)]
+        moves_button = [ui_battle.draw_move(window, move, coord[0], coord[1])
+                        for move, coord in zip(moves_available, list_coord)] 
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            # --- gestion des attaques
+            for i, button in enumerate(moves_button):
+                if button.handle_event(event):
+                    pokemon_player, pokemon_opponent, still_in_battle = \
+                        start_turn(window, pokemon_player, pokemon_opponent, moves_available, i)
+
+                    # 🔹 Détection KO ici, pas dans start_turn
+                    if still_in_battle == "ko":
+                        new_pokemon, still_alive = ko(window, pokemon_player, pokemon_opponent)
+                        if pokemon_player.is_dead():
+                            pokemon_player = new_pokemon
+                        else:
+                            pokemon_opponent = new_pokemon
+
+            if BACK_BUTTON.handle_event(event):
+                battle_running = False
+
+        pygame.display.flip()
+
+    return pokemon_player, pokemon_opponent, battle_running
+
+
+def play(window):    
+    #------|Variable
+    battle_start = False
+    play_running = True
+    trainer,opponent = pokemon_trainer.init_trainer()
+    while play_running :
+        dt = clock.tick(30)
+        fps_counter()
+        bg_path = os.path.join(background_dir_path,"bg-forest.png")
+        if not battle_start:
+            pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent,background=bg_path)
+            battle_start = True
+        ui_battle.refresh_screen(window,pokemon_player,pokemon_opponent)
+        
+        for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
+            button.draw(window)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if ATTACK_BUTTON.handle_event(event):
+                pokemon_player,pokemon_opponent,play_running = \
+                    battle(window,pokemon_player,pokemon_opponent)
+            if BAG_BUTTON.handle_event(event):
+                play_running = False
+            if POKEMON_BUTTON.handle_event(event):
+                play_running = False
+
+        pygame.display.flip()
+
+def options():
+    options_running = True
+    while options_running :
+        dt = clock.tick(30)
+        window.fill(BLACK)
+        fps_counter()
+        
+        draw_text("OPTIONS", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+
+        for button in [BACK_BUTTON]:
+            button.draw(window)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+                
+            if BACK_BUTTON.handle_event(event):
+                options_running = False
+
+        pygame.display.flip()
+
+def main_menu(window):
+    pygame.mixer.music.stop()
+    pygame.mixer.music.load(os.path.join(song_dir_path,"sys/title.mp3"))
+    pygame.mixer.music.play(loops=-1)
+    pygame.mixer.music.set_volume(0.3)
+    run = True
+    while run :
+        dt = clock.tick(30)
+        window.fill(BLACK)        
+        window.blit(BACKGROUND_INTRO,(0,0))
+        fps_counter()
+        
+        draw_text(project_name, font, "#b68f40", res_scene[0]//2 - 200, res_scene[1]//3 - 100)
+
+        for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
+            button.draw(window)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if PLAY_BUTTON.handle_event(event):
+                play(window)
+            if OPTIONS_BUTTON.handle_event(event):
+                options()
+            if QUIT_BUTTON.handle_event(event):
+                pygame.quit()
+                sys.exit()
+
+        pygame.display.flip()
+
+main_menu(window)
