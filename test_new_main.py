@@ -1,8 +1,7 @@
-import os,sys,pygame,pokemon_battle,ui_battle,json,sprite
+import os,sys,pygame,pokemon_battle,ui_battle,json,sprite,pokemon_trainer
 from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path,background_dir_path,battle_json_path
 from pygame.locals import *
 from button_test import Button_test
-import pokemon_trainer
 
 #------|Init pygame
 pygame.init()
@@ -41,7 +40,7 @@ def start_turn(pokemon_player,pokemon_opponent,moves,move_id):
         return pokemon_player,pokemon_opponent,True
     else:
         pokemon_player,pokemon_opponent,still_in_battle = \
-            pokemon_battle.turn(pokemon_trainer, pokemon_opponent, f"move{move_id + 1}", window,res_scene,resolution) 
+            pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window,res_scene,resolution) 
         if still_in_battle == "ko":
             still_in_battle = False
         return pokemon_player,pokemon_opponent,still_in_battle
@@ -72,9 +71,9 @@ BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
 def battle(window,pokemon_player,pokemon_opponent):
     battle_running = True
     still_in_battle = True
+    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     while battle_running :
         dt = clock.tick(30)
-        window.fill(BLACK)
         fps_counter()
         
         ui_battle.refresh_screen(window,pokemon_player,pokemon_opponent)
@@ -112,6 +111,7 @@ def play(window):
     #------|Variable
     battle_start = False
     play_running = True
+    trainer,opponent = pokemon_trainer.init_trainer()
     while play_running :
         dt = clock.tick(30)
         fps_counter()
