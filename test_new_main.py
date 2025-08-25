@@ -1,5 +1,5 @@
 import os,sys,pygame,pokemon_battle,ui_battle,json,sprite,pokemon_trainer
-from config import project_name,img_dir_path,sys_dir_path,BLACK,song_dir_path,background_dir_path,battle_json_path
+from config import project_name,img_dir_path,sys_dir_path,BLACK,WHITE,song_dir_path,background_dir_path,battle_json_path
 from pygame.locals import *
 from button_test import Button_test
 
@@ -34,7 +34,7 @@ def fps_counter():
     fps_t = font.render(f"{fps} fps" , 1, pygame.Color("RED"))
     window.blit(fps_t,(0,0))
 
-def start_turn(pokemon_player,pokemon_opponent,moves,move_id):
+def start_turn(window,pokemon_player,pokemon_opponent,moves,move_id):
     if moves[move_id].pp <= 0:
         print(f"{pokemon_player.name} n'a plus de PP pour {moves[0].name}")
         return pokemon_player,pokemon_opponent,True
@@ -42,8 +42,10 @@ def start_turn(pokemon_player,pokemon_opponent,moves,move_id):
         pokemon_player,pokemon_opponent,still_in_battle = \
             pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window,res_scene,resolution) 
         if still_in_battle == "ko":
-            still_in_battle = False
-        return pokemon_player,pokemon_opponent,still_in_battle
+            new_pokemon, still_in_battle = ko(window, pokemon_player, pokemon_opponent)
+            if pokemon_player.is_dead(): pokemon_player = new_pokemon
+            else : pokemon_opponent = new_pokemon
+        return pokemon_player,pokemon_opponent,True
             
             
 #------|Var
@@ -68,6 +70,31 @@ BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
 # taille du boutton sans texte : 191 x 82
 
 #------|function
+def ko(window,pokemon_player,pokemon_opponent):
+    clock = pygame.time.Clock()
+    elapsed = 0
+    pokemon_ko,front_or_back = (pokemon_player,"back") if pokemon_player.hp <= 0 else (pokemon_opponent,"front")
+    pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+    ko_running = True
+    while ko_running:
+        dt = clock.tick(30) / 1000
+        elapsed += dt
+        
+        if elapsed >= 0.5 :
+            draw_text(f"{pokemon_ko.name} {"ennemi" if pokemon_ko is pokemon_opponent else "allié"} est KO", font, WHITE, 100, 600)
+            pygame.display.flip()
+        
+        elif elapsed >= 2:    
+            # animation de la mort du pokemon
+            pokemon_ko.animate_death(window,front_or_back)
+            pokemon_ko.is_ko = True
+                
+            if pokemon_ko is pokemon_player:
+                return trainer.send_next("back")
+            else:
+                return opponent.send_next("front")
+            
+    
 def battle(window,pokemon_player,pokemon_opponent):
     battle_running = True
     still_in_battle = True
@@ -89,17 +116,16 @@ def battle(window,pokemon_player,pokemon_opponent):
                 sys.exit()
             if len(moves_button) > 0 and moves_button[0].handle_event(event):
                 pokemon_player,pokemon_opponent,still_in_battle = \
-                    start_turn(pokemon_player,pokemon_opponent,moves_available,0)
+                    start_turn(window,pokemon_player,pokemon_opponent,moves_available,0)
             if len(moves_button) > 1 and moves_button[1].handle_event(event):
                 pokemon_player,pokemon_opponent,still_in_battle = \
-                    start_turn(pokemon_player,pokemon_opponent,moves_available,1)
+                    start_turn(window,pokemon_player,pokemon_opponent,moves_available,1)
             if len(moves_button) > 2 and moves_button[2].handle_event(event):
                 pokemon_player,pokemon_opponent,still_in_battle = \
-                    start_turn(pokemon_player,pokemon_opponent,moves_available,2)
+                    start_turn(window,pokemon_player,pokemon_opponent,moves_available,2)
             if len(moves_button) > 3 and moves_button[3].handle_event(event):
                 pokemon_player,pokemon_opponent,still_in_battle = \
-                    start_turn(pokemon_player,pokemon_opponent,moves_available,3)          
-                
+                    start_turn(window,pokemon_player,pokemon_opponent,moves_available,3)          
             
             if BACK_BUTTON.handle_event(event):
                 battle_running = False
@@ -129,7 +155,7 @@ def play(window):
                 pygame.quit()
                 sys.exit()
             if ATTACK_BUTTON.handle_event(event):
-                pokemon_player,pokemon_opponent,still_in_battle = \
+                pokemon_player,pokemon_opponent,play_running = \
                     battle(window,pokemon_player,pokemon_opponent)
             if BAG_BUTTON.handle_event(event):
                 play_running = False
