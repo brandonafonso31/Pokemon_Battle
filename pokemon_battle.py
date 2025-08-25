@@ -102,6 +102,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     bt.check_timing_talent(first, second)
 
     # ATTAQUE DU PREMIER
+    elapsed = 0
     while True:
         dt = pygame.time.Clock().tick(30) / 1000
         elapsed += dt
