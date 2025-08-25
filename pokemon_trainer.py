@@ -79,9 +79,22 @@ def init_trainer():
     trainer.catch_pokemon(gengar_trainer)
     
     assert gengar_trainer != gengar
-    print(trainer_ai,trainer,sep="\n")
+    # print(trainer_ai,trainer,sep="\n")
 
     trainer.set_team_into_json("trainer")
     trainer_ai.set_team_into_json("opponent")
     sprite.update_battle_json({"current": [1,1]})
     return trainer,trainer_ai
+
+def get_winner(trainer1,trainer2):
+    winner = None
+    hp_total_trainer1 = sum([pokemon.hp for pokemon in trainer1.pokemon_team])
+    hp_total_trainer2 = sum([pokemon.hp for pokemon in trainer2.pokemon_team])
+    
+    if hp_total_trainer1 <= 0 and hp_total_trainer2 > 0:
+        winner = trainer2
+    elif hp_total_trainer1 > 0 and hp_total_trainer2 <= 0:
+        winner = trainer1
+    return winner
+    
+    
