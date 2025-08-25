@@ -41,7 +41,6 @@ class Pokemon_trainer:
             
     def send_next(self,front_or_back: str):
         "for now only send the next in list, no choice"
-        print("entree dans send_next")
         with open(battle_json_path, "r") as f:
             data = json.load(f)
         team = self.pokemon_team
@@ -53,9 +52,7 @@ class Pokemon_trainer:
                 dic = {"current": [dic[0],i+1]} if front_or_back == "front" else {"current": [i+1,dic[1]]}
                 sprite.update_battle_json(dic)
                 pokemon.play_howl()
-                print("sortie de send_next")
                 return pokemon
-        print("sortie de send_next")
         return None
     
     def set_team_into_json(self,trainer_or_opponent: str):     
