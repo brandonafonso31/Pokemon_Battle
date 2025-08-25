@@ -1,5 +1,5 @@
 principal:
-    - corriger bug quand un pokemon atteint 0 pv (only on player side ?)
+    - mtn si je le pokemon en face met ko le mien, mon pokmeon attaque quand meme avant de mourir (wtf ?)
     - modifier l'interface d'accueil
     - ajouter un ratio pour permettre un scale (dans options qui modifie directement la config)
     - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
