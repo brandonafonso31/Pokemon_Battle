@@ -25,10 +25,10 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
     padding = 10  # Espacement autour des éléments
 
     if from_trainer:
-        x = res_scene[0] - (hp_bar_length + 2*padding + 50)
-        y = res_scene[1] - hp_bar_height - 70
+        x = res_scene[0] - (hp_bar_length + 2*padding)
+        y = res_scene[1] - hp_bar_height - 50
     else:
-        x, y = 50, 70
+        x, y = 2*padding, 50
 
     hp_max = pokemon.hp_max if pokemon.hp_max > 0 else 1
     current_hp = pokemon.hp
