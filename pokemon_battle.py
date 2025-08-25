@@ -116,27 +116,33 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     move = getattr(first, first_move_id)
     print(f"PP {first.name} {first_move_id}: {move.pp}, hp {second.name}: {second.hp}\n")
 
-    pygame.time.delay(1500)
-
-    # ATTAQUE DU SECOND SI VIVANT
-    if not second.is_dead():
+    turn_running = True
+    clock = pygame.time.Clock()
+    elapsed = 0    
+    while turn_running:
+        dt = clock.tick(30) / 1000
+        elapsed += dt
         
-        current_timing = bt.change_timing()
-        bt.check_timing_talent(second,first)
+        # ATTAQUE DU SECOND SI VIVANT
+        if elapsed >= 1.5 and not second.is_dead():
+        
+            current_timing = bt.change_timing()
+            bt.check_timing_talent(second,first)
 
-        second, first, old_hp = second.use_move(second_move_id, first, window)
-        if first is pokemon_1:
-            ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_trainer=old_hp)
-        else:
-            ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_opponent=old_hp)
-            
-        current_timing = bt.change_timing()
-        bt.check_timing_talent(second,first)
+            second, first, old_hp = second.use_move(second_move_id, first, window)
+            if first is pokemon_1:
+                ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_trainer=old_hp)
+            else:
+                ui_battle.refresh_screen(window, pokemon_1, pokemon_2, old_hp_opponent=old_hp)
+                
+            current_timing = bt.change_timing()
+            bt.check_timing_talent(second,first)
 
-        move = getattr(second, second_move_id)
-        print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
+            move = getattr(second, second_move_id)
+            print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
 
-        pygame.time.delay(1000)
+            if elapsed >= 3:
+                turn_running = False
 
     current_timing = bt.change_timing()
 
