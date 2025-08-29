@@ -190,7 +190,7 @@ def battle_menu(window):
         
         if state == "ko" and elapsed >= 2:
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
-            winner,loser = pokemon_trainer.get_winner(pokemon_player.trainer,pokemon_opponent.trainer)
+            winner,loser = pokemon_trainer.get_winner(trainer,opponent)
             text = f"{winner.name} a vaincu {loser.name} !"
             draw_text(text, font, WHITE, 100, 600)
             elapsed = 0
