@@ -1,4 +1,5 @@
 principal:
+    - modifier la position des barres de vie
     - ajouter un ratio pour permettre un scale de l'écran (dans options qui modifie directement la config)
     - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
     - ajouter animation sortie de pokeball
