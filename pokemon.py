@@ -4,7 +4,7 @@ from pokemon_move import *
 from random import randint
 from config import img_dir_path,cries_dir_path
 from pokemon_nature import Nature
-from math import floor
+from math import floor,inf
 from pokemon_talent import Talent
 from random import randint,choice
 import os, pygame
@@ -186,12 +186,20 @@ class Pokemon:
             print(f"{opponent.name} fainted!")
         return self, opponent, old_hp
     
-            
-    def heal(self):
-        self.hp = self.hp_max
-        self.is_ko = False
-        print(f"{self.name} a été soigné")
-        return self
+    def ressurect(self):
+        if self.is_ko == False :
+            print("Can't ressurect a pokemon that is not KO")
+        else:
+            self.hp = self.hp_max
+            self.is_ko = False
+
+    def heal(self,healing = inf):
+        if self.hp == 0 :
+            print("can't heal a pokemon KO !")
+        else:
+            self.hp = min(self.hp + healing, self.hp_max)
+            print(f"{self.name} a été soigné")
+
     
     def get_moveset(self):
         return [move for move in [self.move1, self.move2, self.move3, self.move4] if move is not None]
