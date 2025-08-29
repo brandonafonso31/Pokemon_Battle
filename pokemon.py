@@ -72,8 +72,7 @@ class Pokemon:
     
     def __str__(self):
         output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} | Nature: {self.nature}\n{LINE_PRINT}"
-        return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n"
-    
+        return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n" 
     def __eq__(self, other):
         return self.id == other.id  and self.trainer == other.trainer # id sera implémenter dans la classe Team_Pokemon est sera de 1 à 6 unique et vérifié
         """return self.name == other.name and self.dresseur == other.dresseur \
@@ -81,8 +80,7 @@ class Pokemon:
                 and self.get_stats() == other.get_stats() and self.nickname == other.nickname \
                     and self.talent == other.talent and self.nature == other.nature \
                         and self.shiny == other.shiny and self.item == other.item"""
-    
-    
+      
     def show_type(self):
         types = f"TYPE1: {self.type1.name}"
         if self.type2 != None:
@@ -92,7 +90,6 @@ class Pokemon:
         return [self.hp,self.atk,self.def_,self.atk_spe,self.def_spe,self.vit]
     def show_stats(self):
         return f"hp: {self.hp},\nATK: {self.atk},\nDEF: {self.def_},\nATK_SPE: {self.atk_spe},\nDEF_SPE: {self.def_spe},\nVIT: {self.vit}"
-    
     
     def show_moves(self):
         return f"Move1: {self.move1},\nMove2: {self.move2},\nMove3: {self.move3}, \nMove4: {self.move4}"
@@ -118,15 +115,11 @@ class Pokemon:
                 return
 
         print(f"L'attaque {new_move} a été apprise\n")
-        
-    
     
     def sprites(self,front_or_back,save_to_filename):
         sprites = os.path.join(sprites_dir_path,f"sprites_gen{self.gen}")
         return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back,self.id)
         
-    
-    
     def get_cm(self, opponent, move : Move, objects=None):
         """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""
         msg = ""
