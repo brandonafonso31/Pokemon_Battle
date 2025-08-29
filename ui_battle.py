@@ -18,7 +18,19 @@ def get_color(ratio):
         return (255, 165, 0)     # Orange
     else:
         return (255, 0, 0)       # Rouge
-        
+     
+def get_font_size(txt,rect,x):
+    max_name_width = rect.width + x - 110
+    font_size = 35
+    name_font = pygame.font.Font(font_path, font_size)
+    name_surface = name_font.render(txt, True, BLACK)
+    
+    while font_size > 10 and name_surface.get_width() > max_name_width:
+        font_size -= 1
+        name_font = pygame.font.Font(font_path, font_size)
+        name_surface = name_font.render(txt, True, BLACK)
+    return font_size
+
 def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
     hp_bar_length = 250
     hp_bar_height = 20
@@ -36,8 +48,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
 
     current_length = int(hp_bar_length * (previous_hp / hp_max))
     target_length = int(hp_bar_length * (current_hp / hp_max))
-    font = pygame.font.Font(font_path, 40)
-    
+        
     # Rectangle de fond qui englobe tout (texte + barre)
     background_rect = pygame.Rect(
         x - padding, 
@@ -45,8 +56,12 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         hp_bar_length + 2*padding,
         40 + hp_bar_height + 2*padding  # Texte + barre + padding
     )
-    
     pokemon.hp_bar_rect = background_rect
+    
+    # --- Police pour les chiffres (fixe)
+    hp_font = pygame.font.Font(font_path, 30)
+    # --- Police pour les noms des pokemon (variables)
+    name_pokemon_font = pygame.font.Font(font_path, get_font_size(pokemon.name,background_rect,x)) 
 
     if current_length > target_length :
         hp_step = max(1, (previous_hp - current_hp) // 20)
@@ -77,8 +92,10 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
                 pygame.draw.rect(window, color, bar_rect)
             
                 # Texte
-                text = font.render(f"{pokemon.name} HP: {anim_hp}/{hp_max}", True, BLACK)
+                text = name_pokemon_font.render(f"{pokemon.name}", True, BLACK)
+                hp_surface = hp_font.render(f"HP : {anim_hp}/{hp_max}", True, BLACK)
                 window.blit(text, (x, y - 40))
+                window.blit(hp_surface, (x + hp_bar_length - 110, y - 40))
                 
                 pygame.display.update(background_rect)
                 elapsed = 0
@@ -97,8 +114,10 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         pygame.draw.rect(window, color, bar_rect)
 
         # Texte
-        text = font.render(f"{pokemon.name} HP: {current_hp}/{hp_max}", True, BLACK)
+        text = name_pokemon_font.render(f"{pokemon.name}", True, BLACK)
+        hp_surface = hp_font.render(f"HP : {current_hp}/{hp_max}", True, BLACK)
         window.blit(text, (x, y - 40))
+        window.blit(hp_surface, (x + hp_bar_length - 110, y - 40))
 
 
 def refresh_pokemon_sprite(window,pokemon,trainer_or_opponent,data = None):
