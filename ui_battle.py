@@ -112,6 +112,14 @@ def refresh_pokemon_sprite(window,pokemon,trainer_or_opponent,data = None):
         pokemon_sprite.set_colorkey(sprite.get_first_pixel(path["path_sprite"]))
         window.blit(pokemon_sprite, (path["x"], path["y"]))
 
+def refresh_player_side(window,pokemon):
+    refresh_pokemon_sprite(window,pokemon,"trainer")
+    draw_hp_bar(window, pokemon, from_trainer=True)
+
+def refresh_opponent_side(window,pokemon):
+    refresh_pokemon_sprite(window,pokemon,"opponent")
+    draw_hp_bar(window, pokemon, from_trainer=False)
+
 def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
     """Refresh the screen with the background and all sprites."""
     with open(battle_json_path, "r") as f:
@@ -120,12 +128,6 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
     # Background
     background = pygame.image.load(data["background"]).convert()
     window.blit(background, (0, 0))
-
-    refresh_pokemon_sprite(window, pokemon_trainer, "trainer",data)
-    refresh_pokemon_sprite(window, pokemon_opponent, "opponent",data)
-
-    # HP Bars
-    draw_hp_bar(window, pokemon_trainer, True, old_hp_trainer)
-    draw_hp_bar(window, pokemon_opponent, False, old_hp_opponent)
-
-    #pygame.display.flip()
+    
+    refresh_player_side(window, pokemon_trainer)
+    refresh_opponent_side(window, pokemon_opponent)
