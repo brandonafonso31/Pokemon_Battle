@@ -2,7 +2,6 @@ principal:
     - modifier l'interface d'accueil
     - ajouter un ratio pour permettre un scale de l'écran (dans options qui modifie directement la config)
     - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
-    - modifier la barre de vie pour que si le texte est trop long -> diminuer la police du nom uniqument
     - ajouter animation sortie de pokeball
     - implenter animations des attaques
     - implémenter sac et le switch de pokemon
