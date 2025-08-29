@@ -93,7 +93,7 @@ def create_pokemon_opponent(res, pokemon, id, save_to_filename: str):
         "x": x_opponent,
         "y": y_opponent
     }
-    pokemon.add_rect((x_opponent, y_opponent), scale=2)
+    pokemon.add_rect((x_opponent, y_opponent), opponent_pokemon_sprite)
     return pokemon_json
 
 
@@ -110,7 +110,7 @@ def create_pokemon_trainer(res, pokemon, id, save_to_filename: str):
         "x": x_trainer,
         "y": y_trainer
     }
-    pokemon.add_rect((x_trainer, y_trainer), scale=3)
+    pokemon.add_rect((x_trainer, y_trainer), trainer_pokemon_sprite)
     return pokemon_json
 
 def update_battle_json(updates: dict):
