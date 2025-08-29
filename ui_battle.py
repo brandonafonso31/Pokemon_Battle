@@ -45,6 +45,8 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
         hp_bar_length + 2*padding,
         40 + hp_bar_height + 2*padding  # Texte + barre + padding
     )
+    
+    pokemon.hp_bar_rect = background_rect
 
     if current_length > target_length :
         hp_step = max(1, (previous_hp - current_hp) // 20)
@@ -113,12 +115,14 @@ def refresh_pokemon_sprite(window,pokemon,trainer_or_opponent,data = None):
         window.blit(pokemon_sprite, (path["x"], path["y"]))
 
 def refresh_player_side(window,pokemon):
-    refresh_pokemon_sprite(window,pokemon,"trainer")
-    draw_hp_bar(window, pokemon, from_trainer=True)
+    if pokemon is not None and not pokemon.is_dead():
+        refresh_pokemon_sprite(window,pokemon,"trainer")
+        draw_hp_bar(window, pokemon, from_trainer=True)
 
 def refresh_opponent_side(window,pokemon):
-    refresh_pokemon_sprite(window,pokemon,"opponent")
-    draw_hp_bar(window, pokemon, from_trainer=False)
+    if pokemon is not None and not pokemon.is_dead():
+        refresh_pokemon_sprite(window,pokemon,"opponent")
+        draw_hp_bar(window, pokemon, from_trainer=False)
 
 def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
     """Refresh the screen with the background and all sprites."""
