@@ -113,8 +113,7 @@ def ko(window, pokemon_player, pokemon_opponent):
                 pokemon_player = new_pokemon
                 text = f"{pokemon_player.name} est envoyé par {trainer.name} !"
                 draw_text(text, font, WHITE, 100, 600)
-                ui_battle.refresh_pokemon_sprite(window,pokemon_player,"trainer")
-                ui_battle.draw_hp_bar(window, pokemon_player, True)
+                ui_battle.refresh_player_side(window,pokemon_player)
             else:
                 new_pokemon = opponent.send_next("front")
                 if new_pokemon is None:
@@ -122,9 +121,7 @@ def ko(window, pokemon_player, pokemon_opponent):
                 pokemon_opponent = new_pokemon
                 text = f"{pokemon_opponent.name} est envoyé par {opponent.name} !"
                 draw_text(text, font, WHITE, 100, 600)
-                ui_battle.refresh_pokemon_sprite(window,pokemon_opponent,"opponent") 
-                ui_battle.draw_hp_bar(window, pokemon_opponent, False)
-            
+                ui_battle.refresh_opponent_side(window,pokemon_opponent)
             state = 3
             elapsed = 0
         
