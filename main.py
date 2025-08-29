@@ -68,14 +68,13 @@ BACK_BUTTON = create_button("Retour", (resolution[0] - 191)//2, resolution[1] - 
 # taille du boutton sans texte : 191 x 82
 
 #------|function
-def pokemon_team_menu(window):
+def pokemon_team_menu(window,pokemon_player, pokemon_opponent):
     options_running = True
     while options_running :
         dt = clock.tick(30)
         window.fill(BLACK)
-        fps_counter()
         
-        draw_text("Pokemon Team", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+        draw_text("Pokemon Team", font, "#b68f40", res_scene[0]//2 - 200, res_scene[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
@@ -89,15 +88,16 @@ def pokemon_team_menu(window):
                 options_running = False
 
         pygame.display.flip()
+    
+    ui_battle.refresh_screen(window, pokemon_player, pokemon_opponent)
         
-def bag_menu(window):
+def bag_menu(window, pokemon_player, pokemon_opponent):
     options_running = True
     while options_running :
         dt = clock.tick(30)
         window.fill(BLACK)
-        fps_counter()
         
-        draw_text("Sac", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+        draw_text("Sac", font, "#b68f40", res_scene[0]//2 - 200, res_scene[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
@@ -111,6 +111,8 @@ def bag_menu(window):
                 options_running = False
 
         pygame.display.flip()
+    
+    ui_battle.refresh_screen(window, pokemon_player, pokemon_opponent)
         
 def ko(window, pokemon_player, pokemon_opponent):
     print("entree dans KO menu")
@@ -257,9 +259,9 @@ def battle_menu(window):
                     state = "ko"
                     battle_running = True
             if BAG_BUTTON.handle_event(event):
-                bag_menu(window)
+                bag_menu(window, pokemon_player, pokemon_opponent)
             if POKEMON_BUTTON.handle_event(event):
-                pokemon_team_menu(window)
+                pokemon_team_menu(window, pokemon_player, pokemon_opponent)
 
         pygame.display.flip()
          
