@@ -7,7 +7,7 @@ from pokemon_nature import Nature
 from math import floor,inf
 from pokemon_talent import Talent
 from random import randint,choice
-import os, pygame, sys
+import os, pygame, sys,ui_battle
 
 LINE_PRINT = "-"*100
 
@@ -270,22 +270,31 @@ class Pokemon:
 
         background = pygame.image.load(json_data["background"]).convert()
         current_pokemon_id = json_data["current"]
-        pokemon = "opponent" if front_or_back == "front" else "trainer"
-        x, y = json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["x"], \
-            json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"]
+        pokemon_side = "opponent" if front_or_back == "front" else "trainer"
+        x, y = json_data[pokemon_side][str(current_pokemon_id[pokemon_side == "opponent"])]["x"], \
+            json_data[pokemon_side][str(current_pokemon_id[pokemon_side == "opponent"])]["y"]
 
-        rect = self.rect
-        print(rect)
+        rect_sprite = self.rect
+        hp_bar_rect = self.hp_bar_rect
+        # print(rect)
         clock = pygame.time.Clock()
         elapsed = 0
+        state = 0
+        howl_time = pygame.mixer.Sound(self.howl_path).get_length()
+        
         while True:
             dt = clock.tick(30) / 1000
             elapsed += dt
 
-            if elapsed >= 2:
+            if state == 0 :
                 self.play_howl()
-                window.blit(background, rect, rect)
-                return True
+                state = 1
+                elapsed = 0
+                
+            elif state == 1 and elapsed >= howl_time:
+                window.blit(background,rect_sprite,rect_sprite)
+                window.blit(background,hp_bar_rect,hp_bar_rect)
+                return
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
