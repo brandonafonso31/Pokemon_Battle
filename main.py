@@ -68,6 +68,50 @@ BACK_BUTTON = create_button("Retour", (resolution[0] - 191)//2, resolution[1] - 
 # taille du boutton sans texte : 191 x 82
 
 #------|function
+def pokemon_team_menu(window):
+    options_running = True
+    while options_running :
+        dt = clock.tick(30)
+        window.fill(BLACK)
+        fps_counter()
+        
+        draw_text("Pokemon Team", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+
+        for button in [BACK_BUTTON]:
+            button.draw(window)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+                
+            if BACK_BUTTON.handle_event(event):
+                options_running = False
+
+        pygame.display.flip()
+        
+def bag_menu(window):
+    options_running = True
+    while options_running :
+        dt = clock.tick(30)
+        window.fill(BLACK)
+        fps_counter()
+        
+        draw_text("Sac", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+
+        for button in [BACK_BUTTON]:
+            button.draw(window)
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+                
+            if BACK_BUTTON.handle_event(event):
+                options_running = False
+
+        pygame.display.flip()
+        
 def ko(window, pokemon_player, pokemon_opponent):
     print("entree dans KO menu")
     trainer = pokemon_player.trainer
@@ -213,13 +257,13 @@ def battle_menu(window):
                     state = "ko"
                     battle_running = True
             if BAG_BUTTON.handle_event(event):
-                pass
+                bag_menu(window)
             if POKEMON_BUTTON.handle_event(event):
-                pass
+                pokemon_team_menu(window)
 
         pygame.display.flip()
          
-def options():
+def options_menu(window):
     options_running = True
     while options_running :
         dt = clock.tick(30)
@@ -265,7 +309,7 @@ def main_menu(window):
                 sys.exit()
 
             if OPTIONS_BUTTON.handle_event(event):
-                options()
+                options_menu(window)
             if QUIT_BUTTON.handle_event(event):
                 pygame.quit()
                 sys.exit()
