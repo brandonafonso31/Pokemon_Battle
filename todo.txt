@@ -1,11 +1,10 @@
 principal:
-    - modifier l'interface d'accueil
     - ajouter un ratio pour permettre un scale de l'écran (dans options qui modifie directement la config)
     - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
     - ajouter animation sortie de pokeball
     - implenter animations des attaques
     - implémenter sac et le switch de pokemon
-    - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer + cri du pokemon ...)
+    - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer)
     - ajouter sprite trainer pour plus de vie dans le combat (oppoent always standing there or not ? + animation from player trainer when  sending a pokemon in battle)
     - continuer d'implementer trainer et pokemon_team
     - continuer les talents
@@ -15,6 +14,7 @@ principal:
     - méga-évolution ?
 
 secondaire :
+    - modifier l'interface d'accueil
     - agrandir l'écran du dessous afin d'obteniur un effet DS
     - ajouter des boutons averc le bon texte pour Attaque, Sac, Pokemon
     - creer des dresseurs dans un json ? pour load les adversaires
