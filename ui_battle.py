@@ -1,7 +1,7 @@
 from button import *
 from PIL import ImageColor
 from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution,font_path
-import os,json,sprite,button
+import os,json,sprite,button,sys
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
@@ -72,6 +72,11 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
             dt = clock.tick(30) / 1000 # accumulate le temps passé (en secondes)
             elapsed += dt
             
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                
             if elapsed >= 0.05:
                 if anim_hp > current_hp:
                     anim_hp = max(current_hp, anim_hp - hp_step)
