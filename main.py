@@ -98,7 +98,7 @@ def ko(window, pokemon_player, pokemon_opponent):
             
         # État 1 : jouer l'animation après 2s
         elif state == 1 and elapsed >= 2:
-            finished = pokemon_ko.animate_death(window, front_or_back, elapsed)
+            finished = pokemon_ko.animate_death(window, front_or_back)
             if finished:
                 state = 2
                 elapsed = 0 
@@ -133,7 +133,7 @@ def ko(window, pokemon_player, pokemon_opponent):
     pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     return pokemon_player,pokemon_opponent,not(pokemon_player is None or pokemon_opponent is None)
 
-def turn(window, pokemon_player, pokemon_opponent):
+def attack_menu(window, pokemon_player, pokemon_opponent):
     pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     turn_running = True
     battle_running = True
@@ -171,7 +171,7 @@ def turn(window, pokemon_player, pokemon_opponent):
     pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
     return pokemon_player, pokemon_opponent, battle_running
 
-def battle(window):    
+def battle_menu(window):    
     #------|Variable
     battle_running = True
     trainer,opponent = pokemon_trainer.init_trainer()
@@ -205,7 +205,7 @@ def battle(window):
                 sys.exit()
             if ATTACK_BUTTON.handle_event(event):
                 pokemon_player,pokemon_opponent,battle_running = \
-                    turn(window,pokemon_player,pokemon_opponent)
+                    attack_menu(window,pokemon_player,pokemon_opponent)
                 if not battle_running: 
                     state = "ko"
                     battle_running = True
@@ -257,7 +257,7 @@ def main_menu(window):
                 pygame.quit()
                 sys.exit()
             if PLAY_BUTTON.handle_event(event):
-                battle(window)
+                battle_menu(window)
                 pygame.quit()
                 sys.exit()
 
