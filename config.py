@@ -18,3 +18,5 @@ sys_dir_path = os.path.join(img_dir_path,"sys")
 
 BLACK = (0, 0, 0, 255)
 WHITE = (255, 255, 255, 255)
+
+font_path = os.path.join("font", "pokemon_BW.otf")

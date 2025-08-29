@@ -17,7 +17,7 @@ pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
 
 #------|Fonts
-font = pygame.font.SysFont("arialblack",40)
+font = pygame.font.SysFont("font/pokemon_BW",40)
 
 #------|Utils
 def draw_text(text, font, text_col, x, y):

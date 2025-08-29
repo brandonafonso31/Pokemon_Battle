@@ -1,6 +1,6 @@
 from button import *
 from PIL import ImageColor
-from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution
+from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution,font_path
 import os,json,sprite,button
 
 def draw_move(window,move,x,y):
@@ -36,7 +36,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
 
     current_length = int(hp_bar_length * (previous_hp / hp_max))
     target_length = int(hp_bar_length * (current_hp / hp_max))
-    font = pygame.font.SysFont("arialblack", 20)
+    font = pygame.font.Font(font_path, 40)
     
     # Rectangle de fond qui englobe tout (texte + barre)
     background_rect = pygame.Rect(
