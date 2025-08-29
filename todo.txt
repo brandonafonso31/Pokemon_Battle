@@ -1,9 +1,7 @@
 principal:
-    - mtn si je le pokemon en face met ko le mien, mon pokmeon attaque quand meme avant de mourir (wtf ?) possiblité d'attaquer si le dernier pokemon en face esst ko xd
     - modifier l'interface d'accueil
-    - ajouter un ratio pour permettre un scale (dans options qui modifie directement la config)
+    - ajouter un ratio pour permettre un scale de l'écran (dans options qui modifie directement la config)
     - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
-    - add_rect à modifier pour degager le scale et mettre juste le vrai rect
     - modifier la barre de vie pour que si le texte est trop long -> diminuer la police du nom uniqument
     - ajouter animation sortie de pokeball
     - implenter animations des attaques
