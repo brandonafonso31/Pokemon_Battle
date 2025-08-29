@@ -162,6 +162,10 @@ def attack_menu(window, pokemon_player, pokemon_opponent):
                         start_turn(window, pokemon_player, pokemon_opponent, moves_available, i)
                     if battle_state == "ko":
                         return ko(window, pokemon_player, pokemon_opponent)
+                    elif battle_state == "continue":
+                        print("personne n'est ko donc on continue")
+                        pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
+                        return pokemon_player, pokemon_opponent, battle_running 
 
             if BACK_BUTTON.handle_event(event):
                 turn_running = False
@@ -183,11 +187,11 @@ def battle_menu(window):
         dt = clock.tick(30) / 1000
         elapsed += dt
         
-        if state != "ko":
+        if state != "ko" and state != "end":
             for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
                 button.draw(window)
         
-        if state == "ko" and elapsed >= 2:
+        elif state == "ko" and elapsed >= 2:
             pygame.draw.rect(window, BLACK,(0, res_scene[1], resolution[0], resolution[1]-res_scene[1]))
             winner,loser = pokemon_trainer.get_winner(trainer,opponent)
             text = f"{winner.name} a vaincu {loser.name} !"
