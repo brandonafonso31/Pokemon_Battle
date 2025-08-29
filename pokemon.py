@@ -258,7 +258,7 @@ class Pokemon:
         sound.play()
 
 
-    def animate_death(self, window, front_or_back, elapsed):
+    def animate_death(self, window, front_or_back):
         """
         Anime la disparition du Pokémon KO (appelée à chaque frame par ko()).
         - elapsed : temps écoulé depuis le début de l’anim
@@ -272,16 +272,17 @@ class Pokemon:
         x, y = json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["x"], \
             json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"]
 
-        scale = 2 + (front_or_back == "back")
-        w = 100 * scale * 64    #64 taille par default des images
-        rect = pygame.Rect(x, y, w, w)
+        rect = self.rect
+        clock = pygame.time.Clock()
+        elapsed = 0
+        while True:
+            dt = clock.tick(30) / 1000
+            elapsed += dt
 
-        # Exemple très simple : après 1s, efface le sprite
-        if elapsed >= 2:
-            self.play_howl()
-            window.blit(background, rect, rect)  # on efface le sprite
-            return True  # animation terminée
-        return False  # animation encore en cours
+            if elapsed >= 2:
+                self.play_howl()
+                window.blit(background, rect, rect)
+                return True
 
         
 def get_scale_by_nature(stat_name: str, nature: Nature):
