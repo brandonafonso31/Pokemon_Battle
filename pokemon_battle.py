@@ -36,16 +36,14 @@ def start_battle(window, trainer, trainer_ia, \
         
         if step == 0 and elapsed >= 1:  # après 2.5s : afficher ennemi
             pokemon_opponent = trainer_ia.send_next("front")
-            ui_battle.refresh_pokemon_sprite(window, pokemon_opponent, "opponent",battle_data)
-            ui_battle.draw_hp_bar(window, pokemon_opponent, from_trainer=False)
+            ui_battle.refresh_opponent_side(window, pokemon_opponent)
             pygame.display.flip()
             step = 1
             elapsed = 0
             
         elif step == 1 and elapsed >= 1:  # après 5s : afficher joueur
             pokemon_player = trainer.send_next("back")
-            ui_battle.refresh_pokemon_sprite(window, pokemon_player, "trainer",battle_data)
-            ui_battle.draw_hp_bar(window, pokemon_player, from_trainer=True)
+            ui_battle.refresh_player_side(window, pokemon_player)
             pygame.display.flip()
             step = 2
             running = False
@@ -109,6 +107,11 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
         
         if elapsed >= 1:
             break
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
     first, second, old_hp = first.use_move(first_move_id, second, window)
     ui_battle.draw_hp_bar(window, second, from_trainer=(second is pokemon_1),old_hp=old_hp)
@@ -149,6 +152,11 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
             
         elif state == 1 and elapsed >= 3:
             turn_running = False
+            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
             
     current_timing = bt.change_timing()
 

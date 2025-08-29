@@ -7,7 +7,7 @@ from pokemon_nature import Nature
 from math import floor,inf
 from pokemon_talent import Talent
 from random import randint,choice
-import os, pygame
+import os, pygame, sys
 
 LINE_PRINT = "-"*100
 
@@ -206,9 +206,11 @@ class Pokemon:
     def check_each_EV(self):
         return all([_ <= 252 for _ in self.EV.values()])
 
-    def add_rect(self,coord,scale = 2):
-        default_size = 64,64
-        self.rect = pygame.Rect(coord[0], coord[1], default_size[0]*scale, default_size[1]*scale)
+    def add_rect(self, coord, sprite_surface):
+        w = sprite_surface.get_width()
+        h = sprite_surface.get_height()
+        self.rect = pygame.Rect(coord[0], coord[1], w, h)
+
     
     
     def change_talent(self, talent: Talent):
@@ -273,6 +275,7 @@ class Pokemon:
             json_data[pokemon][str(current_pokemon_id[pokemon == "opponent"])]["y"]
 
         rect = self.rect
+        print(rect)
         clock = pygame.time.Clock()
         elapsed = 0
         while True:
@@ -283,6 +286,11 @@ class Pokemon:
                 self.play_howl()
                 window.blit(background, rect, rect)
                 return True
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
 
         
 def get_scale_by_nature(stat_name: str, nature: Nature):
