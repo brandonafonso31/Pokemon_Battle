@@ -1,6 +1,6 @@
 from config import img_dir_path,song_dir_path,battle_json_path,sprites_dir_path,background_dir_path,BLACK
 import ui_battle, os, sprite, pygame, json, sys
-from random import randint
+from random import randint,choice
 import battle_timing as bt
 
 def start_battle(window, trainer, trainer_ia, \
@@ -84,16 +84,24 @@ def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
     if move_player.prio > move_ia.prio:
         first, first_move_id = pokemon_1, move_id_player
         second, second_move_id = pokemon_2, move_id_ia
-    elif move_ia.prio > move_player.prio:
+    elif move_player.prio < move_ia.prio:
         first, first_move_id = pokemon_2, move_id_ia
         second, second_move_id = pokemon_1, move_id_player
     else:
-        if pokemon_1.vit >= pokemon_2.vit:
+        if pokemon_1.vit > pokemon_2.vit:
             first, first_move_id = pokemon_1, move_id_player
             second, second_move_id = pokemon_2, move_id_ia
-        else:
+        elif pokemon_1.vit < pokemon_2.vit:
             first, first_move_id = pokemon_2, move_id_ia
             second, second_move_id = pokemon_1, move_id_player
+        else:
+            # Si les vitesses sont égales, déterminer l'ordre aléatoirement
+            if choice([True, False]):
+                first, first_move_id = pokemon_1, move_id_player
+                second, second_move_id = pokemon_2, move_id_ia
+            else:
+                first, first_move_id = pokemon_2, move_id_ia
+                second, second_move_id = pokemon_1, move_id_player
 
     # TIMING : ABOUT_TO_GET_HIT
     current_timing = bt.change_timing()
