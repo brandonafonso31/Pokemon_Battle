@@ -15,9 +15,6 @@ pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.pn
 
 #------|Fonts
 font = pygame.font.Font(font_path, 40)
-
-#------|Utils
-      
             
 #------|Var
 BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
@@ -29,13 +26,6 @@ BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
 
 BACKGROUND_TITLE_IMAGE = pygame.image.load(os.path.join(sys_dir_path,"pokemon_logo.png"))
 BACKGROUND_TITLE_IMAGE = pygame.transform.scale(BACKGROUND_TITLE_IMAGE,(BACKGROUND_TITLE_IMAGE.get_width()//5,BACKGROUND_TITLE_IMAGE.get_height()//5))
-
-BACKGROUND_IMAGE_BOTTOM = pygame.image.load(os.path.join(sys_dir_path,"pokeball_full.jpg"))
-BACKGROUND_IMAGE_BOTTOM_LENGHT,BACKGROUND_IMAGE_BOTTOM_HEIGHT = BACKGROUND_INTRO.get_size()
-ratio = res_screen_bottom[0] / BACKGROUND_IMAGE_BOTTOM_LENGHT
-ratio2 = res_screen_bottom[1] / BACKGROUND_IMAGE_BOTTOM_HEIGHT
-scale = (BACKGROUND_IMAGE_BOTTOM_LENGHT*ratio,BACKGROUND_IMAGE_BOTTOM_HEIGHT*ratio2)
-BACKGROUND_IMAGE_BOTTOM = pygame.transform.scale(BACKGROUND_IMAGE_BOTTOM,scale)
 
 #------|Button
 BUTTON_LENGTH,BUTTON_HEIGHT = 191,82    # taille du boutton sans texte : 191 x 82 par default
@@ -108,7 +98,6 @@ def ko(window, pokemon_player, pokemon_opponent):
     pokemon_ko, front_or_back = (pokemon_player, "back") if pokemon_player.hp <= 0 else (pokemon_opponent, "front")
     ko_running = True
     state = 0
-    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     while ko_running:
         dt = clock.tick(30) / 1000
         elapsed += dt
@@ -132,8 +121,7 @@ def ko(window, pokemon_player, pokemon_opponent):
             elapsed = 0 
             
         # État 2 : envoie du pokemon suivant après 4s apres le state 1
-        elif state == 2 and elapsed >= 3:    
-            window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
+        elif state == 2 and elapsed >= 3: 
             if pokemon_ko is pokemon_player:
                 new_pokemon = trainer.send_next("back")
                 if new_pokemon is None:

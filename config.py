@@ -1,4 +1,4 @@
-import os
+import os,pygame
 
 project_name = "Pokemon: Battle Project"
 
@@ -23,3 +23,10 @@ BLACK = (0, 0, 0, 255)
 WHITE = (255, 255, 255, 255)
 
 font_path = os.path.join("font", "pokemon_BW2.otf")
+
+BACKGROUND_IMAGE_BOTTOM = pygame.image.load(os.path.join(sys_dir_path,"pokeball_full.jpg"))
+BACKGROUND_IMAGE_BOTTOM_LENGHT,BACKGROUND_IMAGE_BOTTOM_HEIGHT = BACKGROUND_IMAGE_BOTTOM.get_size()
+ratio = res_screen_bottom[0] / BACKGROUND_IMAGE_BOTTOM_LENGHT
+ratio2 = res_screen_bottom[1] / BACKGROUND_IMAGE_BOTTOM_HEIGHT
+scale = (BACKGROUND_IMAGE_BOTTOM_LENGHT*ratio,BACKGROUND_IMAGE_BOTTOM_HEIGHT*ratio2)
+BACKGROUND_IMAGE_BOTTOM = pygame.transform.scale(BACKGROUND_IMAGE_BOTTOM,scale)

@@ -1,4 +1,4 @@
-from config import song_dir_path,battle_json_path,background_dir_path,BLACK,res_screen_top,resolution
+from config import song_dir_path,battle_json_path,background_dir_path,BLACK,res_screen_top,resolution,res_screen_bottom,black_band_res,BACKGROUND_IMAGE_BOTTOM
 import ui_battle, os, sprite, pygame, json, sys, utils
 from random import randint,choice
 import battle_timing as bt
@@ -64,9 +64,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
     global res_screen_top, resolution
     
     # Nettoyage interface
-    menu_rect = pygame.Rect(0, res_screen_top[1], resolution[0], resolution[1] - res_screen_top[1])
-    pygame.draw.rect(window, BLACK, menu_rect)
-    pygame.display.update(menu_rect)
+    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
+    pygame.display.flip()
 
     # Vérification validité du move joueur
     if not check_move(move_id_player):
