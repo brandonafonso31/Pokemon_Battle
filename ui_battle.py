@@ -1,6 +1,6 @@
 from button import *
 from PIL import ImageColor
-from config import img_dir_path,BLACK,battle_json_path,WHITE,res_scene,resolution,font_path
+from config import *
 import os,json,sprite,button,sys
 
 def draw_move(window,move,x,y):
@@ -37,8 +37,8 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
     padding = 10  # Espacement autour des éléments
 
     if from_trainer:
-        x = res_scene[0] - (hp_bar_length + 2*padding)
-        y = res_scene[1] - hp_bar_height - 100
+        x = res_screen_top[0] - (hp_bar_length + 2*padding)
+        y = res_screen_top[1] - hp_bar_height - 100
     else:
         x, y = 2*padding, 100
 

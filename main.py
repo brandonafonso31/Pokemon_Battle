@@ -1,5 +1,5 @@
 import os,sys,pygame,pokemon_battle,ui_battle,json,sprite,pokemon_trainer
-from config import project_name,img_dir_path,sys_dir_path,BLACK,WHITE,song_dir_path,background_dir_path,battle_json_path,font_path
+from config import *
 from pygame.locals import *
 from button import Button
 
@@ -10,27 +10,23 @@ clock = pygame.time.Clock()
 dt = 0
 
 #------|Resolution
-res_screen_top = (753,500)
-res_screen_bottom = res_screen_top
-
-black_band_res = (max(res_screen_top[0],res_screen_bottom[0]),20)
-resolution = (max(res_screen_top[0],res_screen_bottom[0],black_band_res[0]),res_screen_top[1]+black_band_res[1]+res_screen_bottom[1])
 window = pygame.display.set_mode(resolution,vsync=1)
 pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
 
 #------|Fonts
 font = pygame.font.Font(font_path, 40)
+
 #------|Utils
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     window.blit(img, (x, y))
 
-def create_button(text,x,y,path=""):
+def create_button(text,x,y, scale = 1, path=""):
     if path == "":
         path = os.path.join(img_dir_path,"battle_ui/move_button.png")
     button_img = pygame.image.load(path).convert_alpha()
-    return Button(x, y, button_img, 1, text)
+    return Button(x, y, button_img, scale, text)
 
 def fps_counter():
     fps = str(int(clock.get_fps()))
@@ -45,9 +41,13 @@ def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
     else:
         # Lance le tour de combat (animations, dégâts…)
         pokemon_player, pokemon_opponent, still_in_battle = \
-            pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window, res_scene, resolution)
+            pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window, res_screen_top, resolution)
 
         return pokemon_player, pokemon_opponent, still_in_battle      
+
+def print_log_ingame(txt):
+    draw_text(txt, font, WHITE, res_screen_top[0], res_screen_bottom[1] - 50)
+    
             
 #------|Var
 BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
@@ -138,7 +138,7 @@ def ko(window, pokemon_player, pokemon_opponent):
     pokemon_ko, front_or_back = (pokemon_player, "back") if pokemon_player.hp <= 0 else (pokemon_opponent, "front")
     ko_running = True
     state = 0
-    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     while ko_running:
         dt = clock.tick(30) / 1000
         elapsed += dt
@@ -151,7 +151,7 @@ def ko(window, pokemon_player, pokemon_opponent):
         # État 0 : afficher le message KO
         if state == 0 and elapsed >= 0.5:
             text = f"{pokemon_ko.name} {'ennemi' if pokemon_ko is pokemon_opponent else 'allié'} est KO"
-            draw_text(text, font, WHITE, 100, 600)
+            print_log_ingame(text)
             state = 1
             elapsed = 0
             
@@ -163,14 +163,14 @@ def ko(window, pokemon_player, pokemon_opponent):
             
         # État 2 : envoie du pokemon suivant après 4s apres le state 1
         elif state == 2 and elapsed >= 3:    
-            window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+            window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
             if pokemon_ko is pokemon_player:
                 new_pokemon = trainer.send_next("back")
                 if new_pokemon is None:
                     return new_pokemon,pokemon_opponent, False
                 pokemon_player = new_pokemon
                 text = f"{pokemon_player.name} est envoyé par {trainer.name} !"
-                draw_text(text, font, WHITE, 100, 600)
+                print_log_ingame(text)
                 ui_battle.refresh_player_side(window,pokemon_player)
             else:
                 new_pokemon = opponent.send_next("front")
@@ -178,7 +178,7 @@ def ko(window, pokemon_player, pokemon_opponent):
                     return pokemon_player,pokemon_opponent, False
                 pokemon_opponent = new_pokemon
                 text = f"{pokemon_opponent.name} est envoyé par {opponent.name} !"
-                draw_text(text, font, WHITE, 100, 600)
+                print_log_ingame(text)
                 ui_battle.refresh_opponent_side(window,pokemon_opponent)
             state = 3
             elapsed = 0
@@ -188,7 +188,7 @@ def ko(window, pokemon_player, pokemon_opponent):
             
         pygame.display.flip()
         
-    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     return pokemon_player,pokemon_opponent,not(pokemon_player is None or pokemon_opponent is None)
 
 def attack_menu(window, pokemon_player, pokemon_opponent):
@@ -260,7 +260,7 @@ def battle_menu(window):
             window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
             winner,loser = pokemon_trainer.get_winner(trainer,opponent)
             text = f"{winner.name} a vaincu {loser.name} !"
-            draw_text(text, font, WHITE, 100, 600)
+            print_log_ingame(text)
             elapsed = 0
             state = "end"
         

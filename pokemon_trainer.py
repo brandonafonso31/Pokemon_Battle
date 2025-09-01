@@ -1,6 +1,6 @@
 # Une class en plus pour pokemon_team ?
-import sprite,pygame,json,os
-from config import battle_json_path,res_scene
+import sprite,json
+from config import battle_json_path,res_screen_top
 from copy import deepcopy
 
 class Pokemon_trainer:
@@ -55,15 +55,14 @@ class Pokemon_trainer:
                 return pokemon
         return None
     
-    def set_team_into_json(self,trainer_or_opponent: str):     
-        global res_scene
+    def set_team_into_json(self,trainer_or_opponent: str):
         pokemon_team = {}
         for i in range(len(self.pokemon_team)):
             pokemon = self.pokemon_team[i]
             if trainer_or_opponent == "trainer":
-                data = sprite.create_pokemon_trainer(res_scene, pokemon, i+1, f"pokemon_back_{i+1}.png")
+                data = sprite.create_pokemon_trainer(res_screen_top, pokemon, i+1, f"pokemon_back_{i+1}.png")
             else:
-                data = sprite.create_pokemon_opponent(res_scene, pokemon, i+1, f"pokemon_front_{i+1}.png")
+                data = sprite.create_pokemon_opponent(res_screen_top, pokemon, i+1, f"pokemon_front_{i+1}.png")
             pokemon_team[str(i+1)] = data      
         
         sprite.update_battle_json({trainer_or_opponent: pokemon_team})   
