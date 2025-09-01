@@ -38,9 +38,9 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
 
     if from_trainer:
         x = res_scene[0] - (hp_bar_length + 2*padding)
-        y = res_scene[1] - hp_bar_height - 50
+        y = res_scene[1] - hp_bar_height - 100
     else:
-        x, y = 2*padding, 50
+        x, y = 2*padding, 100
 
     hp_max = pokemon.hp_max if pokemon.hp_max > 0 else 1
     current_hp = pokemon.hp
