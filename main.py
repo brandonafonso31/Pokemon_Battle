@@ -110,7 +110,7 @@ def bag_menu(window, pokemon_player, pokemon_opponent):
         dt = clock.tick(30)
         window.fill(BLACK)
         
-        draw_text("Sac", font, "#b68f40", res_scene[0]//2 - 200, res_scene[1]//2)
+        draw_text("Sac", font, "#b68f40", res_screen_bottom[0]//2 - 200, res_screen_bottom[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
