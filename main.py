@@ -87,7 +87,7 @@ def pokemon_team_menu(window,pokemon_player, pokemon_opponent):
         dt = clock.tick(30)
         window.fill(BLACK)
         
-        draw_text("Pokemon Team", font, "#b68f40", res_scene[0]//2 - 200, res_scene[1]//2)
+        draw_text("Pokemon Team", font, "#b68f40", res_screen_bottom[0]//2 - 200, res_screen_bottom[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
@@ -193,18 +193,21 @@ def ko(window, pokemon_player, pokemon_opponent):
 
 def attack_menu(window, pokemon_player, pokemon_opponent):
     window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
+    moves_available = pokemon_player.get_moveset()
+        
+    button_padding = 20
+    center = (resolution[0]//2,resolution[1] - res_screen_bottom[1]//2)
+    list_coord = [(center[0] - BUTTON_LENGTH - button_padding, center[1] - BUTTON_HEIGHT - button_padding),
+                    (center[0] + button_padding, center[1] - BUTTON_HEIGHT - button_padding),
+                    (center[0] - BUTTON_LENGTH - button_padding, center[1]),
+                    (center[0] + button_padding, center[1])]
+    
     turn_running = True
     battle_running = True
     while turn_running:
         dt = clock.tick(30)
                     
         # --- créer boutons des attaques
-        moves_available = pokemon_player.get_moveset()
-        center = (resolution[0]//2,resolution[1] - res_screen_bottom[1]//2)
-        list_coord = [(center[0] - BUTTON_LENGTH, center[1] - BUTTON_HEIGHT),
-                      (center[0], center[1] - BUTTON_HEIGHT),
-                      (center[0] - BUTTON_LENGTH, center[1]),
-                      (center[0], center[1])]
         moves_button = [ui_battle.draw_move(window, move, coord[0], coord[1])
                         for move, coord in zip(moves_available, list_coord)]
         
@@ -326,11 +329,11 @@ def main_menu(window):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+                
             if PLAY_BUTTON.handle_event(event):
                 battle_menu(window)
                 pygame.quit()
                 sys.exit()
-
             if OPTIONS_BUTTON.handle_event(event):
                 options_menu(window)
             if QUIT_BUTTON.handle_event(event):
