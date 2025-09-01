@@ -1,7 +1,6 @@
-import os,sys,pygame,pokemon_battle,ui_battle,json,sprite,pokemon_trainer
+import os,sys,pygame,pokemon_battle,ui_battle,json,sprite,pokemon_trainer,utils
 from config import *
 from pygame.locals import *
-from button import Button
 
 #------|Init pygame
 pygame.init()
@@ -18,36 +17,7 @@ pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.pn
 font = pygame.font.Font(font_path, 40)
 
 #------|Utils
-def draw_text(text, font, text_col, x, y):
-    img = font.render(text, True, text_col)
-    window.blit(img, (x, y))
-
-def print_log_ingame(txt):
-    draw_text(txt, font, WHITE, res_screen_top[0], res_screen_bottom[1] - 50)
-    
-def create_button(text,x,y, scale = 1, path=""):
-    if path == "":
-        path = os.path.join(img_dir_path,"battle_ui/move_button.png")
-    button_img = pygame.image.load(path).convert_alpha()
-    return Button(x, y, button_img, scale, text)
-
-def fps_counter():
-    fps = str(int(clock.get_fps()))
-    fps_t = font.render(f"{fps} fps" , 1, pygame.Color("RED"))
-    window.blit(fps_t,(0,0))
-
-def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
-    """Joue un tour de combat avec le move choisi et retourne l'état."""
-    if moves[move_id].pp <= 0:
-        text = f"{pokemon_player.name} n'a plus de PP pour {moves[move_id].name}"
-        print_log_ingame(text)
-        return pokemon_player, pokemon_opponent, True  # toujours en combat, mais pas d'action
-    else:
-        # Lance le tour de combat (animations, dégâts…)
-        pokemon_player, pokemon_opponent, still_in_battle = \
-            pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window, res_screen_top, resolution)
-
-        return pokemon_player, pokemon_opponent, still_in_battle      
+      
             
 #------|Var
 BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
@@ -70,14 +40,14 @@ BACKGROUND_IMAGE_BOTTOM = pygame.transform.scale(BACKGROUND_IMAGE_BOTTOM,scale)
 #------|Button
 BUTTON_LENGTH,BUTTON_HEIGHT = 191,82    # taille du boutton sans texte : 191 x 82 par default
 
-PLAY_BUTTON = create_button("Jouer", (resolution[0] - BUTTON_LENGTH)//2 , res_screen_bottom[1] + black_band_res[1]+25)
-OPTIONS_BUTTON = create_button("Options", (resolution[0] - BUTTON_LENGTH)//2, res_screen_bottom[1] + black_band_res[1] + 175)
-QUIT_BUTTON = create_button("Quitter", (resolution[0] - BUTTON_LENGTH)//2, res_screen_bottom[1] + black_band_res[1] + 325)
+PLAY_BUTTON = utils.create_button("Jouer", (resolution[0] - BUTTON_LENGTH)//2 , res_screen_bottom[1] + black_band_res[1]+25)
+OPTIONS_BUTTON = utils.create_button("Options", (resolution[0] - BUTTON_LENGTH)//2, res_screen_bottom[1] + black_band_res[1] + 175)
+QUIT_BUTTON = utils.create_button("Quitter", (resolution[0] - BUTTON_LENGTH)//2, res_screen_bottom[1] + black_band_res[1] + 325)
 
-ATTACK_BUTTON = create_button("Attaquer", (resolution[0] - 191)//2, res_screen_bottom[1] + black_band_res[1] + 50)
-POKEMON_BUTTON = create_button("Pokémon", resolution[0] - 191 - 18, resolution[1] - 82 - 18)
-BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
-BACK_BUTTON = create_button("Retour", (resolution[0] - 191)//2, resolution[1] - 82 - 18)
+ATTACK_BUTTON = utils.create_button("Attaquer", (resolution[0] - 191)//2, res_screen_bottom[1] + black_band_res[1] + 50)
+POKEMON_BUTTON = utils.create_button("Pokémon", resolution[0] - 191 - 18, resolution[1] - 82 - 18)
+BAG_BUTTON = utils.create_button("Sac", 18, resolution[1] - 82 - 18)
+BACK_BUTTON = utils.create_button("Retour", (resolution[0] - 191)//2, resolution[1] - 82 - 18)
 
 
 #------|function
@@ -87,7 +57,7 @@ def pokemon_team_menu(window,pokemon_player, pokemon_opponent):
         dt = clock.tick(30)
         window.fill(BLACK)
         
-        draw_text("Pokemon Team", font, "#b68f40", res_screen_bottom[0]//2 - 200, res_screen_bottom[1]//2)
+        utils.draw_text(window,"Pokemon Team", font, "#b68f40", res_screen_bottom[0]//2 - 200, res_screen_bottom[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
@@ -110,7 +80,7 @@ def bag_menu(window, pokemon_player, pokemon_opponent):
         dt = clock.tick(30)
         window.fill(BLACK)
         
-        draw_text("Sac", font, "#b68f40", res_screen_bottom[0]//2 - 200, res_screen_bottom[1]//2)
+        utils.draw_text(window,"Sac", font, "#b68f40", res_screen_bottom[0]//2 - 200, res_screen_bottom[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
@@ -151,7 +121,7 @@ def ko(window, pokemon_player, pokemon_opponent):
         # État 0 : afficher le message KO
         if state == 0 and elapsed >= 0.5:
             text = f"{pokemon_ko.name} {'ennemi' if pokemon_ko is pokemon_opponent else 'allié'} est KO"
-            print_log_ingame(text)
+            utils.print_log_ingame(window,text)
             state = 1
             elapsed = 0
             
@@ -170,7 +140,7 @@ def ko(window, pokemon_player, pokemon_opponent):
                     return new_pokemon,pokemon_opponent, False
                 pokemon_player = new_pokemon
                 text = f"{pokemon_player.name} est envoyé par {trainer.name} !"
-                print_log_ingame(text)
+                utils.print_log_ingame(window,text)
                 ui_battle.refresh_player_side(window,pokemon_player)
             else:
                 new_pokemon = opponent.send_next("front")
@@ -178,7 +148,7 @@ def ko(window, pokemon_player, pokemon_opponent):
                     return pokemon_player,pokemon_opponent, False
                 pokemon_opponent = new_pokemon
                 text = f"{pokemon_opponent.name} est envoyé par {opponent.name} !"
-                print_log_ingame(text)
+                utils.print_log_ingame(window,text)
                 ui_battle.refresh_opponent_side(window,pokemon_opponent)
             state = 3
             elapsed = 0
@@ -222,7 +192,7 @@ def attack_menu(window, pokemon_player, pokemon_opponent):
             for i, button in enumerate(moves_button):
                 if button.handle_event(event):
                     pokemon_player, pokemon_opponent, battle_state = \
-                        start_turn(window, pokemon_player, pokemon_opponent, moves_available, i)
+                        utils.start_turn(window, pokemon_player, pokemon_opponent, moves_available, i)
                     if battle_state == "ko":
                         return ko(window, pokemon_player, pokemon_opponent)
                     elif battle_state == "continue":
@@ -260,7 +230,7 @@ def battle_menu(window):
             window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
             winner,loser = pokemon_trainer.get_winner(trainer,opponent)
             text = f"{winner.name} a vaincu {loser.name} !"
-            print_log_ingame(text)
+            utils.print_log_ingame(window,text)
             elapsed = 0
             state = "end"
         
@@ -289,9 +259,9 @@ def options_menu(window):
     while options_running :
         dt = clock.tick(30)
         window.fill(BLACK)
-        fps_counter()
+        utils.fps_counter()
         
-        draw_text("OPTIONS", font, "#b68f40", res_screen_bottom[0]//2 + 200, res_screen_bottom[1]//2)
+        utils.draw_text(window,"OPTIONS", font, "#b68f40", res_screen_bottom[0]//2 + 200, res_screen_bottom[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
