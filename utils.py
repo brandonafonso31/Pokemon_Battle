@@ -1,6 +1,5 @@
-from config import WHITE, res_screen_top,res_screen_bottom,img_dir_path,font_path
-import os,pygame,button,pokemon_battle
-
+from config import WHITE, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path
+import os,pygame,button,pokemon_battle,json
 def draw_text(surface,text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     surface.blit(img, (x, y))
@@ -27,3 +26,13 @@ def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
             pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window)
 
         return pokemon_player, pokemon_opponent, still_in_battle
+
+def update_battle_json(updates: dict):
+    if os.path.exists(battle_json_path):
+        with open(battle_json_path, "r") as f:
+            data = json.load(f)
+    else:
+        data = {}
+    data.update(updates)
+    with open(battle_json_path, "w") as f:
+        json.dump(data, f, indent=4)

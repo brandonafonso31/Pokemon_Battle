@@ -1,5 +1,5 @@
 from config import song_dir_path,battle_json_path,background_dir_path,BLACK,res_screen_top,resolution
-import ui_battle, os, sprite, pygame, json, sys
+import ui_battle, os, sprite, pygame, json, sys, utils
 from random import randint,choice
 import battle_timing as bt
 
@@ -14,14 +14,14 @@ def start_battle(window, trainer, trainer_ia, \
     pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
-    sprite.update_battle_json({"music": music_path})
+    utils.update_battle_json({"music": music_path})
 
     #---------------------------| BACKGROUND |---------------------------#
     background_path = os.path.join(background_dir_path, background)
     background = pygame.image.load(background_path).convert()
     window.blit(background, (0, 0))
     pygame.display.flip()
-    sprite.update_battle_json({"background": background_path})
+    utils.update_battle_json({"background": background_path})
 
     #---------------------| Gestion des étapes avec timer |---------------#
     clock = pygame.time.Clock()

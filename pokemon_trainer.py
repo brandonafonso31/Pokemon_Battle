@@ -1,5 +1,5 @@
 # Une class en plus pour pokemon_team ?
-import sprite,json
+import sprite,json,utils
 from config import battle_json_path,res_screen_top
 from copy import deepcopy
 
@@ -50,7 +50,7 @@ class Pokemon_trainer:
                 # afficher un texte pour annoncer l'arrive du suivant
                 dic = data["current"]
                 dic = {"current": [dic[0],i+1]} if front_or_back == "front" else {"current": [i+1,dic[1]]}
-                sprite.update_battle_json(dic)
+                utils.update_battle_json(dic)
                 pokemon.play_howl()
                 return pokemon
         return None
@@ -65,7 +65,7 @@ class Pokemon_trainer:
                 data = sprite.create_pokemon_opponent(res_screen_top, pokemon, i+1, f"pokemon_front_{i+1}.png")
             pokemon_team[str(i+1)] = data      
         
-        sprite.update_battle_json({trainer_or_opponent: pokemon_team})   
+        utils.update_battle_json({trainer_or_opponent: pokemon_team})   
 
 def init_trainer():       
     from pokemon_init import leviator,dracaufeu,gengar    
@@ -82,7 +82,7 @@ def init_trainer():
 
     trainer.set_team_into_json("trainer")
     trainer_ai.set_team_into_json("opponent")
-    sprite.update_battle_json({"current": [1,1]})
+    utils.update_battle_json({"current": [1,1]})
     return trainer,trainer_ai
 
 def get_winner(trainer1,trainer2):

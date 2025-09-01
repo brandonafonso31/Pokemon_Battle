@@ -113,16 +113,6 @@ def create_pokemon_trainer(res, pokemon, id, save_to_filename: str):
     pokemon.add_rect((x_trainer, y_trainer), trainer_pokemon_sprite)
     return pokemon_json
 
-def update_battle_json(updates: dict):
-    if os.path.exists(battle_json_path):
-        with open(battle_json_path, "r") as f:
-            data = json.load(f)
-    else:
-        data = {}
-    data.update(updates)
-    with open(battle_json_path, "w") as f:
-        json.dump(data, f, indent=4)
-
 def get_image(image_path,scale=1):
     image = pygame.image.load(image_path).convert()
     w,h = image.get_size()
