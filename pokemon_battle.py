@@ -1,4 +1,4 @@
-from config import img_dir_path,song_dir_path,battle_json_path,sprites_dir_path,background_dir_path,BLACK
+from config import song_dir_path,battle_json_path,background_dir_path,BLACK,res_screen_top,resolution
 import ui_battle, os, sprite, pygame, json, sys
 from random import randint,choice
 import battle_timing as bt
@@ -59,11 +59,12 @@ def start_battle(window, trainer, trainer_ia, \
 def check_move(move_id: str):
     return move_id in ["move1", "move2", "move3", "move4"]
 
-def turn(pokemon_1, pokemon_2, move_id_player, window, res_scene, resolution):
+def turn(pokemon_1, pokemon_2, move_id_player, window):
     """Exécute un tour complet de combat entre deux Pokémon."""
-
+    global res_screen_top, resolution
+    
     # Nettoyage interface
-    menu_rect = pygame.Rect(0, res_scene[1], resolution[0], resolution[1] - res_scene[1])
+    menu_rect = pygame.Rect(0, res_screen_top[1], resolution[0], resolution[1] - res_screen_top[1])
     pygame.draw.rect(window, BLACK, menu_rect)
     pygame.display.update(menu_rect)
 

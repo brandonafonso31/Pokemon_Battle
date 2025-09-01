@@ -22,6 +22,9 @@ def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     window.blit(img, (x, y))
 
+def print_log_ingame(txt):
+    draw_text(txt, font, WHITE, res_screen_top[0], res_screen_bottom[1] - 50)
+    
 def create_button(text,x,y, scale = 1, path=""):
     if path == "":
         path = os.path.join(img_dir_path,"battle_ui/move_button.png")
@@ -36,7 +39,8 @@ def fps_counter():
 def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
     """Joue un tour de combat avec le move choisi et retourne l'état."""
     if moves[move_id].pp <= 0:
-        print(f"{pokemon_player.name} n'a plus de PP pour {moves[move_id].name}")
+        text = f"{pokemon_player.name} n'a plus de PP pour {moves[move_id].name}"
+        print_log_ingame(text)
         return pokemon_player, pokemon_opponent, True  # toujours en combat, mais pas d'action
     else:
         # Lance le tour de combat (animations, dégâts…)
@@ -44,10 +48,6 @@ def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
             pokemon_battle.turn(pokemon_player, pokemon_opponent, f"move{move_id + 1}", window, res_screen_top, resolution)
 
         return pokemon_player, pokemon_opponent, still_in_battle      
-
-def print_log_ingame(txt):
-    draw_text(txt, font, WHITE, res_screen_top[0], res_screen_bottom[1] - 50)
-    
             
 #------|Var
 BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
