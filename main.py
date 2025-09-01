@@ -10,9 +10,11 @@ clock = pygame.time.Clock()
 dt = 0
 
 #------|Resolution
-res_scene = (753,500)
-black_band_res = (res_scene[0],20)
-resolution = (res_scene[0],2*res_scene[1]+black_band_res[1])
+res_screen_top = (753,500)
+res_screen_bottom = res_screen_top
+
+black_band_res = (max(res_screen_top[0],res_screen_bottom[0]),20)
+resolution = (max(res_screen_top[0],res_screen_bottom[0],black_band_res[0]),res_screen_top[1]+black_band_res[1]+res_screen_bottom[1])
 window = pygame.display.set_mode(resolution,vsync=1)
 pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path,"sys/logo.png")))
@@ -48,12 +50,11 @@ def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
         return pokemon_player, pokemon_opponent, still_in_battle      
             
 #------|Var
-y_menu = res_scene[1] + 50
-x_menu = 50
 BACKGROUND_INTRO = pygame.image.load(os.path.join(sys_dir_path,"intro.jpg"))
 BACKGROUND_LENGHT,BACKGROUND_HEIGHT = BACKGROUND_INTRO.get_size()
-ratio = resolution[0] / BACKGROUND_LENGHT
-scale = (BACKGROUND_LENGHT*ratio,BACKGROUND_HEIGHT*ratio)
+ratio = res_screen_top[0] / BACKGROUND_LENGHT
+ratio2 = res_screen_top[1] / BACKGROUND_HEIGHT
+scale = (BACKGROUND_LENGHT*ratio,BACKGROUND_HEIGHT*ratio2)
 BACKGROUND_INTRO = pygame.transform.scale(BACKGROUND_INTRO,scale)
 
 BACKGROUND_TITLE_IMAGE = pygame.image.load(os.path.join(sys_dir_path,"pokemon_logo.png"))
@@ -61,18 +62,19 @@ BACKGROUND_TITLE_IMAGE = pygame.transform.scale(BACKGROUND_TITLE_IMAGE,(BACKGROU
 
 BACKGROUND_IMAGE_BOTTOM = pygame.image.load(os.path.join(sys_dir_path,"pokeball_full.jpg"))
 BACKGROUND_IMAGE_BOTTOM_LENGHT,BACKGROUND_IMAGE_BOTTOM_HEIGHT = BACKGROUND_INTRO.get_size()
-ratio = resolution[0] / BACKGROUND_IMAGE_BOTTOM_LENGHT
-scale = (BACKGROUND_IMAGE_BOTTOM_LENGHT*ratio,BACKGROUND_IMAGE_BOTTOM_HEIGHT*ratio)
+ratio = res_screen_bottom[0] / BACKGROUND_IMAGE_BOTTOM_LENGHT
+ratio2 = res_screen_bottom[1] / BACKGROUND_IMAGE_BOTTOM_HEIGHT
+scale = (BACKGROUND_IMAGE_BOTTOM_LENGHT*ratio,BACKGROUND_IMAGE_BOTTOM_HEIGHT*ratio2)
 BACKGROUND_IMAGE_BOTTOM = pygame.transform.scale(BACKGROUND_IMAGE_BOTTOM,scale)
 
 #------|Button
 BUTTON_LENGTH,BUTTON_HEIGHT = 191,82    # taille du boutton sans texte : 191 x 82 par default
 
-PLAY_BUTTON = create_button("Jouer", (resolution[0] - BUTTON_LENGTH)//2 , res_scene[1] + black_band_res[1]+25)
-OPTIONS_BUTTON = create_button("Options", (resolution[0] - BUTTON_LENGTH)//2, res_scene[1] + black_band_res[1] + 175)
-QUIT_BUTTON = create_button("Quitter", (resolution[0] - BUTTON_LENGTH)//2, res_scene[1] + black_band_res[1] + 325)
+PLAY_BUTTON = create_button("Jouer", (resolution[0] - BUTTON_LENGTH)//2 , res_screen_bottom[1] + black_band_res[1]+25)
+OPTIONS_BUTTON = create_button("Options", (resolution[0] - BUTTON_LENGTH)//2, res_screen_bottom[1] + black_band_res[1] + 175)
+QUIT_BUTTON = create_button("Quitter", (resolution[0] - BUTTON_LENGTH)//2, res_screen_bottom[1] + black_band_res[1] + 325)
 
-ATTACK_BUTTON = create_button("Attaquer", (resolution[0] - 191)//2, res_scene[1] + black_band_res[1] + 25)
+ATTACK_BUTTON = create_button("Attaquer", (resolution[0] - 191)//2, res_screen_bottom[1] + black_band_res[1] + 50)
 POKEMON_BUTTON = create_button("Pokémon", resolution[0] - 191 - 18, resolution[1] - 82 - 18)
 BAG_BUTTON = create_button("Sac", 18, resolution[1] - 82 - 18)
 BACK_BUTTON = create_button("Retour", (resolution[0] - 191)//2, resolution[1] - 82 - 18)
@@ -190,7 +192,7 @@ def ko(window, pokemon_player, pokemon_opponent):
     return pokemon_player,pokemon_opponent,not(pokemon_player is None or pokemon_opponent is None)
 
 def attack_menu(window, pokemon_player, pokemon_opponent):
-    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     turn_running = True
     battle_running = True
     while turn_running:
@@ -198,10 +200,11 @@ def attack_menu(window, pokemon_player, pokemon_opponent):
                     
         # --- créer boutons des attaques
         moves_available = pokemon_player.get_moveset()
-        list_coord = [(18,res_scene[1] + 18),
-                      (resolution[0] - 191 - 18, res_scene[1] + 18),
-                      (18,resolution[1] - 18  - 82),
-                      (resolution[0] - 191 - 18,resolution[1] - 18 - 82)]
+        center = (resolution[0]//2,resolution[1] - res_screen_bottom[1]//2)
+        list_coord = [(center[0] - BUTTON_LENGTH, center[1] - BUTTON_HEIGHT),
+                      (center[0], center[1] - BUTTON_HEIGHT),
+                      (center[0] - BUTTON_LENGTH, center[1]),
+                      (center[0], center[1])]
         moves_button = [ui_battle.draw_move(window, move, coord[0], coord[1])
                         for move, coord in zip(moves_available, list_coord)]
         
@@ -221,14 +224,14 @@ def attack_menu(window, pokemon_player, pokemon_opponent):
                         return ko(window, pokemon_player, pokemon_opponent)
                     elif battle_state == "continue":
                         print("personne n'est ko donc on continue")
-                        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+                        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
                         return pokemon_player, pokemon_opponent, battle_running 
 
             if BACK_BUTTON.handle_event(event):
                 turn_running = False
 
         pygame.display.flip()
-    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     return pokemon_player, pokemon_opponent, battle_running
 
 def battle_menu(window):    
@@ -237,21 +240,21 @@ def battle_menu(window):
     trainer,opponent = pokemon_trainer.init_trainer()
     # random background()
     bg_path = os.path.join(background_dir_path,"bg-forest.png")
-    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent,background=bg_path)
     elapsed = 0
     state =""
     while battle_running :
         dt = clock.tick(30) / 1000
         elapsed += dt
-        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
         
         if state != "ko" and state != "end":
             for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
                 button.draw(window)
         
         elif state == "ko" and elapsed >= 2:
-            window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+            window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
             winner,loser = pokemon_trainer.get_winner(trainer,opponent)
             text = f"{winner.name} a vaincu {loser.name} !"
             draw_text(text, font, WHITE, 100, 600)
@@ -285,7 +288,7 @@ def options_menu(window):
         window.fill(BLACK)
         fps_counter()
         
-        draw_text("OPTIONS", font, "#b68f40", res_scene[0]//2 + 200, res_scene[1]//2)
+        draw_text("OPTIONS", font, "#b68f40", res_screen_bottom[0]//2 + 200, res_screen_bottom[1]//2)
 
         for button in [BACK_BUTTON]:
             button.draw(window)
@@ -313,8 +316,8 @@ def main_menu(window):
         
         window.fill(BLACK)        
         window.blit(BACKGROUND_INTRO,(0,0))       
-        window.blit(BACKGROUND_TITLE_IMAGE, ((res_scene[0] - BACKGROUND_TITLE_IMAGE.get_width())//2, 0))
-        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_scene[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_scene[1] + black_band_res[1]))
+        window.blit(BACKGROUND_TITLE_IMAGE, ((res_screen_bottom[0] - BACKGROUND_TITLE_IMAGE.get_width())//2, 0))
+        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
         
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
             button.draw(window)
