@@ -39,7 +39,7 @@ class Pokemon_trainer:
             self.pokemon_team.append(pokemon)
             print(f"{self.name} a capturé {pokemon.name}")
             
-    def send_next(self,window,front_or_back: str):
+    def send_next(self,window,front_or_back: str,reset = False):
         "for now only send the next in list, no choice"
         with open(battle_json_path, "r") as f:
             data = json.load(f)
@@ -48,7 +48,7 @@ class Pokemon_trainer:
             pokemon = team[i]
             if pokemon.hp != 0:
                 text = f"{self.name} envoie {pokemon.name} !"
-                utils.print_log_ingame(window,text)
+                utils.print_log_ingame(window,text,reset)
                 dic = data["current"]
                 dic = {"current": [dic[0],i+1]} if front_or_back == "front" else {"current": [i+1,dic[1]]}
                 utils.update_battle_json(dic)

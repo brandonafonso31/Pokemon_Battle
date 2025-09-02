@@ -110,7 +110,7 @@ def ko(window, pokemon_player, pokemon_opponent):
         # État 0 : afficher le message KO
         if state == 0 and elapsed >= 0.5:
             text = f"{pokemon_ko.name} {'ennemi' if pokemon_ko is pokemon_opponent else 'allié'} est KO"
-            utils.print_log_ingame(window,text)
+            utils.print_log_ingame(window,text, reset = True)
             state = 1
             elapsed = 0
             

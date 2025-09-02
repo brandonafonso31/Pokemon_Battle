@@ -161,7 +161,7 @@ class Pokemon:
             return None  # Signal to request another move
         move.pp -= 1
         text = f"{self.name} utilise {move.name} !"
-        utils.print_log_ingame(window,text)
+        utils.print_log_ingame(window,text,reset = True)
         
         # Calculate damage
         damage = 0

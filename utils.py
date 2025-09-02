@@ -5,7 +5,19 @@ def draw_text(surface,text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     surface.blit(img, (x, y))
 
-def print_log_ingame(surface,txt):
+def reset_log(surface):
+    delay_flat(1)
+    with open(battle_json_path, "r") as f:
+        battle_data = json.load(f)
+    background = pygame.image.load(battle_data["background"]).convert()
+    
+    rect_height = 50
+    rect = pygame.Rect(0,res_screen_top[1]- rect_height,res_screen_top[0],rect_height-5)
+
+    surface.blit(background, rect, rect)
+    pygame.display.flip()
+    
+def print_log_ingame(surface,txt,reset = False):
     with open(battle_json_path, "r") as f:
         battle_data = json.load(f)
     background = pygame.image.load(battle_data["background"]).convert()
@@ -24,6 +36,9 @@ def print_log_ingame(surface,txt):
     font = pygame.font.Font(font_path,30)
     padding = 10
     draw_text(surface, txt, font, WHITE, padding, res_screen_bottom[1] - rect_height//2 - padding)
+    pygame.display.flip()
+    if reset:
+        reset_log(surface)
     
 def create_button(text,x,y, scale = 1, path=""):
     if path == "":
@@ -35,7 +50,8 @@ def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
     """Joue un tour de combat avec le move choisi et retourne l'état."""
     if moves[move_id].pp <= 0:
         text = f"{pokemon_player.name} n'a plus de PP pour {moves[move_id].name}"
-        print_log_ingame(window,text)
+        print_log_ingame(window,text, reset = True)
+        
         return pokemon_player, pokemon_opponent, "choose_attack"  # toujours en combat, mais pas d'action
     else:
         # Lance le tour de combat (animations, dégâts…)
