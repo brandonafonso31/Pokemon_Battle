@@ -1,5 +1,5 @@
 principal:
-    - ajuster le sprite de l'adversaire (le faire disparaitre)
+    - ajouter la pokéball au sol (ou en l'air qui tourne) à partir du moment où le sprite de l'adversaire se déplace
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter animation sortie de pokeball pour l'adversaire
     - implenter animations des attaques

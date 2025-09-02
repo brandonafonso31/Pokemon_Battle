@@ -1,5 +1,5 @@
 # Une class en plus pour pokemon_team ?
-import sprite,json,utils,os,pygame
+import sprite,json,utils,os,pygame,sys
 from config import battle_json_path,res_screen_top,sprite_trainers_dir_path
 from copy import deepcopy
 
@@ -9,7 +9,7 @@ class Pokemon_trainer:
         self.pokemon_team = []
         self.pc = []
         self.sprite_path = os.path.join(sprite_trainers_dir_path,f"{(self.name).upper()}.png")
-        self.sprite_coord = 0,0
+        self.sprite_coord = -1,-1
     
     def __str__(self):
         string  = f"Dresseur: {self.name}\nPokémon:"
@@ -78,12 +78,38 @@ class Pokemon_trainer:
         sprite_trainer = pygame.image.load(sprite_path).convert()
         sprite_trainer.set_colorkey(sprite.get_first_pixel(sprite_path))
         
-        base_offset = sprite.get_base_pixel(sprite_path) - sprite_trainer.get_height()
-        x_trainer = (res_screen_top[0] + sprite_trainer.get_width())//2 + 30
-        y_trainer = res_screen_top[1]//2 - base_offset - 150
-        self.sprite_coord = x_trainer,y_trainer
+        if self.sprite_coord == (-1,-1) :
+            base_offset = sprite.get_base_pixel(sprite_path) - sprite_trainer.get_height()
+            x_trainer = (res_screen_top[0] + sprite_trainer.get_width())//2 + 30
+            y_trainer = res_screen_top[1]//2 - base_offset - 150
+            self.sprite_coord = x_trainer,y_trainer
+            
         return sprite_trainer
 
+    def move_to_right(self,window):
+        sprite_trainer = self.get_opponent_sprite()
+        x,y = self.sprite_coord
+        with open(battle_json_path, "r") as f:
+            data = json.load(f)        
+        bg = pygame.image.load(data["background"]).convert()
+        rect = pygame.Rect(x,y,sprite_trainer.get_width(),sprite_trainer.get_height())
+        clock = pygame.time.Clock()
+        dt = 0
+        limit_x = res_screen_top[0]
+        while x < limit_x:
+            dt = clock.tick(30) / 1000
+            rect = pygame.Rect(x,y,sprite_trainer.get_width(),sprite_trainer.get_height())
+            window.blit(bg,rect,rect)
+            x += 150 * dt
+            window.blit(sprite_trainer,(x,y))          
+            
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+            
+            pygame.display.flip()
+            
 def init_trainer():       
     from pokemon_init import leviator,dracaufeu,gengar   
     trainer_ai = Pokemon_trainer("Red")
