@@ -51,7 +51,8 @@ def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):
     if moves[move_id].pp <= 0:
         text = f"{pokemon_player.name} n'a plus de PP pour {moves[move_id].name}"
         print_log_ingame(window,text, reset = True)
-        
+        text = f"Que dois faire {pokemon_player.name} ?"
+        print_log_ingame(window,text)
         return pokemon_player, pokemon_opponent, "choose_attack"  # toujours en combat, mais pas d'action
     else:
         # Lance le tour de combat (animations, dégâts…)
