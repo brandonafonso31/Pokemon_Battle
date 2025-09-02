@@ -1,6 +1,4 @@
 principal:
-    - modifier la position des barres de vie
-    - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
     - ajouter animation sortie de pokeball
     - implenter animations des attaques
     - implémenter sac et le switch de pokemon
