@@ -201,16 +201,17 @@ def battle_menu(window):
     pokemon_player,pokemon_opponent,window = pokemon_battle.start_battle(window,trainer,opponent,background=bg_path)
     elapsed = 0
     state =""
+    showing_menu = True
     while battle_running :
         dt = clock.tick(30) / 1000
         elapsed += dt
-        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
-        
-        if state != "ko" and state != "end":            
+        if showing_menu and state != "ko" and state != "end":
+            window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))           
             text = f"Que dois faire {pokemon_player.name} ?"
             utils.print_log_ingame(window,text)
             for button in [ATTACK_BUTTON, BAG_BUTTON, POKEMON_BUTTON]:
                 button.draw(window)
+            showing_menu = False
         
         elif state == "ko" and elapsed >= 2:
             winner,loser = pokemon_trainer.get_winner(trainer,opponent)
@@ -226,18 +227,21 @@ def battle_menu(window):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+                
             if ATTACK_BUTTON.handle_event(event):
                 pokemon_player,pokemon_opponent,battle_running = \
                     attack_menu(window,pokemon_player,pokemon_opponent)
                 if not battle_running: 
                     state = "ko"
-                    battle_running = True
+                showing_menu = True
             if BAG_BUTTON.handle_event(event):
                 bag_menu(window, pokemon_player, pokemon_opponent)
+                showing_menu = True
             if POKEMON_BUTTON.handle_event(event):
                 pokemon_team_menu(window, pokemon_player, pokemon_opponent)
-
+                showing_menu = True
         pygame.display.flip()
+        
          
 def options_menu(window):
     options_running = True

@@ -4,13 +4,12 @@ from config import battle_json_path,res_screen_top,sprite_trainers_dir_path
 from copy import deepcopy
 
 class Pokemon_trainer:
-    def __init__(self, name: str, front_or_back = "front"):
+    def __init__(self, name: str):
         self.name = name
         self.pokemon_team = []
         self.pc = []
         self.sprite_path = os.path.join(sprite_trainers_dir_path,f"{(self.name).upper()}.png")
         self.sprite_coord = 0,0
-        self.sprite = self.create_sprite(front_or_back)
     
     def __str__(self):
         string  = f"Dresseur: {self.name}\nPokémon:"
@@ -71,7 +70,7 @@ class Pokemon_trainer:
         
         utils.update_battle_json({trainer_or_opponent: pokemon_team})  
         
-    def create_sprite(self,front_or_back):
+    def get_sprite(self,front_or_back):
         sprite_path = self.sprite_path
         if not os.path.exists(sprite_path):
             return 0,0
@@ -81,12 +80,13 @@ class Pokemon_trainer:
         ratio = 2 + (front_or_back == "back")
         coord = sprite_trainer.get_width() * ratio, sprite_trainer.get_height() * ratio
         sprite_trainer = pygame.transform.scale(sprite_trainer,coord)
-        
+                
         base_offset = sprite.get_base_pixel(sprite_path) - sprite_trainer.get_height()
-        x_trainer = (res_screen_top[0]//2 - sprite_trainer.get_width())//2 + 40
-        y_trainer = res_screen_top[1] - base_offset - 375
+        x_trainer = (res_screen_top[0] + sprite_trainer.get_width())//2 - 40
+        y_trainer = res_screen_top[1]//2 - base_offset - 200
         self.sprite_coord = x_trainer,y_trainer
               
+        print(self.sprite_coord)
         return sprite_trainer
 
 def init_trainer():       
