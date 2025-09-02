@@ -35,14 +35,14 @@ def start_battle(window, trainer, trainer_ia, \
         elapsed += dt
         
         if step == 0 and elapsed >= 1:  # après 2.5s : afficher ennemi
-            pokemon_opponent = trainer_ia.send_next("front")
+            pokemon_opponent = trainer_ia.send_next(window,"front")
             ui_battle.refresh_opponent_side(window, pokemon_opponent)
             pygame.display.flip()
             step = 1
             elapsed = 0
             
         elif step == 1 and elapsed >= 1:  # après 5s : afficher joueur
-            pokemon_player = trainer.send_next("back")
+            pokemon_player = trainer.send_next(window,"back")
             ui_battle.refresh_player_side(window, pokemon_player)
             pygame.display.flip()
             step = 2

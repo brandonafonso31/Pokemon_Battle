@@ -7,7 +7,7 @@ from pokemon_nature import Nature
 from math import floor,inf
 from pokemon_talent import Talent
 from random import randint,choice
-import os, pygame, sys,ui_battle
+import os, pygame, sys, utils
 
 LINE_PRINT = "-"*100
 
@@ -65,8 +65,11 @@ class Pokemon:
         # Howl
         self.howl_path = howl_path
         
+        # Trainer
+        self.trainer = None
+        
         # A implementer
-        self.trainer = None         # Dresseur ? je sais plus pour quoi faire ... pour différencier 2 pokemons identiques ?
+             
         self.shiny = False          # change uniquement les scripts
         self.item = item            # objet tenu par le pokémon
     
@@ -157,7 +160,9 @@ class Pokemon:
             print(f"No PP left for {move.name}")
             return None  # Signal to request another move
         move.pp -= 1
-        print(f"{self.name} uses {move.name}")
+        text = f"{self.name} utilise {move.name} !"
+        utils.print_log_ingame(window,text)
+        
         # Calculate damage
         damage = 0
         if isinstance(move, SpecialMove):
@@ -168,6 +173,7 @@ class Pokemon:
             # TODO: Implement status effects
             print(f"{move.name} has status effects!")
             return self, opponent
+        
         # Apply type effectiveness
         damage *= self.get_cm(opponent, move)
         damage = max(0, floor(damage))

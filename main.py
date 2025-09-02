@@ -181,12 +181,13 @@ def attack_menu(window, pokemon_player, pokemon_opponent):
                 if button.handle_event(event):
                     pokemon_player, pokemon_opponent, battle_state = \
                         utils.start_turn(window, pokemon_player, pokemon_opponent, moves_available, i)
-                    if battle_state == "ko":
-                        return ko(window, pokemon_player, pokemon_opponent)
-                    elif battle_state == "continue":
-                        print("personne n'est ko donc on continue")
-                        window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
-                        return pokemon_player, pokemon_opponent, battle_running 
+                    if battle_state != "choose_attack":
+                        if battle_state == "ko":
+                            return ko(window, pokemon_player, pokemon_opponent)
+                        elif battle_state == "continue":
+                            print("personne n'est ko donc on continue")
+                            window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
+                            return pokemon_player, pokemon_opponent, battle_running 
 
             if BACK_BUTTON.handle_event(event):
                 turn_running = False
