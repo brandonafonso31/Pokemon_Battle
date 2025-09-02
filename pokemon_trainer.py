@@ -47,10 +47,12 @@ class Pokemon_trainer:
         for i in range(len(team)):
             pokemon = team[i]
             if pokemon.hp != 0:
-                # afficher un texte pour annoncer l'arrive du suivant
+                text = f"{self.name} envoie {pokemon.name} !"
+                utils.print_log_ingame(text)
                 dic = data["current"]
                 dic = {"current": [dic[0],i+1]} if front_or_back == "front" else {"current": [i+1,dic[1]]}
                 utils.update_battle_json(dic)
+                
                 pokemon.play_howl()
                 return pokemon
         return None
