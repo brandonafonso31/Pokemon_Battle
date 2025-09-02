@@ -107,21 +107,18 @@ def ko(window, pokemon_player, pokemon_opponent):
                 pygame.quit()
                 sys.exit()
                 
-        # État 0 : afficher le message KO
         if state == 0 and elapsed >= 0.5:
             text = f"{pokemon_ko.name} {'ennemi' if pokemon_ko is pokemon_opponent else 'allié'} est KO"
-            utils.print_log_ingame(window,text, reset = True)
+            utils.print_log_ingame(window,text)
             state = 1
             elapsed = 0
             
-        # État 1 : jouer l'animation après 2s
         elif state == 1 and elapsed >= 2:
             pokemon_ko.animate_death(window, front_or_back)
             state = 2
             elapsed = 0 
             
-        # État 2 : envoie du pokemon suivant après 4s apres le state 1
-        elif state == 2 and elapsed >= 3: 
+        elif state == 2 and elapsed >= 2: 
             if pokemon_ko is pokemon_player:
                 new_pokemon = trainer.send_next(window,"back")
                 if new_pokemon is None:
