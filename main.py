@@ -196,8 +196,7 @@ def attack_menu(window, pokemon_player, pokemon_opponent):
     window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     return pokemon_player, pokemon_opponent, battle_running
 
-def battle_menu(window):    
-    #------|Variable
+def battle_menu(window):
     battle_running = True
     trainer,opponent = pokemon_trainer.init_trainer()
     # random background()
