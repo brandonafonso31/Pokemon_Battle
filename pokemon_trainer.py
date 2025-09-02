@@ -63,30 +63,25 @@ class Pokemon_trainer:
         for i in range(len(self.pokemon_team)):
             pokemon = self.pokemon_team[i]
             if trainer_or_opponent == "trainer":
-                data = sprite.create_pokemon_trainer(res_screen_top, pokemon, i+1, f"pokemon_back_{i+1}.png")
+                data = sprite.create_pokemon_trainer(res_screen_top, pokemon, f"pokemon_back_{i+1}.png")
             else:
-                data = sprite.create_pokemon_opponent(res_screen_top, pokemon, i+1, f"pokemon_front_{i+1}.png")
+                data = sprite.create_pokemon_opponent(res_screen_top, pokemon, f"pokemon_front_{i+1}.png")
             pokemon_team[str(i+1)] = data      
         
         utils.update_battle_json({trainer_or_opponent: pokemon_team})  
         
-    def get_sprite(self,front_or_back):
+    def get_opponent_sprite(self):
         sprite_path = self.sprite_path
         if not os.path.exists(sprite_path):
             return 0,0
         
         sprite_trainer = pygame.image.load(sprite_path).convert()
         sprite_trainer.set_colorkey(sprite.get_first_pixel(sprite_path))
-        ratio = 2 + (front_or_back == "back")
-        coord = sprite_trainer.get_width() * ratio, sprite_trainer.get_height() * ratio
-        sprite_trainer = pygame.transform.scale(sprite_trainer,coord)
-                
+        
         base_offset = sprite.get_base_pixel(sprite_path) - sprite_trainer.get_height()
-        x_trainer = (res_screen_top[0] + sprite_trainer.get_width())//2 - 40
-        y_trainer = res_screen_top[1]//2 - base_offset - 200
+        x_trainer = (res_screen_top[0] + sprite_trainer.get_width())//2 + 30
+        y_trainer = res_screen_top[1]//2 - base_offset - 150
         self.sprite_coord = x_trainer,y_trainer
-              
-        print(self.sprite_coord)
         return sprite_trainer
 
 def init_trainer():       

@@ -25,7 +25,7 @@ def start_battle(window, player, opponent, \
 
     #-------------------------| Sprites Trainer |------------------------#
     utils.delay_flat(1)
-    window.blit(opponent.get_sprite("front"), opponent.sprite_coord)
+    window.blit(opponent.get_opponent_sprite(), opponent.sprite_coord)
     utils.delay_flat(1)
     utils.print_log_ingame(window,f"{opponent.name} vous défie dans un duel au sommet !",reset = True)
         
