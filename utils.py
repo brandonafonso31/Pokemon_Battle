@@ -24,7 +24,6 @@ def print_log_ingame(surface,txt):
     font = pygame.font.Font(font_path,30)
     padding = 10
     draw_text(surface, txt, font, WHITE, padding, res_screen_bottom[1] - rect_height//2 - padding)
-    delay_flat(0.5)
     
 def create_button(text,x,y, scale = 1, path=""):
     if path == "":
