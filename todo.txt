@@ -11,7 +11,7 @@ principal:
     - StatusMove à implémenter
     - méga-évolution
 
-secondaire :
+secondaire :    
     - modifier l'interface d'accueil
     - agrandir l'écran du dessous afin d'obteniur un effet DS
     - ajouter des boutons averc le bon texte pour Attaque, Sac, Pokemon
@@ -22,3 +22,4 @@ secondaire :
 optionel :
     - load une image pour le bloc contenant les hp, le niv et le nom
     - sprite adversaire toujours affiché ?
+    - modifier les comparaisons de str (meilleur lisibilité mais comparer des str ~) ?

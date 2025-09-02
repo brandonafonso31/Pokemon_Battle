@@ -3,7 +3,7 @@ import ui_battle, os, sprite, pygame, json, sys, utils
 from random import randint,choice
 import battle_timing as bt
 
-def start_battle(window, trainer, trainer_ia, \
+def start_battle(window, player, opponent, \
     music_path="battle/trainer_BW.mp3", background="forest.jpg"):
     """Instancie les premiers éléments de la scène."""
     with open(battle_json_path, "r") as f:
@@ -23,28 +23,31 @@ def start_battle(window, trainer, trainer_ia, \
     pygame.display.flip()
     utils.update_battle_json({"background": background_path})
 
-    #---------------------| Gestion des étapes avec timer |---------------#
+    #-------------------------| Sprites Trainer |------------------------#
+    utils.delay_flat(1)
+    window.blit(opponent.sprite, opponent.sprite_coord)
+    utils.delay_flat(1)
+    utils.print_log_ingame(window,f"{opponent.name} vous défie dans un duel au sommet !",reset = True)
+        
+    #-------------------------| Sprites Pokémon |------------------------#
     clock = pygame.time.Clock()
     elapsed = 0
     step = 0
     pokemon_player, pokemon_opponent = None, None
     running = True
-
     while running:
         dt = clock.tick(30) / 1000 # accumulate le temps passé (en secondes)
         elapsed += dt
         
         if step == 0 and elapsed >= 2:  # après 2s : afficher ennemi
-            pokemon_opponent = trainer_ia.send_next(window,"front")
+            pokemon_opponent = opponent.send_next(window,"front")
             ui_battle.refresh_opponent_side(window, pokemon_opponent)
-            pygame.display.flip()
             step = 1
             elapsed = 0
             
         elif step == 1 and elapsed >= 2:  # après 2s : afficher joueur
-            pokemon_player = trainer.send_next(window,"back")
+            pokemon_player = player.send_next(window,"back")
             ui_battle.refresh_player_side(window, pokemon_player)
-            pygame.display.flip()
             step = 2
             elapsed = 0
         
@@ -55,7 +58,9 @@ def start_battle(window, trainer, trainer_ia, \
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-
+                
+        pygame.display.flip()
+        
     return pokemon_player, pokemon_opponent, window
 
 

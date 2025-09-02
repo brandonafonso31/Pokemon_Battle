@@ -1,13 +1,16 @@
 # Une class en plus pour pokemon_team ?
-import sprite,json,utils
-from config import battle_json_path,res_screen_top
+import sprite,json,utils,os,pygame
+from config import battle_json_path,res_screen_top,sprite_trainers_dir_path
 from copy import deepcopy
 
 class Pokemon_trainer:
-    def __init__(self, name: str):
+    def __init__(self, name: str, front_or_back = "front"):
         self.name = name
         self.pokemon_team = []
         self.pc = []
+        self.sprite_path = os.path.join(sprite_trainers_dir_path,f"{(self.name).upper()}.png")
+        self.sprite_coord = 0,0
+        self.sprite = self.create_sprite(front_or_back)
     
     def __str__(self):
         string  = f"Dresseur: {self.name}\nPokémon:"
@@ -66,12 +69,29 @@ class Pokemon_trainer:
                 data = sprite.create_pokemon_opponent(res_screen_top, pokemon, i+1, f"pokemon_front_{i+1}.png")
             pokemon_team[str(i+1)] = data      
         
-        utils.update_battle_json({trainer_or_opponent: pokemon_team})   
+        utils.update_battle_json({trainer_or_opponent: pokemon_team})  
+        
+    def create_sprite(self,front_or_back):
+        sprite_path = self.sprite_path
+        if not os.path.exists(sprite_path):
+            return 0,0
+        
+        sprite_trainer = pygame.image.load(sprite_path).convert()
+        sprite_trainer.set_colorkey(sprite.get_first_pixel(sprite_path))
+        ratio = 2 + (front_or_back == "back")
+        coord = sprite_trainer.get_width() * ratio, sprite_trainer.get_height() * ratio
+        sprite_trainer = pygame.transform.scale(sprite_trainer,coord)
+        
+        base_offset = sprite.get_base_pixel(sprite_path) - sprite_trainer.get_height()
+        x_trainer = (res_screen_top[0]//2 - sprite_trainer.get_width())//2 + 40
+        y_trainer = res_screen_top[1] - base_offset - 375
+        self.sprite_coord = x_trainer,y_trainer
+              
+        return sprite_trainer
 
 def init_trainer():       
     from pokemon_init import leviator,dracaufeu,gengar   
-    leviator.move1.pp = 0 
-    trainer_ai = Pokemon_trainer("Ash")
+    trainer_ai = Pokemon_trainer("Red")
     trainer_ai.catch_pokemon(dracaufeu)
     trainer_ai.catch_pokemon(gengar)
     trainer = Pokemon_trainer("Brandon")
@@ -97,5 +117,3 @@ def get_winner(trainer1,trainer2):
     elif hp_total_trainer1 > 0 and hp_total_trainer2 <= 0:
         winner,loser = trainer1,trainer2
     return winner,loser
-    
-    
