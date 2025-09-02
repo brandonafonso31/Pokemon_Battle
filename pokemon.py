@@ -2,7 +2,7 @@ from sprite import *
 from pokemon_type import *
 from pokemon_move import *
 from random import randint
-from config import img_dir_path,cries_dir_path
+from config import gen_sprites_sheets_path
 from pokemon_nature import Nature
 from math import floor,inf
 from pokemon_talent import Talent
@@ -120,8 +120,8 @@ class Pokemon:
         print(f"L'attaque {new_move} a été apprise\n")
     
     def sprites(self,front_or_back,save_to_filename):
-        sprites = os.path.join(sprites_dir_path,f"sprites_gen{self.gen}")
-        return recup_sprite_pokemon(sprites, self.num_on_sprite_sheet, front_or_back,self.id)
+        sprites_sheet = os.path.join(gen_sprites_sheets_path,f"gen{self.gen}_{front_or_back}.png")
+        return recup_sprite_pokemon(sprites_sheet, self.num_on_sprite_sheet, front_or_back,self.id)
         
     def get_cm(self, opponent, move : Move, objects=None):
         """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""

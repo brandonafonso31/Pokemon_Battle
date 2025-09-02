@@ -1,6 +1,5 @@
 principal:
     - modifier la position des barres de vie
-    - ajouter un ratio pour permettre un scale de l'écran (dans options qui modifie directement la config)
     - déplacer les sprites de all_gen dans un dossier gen_id ou id est le num de gen
     - ajouter animation sortie de pokeball
     - implenter animations des attaques
@@ -12,7 +11,7 @@ principal:
     - continuer d'implémenter le systeme de target
     - ajouter esquive et precision au constructeur pokemon ?
     - StatusMove à implémenter
-    - méga-évolution ?
+    - méga-évolution
 
 secondaire :
     - modifier l'interface d'accueil
@@ -20,6 +19,7 @@ secondaire :
     - ajouter des boutons averc le bon texte pour Attaque, Sac, Pokemon
     - creer des dresseurs dans un json ? pour load les adversaires
     - ajouter une fonction PC pour choisir sa team avant le combat (utiliser les petits sprites pour l'affichage peut-être plutot commmencer par just des inpuits dans le terminal)
+    - ajouter un ratio pour permettre un scale de l'écran (dans options qui modifie directement la config)
 
 optionel :
     - load une image pour le bloc contenant les hp, le niv et le nom
