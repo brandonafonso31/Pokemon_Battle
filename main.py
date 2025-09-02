@@ -244,7 +244,6 @@ def options_menu(window):
     while options_running :
         dt = clock.tick(30)
         window.fill(BLACK)
-        utils.fps_counter()
         
         utils.draw_text(window,"OPTIONS", font, "#b68f40", res_screen_bottom[0]//2 + 200, res_screen_bottom[1]//2)
 
