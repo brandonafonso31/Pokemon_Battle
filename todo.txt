@@ -1,9 +1,9 @@
 principal:
+    - ajouter animation from player trainer when  sending a pokemon in battle
     - ajouter animation sortie de pokeball
     - implenter animations des attaques
     - implémenter sac et le switch de pokemon
     - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer)
-    - ajouter sprite trainer pour plus de vie dans le combat (oppoent always standing there or not ? + animation from player trainer when  sending a pokemon in battle)
     - continuer d'implementer trainer et pokemon_team
     - continuer les talents
     - continuer d'implémenter le systeme de target
@@ -21,3 +21,4 @@ secondaire :
 
 optionel :
     - load une image pour le bloc contenant les hp, le niv et le nom
+    - sprite adversaire toujours affiché ?
