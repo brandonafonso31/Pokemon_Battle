@@ -8,7 +8,7 @@ def start_battle(window, trainer, trainer_ia, \
     """Instancie les premiers éléments de la scène."""
     with open(battle_json_path, "r") as f:
         battle_data = json.load(f)
-
+    window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
     #-----------------------------| MUSIC |------------------------------#
     music_path = os.path.join(song_dir_path, music_path)
     pygame.mixer.music.load(music_path)
@@ -34,18 +34,21 @@ def start_battle(window, trainer, trainer_ia, \
         dt = clock.tick(30) / 1000 # accumulate le temps passé (en secondes)
         elapsed += dt
         
-        if step == 0 and elapsed >= 1:  # après 2.5s : afficher ennemi
+        if step == 0 and elapsed >= 2:  # après 2s : afficher ennemi
             pokemon_opponent = trainer_ia.send_next(window,"front")
             ui_battle.refresh_opponent_side(window, pokemon_opponent)
             pygame.display.flip()
             step = 1
             elapsed = 0
             
-        elif step == 1 and elapsed >= 1:  # après 5s : afficher joueur
+        elif step == 1 and elapsed >= 2:  # après 2s : afficher joueur
             pokemon_player = trainer.send_next(window,"back")
             ui_battle.refresh_player_side(window, pokemon_player)
             pygame.display.flip()
             step = 2
+            elapsed = 0
+        
+        elif step == 2 and elapsed >= 2:
             running = False
             
         for event in pygame.event.get():
@@ -109,18 +112,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
 
     # ATTAQUE DU PREMIER
     elapsed = 0
-    while True:
-        dt = pygame.time.Clock().tick(30) / 1000
-        elapsed += dt
-        
-        if elapsed >= 1:
-            break
-        
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-
+    utils.delay_flat(1) # delay de une seconde mais la fentre n'est pas freeze   
+    
     first, second, old_hp = first.use_move(first_move_id, second, window)
     ui_battle.draw_hp_bar(window, second, from_trainer=(second is pokemon_1),old_hp=old_hp)
     
