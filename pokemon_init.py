@@ -3,7 +3,6 @@ from pokemon_move import *
 from pokemon_nature import Nature
 from pokemon_talent import talents
 from pokedex import create_pokemon
-from test_talent import Talent
 
 #--------------------------------------| Dracaufeu |--------------------------------------#
 dracaufeu_EV = {"hp":0,"atk":0,"def_":0,"atk_spe":252,"def_spe":6,"vit":252}
@@ -35,7 +34,7 @@ leviator.learn_move(crocgivre)
 leviator.learn_move(cascade)
 leviator.learn_move(aquajet)
 leviator.learn_move(seisme)
-leviator.change_talent(Talent.registry["Intimidation"]())
+leviator.change_talent(talents["Intimidation"]())
 #print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
 pikachu_EV = {"hp":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
