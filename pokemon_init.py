@@ -57,4 +57,4 @@ tonnerre = SpecialMove("Tonnerre",Type.ELECTRIQUE,power=90,precision=100,pp=15, 
 balle_ombre = SpecialMove("Balle'Ombre",Type.SPECTRE,power=80,precision=100,pp=10, effect = dico_effect_move["Balle'Ombre"], prio = 0)
 gengar.learn_move(tonnerre)
 gengar.learn_move(balle_ombre)
-#print(ectoplasma)
+print(gengar)

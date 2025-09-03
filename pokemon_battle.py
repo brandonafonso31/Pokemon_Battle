@@ -43,7 +43,7 @@ def start_battle(window, player, opponent, \
         dt = clock.tick(30) / 1000 # accumulate le temps passé (en secondes)
         elapsed += dt
         
-        if step == 0 and elapsed >= 2:  # après 2s : afficher ennemi
+        if step == 0:
             pokemon_opponent = opponent.send_next(window,"front")
             ui_battle.refresh_opponent_side(window, pokemon_opponent)
             step = 1
@@ -64,7 +64,8 @@ def start_battle(window, player, opponent, \
                 sys.exit()
                 
         pygame.display.flip()
-        
+    
+    bt.check_timing_talent(pokemon_player, pokemon_opponent)
     return pokemon_player, pokemon_opponent, window
 
 
