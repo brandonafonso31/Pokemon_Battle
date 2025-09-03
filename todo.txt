@@ -2,6 +2,9 @@ principal:
     - ajouter la pokéball au sol (ou en l'air qui tourne) à partir du moment où le sprite de l'adversaire se déplace
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter animation sortie de pokeball pour l'adversaire
+    - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1
+    - changer la condition battle_menu par while team1.get_num_living_pokemon() > 1 and team2.get_num_living_pokemon() > 1
+    - esquive et précision: ne pas oublier de les remettre à 1 quand swap pokemon
     - implenter animations des attaques
     - implémenter sac et le switch de pokemon
     - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer)
@@ -14,8 +17,6 @@ principal:
 
 secondaire :    
     - modifier l'interface d'accueil
-    - agrandir l'écran du dessous afin d'obteniur un effet DS
-    - ajouter des boutons averc le bon texte pour Attaque, Sac, Pokemon
     - creer des dresseurs dans un json ? pour load les adversaires
     - ajouter une fonction PC pour choisir sa team avant le combat (utiliser les petits sprites pour l'affichage peut-être plutot commmencer par just des inpuits dans le terminal)
     - ajouter un ratio pour permettre un scale de l'écran (dans options qui modifie directement la config)
