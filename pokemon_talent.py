@@ -1,4 +1,5 @@
 from battle_timing import Timing
+import utils
 
 class Talent:
     def __init__(self, name, description, effect, timing:Timing, frequency):
@@ -27,7 +28,9 @@ def intimidation():
     """Talent: Intimidation"""
     def effect(pokemon_1,pokemon_2):
         pokemon_2.apply_buff_debuff("atk", scale=-1)
-        print(f"Le talent de {pokemon_1.name} influcence {pokemon_2.name}!")
+        txt = f"Le talent de {pokemon_1.name} influcence {pokemon_2.name}!"
+        print(txt)
+        # utils.print_log_ingame(txt)
 
     return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.START, frequency=1)
 
