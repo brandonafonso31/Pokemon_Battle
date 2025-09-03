@@ -6,6 +6,8 @@ import battle_timing as bt
 def start_battle(window, player, opponent, \
     music_path="battle/trainer_BW.mp3", background="forest.jpg"):
     """Instancie les premiers éléments de la scène."""
+    print(bt.current_timing)
+    
     with open(battle_json_path, "r") as f:
         battle_data = json.load(f)
     window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
@@ -71,7 +73,6 @@ def check_move(move_id: str):
 
 def turn(pokemon_1, pokemon_2, move_id_player, window):
     """Exécute un tour complet de combat entre deux Pokémon."""
-    global res_screen_top, resolution
     
     # Nettoyage interface
     window.blit(BACKGROUND_IMAGE_BOTTOM, (res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(), res_screen_bottom[1] + black_band_res[1]))
