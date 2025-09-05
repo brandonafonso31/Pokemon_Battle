@@ -23,10 +23,10 @@
             "y": 90
         }
     },
-    "music": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\song\\battle/trainer_BW.mp3",
+    "music": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\song\\battle\\hgss_champion.mp3",
     "background": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\background\\bg-forest.png",
     "current": [
-        1,
-        1
+        2,
+        2
     ]
 }
