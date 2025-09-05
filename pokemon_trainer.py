@@ -1,16 +1,17 @@
 # Une class en plus pour pokemon_team ?
 import sprite,json,utils,os,pygame,sys
-from config import battle_json_path,res_screen_top,sprite_trainers_dir_path
+from config import battle_json_path,res_screen_top,sprite_trainers_dir_path,song_dir_path
 from copy import deepcopy
 
 class Pokemon_trainer:
-    def __init__(self, name: str):
+    def __init__(self, name: str, theme_path = os.path.join(song_dir_path,"battle","trainer_BW.mp3")):
         self.name = name
         self.pokemon_team = []
         self.pc = []
         self.sprite_path = os.path.join(sprite_trainers_dir_path,f"{(self.name).upper()}.png")
         self.sprite_coord = -1,-1
-    
+        self.theme = theme_path
+        
     def __str__(self):
         string  = f"Dresseur: {self.name}\nPokémon:"
         if len(self.pokemon_team)>0:
