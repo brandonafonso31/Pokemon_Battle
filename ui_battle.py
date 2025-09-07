@@ -1,7 +1,7 @@
 from button import *
 from PIL import ImageColor
 from config import *
-import os,json,sprite,button,sys
+import os,json,sprite,button,sys,utils,pygame
 
 def draw_move(window,move,x,y):
     """return a bool which is did the button got draw ?"""
@@ -148,7 +148,7 @@ def refresh_opponent_side(window,pokemon):
         refresh_pokemon_sprite(window,pokemon,"opponent")
         draw_hp_bar(window, pokemon, from_trainer=False)
 
-def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
+def refresh_screen(window, pokemon_player, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
     """Refresh the screen with the background and all sprites."""
     with open(battle_json_path, "r") as f:
         data = json.load(f)
@@ -157,5 +157,39 @@ def refresh_screen(window, pokemon_trainer, pokemon_opponent, old_hp_trainer=Non
     background = pygame.image.load(data["background"]).convert()
     window.blit(background, (0, 0))
     
-    refresh_player_side(window, pokemon_trainer)
+    refresh_player_side(window, pokemon_player)
     refresh_opponent_side(window, pokemon_opponent)
+
+def get_correct_rect(pokemon, sprite_sheet):
+    height = sprite_sheet.get_height()
+    frame_width = sprite_sheet.get_width() // 3
+
+    if pokemon is None:
+        return pygame.Rect(frame_width * 2, 0, frame_width, height)
+    if not pokemon.is_dead():
+        return pygame.Rect(0, 0, frame_width, height)
+    else:                   
+        return pygame.Rect(frame_width, 0, frame_width, height) 
+           
+
+def draw_pokeball_team(window, trainer, is_player=True):
+    sheet = pygame.image.load(os.path.join(sys_dir_path, "bwicons_pokeball_sheet.png")).convert()
+    frame_width = sheet.get_width() // 3
+    frame_height = sheet.get_height()   
+
+    padding = frame_width//2 + 10
+    if is_player:
+        x, y = res_screen_top[0] - (6 * (padding)) - 20, res_screen_top[1]//2 + frame_height
+    else:
+        x, y = 20, 20        
+
+    pokemon_team = trainer.pokemon_team + [None for i in range(6 - len(trainer.pokemon_team))]
+    for pokemon in pokemon_team:
+        rect = get_correct_rect(pokemon, sheet)
+        window.blit(sheet, (x, y), rect)
+        x += padding
+    pygame.display.flip()
+
+def refresh_pokeball_team(window, player, opponent):
+    draw_pokeball_team(window, player, True)
+    draw_pokeball_team(window, opponent, False)

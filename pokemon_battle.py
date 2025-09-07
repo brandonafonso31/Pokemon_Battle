@@ -21,7 +21,10 @@ def start_battle(window, player, opponent, background="forest.jpg"):
     window.blit(background, (0, 0))
     pygame.display.flip()
     utils.update_battle_json({"background": background_path})
-
+    
+    #------------------------| Show pokeball Team |----------------------#
+    ui_battle.refresh_pokeball_team(window, player, opponent)
+    
     #-------------------------| Sprites Trainer |------------------------#
     utils.delay_flat(1)
     window.blit(opponent.get_opponent_sprite(), opponent.sprite_coord)
@@ -30,6 +33,7 @@ def start_battle(window, player, opponent, background="forest.jpg"):
     utils.delay_flat(1)
     opponent.move_to_right(window)
     utils.delay_flat(0.5)   
+    
     #-------------------------| Sprites Pokémon |------------------------#
     clock = pygame.time.Clock()
     elapsed = 0
