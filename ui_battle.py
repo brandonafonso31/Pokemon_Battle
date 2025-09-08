@@ -38,7 +38,7 @@ def draw_hp_bar(window, pokemon, from_trainer, old_hp=None):
 
     if from_trainer:
         x = res_screen_top[0] - (hp_bar_length + 2*padding)
-        y = res_screen_top[1] - hp_bar_height - 100
+        y = res_screen_top[1] // 2 + 100
     else:
         x, y = 2*padding, 100
 
@@ -179,7 +179,7 @@ def draw_pokeball_team(window, trainer, is_player=True):
 
     padding = frame_width//2 + 10
     if is_player:
-        x, y = res_screen_top[0] - (6 * (padding)) - 20, res_screen_top[1]//2 + frame_height
+        x, y = res_screen_top[0] - (6 * (padding)) - 20, res_screen_top[1]//2 + 20
     else:
         x, y = 20, 20        
 
