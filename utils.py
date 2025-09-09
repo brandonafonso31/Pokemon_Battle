@@ -43,7 +43,7 @@ def print_log_ingame(surface,txt,reset = False):
 def create_button(text,x,y, scale = 1, path=""):
     if path == "":
         path = os.path.join(img_dir_path,"battle_ui/move_button.png")
-    button_img = pygame.image.load(path).convert_alpha()
+    button_img = pygame.image.load(path).convert()
     return button.Button(x, y, button_img, scale, text)
 
 def start_turn(window, pokemon_player, pokemon_opponent, moves, move_id):

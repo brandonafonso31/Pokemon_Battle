@@ -142,11 +142,13 @@ def refresh_player_side(window,pokemon):
     if pokemon is not None and not pokemon.is_dead():
         refresh_pokemon_sprite(window,pokemon,"trainer")
         draw_hp_bar(window, pokemon, from_trainer=True)
+        draw_pokeball_team(window, pokemon.trainer, True)
 
 def refresh_opponent_side(window,pokemon):
     if pokemon is not None and not pokemon.is_dead():
         refresh_pokemon_sprite(window,pokemon,"opponent")
         draw_hp_bar(window, pokemon, from_trainer=False)
+        draw_pokeball_team(window, pokemon.trainer, False)
 
 def refresh_screen(window, pokemon_player, pokemon_opponent, old_hp_trainer=None, old_hp_opponent=None):
     """Refresh the screen with the background and all sprites."""
@@ -175,7 +177,6 @@ def get_correct_rect(pokemon, sprite_sheet):
 def draw_pokeball_team(window, trainer, is_player=True):
     sheet = pygame.image.load(os.path.join(sys_dir_path, "bwicons_pokeball_sheet.png")).convert()
     frame_width = sheet.get_width() // 3
-    frame_height = sheet.get_height()   
 
     padding = frame_width//2 + 10
     if is_player:
