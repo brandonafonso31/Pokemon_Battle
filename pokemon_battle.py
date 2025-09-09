@@ -1,6 +1,6 @@
 from config import song_dir_path,battle_json_path,background_dir_path,BLACK,res_screen_top,resolution,res_screen_bottom,black_band_res,BACKGROUND_IMAGE_BOTTOM
 import ui_battle, os, sprite, pygame, json, sys, utils
-from random import randint,choice
+from random import randint,choice,random
 import battle_timing as bt
 
 def start_battle(window, player, opponent, background="forest.jpg"):
@@ -69,7 +69,6 @@ def start_battle(window, player, opponent, background="forest.jpg"):
     bt.check_timing_talent(pokemon_player, pokemon_opponent)
     return pokemon_player, pokemon_opponent, window
 
-
 def check_move(move_id: str):
     return move_id in ["move1", "move2", "move3", "move4"]
 
@@ -94,39 +93,24 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
     move_ia = getattr(pokemon_2, move_id_ia)
 
     # Détermination de l'ordre : priorité > vitesse
-    if move_player.prio > move_ia.prio:
-        first, first_move_id = pokemon_1, move_id_player
-        second, second_move_id = pokemon_2, move_id_ia
-    elif move_player.prio < move_ia.prio:
-        first, first_move_id = pokemon_2, move_id_ia
-        second, second_move_id = pokemon_1, move_id_player
-    else:
-        if pokemon_1.vit > pokemon_2.vit:
-            first, first_move_id = pokemon_1, move_id_player
-            second, second_move_id = pokemon_2, move_id_ia
-        elif pokemon_1.vit < pokemon_2.vit:
-            first, first_move_id = pokemon_2, move_id_ia
-            second, second_move_id = pokemon_1, move_id_player
-        else:
-            # Si les vitesses sont égales, déterminer l'ordre aléatoirement
-            if choice([True, False]):
-                first, first_move_id = pokemon_1, move_id_player
-                second, second_move_id = pokemon_2, move_id_ia
-            else:
-                first, first_move_id = pokemon_2, move_id_ia
-                second, second_move_id = pokemon_1, move_id_player
+    first, first_move_id, second, second_move_id = utils.get_prio(
+        pokemon_1, pokemon_2, move_player, move_ia, move_id_player, move_id_ia
+    )
 
     # TIMING : ABOUT_TO_GET_HIT
     current_timing = bt.change_timing()
     bt.check_timing_talent(first, second)
 
-    # ATTAQUE DU PREMIER
-    elapsed = 0
-    utils.delay_flat(1) # delay de une seconde mais la fentre n'est pas freeze   
-    
-    first, second, old_hp = first.use_move(first_move_id, second, window)
-    ui_battle.draw_hp_bar(window, second, from_trainer=(second is pokemon_1),old_hp=old_hp)
-    
+    # --- ATTAQUE DU PREMIER ---
+    utils.delay_flat(1)  # petite pause avant l'attaque
+
+    success_rate = utils.get_success_rate(first, second, first_move_id)
+    if random() <= success_rate:  # attaque réussie
+        first, second, old_hp = first.use_move(first_move_id, second, window)
+        ui_battle.draw_hp_bar(window, second, from_trainer=(second is pokemon_1), old_hp=old_hp)
+    else:  # attaque ratée
+        utils.print_log_ingame(window, f"{first.name} rate son attaque !", reset=True)
+
     # TIMING : GOT_HIT
     current_timing = bt.change_timing()
     bt.check_timing_talent(first, second)
@@ -135,40 +119,44 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
     move = getattr(first, first_move_id)
     print(f"PP {first.name} {first_move_id}: {move.pp}, hp {second.name}: {second.hp}\n")
 
+    # --- TOUR DU SECOND ---
     turn_running = not second.is_dead()
     clock = pygame.time.Clock()
-    elapsed = 0    
+    elapsed = 0
     state = 0
+
     while turn_running:
         dt = clock.tick(30) / 1000
         elapsed += dt
-        
-        # ATTAQUE DU SECOND SI VIVANT
-        if state == 0 and elapsed >= 1.5:
-        
-            current_timing = bt.change_timing()
-            bt.check_timing_talent(second,first)
 
-            second, first, old_hp = second.use_move(second_move_id, first, window)
-            ui_battle.draw_hp_bar(window, first, from_trainer=(second is pokemon_2),old_hp=old_hp)    
-                
+        if state == 0 and elapsed >= 1.5:
             current_timing = bt.change_timing()
-            bt.check_timing_talent(second,first)
+            bt.check_timing_talent(second, first)
+
+            success_rate = utils.get_success_rate(second, first, second_move_id)
+            if random() <= success_rate:  # attaque réussie
+                second, first, old_hp = second.use_move(second_move_id, first, window)
+                ui_battle.draw_hp_bar(window, first, from_trainer=(second is pokemon_2), old_hp=old_hp)
+            else:
+                utils.print_log_ingame(window, f"{second.name} rate son attaque !", reset=True)
+
+            current_timing = bt.change_timing()
+            bt.check_timing_talent(second, first)
 
             move = getattr(second, second_move_id)
             print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
-        
+
             state = 1
             elapsed = 0
-            
+
         elif state == 1 and elapsed >= 3:
             turn_running = False
-            
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            
+
     current_timing = bt.change_timing()
 
     return pokemon_1, pokemon_2, "ko" if (pokemon_1.is_dead() or pokemon_2.is_dead()) else "continue"

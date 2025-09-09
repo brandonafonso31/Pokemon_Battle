@@ -1,5 +1,6 @@
 from config import WHITE, BLACK, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path,pokeball_dir_path,sprites_dir_path
 import os,pygame,button,pokemon_battle,json,sys,sprite
+from random import choice,randint
 
 def draw_text(surface,text, font, text_col, x, y):
     img = font.render(text, True, text_col)
@@ -152,3 +153,33 @@ def get_width_pokeball_sprite():
         sprite = pygame.image.load(path).convert()
         return sprite.get_width()
     return 0
+
+def get_prio(pokemon_1,pokemon_2,move_player,move_ia,move_id_player,move_id_ia):
+    first, first_move_id, second, second_move_id = None,None,None,None
+    if move_player.prio > move_ia.prio:
+        first, first_move_id = pokemon_1, move_id_player
+        second, second_move_id = pokemon_2, move_id_ia
+    elif move_player.prio < move_ia.prio:
+        first, first_move_id = pokemon_2, move_id_ia
+        second, second_move_id = pokemon_1, move_id_player
+    else:
+        if pokemon_1.vit > pokemon_2.vit:
+            first, first_move_id = pokemon_1, move_id_player
+            second, second_move_id = pokemon_2, move_id_ia
+        elif pokemon_1.vit < pokemon_2.vit:
+            first, first_move_id = pokemon_2, move_id_ia
+            second, second_move_id = pokemon_1, move_id_player
+        else:
+            # Si les vitesses sont égales, déterminer l'ordre aléatoirement
+            if choice([True, False]):
+                first, first_move_id = pokemon_1, move_id_player
+                second, second_move_id = pokemon_2, move_id_ia
+            else:
+                first, first_move_id = pokemon_2, move_id_ia
+                second, second_move_id = pokemon_1, move_id_player
+    return first, first_move_id, second, second_move_id
+
+def get_success_rate(pokemon_1, pokemon_2, first_move_id):
+    move = getattr(pokemon_1, first_move_id)
+    return pokemon_1.accuracy / pokemon_2.escape * move.accuracy
+    

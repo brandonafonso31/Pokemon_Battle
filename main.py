@@ -213,7 +213,10 @@ def battle_menu(window):
                 button.draw(window)
             showing_menu = False
         
-        elif state == "ko" and elapsed >= 2:
+        if state == "ko":
+            elapsed = 0
+        
+        elif state == "ko" and elapsed >= 3:
             winner,loser = pokemon_trainer.get_winner(trainer,opponent) 
             text = f"{winner.name} a vaincu {loser.name} !"
             utils.print_log_ingame(window,text)

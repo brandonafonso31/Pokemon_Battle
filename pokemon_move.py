@@ -3,12 +3,12 @@ from collections import defaultdict
 from move_target import Target
 
 class Move:
-    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int, target:Target = Target.OPPONENT,animation = None):
+    def __init__(self, name: str, type: Type, power: int, accuracy: int, pp: int, effect: str, prio: int, target:Target = Target.OPPONENT,animation = None):
         self.name = name
         self.type = type 
         
         self.power = power
-        self.precision = precision
+        self.accuracy = accuracy
         self.pp = pp
         
         self.effect = effect
@@ -21,19 +21,19 @@ class Move:
         return f"{self.name}" 
         
 class StatusMove(Move):
-    def __init__(self, name: str, type: Type, precision: int, pp: int, effect: str, prio: int):
-        super().__init__(name, type, None, precision, pp, effect, prio)
+    def __init__(self, name: str, type: Type, accuracy: int, pp: int, effect: str, prio: int):
+        super().__init__(name, type, None, accuracy, pp, effect, prio)
 
 class PhysicalMove(Move):
-    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
-        super().__init__(name, type, power, precision, pp, effect, prio)
+    def __init__(self, name: str, type: Type, power: int, accuracy: int, pp: int, effect: str, prio: int):
+        super().__init__(name, type, power, accuracy, pp, effect, prio)
 
 class SpecialMove(Move):
-    def __init__(self, name: str, type: Type, power: int, precision: int, pp: int, effect: str, prio: int):
-        super().__init__(name, type, power, precision, pp, effect, prio)
+    def __init__(self, name: str, type: Type, power: int, accuracy: int, pp: int, effect: str, prio: int):
+        super().__init__(name, type, power, accuracy, pp, effect, prio)
 
 
-# plutôt mettre les trucs comme ça dans un csv, peut-être même toute l'attaque (power, pp, precision, prio ...)
+# plutôt mettre les trucs comme ça dans un csv, peut-être même toute l'attaque (power, pp, accuracy, prio ...)
 dico_effect_move = {    
     "Lance-Flammes" : f"L'ennemi reçoit un torrent de flammes. A 10% de chance de brûler la cible.",
     

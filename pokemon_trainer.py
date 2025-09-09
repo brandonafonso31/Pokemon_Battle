@@ -130,7 +130,7 @@ def init_trainer():
     from pokemon_init import leviator,dracaufeu,gengar   
     trainer_ai = Pokemon_trainer("Red","hgss_champion.mp3")
     trainer_ai.catch_pokemon(dracaufeu)
-    trainer_ai.catch_pokemon(gengar)
+    # trainer_ai.catch_pokemon(gengar)
     trainer = Pokemon_trainer("Brandon")
     trainer.catch_pokemon(leviator)
     gengar_trainer = deepcopy(gengar)

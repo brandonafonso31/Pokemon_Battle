@@ -1,10 +1,8 @@
 principal:
     - adjuster le dernier message pour annoncer le vainqueur car sprite du pokmeon qui disparait et efface un bout du message
-    - ajouter la pokéball au sol (ou en l'air qui tourne) à partir du moment où le sprite de l'adversaire se déplace
-    - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter animation sortie de pokeball pour l'adversaire
+    - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1
-    - changer la condition battle_menu par while team1.get_num_living_pokemon() > 1 and team2.get_num_living_pokemon() > 1
     - esquive et précision: ne pas oublier de les remettre à 1 quand swap pokemon
     - implenter animations des attaques
     - implémenter sac et le switch de pokemon
@@ -26,3 +24,4 @@ optionel :
     - load une image pour le bloc contenant les hp, le niv et le nom
     - sprite adversaire toujours affiché ?
     - modifier les comparaisons de str (meilleur lisibilité mais comparer des str ~) ?
+    - changer la condition battle_menu par while team1.get_num_living_pokemon() > 1 and team2.get_num_living_pokemon() > 1

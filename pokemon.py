@@ -44,6 +44,10 @@ class Pokemon:
             "vit": 0
         }
         
+        # Stats supp:
+        self.escape = 1
+        self.accuracy = 1
+        
         # Types
         self.type1 = type1
         self.type2 = type2 
@@ -160,6 +164,7 @@ class Pokemon:
             print(f"No PP left for {move.name}")
             return None  # Signal to request another move
         move.pp -= 1
+        
         text = f"{self.name} utilise {move.name} !"
         utils.print_log_ingame(window,text,reset = True)
         
