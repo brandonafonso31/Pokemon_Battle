@@ -109,7 +109,7 @@ def send_pokeball(window, pos, pokeball_name = "pokeball"):
     rect_bg = pygame.Rect(x, y, width_per_frame, height)
     loop = 0
     
-    while loop <= 4:
+    while loop <= 3:
         dt = clock.tick(30) / 1000
         elapsed += dt
         
@@ -137,6 +137,7 @@ def send_pokeball(window, pos, pokeball_name = "pokeball"):
     delay_flat(0.5)
     # flash écran ou qqch
     window.blit(bg,pos,rect_bg)
+    delay_flat(0.2)
        
 def get_width_pokemon_sprite(front_or_back):
     path = os.path.join(sprites_dir_path,"actual_battle_sprite",f"pokemon_{front_or_back}_1.png")

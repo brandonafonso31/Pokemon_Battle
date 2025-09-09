@@ -50,7 +50,7 @@ def start_battle(window, player, opponent, background="forest.jpg"):
             step = 1
             elapsed = 0
             
-        elif step == 1 and elapsed >= 2:  # après 2s : afficher joueur
+        elif step == 1 and elapsed >= 5:
             pokemon_player = player.send_next(window,"back")
             ui_battle.refresh_player_side(window, pokemon_player)
             step = 2
