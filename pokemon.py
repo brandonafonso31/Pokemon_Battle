@@ -14,7 +14,7 @@ LINE_PRINT = "-"*100
 class Pokemon:
     def __init__(self,name: str,hp: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
         gen: int,type1: Type, nature:Nature= Nature.BIZARRE, EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0}, \
-            type2=None,talent:Talent=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname="",howl_path=""):
+            type2=None,talent:Talent=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname="",howl_path="",sexe = 0):
         
         # Infos
         self.name = name
@@ -56,6 +56,7 @@ class Pokemon:
         
         # Sprite
         self.gen = gen
+        self.sexe = sexe    # 0 pour male, 1 pour femelle    
         self.num_on_sprite_sheet = num_on_sprite_sheet
         self.rect = None
         
