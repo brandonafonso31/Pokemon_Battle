@@ -4,13 +4,14 @@ from config import battle_json_path,res_screen_top,sprite_trainers_dir_path,song
 from copy import deepcopy
 
 class Pokemon_trainer:
-    def __init__(self, name: str, theme_path = os.path.join(song_dir_path,"battle","trainer_BW.mp3")):
+    def __init__(self, name: str, theme_path = os.path.join(song_dir_path,"battle","trainer_BW.mp3"), pokeball = "pokeball"):
         self.name = name
         self.pokemon_team = []
         self.pc = []
         self.sprite_path = os.path.join(sprite_trainers_dir_path,f"{(self.name).upper()}.png")
         self.sprite_coord = -1,-1
         self.theme = theme_path
+        self.pokeball = pokeball
         
     def __str__(self):
         string  = f"Dresseur: {self.name}\nPokémon:"
@@ -68,7 +69,7 @@ class Pokemon_trainer:
                         poke_y
                     )
 
-                    utils.send_pokeball(window, pos)
+                    self.send_pokeball(window, pos)
 
                     
                 pokemon.play_howl()
@@ -126,9 +127,66 @@ class Pokemon_trainer:
             
             pygame.display.flip()
             
+    def send_pokeball(self,window, pos):
+        pokeball_name = self.pokeball
+        
+        x,y = pos
+        path = os.path.join(pokeball_dir_path,f"ball_{pokeball_name.upper()}.png")
+        pokeball_sprite = pygame.image.load(path).convert()
+        pokeball_sprite.set_colorkey(sprite.get_first_pixel(path))
+        
+        path_open = os.path.join(pokeball_dir_path,f"ball_{pokeball_name.upper()}_open.png")
+        pokeball_sprite_open = pygame.image.load(path_open).convert()
+        pokeball_sprite_open.set_colorkey(sprite.get_first_pixel(path_open))
+        
+        with open(battle_json_path, "r") as f:
+            data = json.load(f)        
+        bg = pygame.image.load(data["background"]).convert()
+        
+        width = pokeball_sprite.get_width()
+        height = pokeball_sprite.get_height()
+        
+        clock = pygame.time.Clock()
+        nb_frames = 8
+        width_per_frame = width // nb_frames
+        elapsed = 0
+        x_frame = 0
+        rect_bg = pygame.Rect(x, y, width_per_frame, height)
+        loop = 0
+        
+        while loop <= 3:
+            dt = clock.tick(30) / 1000
+            elapsed += dt
+            
+            if elapsed >= 0.05:
+                rect = pygame.Rect(x_frame, 0, width_per_frame, height)
+                window.blit(bg,pos,rect_bg)
+                window.blit(pokeball_sprite, pos, rect) 
+                x_frame += width_per_frame
+                elapsed = 0
+                
+                if x_frame >= width :
+                    loop += 1
+                    x_frame = 0             
+            
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                    
+            pygame.display.flip() 
+        
+        window.blit(bg,pos,rect_bg)
+        window.blit(pokeball_sprite_open, pos)
+        pygame.display.flip()
+        utils.delay_flat(0.1)
+        # flash écran ou qqch
+        window.blit(bg,pos,rect_bg)
+        utils.delay_flat(0.2)
+            
 def init_trainer():       
     from pokemon_init import leviator,dracaufeu,gengar   
-    trainer_ai = Pokemon_trainer("Red","hgss_champion.mp3")
+    trainer_ai = Pokemon_trainer("Red","hgss_champion.mp3","luxuryball")
     trainer_ai.catch_pokemon(dracaufeu)
     # trainer_ai.catch_pokemon(gengar)
     trainer = Pokemon_trainer("Brandon")
