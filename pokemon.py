@@ -41,7 +41,9 @@ class Pokemon:
             "def_": 0,
             "atk_spe": 0,
             "def_spe": 0,
-            "vit": 0
+            "vit": 0,
+            "accuracy": 0,
+            "escape": 0
         }
         
         # Stats supp:
