@@ -243,8 +243,7 @@ def battle_menu(window):
                 pokemon_team_menu(window, pokemon_player, pokemon_opponent)
                 showing_menu = True
         pygame.display.flip()
-        
-         
+          
 def options_menu(window):
     options_running = True
     while options_running :
