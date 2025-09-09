@@ -1,5 +1,5 @@
 principal:
-    - ajouter animation sortie de pokeball pour l'adversaire
+    - ajouter animation sortie de pokeball pour l'adversaire (différente pour chaque pokeball)
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1
     - implenter animations des attaques
