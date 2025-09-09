@@ -1,9 +1,7 @@
 principal:
-    - adjuster le dernier message pour annoncer le vainqueur car sprite du pokmeon qui disparait et efface un bout du message
     - ajouter animation sortie de pokeball pour l'adversaire
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1
-    - esquive et précision: ne pas oublier de les remettre à 1 quand swap pokemon
     - implenter animations des attaques
     - implémenter sac et le switch de pokemon
     - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer)
