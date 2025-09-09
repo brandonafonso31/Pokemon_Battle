@@ -19,7 +19,6 @@ def apply_timing_effect(pokemon_using_talent, pokemon_2):
     talent = pokemon_using_talent.talent
     timing_talent = talent.timing
     with timing_lock:
-        print(talent,current_timing)
         if current_timing == timing_talent:
             talent.trigger(pokemon_using_talent, pokemon_2)
             

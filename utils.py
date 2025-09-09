@@ -134,7 +134,7 @@ def send_pokeball(window, pos, pokeball_name = "pokeball"):
     window.blit(bg,pos,rect_bg)
     window.blit(pokeball_sprite_open, pos)
     pygame.display.flip()
-    delay_flat(0.5)
+    delay_flat(0.1)
     # flash écran ou qqch
     window.blit(bg,pos,rect_bg)
     delay_flat(0.2)
