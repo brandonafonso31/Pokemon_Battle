@@ -13,6 +13,7 @@ sprites_dir_path = os.path.join(img_dir_path,"sprites")
 gen_sprites_sheets_path = os.path.join(sprites_dir_path,"gen")
 actual_battle_sprite_dir_path = os.path.join(sprites_dir_path,"actual_battle_sprite")
 sprite_trainers_dir_path = os.path.join(sprites_dir_path,"trainers")
+pokeball_dir_path = os.path.join(sprites_dir_path,"pokeball")
 
 song_dir_path = os.path.join(principal_dir_path,"song")
 data_dir_path = os.path.join(principal_dir_path,"data")

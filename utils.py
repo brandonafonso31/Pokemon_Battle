@@ -1,5 +1,5 @@
-from config import WHITE, BLACK, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path
-import os,pygame,button,pokemon_battle,json,sys
+from config import WHITE, BLACK, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path,pokeball_dir_path,sprites_dir_path
+import os,pygame,button,pokemon_battle,json,sys,sprite
 
 def draw_text(surface,text, font, text_col, x, y):
     img = font.render(text, True, text_col)
@@ -82,3 +82,72 @@ def delay_flat(delay):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+                
+# A changer par une fonction générique display_animation(window,animation_file_path)
+def send_pokeball(window, pos, pokeball_name = "pokeball"):
+    x,y = pos
+    path = os.path.join(pokeball_dir_path,f"ball_{pokeball_name.upper()}.png")
+    pokeball_sprite = pygame.image.load(path).convert()
+    pokeball_sprite.set_colorkey(sprite.get_first_pixel(path))
+    
+    path_open = os.path.join(pokeball_dir_path,f"ball_{pokeball_name.upper()}_open.png")
+    pokeball_sprite_open = pygame.image.load(path_open).convert()
+    pokeball_sprite_open.set_colorkey(sprite.get_first_pixel(path_open))
+    
+    with open(battle_json_path, "r") as f:
+        data = json.load(f)        
+    bg = pygame.image.load(data["background"]).convert()
+    
+    width = pokeball_sprite.get_width()
+    height = pokeball_sprite.get_height()
+    
+    clock = pygame.time.Clock()
+    nb_frames = 8
+    width_per_frame = width // nb_frames
+    elapsed = 0
+    x_frame = 0
+    rect_bg = pygame.Rect(x, y, width_per_frame, height)
+    loop = 0
+    
+    while loop <= 4:
+        dt = clock.tick(30) / 1000
+        elapsed += dt
+        
+        if elapsed >= 0.05:
+            rect = pygame.Rect(x_frame, 0, width_per_frame, height)
+            window.blit(bg,pos,rect_bg)
+            window.blit(pokeball_sprite, pos, rect) 
+            x_frame += width_per_frame
+            elapsed = 0
+            
+            if x_frame >= width :
+                loop += 1
+                x_frame = 0             
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+                
+        pygame.display.flip() 
+    
+    window.blit(bg,pos,rect_bg)
+    window.blit(pokeball_sprite_open, pos)
+    pygame.display.flip()
+    delay_flat(0.5)
+    # flash écran ou qqch
+    window.blit(bg,pos,rect_bg)
+       
+def get_width_pokemon_sprite(front_or_back):
+    path = os.path.join(sprites_dir_path,"actual_battle_sprite",f"pokemon_{front_or_back}_1.png")
+    if os.path.exists(path):
+        sprite = pygame.image.load(path).convert()
+        return sprite.get_width()
+    return 0
+
+def get_width_pokeball_sprite():
+    path = os.path.join(sprites_dir_path,"pokeball","ball_POKEBALL_open.png")
+    if os.path.exists(path):
+        sprite = pygame.image.load(path).convert()
+        return sprite.get_width()
+    return 0

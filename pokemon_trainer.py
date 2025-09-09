@@ -1,6 +1,6 @@
 # Une class en plus pour pokemon_team ?
 import sprite,json,utils,os,pygame,sys
-from config import battle_json_path,res_screen_top,sprite_trainers_dir_path,song_dir_path
+from config import battle_json_path,res_screen_top,sprite_trainers_dir_path,song_dir_path,pokeball_dir_path
 from copy import deepcopy
 
 class Pokemon_trainer:
@@ -55,6 +55,22 @@ class Pokemon_trainer:
                 dic = data["current"]
                 dic = {"current": [dic[0],i+1]} if front_or_back == "front" else {"current": [i+1,dic[1]]}
                 utils.update_battle_json(dic)
+                
+                if front_or_back == "front":
+                    poke_x = data["opponent"][str(i+1)]["x"]
+                    poke_y = data["opponent"][str(i+1)]["y"]
+                    poke_w = utils.get_width_pokemon_sprite(front_or_back)
+                    
+                    # largeur d'une frame de pokéball
+                    ball_w = utils.get_width_pokeball_sprite()
+                    pos = (
+                        poke_x + poke_w // 2 - ball_w // 2,
+                        poke_y
+                    )
+
+                    utils.send_pokeball(window, pos)
+
+                    
                 pokemon.play_howl()
                 return pokemon
         return None
@@ -93,7 +109,6 @@ class Pokemon_trainer:
         with open(battle_json_path, "r") as f:
             data = json.load(f)        
         bg = pygame.image.load(data["background"]).convert()
-        rect = pygame.Rect(x,y,sprite_trainer.get_width(),sprite_trainer.get_height())
         clock = pygame.time.Clock()
         dt = 0
         limit_x = res_screen_top[0]
@@ -101,7 +116,7 @@ class Pokemon_trainer:
             dt = clock.tick(30) / 1000
             rect = pygame.Rect(x,y,sprite_trainer.get_width(),sprite_trainer.get_height())
             window.blit(bg,rect,rect)
-            x += 150 * dt
+            x += 200 * dt
             window.blit(sprite_trainer,(x,y))          
             
             for event in pygame.event.get():
