@@ -127,9 +127,9 @@ def get_success_rate(pokemon_1, pokemon_2, first_move_id):
     move = getattr(pokemon_1, first_move_id)
     return pokemon_1.accuracy / pokemon_2.escape * move.accuracy
     
-def check_hp_to_change_music(pokemon_1,pokemon_2 = None):
+def check_hp_to_change_music(pokemon_1,pokemon_2):
     hp_1,hp_max_1 = pokemon_1.hp,pokemon_1.hp_max
-    hp_2,hp_max_2 = (pokemon_2.hp,pokemon_2.hp_max) if pokemon_2 is not None else (0,0)
+    hp_2,hp_max_2 = pokemon_2.hp,pokemon_2.hp_max
     
     if os.path.exists(battle_json_path):
         with open(battle_json_path, "r") as f:

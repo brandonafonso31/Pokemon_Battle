@@ -135,6 +135,7 @@ def ko(window, pokemon_player, pokemon_opponent):
                 text = f"{pokemon_opponent.name} est envoyé par {opponent.name} !"
                 utils.print_log_ingame(window,text)
                 ui_battle.refresh_opponent_side(window,pokemon_opponent)
+            utils.check_hp_to_change_music(pokemon_player,pokemon_opponent)
             state = 3
             elapsed = 0
         
