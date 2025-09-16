@@ -70,7 +70,7 @@ class Pokemon_trainer:
                     )
 
                     self.send_pokeball(window, pos)
-                    
+                    utils.check_hp_to_change_music(pokemon)
                     
                 pokemon.play_howl()
                 return pokemon
