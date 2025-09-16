@@ -1,4 +1,4 @@
-from config import WHITE, BLACK, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path,pokeball_dir_path,sprites_dir_path,song_dir_path
+from config import WHITE, BLACK, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path,pokeball_dir_path,sprites_dir_path,song_dir_path,low_hp_theme_path
 import os,pygame,button,pokemon_battle,json,sys,sprite
 from random import choice,randint
 
@@ -129,17 +129,22 @@ def get_success_rate(pokemon_1, pokemon_2, first_move_id):
     
 def check_hp_to_change_music(pokemon):
     hp,hp_max = pokemon.hp,pokemon.hp_max
-    pygame.mixer.music.stop()
     
-    if hp > 0 and hp < 20/100 * hp_max:
-        pygame.mixer.music.load(os.path.join(song_dir_path, "battle", "low_hp_BW.mp3"))
-        pygame.mixer.music.play(loops=-1)
-        pygame.mixer.music.set_volume(0.3)
-    elif os.path.exists(battle_json_path):
+    if os.path.exists(battle_json_path):
         with open(battle_json_path, "r") as f:
             data = json.load(f)
-                
         music_path = data["music"]
-        pygame.mixer.music.load(music_path)
+        opponent_theme_path = data["opponent_theme"]
+    else:
+        return
+        
+    if hp > 0 and hp < 20/100 * hp_max and music_path != low_hp_theme_path:
+        pygame.mixer.music.stop()
+        pygame.mixer.music.load(low_hp_theme_path)
         pygame.mixer.music.play(loops=-1)
         pygame.mixer.music.set_volume(0.3)
+    elif music_path != opponent_theme_path:
+            pygame.mixer.music.stop()
+            pygame.mixer.music.load(music_path)
+            pygame.mixer.music.play(loops=-1)
+            pygame.mixer.music.set_volume(0.3)

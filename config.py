@@ -23,6 +23,7 @@ sound_effect_dir_path = os.path.join(song_dir_path,"sound_effect")
 cries_dir_path = os.path.join(song_dir_path,"cries")
 background_dir_path = os.path.join(img_dir_path,"background")
 sys_dir_path = os.path.join(img_dir_path,"sys")
+low_hp_theme_path = os.path.join(song_dir_path, "battle", "low_hp_BW.mp3")
 
 BLACK = (0, 0, 0, 255)
 WHITE = (255, 255, 255, 255)

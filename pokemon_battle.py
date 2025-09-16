@@ -13,6 +13,7 @@ def start_battle(window, player, opponent, background="forest.jpg"):
     pygame.mixer.music.load(music_path)
     pygame.mixer.music.play(loops=-1)
     pygame.mixer.music.set_volume(0.3)
+    utils.update_battle_json({"opponent_theme": music_path})
     utils.update_battle_json({"music": music_path})
 
     #---------------------------| BACKGROUND |---------------------------#
@@ -116,7 +117,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
     bt.check_timing_talent(first, second)
 
     # Do we need to change the theme ?
-    utils.check_hp_to_change_music(first)
+    utils.check_hp_to_change_music(second)
     
     # Log
     move = getattr(first, first_move_id)
@@ -146,7 +147,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
             current_timing = bt.change_timing()
             bt.check_timing_talent(second, first)
 
-            utils.check_hp_to_change_music(second)
+            utils.check_hp_to_change_music(first)
             
             move = getattr(second, second_move_id)
             print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
