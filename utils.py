@@ -129,7 +129,17 @@ def get_success_rate(pokemon_1, pokemon_2, first_move_id):
     
 def check_hp_to_change_music(pokemon):
     hp,hp_max = pokemon.hp,pokemon.hp_max
+    pygame.mixer.music.stop()
+    
     if hp > 0 and hp < 20/100 * hp_max:
-        pygame.mixer.music.stop()
         pygame.mixer.music.load(os.path.join(song_dir_path, "battle", "low_hp_BW.mp3"))
         pygame.mixer.music.play(loops=-1)
+        pygame.mixer.music.set_volume(0.3)
+    elif os.path.exists(battle_json_path):
+        with open(battle_json_path, "r") as f:
+            data = json.load(f)
+                
+        music_path = data["music"]
+        pygame.mixer.music.load(music_path)
+        pygame.mixer.music.play(loops=-1)
+        pygame.mixer.music.set_volume(0.3)

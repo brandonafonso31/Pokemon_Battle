@@ -70,7 +70,7 @@ class Pokemon_trainer:
                     )
 
                     self.send_pokeball(window, pos)
-
+                    
                     
                 pokemon.play_howl()
                 return pokemon
