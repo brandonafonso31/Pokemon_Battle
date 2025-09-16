@@ -152,11 +152,11 @@ class Pokemon_trainer:
         rect_bg = pygame.Rect(x, y, width_per_frame, height)
         loop = 0
         
-        while loop <= 3:
+        while loop <= 2:
             dt = clock.tick(30) / 1000
             elapsed += dt
             
-            if elapsed >= 0.05:
+            if elapsed >= 0.04:
                 rect = pygame.Rect(x_frame, 0, width_per_frame, height)
                 window.blit(bg,pos,rect_bg)
                 window.blit(pokeball_sprite, pos, rect) 
