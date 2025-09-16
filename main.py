@@ -28,7 +28,7 @@ BACKGROUND_TITLE_IMAGE = pygame.image.load(os.path.join(sys_dir_path,"pokemon_lo
 BACKGROUND_TITLE_IMAGE = pygame.transform.scale(BACKGROUND_TITLE_IMAGE,(BACKGROUND_TITLE_IMAGE.get_width()//5,BACKGROUND_TITLE_IMAGE.get_height()//5))
 
 #------|Button
-BUTTON_LENGTH,BUTTON_HEIGHT = 191,82    # taille du boutton sans texte : 191 x 82 par default
+BUTTON_LENGTH,BUTTON_HEIGHT = pygame.image.load(os.path.join(img_dir_path,"battle_ui","move_button.png")).get_size()    # taille du boutton sans texte : 191 x 82 par default
 
 PLAY_BUTTON = utils.create_button("Jouer", (resolution[0] - BUTTON_LENGTH)//2 , res_screen_bottom[1] + black_band_res[1]+25)
 OPTIONS_BUTTON = utils.create_button("Options", (resolution[0] - BUTTON_LENGTH)//2, res_screen_bottom[1] + black_band_res[1] + 175)
