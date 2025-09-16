@@ -127,9 +127,8 @@ def get_success_rate(pokemon_1, pokemon_2, first_move_id):
     move = getattr(pokemon_1, first_move_id)
     return pokemon_1.accuracy / pokemon_2.escape * move.accuracy
     
-def check_hp_to_change_music(pokemon_1,pokemon_2):
-    hp_1,hp_max_1 = pokemon_1.hp,pokemon_1.hp_max
-    hp_2,hp_max_2 = pokemon_2.hp,pokemon_2.hp_max
+def check_hp_to_change_music(pokemon):
+    hp,hp_max = pokemon.hp,pokemon.hp_max
     
     if os.path.exists(battle_json_path):
         with open(battle_json_path, "r") as f:
@@ -138,7 +137,7 @@ def check_hp_to_change_music(pokemon_1,pokemon_2):
         opponent_theme_path = data["opponent_theme"]
     else:
         return
-    boolean_hp = (hp_1 > 0 and hp_1 < 20/100 * hp_max_1) or (hp_2 > 0 and hp_2 < 20/100 * hp_max_2)    
+    boolean_hp = hp > 0 and hp < 20/100 * hp_max
     if boolean_hp and music_path != low_hp_theme_path:
         pygame.mixer.music.stop()
         pygame.mixer.music.load(low_hp_theme_path)

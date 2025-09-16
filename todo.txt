@@ -1,6 +1,5 @@
 principal:
-    - ajout du changement de musique quand barre de vie dans le rouge (- 20%)
-    - ajouter animation sortie de pokeball pour l'adversaire (différente pour chaque pokeball)
+    - erreur d'implémentaion : la musique ne doit pas changer quand c'est un pokemon de l'adversaire qui est low hp
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1 mais pas pour tous donc à gérer dans le csv qui contiendra tous les pokemon
     - implenter animations des attaques
