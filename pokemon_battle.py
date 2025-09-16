@@ -115,6 +115,9 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
     current_timing = bt.change_timing()
     bt.check_timing_talent(first, second)
 
+    # Do we need to change the theme ?
+    utils.check_hp_to_change_music(first, second)
+    
     # Log
     move = getattr(first, first_move_id)
     print(f"PP {first.name} {first_move_id}: {move.pp}, hp {second.name}: {second.hp}\n")
@@ -143,6 +146,8 @@ def turn(pokemon_1, pokemon_2, move_id_player, window):
             current_timing = bt.change_timing()
             bt.check_timing_talent(second, first)
 
+            utils.check_hp_to_change_music(first, second)
+            
             move = getattr(second, second_move_id)
             print(f"PP {second.name} {second_move_id}: {move.pp}, hp {first.name}: {first.hp}\n")
 

@@ -1,4 +1,4 @@
-from config import WHITE, BLACK, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path,pokeball_dir_path,sprites_dir_path
+from config import WHITE, BLACK, res_screen_top,res_screen_bottom,img_dir_path,font_path,battle_json_path,pokeball_dir_path,sprites_dir_path,song_dir_path
 import os,pygame,button,pokemon_battle,json,sys,sprite
 from random import choice,randint
 
@@ -127,3 +127,10 @@ def get_success_rate(pokemon_1, pokemon_2, first_move_id):
     move = getattr(pokemon_1, first_move_id)
     return pokemon_1.accuracy / pokemon_2.escape * move.accuracy
     
+def check_hp_to_change_music(pokemon_1, pokemon_2):
+    hp_1,hp_max_1 = pokemon_1.hp,pokemon_1.hp_max
+    hp_2,hp_max_2 = pokemon_2.hp,pokemon_2.hp_max
+    if hp_1 > 0 and hp_2 > 0 and (hp_1 < 20/100 * hp_max_1 or hp_2 < 20/100 * hp_max_2):
+        pygame.mixer.music.stop()
+        pygame.mixer.music.load(os.path.join(song_dir_path, "battle", "low_hp_BW.mp3"))
+        pygame.mixer.music.play(loops=-1)
