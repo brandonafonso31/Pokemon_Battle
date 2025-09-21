@@ -1,28 +1,28 @@
 {
     "trainer": {
         "1": {
-            "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\actual_battle_sprite\\pokemon_back_1.png",
+            "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\Pokemon_Battle\\images\\sprites\\actual_battle_sprite\\pokemon_back_1.png",
             "x": 84,
             "y": 161
         },
         "2": {
-            "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\actual_battle_sprite\\pokemon_back_2.png",
+            "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\Pokemon_Battle\\images\\sprites\\actual_battle_sprite\\pokemon_back_2.png",
             "x": 84,
             "y": 188
         }
     },
     "opponent": {
         "1": {
-            "path_sprite": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\sprites\\actual_battle_sprite\\pokemon_front_1.png",
+            "path_sprite": "C:\\Users\\Brandon\\Documents\\test_jeux\\Pokemon_Battle\\images\\sprites\\actual_battle_sprite\\pokemon_front_1.png",
             "x": 432,
             "y": 66
         }
     },
-    "music": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\song\\battle\\hgss_champion.mp3",
-    "background": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\images\\background\\bg-forest.png",
+    "music": "C:\\Users\\Brandon\\Documents\\test_jeux\\Pokemon_Battle\\song\\battle\\hgss_champion.mp3",
+    "background": "C:\\Users\\Brandon\\Documents\\test_jeux\\Pokemon_Battle\\images\\background\\bg-forest.png",
     "current": [
-        2,
+        1,
         1
     ],
-    "opponent_theme": "C:\\Users\\brand\\Documents\\test_jeux\\pokemon\\song\\battle\\hgss_champion.mp3"
+    "opponent_theme": "C:\\Users\\Brandon\\Documents\\test_jeux\\Pokemon_Battle\\song\\battle\\hgss_champion.mp3"
 }
