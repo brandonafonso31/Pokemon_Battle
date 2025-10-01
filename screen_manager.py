@@ -1,13 +1,13 @@
 import pygame
 
 class ScreenManager:
-    def __init__(self, logical_size=(750, 750), window_size=(750,750), keep_ratio=True):
+    def __init__(self, logical_size=(753, 1020), window_size=(753,1020), keep_ratio=True):
         self.logical_size = logical_size
         self.window_size = window_size
         self.keep_ratio = keep_ratio
 
         # Fenêtre redimensionnable
-        self.window = pygame.display.set_mode(window_size, pygame.RESIZABLE)
+        self.window = pygame.display.set_mode(self.logical_size, pygame.RESIZABLE)
         pygame.display.set_caption("Pokemon Clone")
 
         # Surface logique (où tu dessines ton jeu)
@@ -32,6 +32,7 @@ class ScreenManager:
             self.window.fill((0, 0, 0))
             pos_x = (window_w - new_w) // 2
             pos_y = (window_h - new_h) // 2
+            # print(pos_x, pos_y)
             self.window.blit(scaled_surface, (pos_x, pos_y))
 
         else:

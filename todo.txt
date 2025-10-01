@@ -1,4 +1,5 @@
 principal:
+    - attention imposssible de quitter ou resize pendant l'attaque du premier pokemon dans le tour
     - mettre les timings dans une liste (ou recup l'enum entier) et incremnter direct plutot que brutalement (pour pouvoir ajouter autant de timing sue je veux)
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1 mais pas pour tous donc à gérer dans le csv qui contiendra tous les pokemon

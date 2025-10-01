@@ -7,7 +7,7 @@ from pokemon_nature import Nature
 from math import floor,inf
 from pokemon_talent import Talent
 from random import randint,choice
-import os, pygame, sys, utils
+import os, pygame, sys, utils as utils
 
 LINE_PRINT = "-"*100
 
@@ -274,7 +274,7 @@ class Pokemon:
         sound.play()
 
 
-    def animate_death(self, window, front_or_back):
+    def animate_death(self, manager, front_or_back):
         """
         Anime la disparition du Pokémon KO (appelée à chaque frame par ko()).
         - elapsed : temps écoulé depuis le début de l’anim
@@ -295,7 +295,7 @@ class Pokemon:
         elapsed = 0
         state = 0
         howl_time = pygame.mixer.Sound(self.howl_path).get_length()
-        
+        surface = manager.get_surface()
         while True:
             dt = clock.tick(30) / 1000
             elapsed += dt
@@ -306,8 +306,9 @@ class Pokemon:
                 elapsed = 0
                 
             elif state == 1 and elapsed >= howl_time:
-                window.blit(background,rect_sprite,rect_sprite)
-                window.blit(background,hp_bar_rect,hp_bar_rect)
+                surface.blit(background,rect_sprite,rect_sprite)
+                surface.blit(background,hp_bar_rect,hp_bar_rect)
+                manager.update()
                 return
 
             for event in pygame.event.get():

@@ -6,6 +6,7 @@ res_screen_top = (753,500)
 res_screen_bottom = res_screen_top
 black_band_res = (max(res_screen_top[0],res_screen_bottom[0]),20)
 resolution = (max(res_screen_top[0],res_screen_bottom[0],black_band_res[0]),res_screen_top[1]+black_band_res[1]+res_screen_bottom[1])
+# print(resolution)
 
 principal_dir_path = os.getcwd()
 img_dir_path = os.path.join(principal_dir_path,"images")
