@@ -10,7 +10,7 @@ clock = pygame.time.Clock()
 dt = 0
 
 #------|Resolution avec ScreenManager
-manager = ScreenManager(resolution, (1080, 1080), keep_ratio=True)  # tu peux mettre (1920,1080) par ex.
+manager = ScreenManager(resolution, keep_ratio=True)
 pygame.display.set_caption(project_name)
 pygame.display.set_icon(pygame.image.load(os.path.join(img_dir_path, "sys/logo.png")))
 
