@@ -1,4 +1,4 @@
-import pygame
+import pygame,os
 
 class ScreenManager:
     def __init__(self, logical_size=(753, 1020)):
@@ -70,31 +70,35 @@ class ScreenManager:
         return pygame.Rect(screen_x, screen_y, screen_width, screen_height)
     
     def toggle_fullscreen(self):
-        """Toggle plein écran - CORRIGÉ POUR LES BOUTONS"""
+        os.environ['SDL_VIDEO_CENTERED'] = '1'
         if not self.is_fullscreen:
-            # Passer en plein écran
-            self.window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+            # FULLSCREEN BORDERLESS
+            self.window = pygame.display.set_mode(self.logical_size, pygame.RESIZABLE)
+            self.window = pygame.display.set_mode(
+                (0,0),
+                pygame.NOFRAME
+            )
             self.is_fullscreen = True
-            print("Passage en True FullScreen")
+            print("Borderless fullscreen activé")
         else:
-            # Revenir en mode fenêtré
+            # Revenir en mode fenêtré centré
             self.window = pygame.display.set_mode(self.logical_size, pygame.RESIZABLE)
             self.is_fullscreen = False
-            print("Passage en mode fenêtré")
-        
-        # FORCER LA MISE À JOUR DES VARIABLES DE CONVERSION IMMÉDIATEMENT
+            print("Retour en mode fenêtré centré")
+
+        # recalcul scale / offsets
         window_w, window_h = self.window.get_size()
         logical_w, logical_h = self.logical_size
-        
         scale = min(window_w / logical_w, window_h / logical_h)
         new_w, new_h = int(logical_w * scale), int(logical_h * scale)
-        
         self.scale_factor = scale
         self.offset_x = (window_w - new_w) // 2
         self.offset_y = (window_h - new_h) // 2
         self.current_scaled_size = (new_w, new_h)
-        
+
         pygame.display.flip()
+
+
         
     def screen_to_logical(self, screen_pos):
         """Convertit une position écran (event.pos) -> position logique (surface)."""
