@@ -91,7 +91,8 @@ def delay_flat(delay,manager):
         dt = clock.tick(30) / 1000
         elapsed += dt
 
-        pygame_event_handle(manager)
+        for event in pygame.event.get():
+            pygame_event_handle(manager,event)
 
 
 def get_width_pokemon_sprite(front_or_back):
