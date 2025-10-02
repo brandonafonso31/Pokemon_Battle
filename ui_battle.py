@@ -6,11 +6,10 @@ import os, json, sprite, button, sys, utils, pygame
 
 def draw_move(manager, move, x, y):
     """Crée et dessine un bouton d'attaque"""
-    surface = manager.get_surface()
     move_img_path = os.path.join(img_dir_path, f"battle_ui/{move.type.name}_attack_button.png")
     move_img = pygame.image.load(move_img_path).convert_alpha()
     move_button = button.Button(x, y, move_img, 1, move.name, ImageColor.getrgb(move.type.color()))
-    move_button.draw(surface)
+    move_button.draw(manager)
     return move_button
 
 
