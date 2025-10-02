@@ -114,9 +114,8 @@ class Pokemon_trainer:
             surface.blit(sprite_trainer, (x, y))
 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                utils.pygame_event_handle(manager,event)
+
 
             manager.update()
 
@@ -164,20 +163,19 @@ class Pokemon_trainer:
                     x_frame = 0
 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                utils.pygame_event_handle(manager,event)
+
 
             manager.update()
 
         surface.blit(bg, pos, rect_bg)
         surface.blit(pokeball_sprite_open, pos)
         manager.update()
-        utils.delay_flat(0.1)
+        utils.delay_flat(0.1,manager)
 
         surface.blit(bg, pos, rect_bg)
         manager.update()
-        utils.delay_flat(0.2)
+        utils.delay_flat(0.2,manager)
 
 
 def init_trainer():

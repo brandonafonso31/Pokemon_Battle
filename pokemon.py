@@ -312,9 +312,7 @@ class Pokemon:
                 return
 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                utils.pygame_event_handle(manager,event)
 
         
 def get_scale_by_nature(stat_name: str, nature: Nature):

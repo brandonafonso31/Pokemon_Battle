@@ -10,7 +10,7 @@ def draw_text(manager, text, font, text_col, x, y):
 
 
 def reset_log(manager):
-    delay_flat(1)
+    delay_flat(1,manager)
     if not os.path.exists(battle_json_path):
         return
     with open(battle_json_path, "r") as f:
@@ -84,17 +84,14 @@ def update_battle_json(updates: dict):
         json.dump(data, f, indent=4)
 
 
-def delay_flat(delay):
+def delay_flat(delay,manager):
     elapsed = 0
     clock = pygame.time.Clock()
     while elapsed < delay:
         dt = clock.tick(30) / 1000
         elapsed += dt
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+        pygame_event_handle(manager)
 
 
 def get_width_pokemon_sprite(front_or_back):
@@ -159,3 +156,11 @@ def check_hp_to_change_music(pokemon):
         pygame.mixer.music.play(loops=-1)
         pygame.mixer.music.set_volume(0.3)
         update_battle_json({"music": opponent_theme_path})            
+        
+        
+def pygame_event_handle(manager,event):
+    if event.type == pygame.QUIT:
+        pygame.quit(); sys.exit()
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_F11 or (event.key == pygame.K_ESCAPE and manager.is_fullscreen):
+            manager.toggle_fullscreen()

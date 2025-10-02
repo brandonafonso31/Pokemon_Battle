@@ -33,14 +33,14 @@ def start_battle(manager, player, opponent, background="forest.jpg"):
     ui_battle.refresh_pokeball_team(manager, player, opponent)
 
     # --- sprite trainer
-    utils.delay_flat(1)
+    utils.delay_flat(1,manager)
     surface.blit(opponent.get_opponent_sprite(), opponent.sprite_coord)
     manager.update()
-    utils.delay_flat(1)
+    utils.delay_flat(1,manager)
     utils.print_log_ingame(manager, f"{opponent.name} vous défie dans un duel au sommet !", reset=True)
-    utils.delay_flat(1)
+    utils.delay_flat(1,manager)
     opponent.move_to_right(manager)
-    utils.delay_flat(0.5)
+    utils.delay_flat(0.5,manager)
 
     # --- sprites pokémon
     clock = pygame.time.Clock()
@@ -69,9 +69,8 @@ def start_battle(manager, player, opponent, background="forest.jpg"):
             running = False
 
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+            utils.pygame_event_handle(manager,event)
+
 
         manager.update()
 
@@ -117,7 +116,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, manager):
     bt.check_timing_talent(first, second)
 
     # --- attaque du premier
-    utils.delay_flat(1)
+    utils.delay_flat(1,manager)
 
     success_rate = utils.get_success_rate(first, second, first_move_id)
     if random() <= success_rate:
@@ -170,9 +169,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, manager):
             turn_running = False
 
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+            utils.pygame_event_handle(manager,event)
 
         manager.update()
 

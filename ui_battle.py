@@ -77,9 +77,8 @@ def draw_hp_bar(manager, pokemon, from_trainer, old_hp=None):
             elapsed += dt
 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                utils.pygame_event_handle(manager,event)
+
 
             if elapsed >= 0.05:
                 if anim_hp > current_hp:

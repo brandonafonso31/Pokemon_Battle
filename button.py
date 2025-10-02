@@ -2,7 +2,7 @@ import pygame,os
 from config import WHITE,font_path
 
 class Button:
-    def __init__(self, x, y, image, scale, text='', text_color=WHITE, padding=10,font_size = 50):
+    def __init__(self, x, y, image, scale, text='', text_color=WHITE, padding=10, font_size=50):
         width = image.get_width()
         height = image.get_height()
         self.image = pygame.transform.scale(image, (int(width * scale), int(height * scale)))
@@ -12,7 +12,6 @@ class Button:
   
         self.text = text
         self.text_color = text_color
-
         self.font_path = font_path
         self.font_size = font_size
         self.font = pygame.font.Font(self.font_path, font_size)
@@ -36,22 +35,23 @@ class Button:
                 return text_surface, text_rect
             font_size -= 1
 
-        # Fallback : texte trop long
+        # fallback
         font = pygame.font.Font(self.font_path, 10)
         self.font = font
         text_surface = font.render(self.text, True, self.text_color)
         text_rect = text_surface.get_rect(center=(self.rect.center[0] - adjust_x, self.rect.center[1]))
         return text_surface, text_rect
 
-    def draw(self, window):
-        window.blit(self.image, (self.rect.x, self.rect.y))
-        window.blit(self.text_surface, self.text_rect)
-        
+    def draw(self, screen_manager):
+        """Dessine sur la surface logique"""
+        surface = screen_manager.get_surface()
+        surface.blit(self.image, (self.rect.x, self.rect.y))
+        surface.blit(self.text_surface, self.text_rect)
+
     def handle_event(self, event, screen_manager):
-        """Gère les événements avec conversion des coordonnées - VERSION CORRIGÉE"""
+        """Gère les clics : convertit l'event.pos écran -> logique et teste self.rect."""
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            # Obtenir le rectangle écran correspondant
-            screen_rect = screen_manager.get_scaled_rect(self.rect)
-            # Vérifier la collision avec les coordonnées écran
-            return screen_rect.collidepoint(event.pos)
+            lx, ly = screen_manager.screen_to_logical(event.pos)
+            #print(event.pos, (lx,ly), self.rect)
+            return self.rect.collidepoint((lx, ly))
         return False
