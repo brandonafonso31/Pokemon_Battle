@@ -47,7 +47,11 @@ class Button:
         window.blit(self.image, (self.rect.x, self.rect.y))
         window.blit(self.text_surface, self.text_rect)
         
-    def handle_event(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            return event.button == 1 and self.rect.collidepoint(event.pos)
+    def handle_event(self, event, screen_manager):
+        """Gère les événements avec conversion des coordonnées - VERSION CORRIGÉE"""
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            # Obtenir le rectangle écran correspondant
+            screen_rect = screen_manager.get_scaled_rect(self.rect)
+            # Vérifier la collision avec les coordonnées écran
+            return screen_rect.collidepoint(event.pos)
         return False

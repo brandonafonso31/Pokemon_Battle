@@ -53,7 +53,7 @@ def pokemon_team_menu(manager, pokemon_player, pokemon_opponent):
         surface = manager.get_surface()
         surface.fill(BLACK)
 
-        utils.draw_text(surface, "Pokemon Team", font, "#b68f40", res_screen_bottom[0] // 2 - 200, res_screen_bottom[1] // 2)
+        utils.draw_text(manager, "Pokemon Team", font, "#b68f40", res_screen_bottom[0] // 2 - 200, res_screen_bottom[1] // 2)
 
         for button in [BACK_BUTTON]:
             button.draw(surface)
@@ -61,12 +61,12 @@ def pokemon_team_menu(manager, pokemon_player, pokemon_opponent):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
-            if BACK_BUTTON.handle_event(event):
+            if BACK_BUTTON.handle_event(event, manager):
                 options_running = False
 
         manager.update()
 
-    ui_battle.refresh_screen(surface, pokemon_player, pokemon_opponent)
+    ui_battle.refresh_screen(manager, pokemon_player, pokemon_opponent)
     manager.update()
 
 
@@ -77,7 +77,7 @@ def bag_menu(manager, pokemon_player, pokemon_opponent):
         surface = manager.get_surface()
         surface.fill(BLACK)
 
-        utils.draw_text(surface, "Sac", font, "#b68f40", res_screen_bottom[0] // 2 - 200, res_screen_bottom[1] // 2)
+        utils.draw_text(manager, "Sac", font, "#b68f40", res_screen_bottom[0] // 2 - 200, res_screen_bottom[1] // 2)
 
         for button in [BACK_BUTTON]:
             button.draw(surface)
@@ -85,12 +85,12 @@ def bag_menu(manager, pokemon_player, pokemon_opponent):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
-            if BACK_BUTTON.handle_event(event):
+            if BACK_BUTTON.handle_event(event, manager):
                 options_running = False
 
         manager.update()
 
-    ui_battle.refresh_screen(surface, pokemon_player, pokemon_opponent)
+    ui_battle.refresh_screen(manager, pokemon_player, pokemon_opponent)
     manager.update()
 
 
@@ -177,7 +177,7 @@ def attack_menu(manager, pokemon_player, pokemon_opponent):
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
             for i, button in enumerate(moves_button):
-                if button.handle_event(event):
+                if button.handle_event(event, manager):
                     pokemon_player, pokemon_opponent, battle_state = \
                         utils.start_turn(manager, pokemon_player, pokemon_opponent, moves_available, i)
                     if battle_state != "choose_attack":
@@ -185,7 +185,7 @@ def attack_menu(manager, pokemon_player, pokemon_opponent):
                             return ko(manager, pokemon_player, pokemon_opponent)
                         elif battle_state == "continue":
                             return pokemon_player, pokemon_opponent, battle_running
-            if BACK_BUTTON.handle_event(event):
+            if BACK_BUTTON.handle_event(event, manager):
                 turn_running = False
 
         manager.update()
@@ -225,15 +225,15 @@ def battle_menu(manager):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
-            if ATTACK_BUTTON.handle_event(event):
+            if ATTACK_BUTTON.handle_event(event, manager):
                 pokemon_player, pokemon_opponent, battle_running = attack_menu(manager, pokemon_player, pokemon_opponent)
                 if not battle_running:
                     state = "ko"; battle_running = True
                 showing_menu = True
-            if BAG_BUTTON.handle_event(event):
+            if BAG_BUTTON.handle_event(event, manager):
                 bag_menu(manager, pokemon_player, pokemon_opponent)
                 showing_menu = True
-            if POKEMON_BUTTON.handle_event(event):
+            if POKEMON_BUTTON.handle_event(event, manager):
                 pokemon_team_menu(manager, pokemon_player, pokemon_opponent)
                 showing_menu = True
 
@@ -247,14 +247,14 @@ def options_menu(manager):
         surface = manager.get_surface()
         surface.fill(BLACK)
 
-        utils.draw_text(surface, "OPTIONS", font, "#b68f40", res_screen_bottom[0] // 2 + 200, res_screen_bottom[1] // 2)
+        utils.draw_text(manager, "OPTIONS", font, "#b68f40", res_screen_bottom[0] // 2 + 200, res_screen_bottom[1] // 2)
         for button in [BACK_BUTTON]:
             button.draw(surface)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
-            if BACK_BUTTON.handle_event(event):
+            if BACK_BUTTON.handle_event(event, manager):
                 options_running = False
 
         manager.update()
@@ -283,11 +283,11 @@ def main_menu(manager):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
-            if PLAY_BUTTON.handle_event(event):
+            if PLAY_BUTTON.handle_event(event, manager):
                 battle_menu(manager); pygame.quit(); sys.exit()
-            if OPTIONS_BUTTON.handle_event(event):
+            if OPTIONS_BUTTON.handle_event(event, manager):
                 options_menu(manager)
-            if QUIT_BUTTON.handle_event(event):
+            if QUIT_BUTTON.handle_event(event, manager):
                 pygame.quit(); sys.exit()
 
         manager.update()
