@@ -124,14 +124,14 @@ def ko(manager, pokemon_player, pokemon_opponent):
                     return new_pokemon, pokemon_opponent, False
                 pokemon_player = new_pokemon
                 utils.print_log_ingame(manager, f"{pokemon_player.name} est envoyé par {trainer.name} !")
-                ui_battle.refresh_player_side(surface, pokemon_player)
+                ui_battle.refresh_player_side(manager, pokemon_player)
             else:
                 new_pokemon = opponent.send_next(manager, "front")
                 if new_pokemon is None:
                     return pokemon_player, pokemon_opponent, False
                 pokemon_opponent = new_pokemon
                 utils.print_log_ingame(manager, f"{pokemon_opponent.name} est envoyé par {opponent.name} !")
-                ui_battle.refresh_opponent_side(surface, pokemon_opponent)
+                ui_battle.refresh_opponent_side(manager, pokemon_opponent)
 
             utils.check_hp_to_change_music(pokemon_player)
             state = 3; elapsed = 0
