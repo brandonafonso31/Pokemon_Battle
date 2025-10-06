@@ -1,20 +1,18 @@
 {
   "0": {
     "timing": "ABOUT_TO_GET_HIT",
-    "attacker": "Pikachu",
-    "defender": "Bulbasaur",
-    "move": "Thunderbolt",
-    "damage": 42,
-    "cancel_attack": false,
-    "extra": {}
+    "attacker": "Dracaufeu",
+    "defender": "Léviator",
+    "move": "Lance-Flammes",
+    "damage": 84,
+    "cancel_attack": false
   },
   "1": {
     "timing": "GOT_HIT",
-    "attacker": "Charmander",
-    "defender": "Squirtle",
-    "move": "Tackle",
-    "damage": 12,
-    "cancel_attack": false,
-    "extra": {}
+    "attacker": "Léviator",
+    "defender": "Dracaufeu",
+    "move": "Cascade",
+    "damage": 130,
+    "cancel_attack": false
   }
 }
