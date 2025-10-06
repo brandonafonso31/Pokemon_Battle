@@ -41,7 +41,7 @@ def create_context(timing: str, attacker, defender, move=None, damage: int = 0):
     return BattleContext(timing, attacker, defender, move, damage)
 
 
-def add_context_to_history(context: BattleContext) -> None:
+def add_context_to_history(context: BattleContext):
     """Ajoute le contexte au fichier JSON sous forme d'objet indexé."""
     try:
         with open(battle_history_path, "r", encoding="utf-8") as f:
@@ -56,11 +56,11 @@ def add_context_to_history(context: BattleContext) -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-from battle_timing import Timing
+"""from battle_timing import Timing
 from pokemon_init import dracaufeu,leviator
 
 init_context_history()
 test_context_1 = create_context(Timing.ABOUT_TO_GET_HIT, dracaufeu, leviator, dracaufeu.move1, 84)
 test_context_2 = create_context(Timing.GOT_HIT, leviator, dracaufeu, leviator.move2, 130)
 add_context_to_history(test_context_1)
-add_context_to_history(test_context_2)
+add_context_to_history(test_context_2)"""
