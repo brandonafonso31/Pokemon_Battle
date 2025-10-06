@@ -1,4 +1,5 @@
 principal:
+    - ajuster les fonctions pour utiliser les contextes (utiles pour coder les talents et leurs divers effets)
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1 mais pas pour tous donc à gérer dans le csv qui contiendra tous les pokemon
     - implenter animations des attaques
