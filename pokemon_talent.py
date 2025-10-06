@@ -23,17 +23,17 @@ class Talent:
             
     def reset(self):
         self.used = 0
-   
+    
 def intimidation():
     """Talent: Intimidation"""
     def effect(pokemon_1,pokemon_2):
         pokemon_2.apply_buff_debuff("atk", scale=-1)
         txt = f"Le talent de {pokemon_1.name} influcence {pokemon_2.name}!"
         print(txt)
-        # utils.print_log_ingame(txt)
+        # utils.print_log_ingame(manager,txt,reset=True)
 
     return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.START, frequency=1)
-
+    
 talents = {
     "Intimidation": intimidation,
 }
