@@ -144,7 +144,7 @@ def turn(pokemon_1, pokemon_2, move_id_player, manager):
         elapsed += dt
 
         if state == 0 and elapsed >= 1.5:
-            current_timing = bt.change_timing()
+            current_timing = bt.change_timing(bt.Timing.ABOUT_TO_GET_HIT)
             bt.check_timing_talent(second, first)
 
             success_rate = utils.get_success_rate(second, first, second_move_id)
