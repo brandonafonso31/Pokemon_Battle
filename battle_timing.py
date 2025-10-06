@@ -35,17 +35,17 @@ def check_timing_talent(pokemon_1, pokemon_2):
     return pokemon_1, pokemon_2
 
 def change_timing():
+    """Passe proprement au timing suivant."""
     global current_timing
-    with timing_lock:        
-        if current_timing == Timing.START:
-            current_timing = Timing.ABOUT_TO_GET_HIT
-        elif current_timing == Timing.ABOUT_TO_GET_HIT:
-            current_timing = Timing.GOT_HIT
-        elif current_timing == Timing.GOT_HIT:
-            current_timing = Timing.END
-        elif current_timing == Timing.END:
-            current_timing = Timing.START
-    print(current_timing)
+    with timing_lock:
+        timing_values = list(Timing)
+        current_index = timing_values.index(current_timing)
+
+        # passe au timing suivant (cycle circulaire)
+        next_index = (current_index + 1) % len(timing_values)
+        current_timing = timing_values[next_index]
+
+    print(f"[Timing] → {current_timing}")
     return current_timing
 
 current_timing = Timing.START
