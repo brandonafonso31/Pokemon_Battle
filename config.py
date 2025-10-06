@@ -18,8 +18,10 @@ pokeball_dir_path = os.path.join(sprites_dir_path,"pokeball")
 
 song_dir_path = os.path.join(principal_dir_path,"song")
 data_dir_path = os.path.join(principal_dir_path,"data")
+battle_history_path = os.path.join(data_dir_path, "battle_history.json")
 battle_json_path = os.path.join(data_dir_path, "actual_battle.json")
 pokemon_data_json_path = os.path.join(data_dir_path, "pokedex.json")
+
 sound_effect_dir_path = os.path.join(song_dir_path,"sound_effect")
 cries_dir_path = os.path.join(song_dir_path,"cries")
 background_dir_path = os.path.join(img_dir_path,"background")

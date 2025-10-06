@@ -1,0 +1,20 @@
+{
+  "0": {
+    "timing": "ABOUT_TO_GET_HIT",
+    "attacker": "Pikachu",
+    "defender": "Bulbasaur",
+    "move": "Thunderbolt",
+    "damage": 42,
+    "cancel_attack": false,
+    "extra": {}
+  },
+  "1": {
+    "timing": "GOT_HIT",
+    "attacker": "Charmander",
+    "defender": "Squirtle",
+    "move": "Tackle",
+    "damage": 12,
+    "cancel_attack": false,
+    "extra": {}
+  }
+}
