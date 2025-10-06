@@ -1,7 +1,7 @@
 from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
-from pokemon_talent import talents
+from pokemon_ability import abilities
 from pokedex import create_pokemon
 
 #--------------------------------------| Dracaufeu |--------------------------------------#
@@ -17,7 +17,7 @@ dracaufeu.learn_move(lance_flamme)
 dracaufeu.learn_move(crocs_eclair)
 dracaufeu.learn_move(lance_soleil)
 #dracaufeu.learn_move(atterisage)
-dracaufeu.change_talent(talents["Intimidation"]())
+dracaufeu.change_ability(abilities["Intimidation"]())
 #print(dracaufeu)
 #--------------------------------------| Léviator |---------------------------------------#
 leviator_EV = {"hp":6,"atk":252,"def_":0,"atk_spe":0,"def_spe":0,"vit":252}
@@ -34,7 +34,7 @@ leviator.learn_move(crocgivre)
 leviator.learn_move(cascade)
 leviator.learn_move(aquajet)
 leviator.learn_move(seisme)
-leviator.change_talent(talents["Intimidation"]())
+leviator.change_ability(abilities["Intimidation"]())
 #print(leviator)
 #--------------------------------------| Pikachu |----------------------------------------#
 pikachu_EV = {"hp":252,"atk":252,"def_":252,"atk_spe":252,"def_spe":252,"vit":252}
@@ -51,7 +51,7 @@ pikachu.learn_move("électacle")"""
 
 gengar_Ev = {"hp":6,"atk":0,"def_":0,"atk_spe":252,"def_spe":0,"vit":252}
 gengar = create_pokemon(94,nature=Nature.MODESTE,EV=gengar_Ev,num_on_sprite_sheet=108)
-gengar.change_talent(talents["Intimidation"]())
+gengar.change_ability(abilities["Intimidation"]())
 
 tonnerre = SpecialMove("Tonnerre",Type.ELECTRIQUE,power=90,accuracy=100,pp=15, effect = dico_effect_move["Tonnerre"], prio = 0)
 balle_ombre = SpecialMove("Balle'Ombre",Type.SPECTRE,power=80,accuracy=100,pp=10, effect = dico_effect_move["Balle'Ombre"], prio = 0)

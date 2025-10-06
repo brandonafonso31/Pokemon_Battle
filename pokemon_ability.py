@@ -1,7 +1,7 @@
 from battle_timing import Timing
 import utils
 
-class Talent:
+class Ability:
     def __init__(self, name, description, effect, timing:Timing, frequency):
         self.name = name
         self.description = description
@@ -32,8 +32,8 @@ def intimidation():
         print(txt)
         # utils.print_log_ingame(manager,txt,reset=True)
 
-    return Talent("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.START, frequency=1)
+    return Ability("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.START, frequency=1)
     
-talents = {
+abilities = {
     "Intimidation": intimidation,
 }

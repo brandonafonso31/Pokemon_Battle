@@ -19,14 +19,14 @@ class Timing(Enum):
 timing_lock = threading.Lock()
 
 
-def apply_timing_effect(pokemon_using_talent, pokemon_2):
-    talent = pokemon_using_talent.talent
-    timing_talent = talent.timing
+def apply_timing_effect(pokemon_using_ability, pokemon_2):
+    ability = pokemon_using_ability.ability
+    ability_timing = ability.timing
     with timing_lock:
-        if current_timing == timing_talent:
-            talent.trigger(pokemon_using_talent, pokemon_2)
+        if current_timing == ability_timing:
+            ability.trigger(pokemon_using_ability, pokemon_2)
             
-    return pokemon_using_talent, pokemon_2
+    return pokemon_using_ability, pokemon_2
     
 def check_timing_talent(pokemon_1, pokemon_2):
     """Check if the timing is correct for the talent"""

@@ -2,7 +2,7 @@ from pokemon import Pokemon
 from pokemon_type import Type
 from pokemon_move import *
 from pokemon_nature import Nature
-from pokemon_talent import talents
+from pokemon_ability import abilities
 from config import pokemon_data_json_path,data_dir_path,cries_dir_path
 import json,os
 
@@ -33,13 +33,13 @@ def get_gen(id: int):
     elif id <= 1010: return 9
     return None
 
-def choice_talent(talents):
+def choice_talent(abilities):
     input_choice = ""
-    for keys,talent in talents.items():
+    for keys,talent in abilities.items():
         input_choice += f"{keys}: {talent}\n"
     
     choice = str.upper(input(input_choice))
-    while choice not in talents.keys():
+    while choice not in abilities.keys():
         choice = str.upper(input(input_choice))
     return choice
     
@@ -51,7 +51,7 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
     
     stats = infos["baseStats"]
     types = infos["types"]
-    talents = infos["abilities"]
+    abilities = infos["abilities"]
     english_name = infos["alias"]
     
     pokemon = Pokemon(name=infos["name"],
@@ -68,7 +68,7 @@ def create_pokemon(id,nature=Nature.BIZARRE,EV={"hp":0,"atk":0,"def_":0,"atk_spe
                    EV=EV,
                    nature=nature,                   
                    nickname=nickname,
-                   talent=talents["0"], #     pour l'instant par défault toujours le 1er talent mais plus tard choice_talent(talents)
+                   ability=abilities["0"], #     pour l'instant par défault toujours le 1er talent mais plus tard choice_talent(abilities)
                    howl_path=os.path.join(cries_dir_path,f"{english_name}.mp3")
     )
     return pokemon

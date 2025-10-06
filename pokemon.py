@@ -5,7 +5,7 @@ from random import randint
 from config import gen_sprites_sheets_path
 from pokemon_nature import Nature
 from math import floor,inf
-from pokemon_talent import Talent
+from pokemon_ability import Ability
 from random import randint,choice
 import os, pygame, sys, utils
 
@@ -14,7 +14,7 @@ LINE_PRINT = "-"*100
 class Pokemon:
     def __init__(self,name: str,hp: int,atk: int,def_: int,atk_spe: int,def_spe: int,vit: int, \
         gen: int,type1: Type, nature:Nature= Nature.BIZARRE, EV={"hp":0,"atk":0,"def_":0,"atk_spe":0,"def_spe":0,"vit":0}, \
-            type2=None,talent:Talent=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname="",howl_path="",sexe = 0):
+            type2=None,ability:Ability=None,num_on_sprite_sheet=None,item=None,id_num=0,nickname="",howl_path="",sexe = 0):
         
         # Infos
         self.name = name
@@ -66,8 +66,8 @@ class Pokemon:
         self.move3 = None
         self.move4 = None
         
-        # Talent
-        self.talent = talent
+        # ability
+        self.ability = ability
         
         # Howl
         self.howl_path = howl_path
@@ -81,14 +81,14 @@ class Pokemon:
         self.item = item            # objet tenu par le pokémon
     
     def __str__(self):
-        output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | Talent: {self.talent} | Nature: {self.nature}\n{LINE_PRINT}"
+        output = f"{LINE_PRINT}\n{self.name} | {self.show_type()} | ability: {self.ability} | Nature: {self.nature}\n{LINE_PRINT}"
         return output + f"\nStats:\n{self.show_stats()}\n{LINE_PRINT}\nMoves:\n{self.show_moves()}\n{LINE_PRINT}\n" 
     def __eq__(self, other):
         return self.id == other.id  and self.trainer == other.trainer # id sera implémenter dans la classe Team_Pokemon est sera de 1 à 6 unique et vérifié
         """return self.name == other.name and self.dresseur == other.dresseur \
             and self.EV == other.EV and self.get_moveset() == other.get_moveset() \
                 and self.get_stats() == other.get_stats() and self.nickname == other.nickname \
-                    and self.talent == other.talent and self.nature == other.nature \
+                    and self.ability == other.ability and self.nature == other.nature \
                         and self.shiny == other.shiny and self.item == other.item"""
       
     def show_type(self):
@@ -131,7 +131,7 @@ class Pokemon:
         return recup_sprite_pokemon(sprites_sheet, self.num_on_sprite_sheet, front_or_back,self.id)
         
     def get_cm(self, opponent, move : Move, window):
-        """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""
+        """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (abilitys) x (climats) x (un nbre entre 0.85 et 1) x crit"""
         
         # rand between 0.85 and 1
         rand = randint(85,100)/100
@@ -149,7 +149,7 @@ class Pokemon:
         # calcul stab
         stab = (move.type == self.type1 or move.type == self.type2) + 1
         
-        return stab * eff * rand    # a ajouter |---> * crit * objets * talents * climats
+        return stab * eff * rand    # a ajouter |---> * crit * objets * abilitys * climats
             
     def use_move(self, move_id: str, opponent, window):
         move = getattr(self, move_id) 
@@ -218,9 +218,9 @@ class Pokemon:
 
     
     
-    def change_talent(self, talent: Talent):
-        self.talent = talent
-        print(f"{self.name} a désormais le talent {talent}")
+    def change_ability(self, ability: Ability):
+        self.ability = ability
+        print(f"{self.name} a désormais le ability {ability}")
         
     def change_stat_from_buff_debuff(self, stat_name):
         """Renvoie la stat modifiée par les stages."""
