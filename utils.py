@@ -165,3 +165,20 @@ def pygame_event_handle(manager,event):
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_F11 or (event.key == pygame.K_ESCAPE and manager.is_fullscreen):
             manager.toggle_fullscreen()
+            
+def print_msg_eff(manager,eff):
+    msg =""
+    if eff == 4:
+        msg+="C'est hyper efficace !"
+    elif eff == 2:
+        msg+="C'est super efficace !"
+    elif eff ==1:
+        msg+="C'est efficace"
+    elif eff == 0.5:
+        msg+="Ce n'est pas très efficace"
+    elif eff == 0.25:
+        msg+="Ce n'est vraiment pas efficace"
+    elif eff == 0:
+        msg+="Cela ne fait aucun dégat"
+    print(msg)
+    print_log_ingame(manager,msg,reset=True)

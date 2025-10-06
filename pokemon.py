@@ -7,7 +7,7 @@ from pokemon_nature import Nature
 from math import floor,inf
 from pokemon_talent import Talent
 from random import randint,choice
-import os, pygame, sys, utils as utils
+import os, pygame, sys, utils
 
 LINE_PRINT = "-"*100
 
@@ -130,11 +130,13 @@ class Pokemon:
         sprites_sheet = os.path.join(gen_sprites_sheets_path,f"gen{self.gen}_{front_or_back}.png")
         return recup_sprite_pokemon(sprites_sheet, self.num_on_sprite_sheet, front_or_back,self.id)
         
-    def get_cm(self, opponent, move : Move, objects=None):
+    def get_cm(self, opponent, move : Move, window):
         """CM est une multiplication : (stab) x (efficacité) x (objets tenus) x (talents) x (climats) x (un nbre entre 0.85 et 1) x crit"""
-        msg = ""
-        rand = randint(85,100)
         
+        # rand between 0.85 and 1
+        rand = randint(85,100)/100
+        
+        # calcul eff
         if self.type1 is None and self.type2 is not None :
             self.type1, self.type2 = self.type2, None
             
@@ -142,23 +144,12 @@ class Pokemon:
             eff = get_multiplicateur(move.type,self.type1)
         else:
             eff = get_double_multiplicateur(move.type,opponent.type1,opponent.type2)
-            
+        utils.print_msg_eff(window,eff)
+        
+        # calcul stab
         stab = (move.type == self.type1 or move.type == self.type2) + 1
         
-        if eff == 4:
-            msg+="C'est hyper efficace !"
-        elif eff == 2:
-            msg+="C'est super efficace !"
-        elif eff ==1:
-            msg+="C'est efficace"
-        elif eff == 0.5:
-            msg+="Ce n'est pas très efficace"
-        elif eff == 0.25:
-            msg+="Ce n'est vraiment pas efficace"
-        elif eff == 0:
-            msg+="Cela ne fait aucun dégat"
-        print(msg)
-        return stab * eff * rand/100    # a ajouter |---> * crit * objets * talents * climats
+        return stab * eff * rand    # a ajouter |---> * crit * objets * talents * climats
             
     def use_move(self, move_id: str, opponent, window):
         move = getattr(self, move_id) 
@@ -183,7 +174,7 @@ class Pokemon:
             return self, opponent
         
         # Apply type effectiveness
-        damage *= self.get_cm(opponent, move)
+        damage *= self.get_cm(opponent, move,window)
         damage = max(0, floor(damage))
         # Apply damage
         old_hp = opponent.hp
