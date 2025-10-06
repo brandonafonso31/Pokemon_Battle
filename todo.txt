@@ -13,11 +13,13 @@ principal:
 
 secondaire :    
     - modifier l'interface d'accueil
-    - creer des dresseurs dans un json ? pour load les adversaires
+    - creer des dresseurs dans un json/csv pour load les adversaires
+    - instacier les pokemons de la même façon que les dresseurs
     - ajouter une fonction PC pour choisir sa team avant le combat (utiliser les petits sprites pour l'affichage peut-être plutot commmencer par just des inpuits dans le terminal)
 
 optionel :
-    - load une image pour le bloc contenant les hp, le niv et le nom
+    - basculer sur un affichage mono écran ? améliorer le rendu
+    - améliorer l'ui_battle
     - sprite adversaire toujours affiché ?
     - modifier les comparaisons de str (meilleur lisibilité mais comparer des str ~) ?
     - changer la condition battle_menu par while team1.get_num_living_pokemon() > 1 and team2.get_num_living_pokemon() > 1
