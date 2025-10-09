@@ -1,0 +1,8 @@
+{
+  "timing": "GOT_HIT",
+  "attacker": "Léviator",
+  "defender": "Dracaufeu",
+  "move": "Cascade",
+  "damage": 130,
+  "cancel_attack": false
+}
