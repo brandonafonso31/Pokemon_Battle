@@ -43,14 +43,17 @@ def create_context(timing: str, attacker, defender, move=None, damage: int = 0):
     set_last_context(context)
     return context
 
-
-def add_context_to_history(context: BattleContext):
-    """Ajoute le contexte au fichier JSON sous forme d'objet indexé."""
+def read_context():
     try:
-        with open(battle_history_path, "r", encoding="utf-8") as f:
+        with open(last_context_path, "r", encoding="utf-8") as f:
             data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         data = {}
+    return data
+
+def add_context_to_history(context: BattleContext):
+    """Ajoute le contexte au fichier JSON sous forme d'objet indexé."""
+    data = read_context()
 
     index = str(len(data))
     data[index] = context.to_dict()
