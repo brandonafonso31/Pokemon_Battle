@@ -113,19 +113,19 @@ def get_width_pokeball_sprite():
 
 def get_prio(pokemon_1, pokemon_2, move_player, move_ia, move_id_player, move_id_ia):
     if move_player.prio > move_ia.prio:
-        return pokemon_1, move_id_player, pokemon_2, move_id_ia
+        return pokemon_1, move_player, move_id_player, pokemon_2, move_ia, move_id_ia
     elif move_player.prio < move_ia.prio:
-        return pokemon_2, move_id_ia, pokemon_1, move_id_player
+        return pokemon_2, move_ia, move_id_ia, pokemon_1, move_player,move_id_player
     else:
         if pokemon_1.vit > pokemon_2.vit:
-            return pokemon_1, move_id_player, pokemon_2, move_id_ia
+            return pokemon_1, move_player, move_id_player, pokemon_2, move_ia, move_id_ia
         elif pokemon_1.vit < pokemon_2.vit:
-            return pokemon_2, move_id_ia, pokemon_1, move_id_player
+            return pokemon_2, move_ia, move_id_ia, pokemon_1, move_player, move_id_player
         else:
             if choice([True, False]):
-                return pokemon_1, move_id_player, pokemon_2, move_id_ia
+                return pokemon_1, move_player, move_id_player, pokemon_2, move_ia, move_id_ia
             else:
-                return pokemon_2, move_id_ia, pokemon_1, move_id_player
+                return pokemon_2 ,move_ia, move_id_ia, pokemon_1, move_player, move_id_player
 
 
 def get_success_rate(pokemon_1, pokemon_2, first_move_id):

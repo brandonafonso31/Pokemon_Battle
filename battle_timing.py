@@ -1,5 +1,6 @@
 from enum import Enum
 import threading
+import battle_context as bc
 
 class Timing(Enum):
     START, ABOUT_TO_GET_HIT, GOT_HIT, END = range(4)
@@ -28,14 +29,19 @@ def apply_timing_effect(pokemon_using_ability, pokemon_2):
             
     return pokemon_using_ability, pokemon_2
     
-def check_timing_talent(pokemon_1, pokemon_2):
-    """Check if the timing is correct for the talent"""
+def check_timing_talent(pokemon_1, pokemon_2, move = None, damage:int = 0):
+    """Crée le context de l'état du combat,
+    puis tente de déclencer les talents"""
+    global current_timing
+    bc.create_context(current_timing, pokemon_1, pokemon_2, move, damage)
+    
     if pokemon_1.vit >= pokemon_2.vit:
         pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)
         pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
     else:
         pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
-        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)         
+        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)  
+           
     return pokemon_1, pokemon_2
 
 def change_timing(default_timing = None):

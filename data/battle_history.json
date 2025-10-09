@@ -14,5 +14,77 @@
     "move": "Cascade",
     "damage": 130,
     "cancel_attack": false
+  },
+  "2": {
+    "timing": "START",
+    "attacker": "Léviator",
+    "defender": "Dracaufeu",
+    "move": "None",
+    "damage": 0,
+    "cancel_attack": false
+  },
+  "3": {
+    "timing": "ABOUT_TO_GET_HIT",
+    "attacker": "Dracaufeu",
+    "defender": "Léviator",
+    "move": "Croc-éclair",
+    "damage": 0,
+    "cancel_attack": false
+  },
+  "4": {
+    "timing": "GOT_HIT",
+    "attacker": "Dracaufeu",
+    "defender": "Léviator",
+    "move": "Croc-éclair",
+    "damage": 223,
+    "cancel_attack": false
+  },
+  "5": {
+    "timing": "START",
+    "attacker": "Ectoplasma",
+    "defender": "Dracaufeu",
+    "move": "Tonnerre",
+    "damage": 0,
+    "cancel_attack": false
+  },
+  "6": {
+    "timing": "ABOUT_TO_GET_HIT",
+    "attacker": "Ectoplasma",
+    "defender": "Dracaufeu",
+    "move": "Tonnerre",
+    "damage": 136,
+    "cancel_attack": false
+  },
+  "7": {
+    "timing": "ABOUT_TO_GET_HIT",
+    "attacker": "Dracaufeu",
+    "defender": "Ectoplasma",
+    "move": "Lance-Soleil",
+    "damage": 0,
+    "cancel_attack": false
+  },
+  "8": {
+    "timing": "GOT_HIT",
+    "attacker": "Dracaufeu",
+    "defender": "Ectoplasma",
+    "move": "----------------------------------------------------------------------------------------------------\nDracaufeu | TYPE1: FEU, TYPE2: VOL | ability: Intimidation | Nature: MODESTE\n----------------------------------------------------------------------------------------------------\nStats:\nhp: 17,\nATK: 93,\nDEF: 98,\nATK_SPE: 177,\nDEF_SPE: 106,\nVIT: 152\n----------------------------------------------------------------------------------------------------\nMoves:\nMove1: Lance-Flammes,\nMove2: Croc-éclair,\nMove3: Lance-Soleil, \nMove4: None\n----------------------------------------------------------------------------------------------------\n",
+    "damage": 34,
+    "cancel_attack": false
+  },
+  "9": {
+    "timing": "START",
+    "attacker": "Ectoplasma",
+    "defender": "Dracaufeu",
+    "move": "Tonnerre",
+    "damage": 0,
+    "cancel_attack": false
+  },
+  "10": {
+    "timing": "ABOUT_TO_GET_HIT",
+    "attacker": "Ectoplasma",
+    "defender": "Dracaufeu",
+    "move": "Tonnerre",
+    "damage": 136,
+    "cancel_attack": false
   }
 }

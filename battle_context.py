@@ -38,7 +38,10 @@ def init_context_history():
 
 def create_context(timing: str, attacker, defender, move=None, damage: int = 0):
     """Crée un nouveau contexte de combat."""
-    return BattleContext(timing, attacker, defender, move, damage)
+    context = BattleContext(timing, attacker, defender, move, damage)
+    add_context_to_history(context)
+    set_last_context(context)
+    return context
 
 
 def add_context_to_history(context: BattleContext):

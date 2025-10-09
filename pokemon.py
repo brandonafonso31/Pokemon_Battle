@@ -182,7 +182,7 @@ class Pokemon:
         if opponent.hp <= 0:
             opponent.hp = 0
             print(f"{opponent.name} fainted!")
-        return self, opponent, old_hp
+        return self, opponent, old_hp, damage
     
     def ressurect(self):
         if self.is_ko == False :

@@ -107,26 +107,26 @@ def turn(pokemon_1, pokemon_2, move_id_player, manager):
     move_ia = getattr(pokemon_2, move_id_ia)
 
     # --- prio / vitesse
-    first, first_move_id, second, second_move_id = utils.get_prio(
+    first, first_move, first_move_id, second, second_move, second_move_id = utils.get_prio(
         pokemon_1, pokemon_2, move_player, move_ia, move_id_player, move_id_ia
     )
 
     # --- timing talents
     current_timing = bt.change_timing()
-    bt.check_timing_talent(first, second)
+    bt.check_timing_talent(first, second, first_move)
 
     # --- attaque du premier
     utils.delay_flat(1,manager)
 
     success_rate = utils.get_success_rate(first, second, first_move_id)
     if random() <= success_rate:
-        first, second, old_hp = first.use_move(first_move_id, second, manager)
+        first, second, old_hp, damage = first.use_move(first_move_id, second, manager)
         ui_battle.draw_hp_bar(manager, second, from_trainer=(second is pokemon_1), old_hp=old_hp)
     else:
         utils.print_log_ingame(manager, f"{first.name} rate son attaque !", reset=True)
 
     current_timing = bt.change_timing()
-    bt.check_timing_talent(first, second)
+    bt.check_timing_talent(first, second, first_move, damage)
 
     utils.check_hp_to_change_music(pokemon_1)
 
@@ -145,17 +145,17 @@ def turn(pokemon_1, pokemon_2, move_id_player, manager):
 
         if state == 0 and elapsed >= 1.5:
             current_timing = bt.change_timing(bt.Timing.ABOUT_TO_GET_HIT)
-            bt.check_timing_talent(second, first)
+            bt.check_timing_talent(second, first, second_move)
 
             success_rate = utils.get_success_rate(second, first, second_move_id)
             if random() <= success_rate:
-                second, first, old_hp = second.use_move(second_move_id, first, manager)
+                second, first, old_hp, damage = second.use_move(second_move_id, first, manager)
                 ui_battle.draw_hp_bar(manager, first, from_trainer=(second is pokemon_2), old_hp=old_hp)
             else:
                 utils.print_log_ingame(manager, f"{second.name} rate son attaque !", reset=True)
 
             current_timing = bt.change_timing()
-            bt.check_timing_talent(second, first)
+            bt.check_timing_talent(second, first, second_move, damage)
 
             utils.check_hp_to_change_music(pokemon_1)
 

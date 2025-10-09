@@ -1,8 +1,8 @@
 {
-  "timing": "GOT_HIT",
-  "attacker": "Léviator",
+  "timing": "ABOUT_TO_GET_HIT",
+  "attacker": "Ectoplasma",
   "defender": "Dracaufeu",
-  "move": "Cascade",
-  "damage": 130,
+  "move": "Tonnerre",
+  "damage": 136,
   "cancel_attack": false
 }
