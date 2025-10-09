@@ -39,9 +39,10 @@ def check_timing_talent(pokemon_1, pokemon_2):
     return pokemon_1, pokemon_2
 
 def change_timing(default_timing = None):
-    """ Change les timings comme présenté ci-dessous\n
-    Start_Turn -> About_To_Get_Hit -> Got_Hit -> \n
-    if second pokemon KO -> End_Turn else -> About_to_Get_Hit -> Got_Hit -> End_Turn """
+    """ Change les timings comme présenté ci-dessous :\n
+    Start_Turn -> About_To_Get_Hit -> Got_Hit ->
+    if second pokemon KO -> End_Turn
+    else -> About_to_Get_Hit -> Got_Hit -> End_Turn """
     global current_timing    
     with timing_lock:       
         if not default_timing:            
