@@ -20,7 +20,7 @@ class Timing(Enum):
 timing_lock = threading.Lock()
 
 
-def apply_timing_effect(pokemon_using_ability, pokemon_2):
+def apply_timing_effect(pokemon_using_ability, pokemon_2, context):
     ability = pokemon_using_ability.ability
     ability_timing = ability.timing
     with timing_lock:
@@ -33,14 +33,14 @@ def check_timing_talent(pokemon_1, pokemon_2, move = None, damage:int = 0):
     """Crée le context de l'état du combat,
     puis tente de déclencer les talents"""
     global current_timing
-    bc.create_context(current_timing, pokemon_1, pokemon_2, move, damage)
+    context = bc.create_context(current_timing, pokemon_1, pokemon_2, move, damage)
     
     if pokemon_1.vit >= pokemon_2.vit:
-        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)
-        pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
+        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2, context)
+        pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1, context)
     else:
-        pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1)
-        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2)  
+        pokemon_2, pokemon_1 = apply_timing_effect(pokemon_2, pokemon_1, context)
+        pokemon_1, pokemon_2 = apply_timing_effect(pokemon_1, pokemon_2, context)  
            
     return pokemon_1, pokemon_2
 

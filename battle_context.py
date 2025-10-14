@@ -4,7 +4,7 @@ from config import battle_history_path,last_context_path
 
 class BattleContext:
 
-    def __init__(self, timing: str,attacker, defender, move=None, damage: int = 0):
+    def __init__(self, timing ,attacker, defender, move=None, damage: int = 0):
         self.timing = timing
         self.attacker = attacker
         self.defender = defender
@@ -53,27 +53,18 @@ def read_context():
 
 def add_context_to_history(context: BattleContext):
     """Ajoute le contexte au fichier JSON sous forme d'objet indexé."""
-    data = read_context()
-
+    try:
+        with open(battle_history_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = {}
+        
     index = str(len(data))
     data[index] = context.to_dict()
-
+    
     with open(battle_history_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         
 def set_last_context(context: BattleContext):
     with open(last_context_path, "w", encoding="utf-8") as f:
         json.dump(context.to_dict(), f, ensure_ascii=False, indent=2)
-
-
-"""from battle_timing import Timing
-from pokemon_init import dracaufeu,leviator
-
-init_context_history()
-test_context_1 = create_context(Timing.ABOUT_TO_GET_HIT, dracaufeu, leviator, dracaufeu.move1, 84)
-test_context_2 = create_context(Timing.GOT_HIT, leviator, dracaufeu, leviator.move2, 130)
-add_context_to_history(test_context_1)
-add_context_to_history(test_context_2)
-
-set_last_context(test_context_1)
-set_last_context(test_context_2)"""
