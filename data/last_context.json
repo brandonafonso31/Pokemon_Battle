@@ -2,7 +2,7 @@
   "timing": "GOT_HIT",
   "attacker": "Léviator",
   "defender": "Dracaufeu",
-  "move": "Cascade",
-  "damage": 130,
+  "move": "Aqua-Jet",
+  "damage": 123,
   "cancel_attack": false
 }

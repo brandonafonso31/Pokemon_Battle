@@ -1,39 +1,50 @@
 from battle_timing import Timing
-import utils
+from pokemon_type import Type
+from math import floor
 
 class Ability:
-    def __init__(self, name, description, effect, timing:Timing, frequency):
+    def __init__(self, name, frequency = -1):
         self.name = name
-        self.description = description
-        self.effect = effect
-        self.timing = timing
         self.frequency = frequency
         self.used = 0
 
     def __str__(self):
-        return f"{self.name}"
+        return self.name
     
-    def can_trigger(self):
-        return self.frequency == 0 or self.used < self.frequency
+    def on_event(self, timing, ctx):
+        pass
 
-    def trigger(self, pokemon_self, pokemon_other):
-        if self.can_trigger():
-            self.effect(pokemon_self, pokemon_other)
-            self.used += 1
-            
+    def can_trigger(self):
+        return self.frequency == -1 or self.used < self.frequency
+    
     def reset(self):
         self.used = 0
-    
-def intimidation():
-    """Talent: Intimidation"""
-    def effect(pokemon_1,pokemon_2):
-        pokemon_2.apply_buff_debuff("atk", scale=-1)
-        txt = f"Le talent de {pokemon_1.name} influcence {pokemon_2.name}!"
-        print(txt)
-        # utils.print_log_ingame(manager,txt,reset=True)
+        
+class Blaze(Ability):
+    def __init__(self):
+        super().__init__("Blaze")
 
-    return Ability("Intimidation", "Baisse l'atk de l'ennemi de 1", effect, Timing.START, frequency=1)
-    
+    def on_event(self, timing, ctx):
+        ratio_hp = ctx.attacker.hp/ctx.attacker.hp_max
+        if timing == Timing.CALC_DAMAGE and (ratio_hp <= 1/3) and ctx.move.type == Type.FEU:
+            ctx.damage *= 1.5
+            ctx.damage = floor(ctx.damage)
+            print(f"🔥 {ctx.attacker.name} active Brasier ! Dégâts augmentés.")
+        return ctx
+
+class Intimidate(Ability):
+    def __init__(self):
+        super().__init__("Intimidate", 1)
+        
+    def on_event(self, timing, ctx):
+        if timing == Timing.START and self.can_trigger():
+            ctx.defender.apply_buff_debuff("atk", -1)
+            print(f"😤 {ctx.attacker.name} intimide {ctx.defender.name} ! L’attaque baisse.")
+            
+            self.used += 1
+        return ctx
+
 abilities = {
-    "Intimidation": intimidation,
+    "Blaze": Blaze(),
+    "Intimidate": Intimidate(),
 }

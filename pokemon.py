@@ -8,6 +8,10 @@ from math import floor,inf
 from pokemon_ability import Ability
 from random import randint,choice
 import os, pygame, sys, utils
+from battle_timing import timing_lock
+import battle_timing as bt
+from battle_timing import Timing
+
 
 LINE_PRINT = "-"*100
 
@@ -173,9 +177,17 @@ class Pokemon:
             print(f"{move.name} has status effects!")
             return self, opponent
         
+        
+        
         # Apply type effectiveness
-        damage *= self.get_cm(opponent, move,window)
+        damage *= self.get_cm(opponent, move, window)
         damage = max(0, floor(damage))
+
+        # -- timing CALC_DAMAGE
+        bt.change_timing(Timing.CALC_DAMAGE)
+        ctx = bt.check_timing_talent(self, opponent, move, damage)
+        damage = ctx.damage  # le talent peut modifier les dégâts
+        
         # Apply damage
         old_hp = opponent.hp
         opponent.hp -= damage

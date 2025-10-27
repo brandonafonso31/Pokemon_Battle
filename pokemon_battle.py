@@ -2,13 +2,14 @@ from config import song_dir_path, battle_json_path, background_dir_path, BLACK, 
 import ui_battle as ui_battle, os, sprite, pygame, json, sys, utils
 from random import randint, choice, random
 import battle_timing as bt
-
+import battle_context as bc
 
 def start_battle(manager, player, opponent, background="forest.jpg"):
     """Instancie les premiers éléments de la scène."""
     print(bt.current_timing)
     surface = manager.get_surface()
-
+    bc.init_context_history()
+    
     # --- fond inférieur
     surface.blit(BACKGROUND_IMAGE_BOTTOM, (
         res_screen_bottom[0] - BACKGROUND_IMAGE_BOTTOM.get_width(),
