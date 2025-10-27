@@ -1,9 +1,8 @@
 principal:
-    - ajuster les fonctions dans battle_context pour arranger les context paar tour (1 ou 2 context par tour)
-    - ajuster les fonctions pour utiliser les contextes (utiles pour coder les talents et leurs divers effets)
+    - modifier la façon dont les messages sont display lors de l'activation des talents
     - ajouter animation quand le player trainer envoie un pokemon au combat
     - ajouter le sexe des pokémon : male implique num_on_sheet de la femelle + 1 mais pas pour tous donc à gérer dans le csv qui contiendra tous les pokemon
-    - implenter animations des attaques
+    - implementer animations des attaques
     - implémenter sac et le switch de pokemon
     - améliorer animation quand KO (faire bouger le sprite dans le sol ou le faire diminuer)
     - continuer d'implementer trainer et pokemon_team
@@ -24,3 +23,4 @@ optionel :
     - sprite adversaire toujours affiché ?
     - modifier les comparaisons de str (meilleur lisibilité mais comparer des str ~) ?
     - changer la condition battle_menu par while team1.get_num_living_pokemon() > 1 and team2.get_num_living_pokemon() > 1
+    - mieux gérer l'affichage ? implméenter une scène, une caméra ...
