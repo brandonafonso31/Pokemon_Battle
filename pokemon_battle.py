@@ -114,20 +114,22 @@ def turn(pokemon_1, pokemon_2, move_id_player, manager):
 
     # --- timing talents
     current_timing = bt.change_timing()
-    bt.check_timing_talent(first, second, first_move)
+    ctx = bt.check_timing_talent(first, second, first_move)
 
     # --- attaque du premier
     utils.delay_flat(1,manager)
-
-    success_rate = utils.get_success_rate(first, second, first_move_id)
-    if random() <= success_rate:
-        first, second, old_hp, damage = first.use_move(first_move_id, second, manager)
-        ui_battle.draw_hp_bar(manager, second, from_trainer=(second is pokemon_1), old_hp=old_hp)
-    else:
-        utils.print_log_ingame(manager, f"{first.name} rate son attaque !", reset=True)
+    if ctx.cancel_attack:
+        utils.print_log_ingame(manager, second.name +"'s ability cancel the move !", reset=True)
+    else:    
+        success_rate = utils.get_success_rate(first, second, first_move_id)
+        if random() <= success_rate:
+            first, second, old_hp, damage = first.use_move(first_move_id, second, manager)
+            ui_battle.draw_hp_bar(manager, second, from_trainer=(second is pokemon_1), old_hp=old_hp)
+        else:
+            utils.print_log_ingame(manager, f"{first.name} rate son attaque !", reset=True)
 
     current_timing = bt.change_timing()
-    bt.check_timing_talent(first, second, first_move, damage)
+    ctx = bt.check_timing_talent(first, second, first_move, damage)
 
     utils.check_hp_to_change_music(pokemon_1)
 
@@ -146,17 +148,19 @@ def turn(pokemon_1, pokemon_2, move_id_player, manager):
 
         if state == 0 and elapsed >= 1.5:
             current_timing = bt.change_timing(bt.Timing.ABOUT_TO_GET_HIT)
-            bt.check_timing_talent(second, first, second_move)
-
-            success_rate = utils.get_success_rate(second, first, second_move_id)
-            if random() <= success_rate:
-                second, first, old_hp, damage = second.use_move(second_move_id, first, manager)
-                ui_battle.draw_hp_bar(manager, first, from_trainer=(second is pokemon_2), old_hp=old_hp)
+            ctx = bt.check_timing_talent(second, first, second_move)
+            if ctx.cancel_attack:
+                utils.print_log_ingame(manager, first.name +"'s ability cancel the move !", reset=True)
             else:
-                utils.print_log_ingame(manager, f"{second.name} rate son attaque !", reset=True)
+                success_rate = utils.get_success_rate(second, first, second_move_id)
+                if random() <= success_rate:
+                    second, first, old_hp, damage = second.use_move(second_move_id, first, manager)
+                    ui_battle.draw_hp_bar(manager, first, from_trainer=(second is pokemon_2), old_hp=old_hp)
+                else:
+                    utils.print_log_ingame(manager, f"{second.name} rate son attaque !", reset=True)
 
             current_timing = bt.change_timing()
-            bt.check_timing_talent(second, first, second_move, damage)
+            ctx = bt.check_timing_talent(second, first, second_move, damage)
 
             utils.check_hp_to_change_music(pokemon_1)
 

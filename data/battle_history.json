@@ -2,81 +2,49 @@
   "0": {
     "timing": "START",
     "attacker": "Léviator",
-    "defender": "Dracaufeu",
+    "defender": "Ectoplasma",
     "move": "None",
     "damage": 0,
     "cancel_attack": false
   },
   "1": {
     "timing": "ABOUT_TO_GET_HIT",
-    "attacker": "Léviator",
-    "defender": "Dracaufeu",
-    "move": "Aqua-Jet",
+    "attacker": "Ectoplasma",
+    "defender": "Léviator",
+    "move": "Balle'Ombre",
     "damage": 0,
     "cancel_attack": false
   },
   "2": {
     "timing": "CALC_DAMAGE",
-    "attacker": "Léviator",
-    "defender": "Dracaufeu",
-    "move": "Aqua-Jet",
-    "damage": 131,
+    "attacker": "Ectoplasma",
+    "defender": "Léviator",
+    "move": "Balle'Ombre",
+    "damage": 116,
     "cancel_attack": false
   },
   "3": {
     "timing": "GOT_HIT",
-    "attacker": "Léviator",
-    "defender": "Dracaufeu",
-    "move": "Aqua-Jet",
-    "damage": 131,
+    "attacker": "Ectoplasma",
+    "defender": "Léviator",
+    "move": "Balle'Ombre",
+    "damage": 116,
     "cancel_attack": false
   },
   "4": {
     "timing": "ABOUT_TO_GET_HIT",
-    "attacker": "Dracaufeu",
-    "defender": "Léviator",
-    "move": "Lance-Flammes",
+    "attacker": "Léviator",
+    "defender": "Ectoplasma",
+    "move": "Séisme",
     "damage": 0,
     "cancel_attack": false
   },
   "5": {
     "timing": "CALC_DAMAGE",
-    "attacker": "Dracaufeu",
-    "defender": "Léviator",
-    "move": "Lance-Flammes",
-    "damage": 51,
-    "cancel_attack": false
-  },
-  "6": {
-    "timing": "GOT_HIT",
-    "attacker": "Dracaufeu",
-    "defender": "Léviator",
-    "move": "Lance-Flammes",
-    "damage": 76,
-    "cancel_attack": false
-  },
-  "7": {
-    "timing": "START",
     "attacker": "Léviator",
-    "defender": "Dracaufeu",
-    "move": "Aqua-Jet",
-    "damage": 0,
-    "cancel_attack": false
-  },
-  "8": {
-    "timing": "CALC_DAMAGE",
-    "attacker": "Léviator",
-    "defender": "Dracaufeu",
-    "move": "Aqua-Jet",
-    "damage": 123,
-    "cancel_attack": false
-  },
-  "9": {
-    "timing": "GOT_HIT",
-    "attacker": "Léviator",
-    "defender": "Dracaufeu",
-    "move": "Aqua-Jet",
-    "damage": 123,
+    "defender": "Ectoplasma",
+    "move": "Séisme",
+    "damage": 116,
     "cancel_attack": false
   }
 }

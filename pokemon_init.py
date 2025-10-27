@@ -51,10 +51,10 @@ pikachu.learn_move("électacle")"""
 
 gengar_Ev = {"hp":6,"atk":0,"def_":0,"atk_spe":252,"def_spe":0,"vit":252}
 gengar = create_pokemon(94,nature=Nature.MODESTE,EV=gengar_Ev,num_on_sprite_sheet=108)
-gengar.change_ability(abilities["Intimidate"])
+gengar.change_ability(abilities["Levitate"])
 
 tonnerre = SpecialMove("Tonnerre",Type.ELECTRIQUE,power=90,accuracy=100,pp=15, effect = dico_effect_move["Tonnerre"], prio = 0)
 balle_ombre = SpecialMove("Balle'Ombre",Type.SPECTRE,power=80,accuracy=100,pp=10, effect = dico_effect_move["Balle'Ombre"], prio = 0)
-gengar.learn_move(tonnerre)
+#gengar.learn_move(tonnerre)
 gengar.learn_move(balle_ombre)
 #print(gengar)

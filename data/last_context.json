@@ -1,8 +1,8 @@
 {
-  "timing": "GOT_HIT",
+  "timing": "CALC_DAMAGE",
   "attacker": "Léviator",
-  "defender": "Dracaufeu",
-  "move": "Aqua-Jet",
-  "damage": 123,
+  "defender": "Ectoplasma",
+  "move": "Séisme",
+  "damage": 116,
   "cancel_attack": false
 }

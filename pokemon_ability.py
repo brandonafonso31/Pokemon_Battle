@@ -43,8 +43,21 @@ class Intimidate(Ability):
             
             self.used += 1
         return ctx
+    
+class Levitate(Ability):
+    def __init__(self):
+        super().__init__("Levitate")
+
+    def on_event(self, timing, ctx):
+        if timing == Timing.ABOUT_TO_GET_HIT and ctx.move.type == Type.SOL:
+            ctx.cancel_attack = True
+            ctx.damage = 0
+            print(f"☁️ {ctx.defender.name} lévite et évite l'attaque Sol !")
+        return ctx
+
 
 abilities = {
     "Blaze": Blaze(),
     "Intimidate": Intimidate(),
+    "Levitate": Levitate(),
 }
