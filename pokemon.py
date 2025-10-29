@@ -79,8 +79,10 @@ class Pokemon:
         # Trainer
         self.trainer = None
         
-        # A implementer
-             
+        # Status
+        self.status = []
+        
+        # A implementer             
         self.shiny = False          # change uniquement les scripts
         self.item = item            # objet tenu par le pokémon
     
@@ -317,7 +319,15 @@ class Pokemon:
             for event in pygame.event.get():
                 utils.pygame_event_handle(manager,event)
 
+    
+    def add_status(self, status):
+        self.status.append(status)
+    
+    def remove_status(self, status):
+        self.status.remove(status)
         
+    
+    
 def get_scale_by_nature(stat_name: str, nature: Nature):
     return 1.1 if stat_name == nature.effect()["stat_boost"] else 0.9 if stat_name == nature.effect()["stat_neg"] else 1
      
