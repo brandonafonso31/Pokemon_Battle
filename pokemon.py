@@ -175,7 +175,7 @@ class Pokemon:
         elif isinstance(move, StatusMove):
             # TODO: Implement status effects
             print(f"{move.name} has status effects!")
-            return self, opponent
+            return self, opponent, opponent.hp, 0
         
         
         
